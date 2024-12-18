@@ -1,0 +1,500 @@
+/*
+*********************************************************************************************
+* File: index.css
+* Author: Madhurima Rawat
+* Date: December 18, 2024
+* Description: This is the main stylesheet for "Madhurima Mindscape", a personal blog website.
+*              It defines the unique design elements, including layouts, color schemes, typography, 
+*              and responsive behavior to create a visually appealing and functional blog experience.
+*              The style uses a combination of custom CSS and external frameworks like Bootstrap and Font Awesome.
+* Version: 1.0
+* GitHub Repository: https://github.com/madhurimarawat/Madhurima-Mindscape
+* Issues/Bugs: For any issues or bugs, please visit the GitHub repository issues section.
+* Comments:
+    - The blog design is fully responsive, adapting to different screen sizes using Bootstrap 4.6.1 grid system.
+    - Custom styles are applied to enhance visual appeal, including custom fonts, color schemes, and hover effects.
+    - The carousel section is styled with smooth transitions to provide an interactive visual experience.
+    - The navigation bar and footer sections are styled to ensure consistency and clarity.
+    - Font Awesome icons are used to enhance accessibility and provide visual cues for links and sections.
+* Dependencies:
+    - Font Awesome 5.15.4: Provides icons used across the website for better user experience and navigation.
+    - Bootstrap 4.6.1: Used for layout and responsive grid system.
+    - Custom JavaScript (index.js): Handles interactive elements like the carousel, dynamic content changes, etc.
+*********************************************************************************************
+*/
+
+/* Header Styling */
+.header {
+    text-align: center;
+    /* Centers text horizontally */
+    background: linear-gradient(to right, #f8c471, #db4583, #b0e6b2);
+    /* Sets background color */
+    color: white;
+    /* Text color */
+    padding: 2rem;
+    /* Adds padding to the header */
+}
+
+/* Header Title Styling */
+.header h1 {
+    font-size: 2.5rem;
+    /* Sets the font size of the title */
+    margin: 0;
+    /* Removes any default margin */
+}
+
+/* Header Paragraph Styling */
+.header p {
+    font-size: 1.2rem;
+    /* Sets the font size of the paragraph */
+    margin: 0;
+    /* Removes any default margin */
+    font-style: italic;
+    /* Makes the paragraph italic */
+}
+
+.portfolio-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 20px;
+    /* Space between the theme button and portfolio link */
+}
+
+.portfolio-link:hover {
+    text-decoration: underline;
+    color: #ff7e5f;
+    /* You can change the hover color as needed */
+}
+
+.github-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 20px;
+    /* Space between the theme button and portfolio link */
+}
+
+.github-link:hover {
+    text-decoration: underline;
+    color: #ff7e5f;
+    /* You can change the hover color as needed */
+}
+
+/* Global Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    /* Default font family */
+    text-align: center;
+    /* Centers text horizontally */
+    margin: 0;
+    /* Removes any default margin */
+    padding: 0;
+    /* Removes any default padding */
+    background: linear-gradient(to right, #fdd835, #f8a5b1);
+    /* Gradient background */
+    color: #fff;
+    /* Sets default text color */
+    margin-bottom: 0;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+    /* Positioning relative to parent */
+    display: inline-block;
+    /* Inline-block for proper alignment */
+    text-align: left;
+    /* Left-align the dropdown content */
+}
+
+/* Dropdown Menu Content Styling */
+.dropdown-content {
+    display: none;
+    /* Initially hidden */
+    position: absolute;
+    /* Positioned relative to the dropdown */
+    background-color: #f9f9f9;
+    /* Light background for dropdown */
+    min-width: 160px;
+    /* Minimum width for the dropdown */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    /* Adds subtle shadow */
+    z-index: 1;
+    /* Ensures dropdown is on top of other elements */
+    border-radius: 5px;
+    /* Rounded corners for dropdown */
+}
+
+/* Dropdown Links Styling */
+.dropdown-content a {
+    color: black;
+    /* Text color for dropdown links */
+    padding: 12px 16px;
+    /* Padding inside the links */
+    text-decoration: none;
+    /* Removes underline */
+    display: block;
+    /* Makes each link a block element */
+    border-bottom: 1px solid #ddd;
+    /* Border between dropdown items */
+    border-radius: 5px;
+    /* Slight rounding of edges */
+}
+
+/* Dropdown Link Hover Effect */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    /* Changes background color on hover */
+}
+
+/* Show Dropdown Menu on Hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+    /* Shows the dropdown content when hovered */
+}
+
+/* Path Container Styling */
+.path {
+    display: flex;
+    /* Enables flexbox */
+    justify-content: center;
+    /* Centers content horizontally */
+    align-items: center;
+    /* Centers content vertically */
+    position: relative;
+    /* Positions relative to its container */
+    margin-top: 10px;
+    /* Space above the path */
+    margin-bottom: 0px;
+    /* Space below the path */
+}
+
+/* Individual Path Item Styling */
+.path-item {
+    text-decoration: none;
+    /* Removes underline from links */
+    color: white;
+    /* Text color for path items */
+    font-size: 1.5rem;
+    /* Font size */
+    border: 2px solid #82898f;
+    /* Border around items */
+    padding: 0.8rem 1.5rem;
+    /* Padding inside the path items */
+    border-radius: 8px;
+    /* Rounded corners for items */
+    transition: all 0.3s ease;
+    /* Smooth transition for hover effects */
+    position: relative;
+    /* Position relative to its container */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+    /* Glow effect */
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black background */
+    transform: translateY(50px);
+    /* Initially place items below */
+    opacity: 0;
+    /* Initially hidden */
+    animation: riseUp 0.8s forwards;
+    /* Animation for upward movement */
+}
+
+/* Delay Animation for Path Items */
+.path-item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.path-item:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.path-item:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.path-item:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+/* Animation for Path Items (Rise Up) */
+@keyframes riseUp {
+    0% {
+        transform: translateY(50px);
+        /* Start from below */
+        opacity: 0;
+        /* Start hidden */
+    }
+
+    100% {
+        transform: translateY(0);
+        /* End at normal position */
+        opacity: 1;
+        /* Fade in */
+    }
+}
+
+/* Hover Effect for Path Items */
+.path-item:hover {
+    color: #1abc9c;
+    /* Text color on hover */
+    box-shadow: 0 0 25px rgba(26, 188, 156, 0.8);
+    /* Glowing shadow on hover */
+    transform: scale(1.05);
+    /* Slight zoom effect on hover */
+}
+
+/* Style for the icon circle */
+.path-item i {
+    display: inline-block;
+    width: 50px;
+    /* Size of the circle */
+    height: 50px;
+    /* Size of the circle */
+    background-color: #ff9a8b;
+    /* Circle background color */
+    color: white;
+    /* Icon color */
+    border-radius: 50%;
+    /* Makes it circular */
+    text-align: center;
+    line-height: 50px;
+    /* Centers the icon vertically */
+    font-size: 24px;
+    /* Icon size */
+    margin-right: 15px;
+    /* Space between icon and label */
+}
+
+/* Style for the label (heading) */
+.path-item {
+    display: flex;
+    align-items: center;
+    /* Align icon and label horizontally */
+    font-size: 1.5rem;
+    /* Font size for the label */
+    color: #fff;
+    /* Label text color */
+    text-decoration: none;
+    /* Remove underline */
+}
+
+/* Optional: Hover effect for the path-item */
+.path-item:hover {
+    color: #1abc9c;
+    /* Change label color on hover */
+    box-shadow: 0 0 25px rgba(26, 188, 156, 0.8);
+    /* Glowing shadow on hover */
+    transform: scale(1.05);
+    /* Slight zoom effect on hover */
+}
+
+/* Path Item Container Styling */
+.path-container {
+    display: flex;
+    /* Flexbox layout */
+    align-items: center;
+    /* Adds space between path items */
+    flex-wrap: wrap;
+    /* Allows items to wrap in smaller screens */
+    position: relative;
+    /* Positions relative to its container */
+    justify-content: center;
+    /* Centers items horizontally */
+    flex-direction: column;
+    /* Arranges path sections vertically */
+    gap: 2rem;
+    /* Adds space between sections */
+    margin: 0 auto;
+    /* Centers the container */
+    max-width: 1200px;
+    /* Optional: Set a max-width */
+    padding: 20px;
+    /* Optional: Adds padding inside the container */
+}
+
+/* Individual Path Section Styling */
+.path-section {
+    width: 100%;
+    /* Ensures each section takes up the full width */
+    text-align: center;
+    /* Centers text within each section */
+    margin-bottom: -20px;
+    /* Adds space after each section, including the heading and its box */
+}
+
+/* Add margin-bottom to the heading to create space */
+.path-section h2 {
+    margin-bottom: 15px;
+    /* Adds space between the heading and the next element (the box) */
+}
+
+/* Path Item Styling */
+.path-section .path-item {
+    display: inline-block;
+    /* Makes the links display inline-block */
+    margin-right: 1rem;
+    /* Adds space between the links */
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    border: 2px solid #82898f;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Hover Effect for Path Items */
+.path-item:hover {
+    color: #1abc9c;
+    box-shadow: 0 0 25px rgba(26, 188, 156, 0.8);
+    transform: scale(1.05);
+}
+
+@media (min-width: 769px) {
+
+    /* Your CSS rules for screens between 769px and 1024px */
+    .path-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .path-section .path-item {
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Reduce the space between sections on smaller screens */
+    .path-section {
+        margin-bottom: -10px;
+        /* Set margin to a lower value to decrease space between sections */
+        padding-bottom: 0px;
+        /* Add padding to ensure no extra space */
+    }
+
+    /* Stacking the links vertically on mobile */
+    .path-section .path-item {
+        display: block;
+        /* Stacks the links vertically on smaller screens */
+        margin-right: 0;
+        /* Removes the right margin */
+        margin-bottom: 10px;
+        /* Adds space between the stacked items (adjust if needed) */
+        padding: 0.6rem 1rem;
+        /* Adjust padding if needed to reduce size of boxes */
+    }
+}
+
+/* Responsive Adjustments for Path Container */
+@media screen and (max-width: 600px) {
+    .path-container {
+        flex-direction: column;
+        /* Stacks items vertically */
+    }
+
+    .path-item::after {
+        display: none;
+        /* Removes arrows on small screens */
+    }
+}
+
+.footer-section {
+    margin: 0;
+    padding: 1rem 0;
+    background-color: #db4583;
+    color: white;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    flex-shrink: 0;
+    height: auto;
+    margin-bottom: 0;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Phones (below 768px) */
+@media (max-width: 767px) {
+    div>label {
+        font-size: 16px;
+        /* Adjust font size for smaller screens */
+        margin-right: 5px;
+        /* Reduces margin between elements */
+    }
+
+    #name-input {
+        margin: 10px 0;
+        /* Vertical spacing */
+        width: 90%;
+        /* Makes the input width responsive */
+        max-width: 300px;
+        /* Sets max width */
+    }
+
+    button {
+        margin-top: 15px;
+        /* Space above the button */
+        width: 90%;
+        /* Makes the button width responsive */
+        max-width: 300px;
+        /* Sets max width */
+    }
+
+    .dropdown-content {
+        position: fixed;
+        /* Fixed position for dropdown on small screens */
+        bottom: 10px;
+        /* Align near bottom */
+        left: 10px;
+        /* Padding from the left */
+        right: 10px;
+        /* Padding from the right */
+        width: auto;
+        /* Flexible width */
+        max-width: 100%;
+        /* Use full screen width */
+        z-index: 1000;
+        /* Ensures dropdown appears above other elements */
+    }
+
+    .dropdown-content a {
+        text-align: center;
+        /* Centers the dropdown links */
+        font-size: 14px;
+        /* Smaller font size */
+        padding: 8px 10px;
+        /* Compact padding for smaller screens */
+    }
+}
+
+/* Tablets (768px to 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .dropdown-content {
+        position: absolute;
+        /* Dropdown relative to parent */
+        left: 50%;
+        /* Centers the dropdown */
+        transform: translateX(-50%);
+        /* Adjusts the dropdown for perfect centering */
+        width: 200px;
+        /* Sets dropdown width */
+        max-width: 90%;
+        /* Prevents overflow */
+    }
+
+    .dropdown-content a {
+        text-align: center;
+        /* Centers the links */
+        font-size: 16px;
+        /* Adjusts font size */
+        padding: 10px 16px;
+        /* Adjusts padding */
+    }
+}

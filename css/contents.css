@@ -1,0 +1,147 @@
+/*
+*********************************************************************************************
+* File: contents.css
+* Author: Madhurima Rawat
+* Date: December 18, 2024
+* Description: This is the stylesheet for the content pages of the "Madhurima Mindscape" blog website.
+*              It contains specific styles for the body text, headings, quotes, images, and links 
+*              used across various content pages. The CSS ensures consistent and readable design 
+*              elements, enhancing the visual appeal of the content with customized fonts, colors, 
+*              and spacing.
+* Version: 1.0
+* GitHub Repository: https://github.com/madhurimarawat/Madhurima-Mindscape
+* Issues/Bugs: For any issues or bugs, please visit the GitHub repository issues section.
+* Comments:
+    - The body text is styled for better readability with justified alignment and a consistent font size.
+    - Section titles are centered and styled in italic with a pink color (`#db4583`) to make them stand out.
+    - Blockquotes are styled with an emphasis on readability, including italicized text, bold font weight, 
+      and a left border for better visual impact.
+    - Image captions are styled to stand out with bold and italic fonts, with a monospace font family for a 
+      distinct look. They also provide support for clickable links within captions.
+    - Links are styled in italicized bold text with underlines, ensuring they are clearly distinguished from 
+      regular content.
+* Dependencies:
+    - Font Awesome 5.15.4: Provides icons for visual elements.
+    - Custom JavaScript (index.js): Handles interactive elements across the website.
+*********************************************************************************************
+*/
+
+body {
+    text-align: justify;
+    /* Justifies text for better readability */
+    color: black;
+    /* Sets the default text color to black */
+    font-size: 18px;
+    /* Sets a comfortable font size for the body text */
+}
+
+section {
+    margin: 20px;
+    /* Adds a margin around each section for spacing */
+    margin-bottom: 35px;
+    /* Adds extra space at the bottom of each section */
+}
+
+section h3 {
+    text-align: center;
+    /* Centers the section headings */
+    font-family: Arial, Helvetica, sans-serif;
+    /* Uses a clean sans-serif font */
+    font-style: italic;
+    /* Italicizes section headings for emphasis */
+    margin-bottom: 20px;
+    /* Adds space below the heading */
+    color: #db4583;
+    /* Applies a pink color to the headings */
+}
+
+h2 {
+    text-align: center;
+    /* Centers main headings */
+    font-family: monospace;
+    /* Uses a monospace font for a more technical feel */
+    font-style: italic;
+    /* Italicizes for emphasis */
+    margin-top: 10px;
+    /* Adds margin at the top */
+    margin-bottom: 10px;
+    /* Adds margin at the bottom */
+    color: #db4583;
+    /* Uses pink color for main headings */
+    font-weight: bold;
+    /* Makes the headings bold */
+}
+
+.about-me {
+    text-align: center;
+    /* Centers the text for the "About Me" section */
+}
+
+.blockquote {
+    margin: 1em 0;
+    /* Adds space above and below the blockquote */
+    padding: 1em;
+    /* Adds internal padding for better readability */
+    border-left: 5px solid #6cb2eb;
+    /* Adds a blue left border for emphasis */
+    font-style: italic;
+    /* Italicizes the text inside blockquotes */
+    font-size: 1.1em;
+    /* Slightly increases the font size for better visibility */
+    color: #333;
+    /* Ensures the text color is dark for legibility */
+    font-weight: bold;
+    /* Makes blockquote text bold */
+    font-family: monospace;
+    /* Uses monospace font for a unique style */
+}
+
+.image-caption {
+    font-weight: bold;
+    /* Makes image captions bold */
+    font-style: italic;
+    /* Italicizes image captions */
+    font-size: 16px;
+    /* Adjusts the font size for readability */
+    text-align: center;
+    /* Centers image captions */
+    margin-top: 9px;
+    /* Adds a small space above captions */
+    color: black;
+    /* Sets caption text color to black */
+    font-family: monospace;
+    /* Uses monospace font for a unique look */
+}
+
+/* Styling for image captions that are links */
+.image-caption-link {
+    color: black;
+    /* Sets the link color to black */
+    text-decoration: underline;
+    /* Underlines the text to indicate it's a link */
+}
+
+h4,
+h5 {
+    text-align: center;
+    /* Centers headings */
+    font-family: monospace;
+    /* Applies a monospace font */
+    font-weight: bold;
+    /* Makes headings bold */
+    margin-bottom: 25px;
+    /* Adds space below the headings */
+}
+
+.link {
+    font-family: monospace;
+    /* Uses a monospace font for links */
+    color: black;
+    /* Sets the link text color to black */
+    text-decoration: underline;
+    /* Underlines the link text */
+    font-weight: bold;
+    /* Makes the link text bold */
+    font-style: italic;
+    /* Italicizes the link text */
+}
