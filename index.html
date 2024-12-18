@@ -1,0 +1,151 @@
+<!--
+*********************************************************************************************
+* File: index.html
+* Author: Madhurima Rawat
+* Date: December 18, 2024
+* Description: This is the homepage of Madhurima Rawat's personal blog website, "Madhurima Mindscape". 
+*              The page showcases an interactive carousel for displaying visual content, and sections 
+*              that guide visitors to explore various blog topics including personal reflections, tech 
+*              insights, project diaries, and creative photography. 
+*              It serves as a portal for showcasing personal projects, insights, and creative work.
+* Version: 1.0
+* GitHub Repository: https://github.com/madhurimarawat/Madhurima-Mindscape
+* Issues/Bugs: For any issues or bugs, please visit the GitHub repository issues section.
+* Comments:
+    - The homepage features a dynamic carousel to display images, offering a visually appealing start.
+    - Several sections (Introduction, Personal Insights, Tech Insights, Project Diaries, and Creative Clicks) 
+      are provided with easy navigation links, leading to individual blog pages.
+    - The page is styled using Bootstrap 4.6.1 to ensure a responsive layout across various devices.
+    - Font Awesome icons are used to visually represent the different sections and links.
+* Dependencies:
+    - Font Awesome 5.15.4: Provides icons used throughout the page for visual enhancements.
+    - Bootstrap 4.6.1: Ensures a responsive, mobile-friendly design.
+    - Custom CSS (index.css): Defines the unique style of the blog website.
+    - JavaScript (index.js): Manages interactivity, including the carousel behavior and dynamic features.
+*********************************************************************************************
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Welcome to Madhurima Mindscape, a personal blog by Madhurima Rawat. Explore personal reflections, tech insights, project diaries, and creative photography.">
+    <meta name="keywords"
+        content="Madhurima Rawat, blog, personal blog, tech insights, photography, creative content, project diaries, personal reflections">
+    <meta name="author" content="Madhurima Rawat">
+    <meta name="robots" content="index, follow">
+    <title>Madhurima Mindscape</title>
+    <!-- For PNG and SVG logos -->
+    <link rel="icon" href="images/Logo.png" type="image/png">
+    <!-- Bootstrap CSS  CDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Link to Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <script defer src="js/index.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Place the div with a specific id to insert the navbar -->
+    <div id="header-container"></div>
+
+
+    <!---------------------    Slider Section Starts From Here----------------->
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/Illustration_1.png" height="400px" class="d-block w-100" alt="Slider Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="images/Illustration_2.webp" height="400px" class="d-block w-100" alt="Slider Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="images/Illustration_3.png" height="400px" class="d-block w-100" alt="Slider Image 2">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </button>
+    </div>
+    <div class="main-content">
+        <main class="path">
+            <div class="path-container">
+                <!-- First Section -->
+                <div class="path-section">
+                    <h2>Introduction</h2>
+                    <a href="introduction.html" class="path-item">
+                        <i class="fas fa-info-circle"></i> Explore the Blog
+                    </a>
+                    <a href="about-me.html" class="path-item">
+                        <i class="fas fa-user"></i> About Me
+                    </a>
+                </div>
+
+                <!-- Second Section -->
+                <div class="path-section">
+                    <h2>Personal Insights</h2>
+                    <a href="2024-reflections.html" class="path-item">
+                        <i class="fas fa-calendar"></i> 2024 Reflections
+                    </a>
+                    <a href="practical-wisdom.html" class="path-item">
+                        <i class="fas fa-hands-helping"></i> Practical Wisdom
+                    </a>
+                </div>
+
+                <!-- Third Section -->
+                <div class="path-section">
+                    <h2>Tech Insights</h2>
+                    <a href="data-stories.html" class="path-item">
+                        <i class="fas fa-database"></i> Data Stories
+                    </a>
+                </div>
+
+                <!-- Fourth Section -->
+                <div class="path-section">
+                    <h2>Project Diaries</h2>
+                    <a href="library-management.html" class="path-item">
+                        <i class="fas fa-book"></i> Library Management
+                    </a>
+
+                </div>
+
+                <!-- Fifth Section -->
+                <div class="path-section">
+                    <h2>Creative Clicks</h2>
+                    <a href="floral-photography.html" class="path-item">
+                        <i class="fas fa-seedling"></i> Floral Photography
+                    </a>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <br>
+</body>
+<footer class="footer-section">
+    <p>&copy; 2024 Madhurima Mindscape. All rights reserved.</p>
+</footer>
+
+</html>

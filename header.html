@@ -1,0 +1,58 @@
+<!--
+*********************************************************************************************
+* File: header.html
+* Author: Madhurima Rawat
+* Date: December 18, 2024
+* Description: This is the header section of Madhurima Rawat's personal website "Madhurima Mindscape".
+*              The header contains the main title of the site, a tagline, and a dropdown menu to 
+*              select various theme options for the website background. It also includes links to 
+*              the portfolio and GitHub repositories.
+*              This header is consistent across all pages, providing a unified look and navigation.
+* Version: 1.0
+* GitHub Repository: https://github.com/madhurimarawat/Madhurima-Mindscape
+* Issues/Bugs: For any issues or bugs, please visit the GitHub repository issues section.
+* Comments:
+    - The header displays the title "Madhurima Mindscape" and a brief tagline describing the site.
+    - The dropdown button allows the user to choose different background color themes, enhancing user customization.
+    - Links to the personal portfolio and GitHub repository are provided for easy access to more information.
+    - The header is designed to be lightweight, providing both aesthetics and functionality.
+* Dependencies:
+    - No external dependencies are used in this section (apart from general site-wide styles and scripts).
+*********************************************************************************************
+-->
+
+
+<header class="header">
+    <h1>Madhurima Mindscape</h1>
+    <p>Modules, Materials, Moments, Memories, and More</p>
+
+    <!-- Select Theme Button Positioned to the Side -->
+    <div class="dropdown">
+        <a href="#" class="dropdown-toggle" style="color: white;">
+            🎨 Select Theme
+        </a>
+        <!-- Dropdown content with theme options -->
+        <div class="dropdown-content">
+            <a href="#" onclick="changeBackground('#ff7e5f', '#feb47b')">🌅 Sunset Vibes</a>
+            <a href="#" onclick="changeBackground('#2bc0e4', '#eaecc6')">🌊 Ocean Breeze</a>
+            <a href="#" onclick="changeBackground('#c2a6ff', '#d6c1ff')">🌙 Lavender Dream</a>
+            <a href="#" onclick="changeBackground('#6dd5ed', '#2193b0')">🍃 Green Freshness</a>
+            <a href="#" onclick="changeBackground('#ff7f50', '#ff4500')">🔥 Fiery Passion</a>
+            <a href="#" onclick="changeBackground('#f6d365', '#fda085')">🌇 Golden Hour</a>
+            <a href="#" onclick="changeBackground('#a8e0ff', '#6ec1e4')">🚢 Calm Seas</a>
+            <a href="#" onclick="changeBackground('#ffebeb', '#fff4f4')">🔥 Fiery Passion</a>
+            <a href="#" onclick="changeBackground('#ff9a8b', '#ffb8b2')">🍂 Autumn Leaves</a>
+            <a href="#" onclick="changeBackground('#d1d1d176', '#333333')">🌌 Mysterious Night</a>
+            <a href="#" onclick="changeBackground('#a1c4fd', '#c2e9fb')">☁️ Pastel Dream</a>
+            <a href="#" onclick="changeBackground('#00b4db', '#0083b0')">🌴 Tropical Paradise</a>
+            <a href="#" onclick="changeBackground('#8e44ad', '#3498db')">🌫️ Purple Haze</a>
+            <a href="#" onclick="changeBackground('#8e44ad', '#e74c3c')">🍓 Berry Blast</a>
+            <a href="#" onclick="changeBackground('#9cecfb', '#65c7f7')">🌬️ Cool Breeze</a>
+            <a href="#" onclick="changeBackground('#d7bfae', '#b29381')">☕ Mocha Mousse</a>
+        </div>
+    </div>
+    <!-- Added Link After Themes Button -->
+    <a href="https://madhurimarawat.github.io/Portfolio-Website/" class="portfolio-link">Portfolio</a>
+    <!-- Added Link After Themes Button -->
+    <a href="https://github.com/madhurimarawat/Madhurima-Mindscape" class="github-link">GitHub</a>
+</header>
