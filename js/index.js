@@ -43,3 +43,35 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('Error loading the navbar:', error); // Log an error if the fetch fails
         });
 });
+
+// Declare a variable to hold the timeout ID
+let dropdownTimeout;
+
+// Function to show the dropdown
+function showDropdown() {
+    clearTimeout(dropdownTimeout); // Clear any existing timeout to ensure it doesn't hide too early
+    const dropdownContent = document.querySelector('.dropdown-content');
+    dropdownContent.style.display = 'block'; // Show the dropdown
+    dropdownContent.style.opacity = '1'; // Make sure the opacity is fully visible
+}
+
+// Function to hide the dropdown after a short delay
+function hideDropdown() {
+    dropdownTimeout = setTimeout(() => {
+        const dropdownContent = document.querySelector('.dropdown-content');
+        dropdownContent.style.opacity = '0'; // Fade out
+        dropdownContent.style.display = 'none'; // Hide the dropdown
+    }, 300); // Adjust this value (in milliseconds) for the desired delay before hiding
+}
+
+// Wait for the DOM to fully load before adding event listeners
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdown = document.querySelector('.dropdown');
+
+    // Show the dropdown when the user hovers over the dropdown container
+    dropdown.addEventListener('mouseenter', showDropdown);
+
+    // Hide the dropdown after the hover ends
+    dropdown.addEventListener('mouseleave', hideDropdown);
+});
+
