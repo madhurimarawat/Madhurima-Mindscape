@@ -67,6 +67,12 @@ A collection of my photography work and creative expressions through the lens.
 - **Responsive Design:** The website is fully responsive and works seamlessly on all devices.
 - **Dynamic Content:** The website includes sections that cater to both personal and professional content.
 - **Creative Exploration:** A place to showcase not just technical projects but also personal insights and creative work like photography.
+  
+---
+
+## Resources
+
+Logos and images were generated using ChatGPT: <a href = "https://chatgpt.com/">ChatGPT</a>
 
 ---
 
