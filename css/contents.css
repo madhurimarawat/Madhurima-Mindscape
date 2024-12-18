@@ -145,3 +145,11 @@ h5 {
     font-style: italic;
     /* Italicizes the link text */
 }
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .image {
+        width: 100%;
+        /* Maintain aspect ratio */
+    }
+}
