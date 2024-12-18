@@ -9,17 +9,6 @@
  * Version: 1.0
  * GitHub Repository: https://github.com/madhurimarawat/Madhurima-Mindscape
  * Issues/Bugs: For any issues or bugs, please visit the GitHub repository issues section.
- *
- * Functions:
- * - changeBackground: Updates the page's background to a gradient based on two selected colors.
- *
- * Dependencies:
- * - header.html: Contains the structure and content for the navigation bar, which is dynamically loaded.
- *
- * Comments:
- * - The changeBackground function is used to dynamically alter the page's background gradient.
- * - On page load, the script fetches the content of the navbar from the `header.html` file and 
- *   injects it into the 'header-container' div to display the navigation bar.
  */
 
 /**
@@ -67,11 +56,32 @@ function hideDropdown() {
 // Wait for the DOM to fully load before adding event listeners
 document.addEventListener('DOMContentLoaded', function () {
     const dropdown = document.querySelector('.dropdown');
+    const dropdownContent = document.querySelector('.dropdown-content');
 
     // Show the dropdown when the user hovers over the dropdown container
-    dropdown.addEventListener('mouseenter', showDropdown);
+    dropdown.addEventListener('mouseenter', function () {
+        showDropdown();
+    });
 
-    // Hide the dropdown after the hover ends
-    dropdown.addEventListener('mouseleave', hideDropdown);
+    // Show the dropdown when hovering over the dropdown content itself
+    dropdownContent.addEventListener('mouseenter', function () {
+        showDropdown();
+    });
+
+    // Hide the dropdown when the user leaves both the dropdown container and the dropdown content
+    dropdown.addEventListener('mouseleave', function () {
+        // Only hide the dropdown if the mouse is not inside the dropdown content
+        if (!dropdownContent.matches(':hover')) {
+            hideDropdown();
+        }
+    });
+
+    // Hide the dropdown when the user leaves the dropdown content
+    dropdownContent.addEventListener('mouseleave', function () {
+        // Only hide the dropdown if the mouse is not inside the dropdown container
+        if (!dropdown.matches(':hover')) {
+            hideDropdown();
+        }
+    });
 });
 
