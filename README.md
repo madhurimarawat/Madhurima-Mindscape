@@ -2,7 +2,11 @@
 This is a personal blog where I share a variety of content, including personal reflections, tech insights, project diaries, and creative photography. Explore different categories such as personal growth, tech insights, and project experiences.
 
 <a href="https://madhurimarawat.github.io/Madhurima-Mindscape" target="_blank">
-  <img src="website_snapshots/website_1.png" alt="Snapshot 1" />
+  <img src="website_snapshots/Website_Working.gif" alt="Website Working" width = "100%"/>
+</a>
+<br><br>
+<a href="https://madhurimarawat.github.io/Madhurima-Mindscape" target="_blank">
+  <img src="website_snapshots/Website_Themes.gif" alt="Website Working" width = "100%"/>
 </a>
 
 ---
