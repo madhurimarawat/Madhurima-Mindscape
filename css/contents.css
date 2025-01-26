@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: contents.css
 * Author: Madhurima Rawat
-* Date: December 18, 2024
+* Date: January 26, 2025
 * Description: This is the stylesheet for the content pages of the "Madhurima Mindscape" blog website.
 *              It contains specific styles for the body text, headings, quotes, images, and links 
 *              used across various content pages. The CSS ensures consistent and readable design 
@@ -144,6 +144,17 @@ h5 {
     /* Makes the link text bold */
     font-style: italic;
     /* Italicizes the link text */
+}
+
+/* This is for styling of poem stanzas */
+.poem-stanza {
+    font-family: monospace;
+    /* Uses a monospace font for poem stanzas */
+    font-weight: bold;
+    /* Makes poem stanzas bold */
+    margin-bottom: 10px;
+    /* Adds space below the stanzas */
+    text-align: center;
 }
 
 /* Media query for mobile devices */
