@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: contents.css
 * Author: Madhurima Rawat
-* Date: January 26, 2025
+* Date: February 25, 2025
 * Description: This is the stylesheet for the content pages of the "Madhurima Mindscape" blog website.
 *              It contains specific styles for the body text, headings, quotes, images, and links 
 *              used across various content pages. The CSS ensures consistent and readable design 
@@ -62,7 +62,7 @@ h2 {
     /* Uses a monospace font for a more technical feel */
     font-style: italic;
     /* Italicizes for emphasis */
-    margin-top: 10px;
+    margin-top: 30px;
     /* Adds margin at the top */
     margin-bottom: 10px;
     /* Adds margin at the bottom */

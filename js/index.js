@@ -1,12 +1,12 @@
 /**
  * File: index.js
  * Author: Madhurima Rawat
- * Date: December 18, 2024
+ * Date: February 25, 2025
  * Description: This JavaScript file is responsible for dynamic interactions on the homepage of 
  *              the "Madhurima Mindscape" blog. It includes functions for changing the page background 
  *              to a gradient using selected colors and loading external content such as the navbar from 
  *              a separate HTML file.
- * Version: 1.0
+ * Version: 1.1
  * GitHub Repository: https://github.com/madhurimarawat/Madhurima-Mindscape
  * Issues/Bugs: For any issues or bugs, please visit the GitHub repository issues section.
  */
@@ -27,6 +27,9 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(response => response.text()) // Get the content of the file as text
         .then(data => {
             document.getElementById('header-container').innerHTML = data; // Inject the navbar content into the container
+
+            // Ensure dropdown functionality is set up only after navbar is loaded
+            setupDropdown();
         })
         .catch(error => {
             console.error('Error loading the navbar:', error); // Log an error if the fetch fails
@@ -36,52 +39,52 @@ document.addEventListener('DOMContentLoaded', function () {
 // Declare a variable to hold the timeout ID
 let dropdownTimeout;
 
-// Function to show the dropdown
+/**
+ * Function to show the dropdown.
+ */
 function showDropdown() {
-    clearTimeout(dropdownTimeout); // Clear any existing timeout to ensure it doesn't hide too early
+    clearTimeout(dropdownTimeout); // Clear any existing timeout to prevent premature hiding
     const dropdownContent = document.querySelector('.dropdown-content');
-    dropdownContent.style.display = 'block'; // Show the dropdown
-    dropdownContent.style.opacity = '1'; // Make sure the opacity is fully visible
+    if (dropdownContent) {
+        dropdownContent.style.display = 'block'; // Show the dropdown
+        dropdownContent.style.opacity = '1'; // Make sure the opacity is fully visible
+    }
 }
 
-// Function to hide the dropdown after a short delay
+/**
+ * Function to hide the dropdown after a short delay.
+ */
 function hideDropdown() {
     dropdownTimeout = setTimeout(() => {
         const dropdownContent = document.querySelector('.dropdown-content');
-        dropdownContent.style.opacity = '0'; // Fade out
-        dropdownContent.style.display = 'none'; // Hide the dropdown
+        if (dropdownContent) {
+            dropdownContent.style.opacity = '0'; // Fade out
+            dropdownContent.style.display = 'none'; // Hide the dropdown
+        }
     }, 300); // Adjust this value (in milliseconds) for the desired delay before hiding
 }
 
-// Wait for the DOM to fully load before adding event listeners
-document.addEventListener('DOMContentLoaded', function () {
+/**
+ * Ensures dropdown interactions are properly set up after the navbar is loaded.
+ */
+function setupDropdown() {
     const dropdown = document.querySelector('.dropdown');
     const dropdownContent = document.querySelector('.dropdown-content');
 
-    // Show the dropdown when the user hovers over the dropdown container
-    dropdown.addEventListener('mouseenter', function () {
-        showDropdown();
-    });
+    if (dropdown && dropdownContent) {
+        // Show the dropdown when hovering over the dropdown container
+        dropdown.addEventListener('mouseenter', showDropdown);
+        dropdownContent.addEventListener('mouseenter', showDropdown);
 
-    // Show the dropdown when hovering over the dropdown content itself
-    dropdownContent.addEventListener('mouseenter', function () {
-        showDropdown();
-    });
+        // Hide the dropdown when the user leaves both the dropdown container and dropdown content
+        dropdown.addEventListener('mouseleave', function () {
+            if (!dropdownContent.matches(':hover')) hideDropdown();
+        });
 
-    // Hide the dropdown when the user leaves both the dropdown container and the dropdown content
-    dropdown.addEventListener('mouseleave', function () {
-        // Only hide the dropdown if the mouse is not inside the dropdown content
-        if (!dropdownContent.matches(':hover')) {
-            hideDropdown();
-        }
-    });
-
-    // Hide the dropdown when the user leaves the dropdown content
-    dropdownContent.addEventListener('mouseleave', function () {
-        // Only hide the dropdown if the mouse is not inside the dropdown container
-        if (!dropdown.matches(':hover')) {
-            hideDropdown();
-        }
-    });
-});
-
+        dropdownContent.addEventListener('mouseleave', function () {
+            if (!dropdown.matches(':hover')) hideDropdown();
+        });
+    } else {
+        console.error("Dropdown elements not found. Ensure header.html contains the necessary elements.");
+    }
+}
