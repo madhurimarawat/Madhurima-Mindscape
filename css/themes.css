@@ -1,0 +1,180 @@
+/*
+*********************************************************************************************
+* File: themes.css
+* Author: Madhurima Rawat
+* Date: May 31, 2025
+* Description: This stylesheet defines the visual themes for the "Madhurima Mindscape" blog.
+*              It includes custom CSS variables for different themes such as Sunset Vibes, 
+*              Ocean Breeze, Lavender Dream, and more. Each theme adjusts the color palette, 
+*              backgrounds, and other UI elements to provide a personalized user experience.
+*              This file allows dynamic theme switching via JavaScript.
+* Version: 1.0
+* GitHub Repository: https://github.com/madhurimarawat/Madhurima-Mindscape
+* Issues/Bugs: For any issues or bugs, please visit the GitHub repository issues section.
+* Comments:
+*     - Themes are defined using CSS custom properties (variables) scoped to theme-specific classes.
+*     - Each theme controls key elements: header, footer, box shadows, icon circles, and text colors.
+*     - Default styles are defined in the base `body` and global element rules.
+*     - Themes can be toggled using JavaScript by adding corresponding class names to the `body`.
+*     - Theming supports accessibility by using strong contrast and clean color palettes.
+* Dependencies:
+*     - Font Awesome 5.15.4: Icon styles referenced in theme-specific elements.
+*     - Bootstrap 4.6.1: Grid layout and responsive structure assumed in design.
+*     - Custom JavaScript (index.js): Handles theme switching logic and interaction.
+*********************************************************************************************
+*/
+
+/* ==== Default Theme Variables (used globally unless overridden by theme) ==== */
+body {
+    --footer-color: #db4583;
+    --circle-bg: #ff9a8b;
+    --header-bg: linear-gradient(to right, #f8c471, #db4583, #b0e6b2);
+    --circle-color: white;
+    --h2-color: #db4583;
+    --h3-color: #db4583;
+    --box-bg-color: rgba(0, 0, 0, 0.5);
+    --box-bg-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+    --blockquote-border: 5px solid #6cb2eb;
+    --text-color: black;
+}
+
+/* ==== Typography Styling ==== */
+h2 {
+    color: var(--h2-color);
+    /* Main heading color (e.g., section titles) */
+}
+
+section h3 {
+    color: var(--h3-color);
+    /* Subsection heading color */
+    font-weight: bold;
+    /* Makes h3 stand out */
+}
+
+/* ==== Global Text Color ==== */
+body {
+    color: var(--text-color);
+    /* Default text color for readability */
+}
+
+/* ==== Blockquote Styling ==== */
+.blockquote {
+    border-left: var(--blockquote-border);
+    /* Emphasized left border for quotes */
+    color: var(--text-color);
+    /* Inherits body text color */
+}
+
+/* ==== Path Items (Icon Cards) Styling ==== */
+.path-item {
+    color: white;
+    /* Text inside the item */
+    border: 2px solid #82898f;
+    /* Subtle border */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+    /* Glowing effect */
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black background */
+}
+
+/* Ensures theme overrides apply to path-item within a section */
+.path-section .path-item {
+    color: white;
+    box-shadow: var(--box-bg-shadow);
+    background: var(--box-bg-color);
+}
+
+/* ==== Footer Section Styling ==== */
+.footer-section {
+    background-color: var(--footer-color);
+    /* Footer background */
+    color: white;
+    /* Footer text color */
+}
+
+/* ==== Icon Circle Styling (inside path items) ==== */
+.path-item i {
+    background-color: var(--circle-bg);
+    /* Icon circle background */
+    color: var(--circle-color);
+    /* Icon color */
+}
+
+/* ==== Header Section Styling ==== */
+.header {
+    background: var(--header-bg);
+    /* Gradient background for header */
+}
+
+/* ==== Themes: Custom Variables for Theme Switching ==== */
+
+/* 🌇 Sunset Vibes */
+.theme-default,
+.theme-sunset-vibes {
+    --footer-color: #ff7653;
+    --circle-bg: #feb47b;
+    --header-bg: linear-gradient(to right, #ff7e5f, #ff4e50);
+    --h2-color: whitesmoke;
+    --h3-color: whitesmoke;
+}
+
+/* 🌊 Ocean Breeze */
+.theme-ocean-breeze {
+    --footer-color: #456b84;
+    --circle-bg: #eaecc6;
+    --header-bg: linear-gradient(to right, #2bc0e4, #4b82a7, #eaecc6);
+    --circle-color: #333;
+    --h2-color: #4b82a7;
+    --h3-color: #4b82a7;
+    --box-bg-color: #4b82a7;
+    --box-bg-shadow: 0 0 15px rgba(236, 22, 86, 0.6);
+    --blockquote-border: 5px solid rgba(236, 22, 86, 0.6);
+}
+
+/* 🌸 Lavender Dream */
+.theme-lavender-dream {
+    --footer-color: #9c72f6;
+    --header-bg: linear-gradient(to right, #c2a6ff, #a57cf6);
+    --circle-color: beige;
+    --h2-color: #954ba7;
+    --h3-color: #954ba7;
+    --box-bg-color: #a57cf6;
+    --box-bg-shadow: 0 0 15px rgba(236, 22, 86, 0.6);
+    --blockquote-border: 5px solid rgba(236, 22, 86, 0.6);
+}
+
+/* 🌿 Tropical Paradise */
+.theme-tropical-paradise {
+    --footer-color: #2193b0;
+    --circle-bg: #6dd5ed;
+    --circle-color: #574f4f;
+    --header-bg: linear-gradient(to right, #38c1e0, #05718d);
+    --h2-color: #124c5e;
+    --h3-color: #266d5b;
+    --box-bg-color: #1b809a;
+    --box-bg-shadow: 0 0 15px rgba(236, 22, 86, 0.6);
+    --blockquote-border: 5px solid rgba(236, 22, 86, 0.6);
+}
+
+/* 🍁 Autumn Leaves */
+.theme-autumn-leaves {
+    --footer-color: #ec7f6e;
+    --circle-bg: #ffb8b2;
+    --circle-color: #574f4f;
+    --header-bg: linear-gradient(to right, #fe907e, #ff7653, #f7a69f);
+    --box-bg-color: #d16633;
+    --h2-color: whitesmoke;
+    --h3-color: whitesmoke;
+}
+
+/* 🌌 Mysterious Night */
+.theme-mysterious-night {
+    --footer-color: #333333;
+    --circle-bg: #d1d1d176;
+    --header-bg: linear-gradient(to right, #d1d1d176, #333333);
+    --h2-color: bisque;
+    --h3-color: beige;
+    --box-bg-color: #333;
+    --blockquote-border: 5px solid rgba(236, 22, 86, 0.6);
+    --text-color: whitesmoke;
+}
