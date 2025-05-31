@@ -477,6 +477,11 @@ body {
         padding: 8px 10px;
         /* Compact padding for smaller screens */
     }
+
+    /* Adjustments for footer */
+    .footer-section {
+        font-size: 1em;
+    }
 }
 
 /* Tablets (768px to 1024px) */
