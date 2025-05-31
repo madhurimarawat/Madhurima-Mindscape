@@ -67,27 +67,34 @@ function applyTheme(themeName, color1 = null, color2 = null) {
         body.style.background = `linear-gradient(to right, ${startColor}, ${endColor})`;
 
         // ✅ Show slider only for specific themes
-        const themesWithSlider = ['sunset-vibes', 'default']; // Add the themes where the slider should appear
+        const themesWithSlider = ['sunset-vibes', 'default'];
         if (carousel) {
             carousel.style.display = themesWithSlider.includes(themeName) ? '' : 'none';
         }
 
     } else {
-        // 🌐 Default fallback: no theme class, no background
-        body.style.background = '';
+        // 🌐 Default fallback: apply Madhurima's default theme gradient
+        body.style.background = 'linear-gradient(to right, #fdd835, #f8a5b1)';
         if (carousel) carousel.style.display = '';
     }
 
     // 💾 Save the selected theme to localStorage
-    console.log("Trying to save theme:", themeName); // DEBUG LINE
     try {
-        localStorage.setItem('selectedTheme', themeName);
-        console.log("✅ Theme saved to localStorage:", themeName); // DEBUG LINE
+        localStorage.setItem('madhurima-mindscape-website-theme', themeName);
     } catch (e) {
         console.warn("⚠️ localStorage is not available or quota exceeded:", e);
     }
-
 }
+
+// ✅ On first page load, apply default or saved theme
+document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem('madhurima-mindscape-website-theme');
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    } else {
+        applyTheme('default'); // fallback to default theme
+    }
+});
 
 /**
  * On DOM content loaded, load the saved theme from localStorage (if any)
@@ -109,30 +116,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+/**
+ * Shows the dropdown content.
+ */
+function showDropdown() {
+    const dropdownContent = document.querySelector('.dropdown-content');
+    if (dropdownContent) {
+        dropdownContent.style.display = 'block';
+    }
+}
 
-// Wait for the DOM to fully load
-document.addEventListener('DOMContentLoaded', function () {
-    // Load header
-    fetch('components/header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-container').innerHTML = data;
-            setupDropdown(); // Optional: setup dropdown if header includes it
-        })
-        .catch(error => {
-            console.error('Error loading the header:', error);
-        });
-
-    // Load footer
-    fetch('components/footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-container').innerHTML = data;
-        })
-        .catch(error => {
-            console.error('Error loading the footer:', error);
-        });
-});
+/**
+ * Hides the dropdown content.
+ */
+function hideDropdown() {
+    const dropdownContent = document.querySelector('.dropdown-content');
+    if (dropdownContent) {
+        dropdownContent.style.display = 'none';
+    }
+}
 
 /**
  * Ensures dropdown interactions are properly set up after the navbar is loaded.
@@ -158,3 +160,27 @@ function setupDropdown() {
         console.error("Dropdown elements not found. Ensure header.html contains the necessary elements.");
     }
 }
+
+// Wait for the DOM to fully load
+document.addEventListener('DOMContentLoaded', function () {
+    // Load header
+    fetch('components/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+            setupDropdown(); // Optional: setup dropdown if header includes it
+        })
+        .catch(error => {
+            console.error('Error loading the header:', error);
+        });
+
+    // Load footer
+    fetch('components/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error loading the footer:', error);
+        });
+});
