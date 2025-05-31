@@ -43,10 +43,8 @@ function applyTheme(themeName, color1 = null, color2 = null) {
     const carousel = document.getElementById('carouselExampleIndicators');
 
     if (themeName !== 'default') {
-        // ✅ Add the selected theme class
         body.classList.add(`theme-${themeName}`);
 
-        // 🎨 Predefined theme gradients
         const backgroundGradients = {
             "sunset-vibes": ["#ff7e5f", "#feb47b"],
             "ocean-breeze": ["#2bc0e4", "#eaecc6"],
@@ -56,63 +54,42 @@ function applyTheme(themeName, color1 = null, color2 = null) {
             "tropical-paradise": ["#00b4db", "#0083b0"]
         };
 
-        // 🎨 Use either passed custom colors or predefined theme gradient
         let [startColor, endColor] = backgroundGradients[themeName] || ["white", "white"];
         if (color1 && color2) {
             startColor = color1;
             endColor = color2;
         }
 
-        // ✅ Apply background gradient
         body.style.background = `linear-gradient(to right, ${startColor}, ${endColor})`;
 
-        // ✅ Show slider only for specific themes
         const themesWithSlider = ['sunset-vibes', 'default'];
         if (carousel) {
             carousel.style.display = themesWithSlider.includes(themeName) ? '' : 'none';
         }
 
     } else {
-        // 🌐 Default fallback: apply Madhurima's default theme gradient
         body.style.background = 'linear-gradient(to right, #fdd835, #f8a5b1)';
         if (carousel) carousel.style.display = '';
     }
 
-    // 💾 Save the selected theme to localStorage
+    // ✅ Save the theme (single consistent key)
     try {
         localStorage.setItem('madhurima-mindscape-website-theme', themeName);
+        console.log("💾 Theme saved:", themeName);
     } catch (e) {
         console.warn("⚠️ localStorage is not available or quota exceeded:", e);
     }
 }
 
-// ✅ On first page load, apply default or saved theme
+// ✅ Apply theme on first load from saved preference
 document.addEventListener("DOMContentLoaded", () => {
-    const savedTheme = localStorage.getItem('madhurima-mindscape-website-theme');
-    if (savedTheme) {
-        applyTheme(savedTheme);
-    } else {
-        applyTheme('default'); // fallback to default theme
-    }
-});
-
-/**
- * On DOM content loaded, load the saved theme from localStorage (if any)
- * and apply it to the page. If no saved theme is found, apply the default theme.
- *
- * This ensures the user's theme preference persists across page reloads.
- */
-document.addEventListener('DOMContentLoaded', () => {
     try {
-        // Retrieve the saved theme name from localStorage
-        const savedTheme = localStorage.getItem('selectedTheme');
-        console.log("🧾 Loaded theme from localStorage:", savedTheme); // Debug: show loaded theme
-
-        // Apply the saved theme; if none found, apply 'default' theme
+        const savedTheme = localStorage.getItem('madhurima-mindscape-website-theme');
+        console.log("🧾 Loaded saved theme:", savedTheme);
         applyTheme(savedTheme || 'default');
     } catch (e) {
-        // Handle errors if localStorage is unavailable or throws errors (e.g. private mode)
-        console.warn("⚠️ localStorage getItem error:", e);
+        console.warn("⚠️ Error loading theme from localStorage:", e);
+        applyTheme('default');
     }
 });
 

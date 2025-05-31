@@ -53,32 +53,19 @@
     /* Makes the paragraph italic */
 }
 
-.portfolio-link {
+.header-link {
     color: white;
     text-decoration: none;
     font-size: 16px;
     margin-left: 20px;
-    /* Space between the theme button and portfolio link */
+    /* Space between the theme button and link */
+    font-weight: bold;
 }
 
-.portfolio-link:hover {
+.header-link:hover {
     text-decoration: underline;
-    color: #ff7e5f;
-    /* You can change the hover color as needed */
-}
-
-.github-link {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    margin-left: 20px;
-    /* Space between the theme button and portfolio link */
-}
-
-.github-link:hover {
-    text-decoration: underline;
-    color: #ff7e5f;
-    /* You can change the hover color as needed */
+    color: teal;
+    /* We can change the hover color as needed */
 }
 
 /* Global Body Styles */
@@ -106,6 +93,11 @@ body {
     /* Inline-block for proper alignment */
     text-align: left;
     /* Left-align the dropdown content */
+}
+
+.dropdown-toggle {
+    color: white;
+    font-weight: bold;
 }
 
 /* Dropdown Menu Content Styling */
@@ -360,7 +352,7 @@ body {
 
 @media (min-width: 769px) {
 
-    /* Your CSS rules for screens between 769px and 1024px */
+    /*  CSS rules for screens between 769px and 1024px */
     .path-container {
         display: flex;
         flex-wrap: wrap;
