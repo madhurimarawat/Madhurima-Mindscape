@@ -1,0 +1,311 @@
+<!--
+*********************************************************************************************
+* File: practical-wisdom.html
+* Author: Madhurima Rawat
+* Date: January 26, 2025
+* Description: This page is dedicated to sharing practical wisdom and personal reflections 
+*              that aim to inspire and guide visitors through life's various challenges. The page
+*              provides insights on topics like celebrating small victories, dealing with frustration, 
+*              enjoying life's simple moments, and embracing personal uniqueness.
+* Version: 1.0
+* GitHub Repository: https://github.com/madhurimarawat/Madhurima-Mindscape
+* Issues/Bugs: For any issues or bugs, please visit the GitHub repository issues section.
+* Comments:
+    - The page is structured into sections, each highlighting a valuable piece of life advice with
+      personal reflections and motivational quotes.
+    - The sections include "Celebrate Small Victories", "Vent Out Your Frustrations", "Enjoy the Small Things",
+      "Give Yourself Some Time", "You Are Unique — Don’t Let Others’ Success Overshadow Yours", "Don’t Take Criticism to Heart", 
+      "Help Others If You Can", and "Start Somewhere".
+    - Bootstrap 4.6.1 is used for responsive design, ensuring accessibility across various screen sizes.
+    - Font Awesome icons are utilized for visual enhancement of the sections and quotations.
+* Dependencies:
+    - Font Awesome 5.15.4: Provides icons used for visual styling throughout the page.
+    - Bootstrap 4.6.1: Ensures a responsive and mobile-friendly layout.
+    - Custom CSS (index.css, contents.css): Defines unique styling for the blog's look and feel.
+    - JavaScript (index.js): Manages interactivity and dynamic features such as the navigation and content behavior.
+*********************************************************************************************
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--
+      The <base> tag sets the base URL for all relative paths.
+      <base href="../../" /> moves up two folders from current file.
+      Use it to correctly link CSS/JS from nested pages.
+      Only one <base> allowed, placed inside <head>.
+    -->
+    <base href="../../" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madhurima Mindscape</title>
+
+    <!-- 
+                    Specifies the publication date and time in ISO 8601 format. 
+                    The structure includes:
+                    - Date in YYYY-MM-DD format: 
+                      YYYY = 4-digit year (e.g., 2024)
+                      MM   = 2-digit month (e.g., 12 for December)
+                      DD   = 2-digit day (e.g., 18)
+                    - A literal 'T' separator between date and time.
+                    - Time in HH:MM:SS format: 
+                      HH = 2-digit hour in 24-hour format (e.g., 15 for 3 PM in UTC)
+                      MM = 2-digit minutes (e.g., 20)
+                      SS = 2-digit seconds (e.g., 13)
+                    - 'Z' at the end indicates the time is in Coordinated Universal Time (UTC).
+                    Example: "2024-12-18T15:20:13Z" represents December 18, 2024, at 3:20:13 PM UTC.
+                -->
+
+    <!-- Specifies the publication date and time in ISO 8601 format -->
+    <meta name="date" content="2024-12-18T15:20:13Z" />
+
+    <!-- Last Updated -->
+    <meta name="last-modified" content="2025-01-26T13:04:28Z">
+
+
+    <!-- Open Graph Meta Tags for social sharing -->
+    <meta property="og:title" content="Madhurima Mindscape - Explore Personal and Tech Insights" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://madhurimarawat.github.io/Madhurima-Mindscape/" />
+    <meta property="og:description"
+        content="Dive into Madhurima Mindscape - a space for personal reflections, tech insights, project stories, and creative photography." />
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/madhurimarawat/Madhurima-Mindscape/main/images/Illustration_2.webp" />
+    <meta property="og:image:alt" content="Madhurima Mindscape Blog Snapshot" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Madhurima Mindscape - Explore Personal and Tech Insights" />
+    <meta name="twitter:description"
+        content="Dive into Madhurima Mindscape - a space for personal reflections, tech insights, project stories, and creative photography." />
+    <meta name="twitter:image"
+        content="https://raw.githubusercontent.com/madhurimarawat/Madhurima-Mindscape/main/images/Illustration_2.webp" />
+
+    <meta name="description"
+        content="Explore practical wisdom through personal reflections and insights that offer guidance on celebrating small victories, managing frustrations, embracing uniqueness, and more.">
+    <meta name="keywords"
+        content="Practical wisdom, self-help, personal growth, motivation, life advice, celebrating victories, managing frustration, embracing uniqueness, self-reflection, inspiration">
+    <meta name="author" content="Madhurima Rawat">
+    <meta name="robots" content="index, follow">
+
+    <!-- For PNG and SVG logos -->
+    <link rel="icon" href="images/Logo.png" type="image/png">
+    <!-- Bootstrap CSS  CDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/contents.css">
+    <!-- Link to Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <script defer src="js/index.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Placing the div with a specific id to insert the navbar -->
+    <div id="header-container"></div>
+
+    <h2>Practical Wisdom</h2>
+
+    <section class="intro">
+        <p>
+        <blockquote class="blockquote">
+            “Life is a journey, not a destination. Along the way, we learn, grow, and discover the truths that shape
+            us.”
+        </blockquote>
+        </p>
+        <p>
+            Throughout our lives, we encounter moments of reflection, growth, and transformation. These experiences
+            often provide us
+            with invaluable lessons that help guide us through both challenges and opportunities. Here, I’ll share some
+            of the most
+            insightful tips and wisdom I've gained from my personal journey.
+        </p>
+
+    </section>
+
+
+    <section class="self-help">
+
+        <div class="tip-item">
+            <h3>Celebrate Small Victories</h3>
+            <p>Don’t overlook the small wins. Successfully completing a project, finishing a presentation, or even
+                conquering
+                your fears are all victories worth celebrating. These moments create a sense of accomplishment and
+                contribute to
+                overall contentment in life.</p>
+            <p>When tackling bigger tasks, break them down into smaller, achievable goals. I remember when I worked on
+                my minor
+                project in the 7th semester. I divided the project into several tasks: first drafting the idea, then
+                collecting
+                data, and so on. It’s not just about breaking tasks into smaller pieces; celebrating each small victory
+                along
+                the way is what keeps the momentum going. These little wins give a huge boost to confidence.</p>
+            <blockquote class="blockquote">
+                <p>“The little victories along the way are the stepping stones to bigger successes. Celebrate them as
+                    you go.”
+                </p>
+            </blockquote>
+        </div>
+
+        <div class="tip-item">
+            <h3>Vent Out Your Frustrations</h3>
+            <p>Life can be frustrating at times, and it's important to let those feelings out. Cry, laugh, dance,
+                sing—whatever
+                helps you release the stress. Don’t bottle it up, as it only leads to more frustration. Sometimes, we
+                lack
+                someone to talk to, but we can always rely on ourselves for support.</p>
+            <p>When I feel frustrated, I head to my rooftop. It's quiet, peaceful, and gives me space to think. I
+                reflect on why
+                I started and why I won’t stop. This kind of retrospection helps me accept whatever challenges I face,
+                whether
+                it's frustration, jealousy, or failure. It's crucial to understand what went wrong and use that
+                knowledge to
+                move forward.</p>
+            <p>When seeking help from others, find someone trustworthy, not someone who might use your struggles against
+                you. If
+                no one is available, remember that you are your own best company. Hobbies also play a big role in easing
+                frustration. Whenever I feel down, I focus on my other hobbies, like photography or listening to music.
+                Finding
+                a song that matches your mood can help you feel less frustrated and more at peace.</p>
+            <blockquote class="blockquote">
+                <p>“Sometimes, venting out your frustrations is the first step towards healing. Don’t bottle it up.”</p>
+            </blockquote>
+        </div>
+        <div class="tip-item">
+            <h3>Enjoy the Small Things</h3>
+            <p>Beauty is in the eye of the beholder. Whenever I’m on any journey or even a simple trip, like from my
+                home to the
+                market, I try to notice every little thing around me. Maybe a random kid smiles at me or my regular
+                shopkeeper
+                gives me a discount. Sometimes, these small signs are enough to make my day.</p>
+            <p>The key is to focus on the glass being half-full. Always focus on what you have, instead of what you
+                don't. Even
+                during your regular visits, try to find something to cherish — a photo, a joke, a lesson, or even a
+                funny roast.
+                It may seem like small things, but they have a big impact. Always notice them because sometimes, this is
+                all we
+                need to cheer up.</p>
+            <blockquote class="blockquote">
+                <p>“Happiness is not in the big things, but in the small moments we tend to overlook.”</p>
+            </blockquote>
+        </div>
+
+        <div class="tip-item">
+            <h3>Give Yourself Some Time</h3>
+            <p>This is one of the most important lessons I’ve learned: Don’t think that everything will change in a day,
+                but
+                trust that it will eventually change. Keep hustling and keep doing better. Trust me, you’re doing good
+                even if
+                no one is watching. Be your own admirer and acknowledge the little things you do — those small efforts
+                and steps
+                forward are great.</p>
+            <p>I always remind myself of this, especially when I feel like things are not going the way I want. When
+                I’ve helped
+                someone or done something that made me feel good, I make sure to give myself some time to recharge. I
+                take a
+                break, then I restart with renewed energy.</p>
+            <blockquote class="blockquote">
+                <p>“It’s okay to pause. You’ll come back stronger. Give yourself the grace you give others.”</p>
+            </blockquote>
+        </div>
+
+        <div class="tip-item">
+            <h3>You Are Unique — Don’t Let Others’ Success Overshadow Yours</h3>
+            <p>We are all built differently, and as a result, we can never measure our success or achievements by
+                someone else’s
+                standards. The truth is, don’t feel bad about being different in any way. Maybe we’re not good at one
+                thing, but
+                that’s okay — find your own strengths and focus on them.</p>
+            <p>Do not change for someone else. Change for yourself — for your growth, for your desire to become a better
+                person.
+                Embrace your uniqueness, because that’s what makes you stand out and gives you the potential to achieve
+                things
+                that are true to who you are.</p>
+            <blockquote class="blockquote">
+                <p>“Success is not a comparison; it’s about becoming the best version of yourself.”</p>
+            </blockquote>
+        </div>
+
+        <div class="tip-item">
+            <h3>Don’t Take Criticism to Heart</h3>
+            <p>The thing is, we all make mistakes, and that’s absolutely fine. In the beginning, it’s easy to feel
+                overly
+                protective or defensive when someone points out our errors, even if it’s done through taunts. But it's
+                okay —
+                after all, we’re only affected by something when we haven’t fully accepted it.</p>
+            <p>Take every criticism as an opportunity to grow. Analyze it, inspect it, introspect on it, but never let
+                it make
+                you feel small or discouraged. See it as a chance to improve — whether it’s your project, yourself, or
+                anything
+                you’re struggling with. Criticism is a stepping stone toward becoming a better version of yourself.</p>
+            <blockquote class="blockquote">
+                <p>“Criticism is not a reflection of your worth; it's an opportunity for growth and improvement.”</p>
+            </blockquote>
+        </div>
+
+        <div class="tip-item">
+            <h3>Help Others If You Can</h3>
+            <p>There’s no problem in helping others, and the key is to feel grateful that you’re capable of doing so. I
+                always
+                try to assist, no matter how small the contribution may be. Seeing someone else grateful or even just
+                smiling
+                because of your help is a truly rewarding feeling — cherish it.</p>
+            <p>However, don't allow people to walk all over you. Help, but also ensure that you communicate your
+                boundaries and
+                make others understand the value of your assistance.</p>
+            <blockquote class="blockquote">
+                <p>“The joy of helping others lies not just in what you do, but in knowing your support makes a
+                    difference.”</p>
+            </blockquote>
+        </div>
+
+        <div class="tip-item">
+            <h3>Start Somewhere</h3>
+            <p>When you feel overwhelmed by too many paths and can’t decide which one to take, it’s better to just start
+                and
+                figure things out along the way. From my personal experience, I was completely confused about web
+                development,
+                backend, frontend, data science — so many options! But I just started with frontend development, loved
+                it, then
+                moved on to data science and realized it was my true calling. That’s how I learned and continue to
+                learn.</p>
+            <p>It’s okay to be confused. I remember when I started with GitHub, I thought, “What good could I possibly
+                do? I’m a
+                complete beginner!” I wasn’t even sure what project to create, but I just started, and things gradually
+                made
+                sense. The key is to start, fail, and keep going. It’s better to fail than to never start at all.</p>
+            <blockquote class="blockquote">
+                <p>“Starting is the first step toward success. The road may be unclear, but action will always lead to
+                    progress.”</p>
+            </blockquote>
+
+        </div>
+
+    </section>
+
+    <section class="conclusion">
+        <p>Ultimately, life is a series of lessons and experiences that shape who we are. Embrace the journey,
+            celebrate the
+            small victories, and remember that growth comes from both success and failure. Stay true to yourself,
+            help others
+            when you can, and always keep moving forward. The key is to never stop learning and evolving.</p>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <br>
+
+</body>
+<footer class="footer-section">
+    <p>&copy; 2024 Madhurima Mindscape. All rights reserved.</p>
+</footer>
+
+</html>
