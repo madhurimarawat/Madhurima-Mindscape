@@ -1,4 +1,10 @@
-# Understanding the Need for a Python Server and Troubleshooting Header.html Linking Issues
+## ⚠️ Note: This Setup Is Not Applicable for Jekyll-Based Projects
+
+> [!IMPORTANT]
+> ## The instructions below for using a Python server **will not work** for this project anymore because it now uses **Jekyll** and **front matter** (YAML metadata).
+> ### To set up and run the project correctly, **please refer to** the [`jekyll-localhost-setup.md`](https://github.com/madhurimarawat/Madhurima-Mindscape/blob/main/jekyll-localhost-setup.md) or [`jekyll-localhost-setup.pdf`](https://github.com/madhurimarawat/Madhurima-Mindscape/blob/main/jekyll-localhost-setup.pdf) files for c
+
+## Understanding the Need for a Python Server and Troubleshooting Header.html Linking Issues
 
 When working with web development, it is common to test files locally in a browser. However, there are limitations when loading files, especially when using JavaScript to link HTML components like a `header.html` into the main webpage. This document explores why running a Python server resolves these issues and how to set it up.
 
