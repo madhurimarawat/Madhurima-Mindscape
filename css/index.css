@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: index.css
 * Author: Madhurima Rawat
-* Date: May 31, 2025
+* Date: June 2, 2025
 * Description: This is the main stylesheet for "Madhurima Mindscape", a personal blog website.
 *              It defines the unique design elements, including layouts, color schemes, typography, 
 *              and responsive behavior to create a visually appealing and functional blog experience.
@@ -142,12 +142,6 @@ body {
     color: coral;
     text-decoration: underline;
     font-weight: bold;
-}
-
-/* Show Dropdown Menu on Hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-    /* Shows the dropdown content when hovered */
 }
 
 /* Path Container Styling */
