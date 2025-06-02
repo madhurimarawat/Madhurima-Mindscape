@@ -1,7 +1,7 @@
 /**
  * File: index.js
  * Author: Madhurima Rawat
- * Date: May 31, 2025
+ * Date: June 2, 2025
  * Description: This JavaScript file controls dynamic interactions on the homepage of 
  *              the "Madhurima Mindscape" blog. It includes functions to apply background 
  *              gradients based on selected themes or custom colors, manage the visibility 
@@ -93,51 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-/**
- * Shows the dropdown content.
- */
-function showDropdown() {
-    const dropdownContent = document.querySelector('.dropdown-content');
-    if (dropdownContent) {
-        dropdownContent.style.display = 'block';
-    }
-}
-
-/**
- * Hides the dropdown content.
- */
-function hideDropdown() {
-    const dropdownContent = document.querySelector('.dropdown-content');
-    if (dropdownContent) {
-        dropdownContent.style.display = 'none';
-    }
-}
-
-/**
- * Ensures dropdown interactions are properly set up after the navbar is loaded.
- */
-function setupDropdown() {
-    const dropdown = document.querySelector('.dropdown');
-    const dropdownContent = document.querySelector('.dropdown-content');
-
-    if (dropdown && dropdownContent) {
-        // Show the dropdown when hovering over the dropdown container
-        dropdown.addEventListener('mouseenter', showDropdown);
-        dropdownContent.addEventListener('mouseenter', showDropdown);
-
-        // Hide the dropdown when the user leaves both the dropdown container and dropdown content
-        dropdown.addEventListener('mouseleave', function () {
-            if (!dropdownContent.matches(':hover')) hideDropdown();
-        });
-
-        dropdownContent.addEventListener('mouseleave', function () {
-            if (!dropdown.matches(':hover')) hideDropdown();
-        });
-    } else {
-        console.error("Dropdown elements not found. Ensure header.html contains the necessary elements.");
-    }
-}
-
 // Wait for the DOM to fully load
 document.addEventListener('DOMContentLoaded', function () {
     // Load header
@@ -161,3 +116,90 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('Error loading the footer:', error);
         });
 });
+
+function showDropdown() {
+    // 🔍 Find dropdown content element
+    const dropdownContent = document.querySelector('.dropdown-content');
+    if (dropdownContent) {
+        // 👀 Show the dropdown by setting display to block
+        dropdownContent.style.display = 'block';
+    }
+}
+
+function hideDropdown() {
+    // 🔍 Find dropdown content element
+    const dropdownContent = document.querySelector('.dropdown-content');
+    if (dropdownContent) {
+        // 🙈 Hide the dropdown by setting display to none
+        dropdownContent.style.display = 'none';
+    }
+}
+
+function setupDropdown() {
+    // 🔍 Select dropdown container and its content
+    const dropdown = document.querySelector('.dropdown');
+    const dropdownContent = document.querySelector('.dropdown-content');
+
+    // 🚫 If dropdown or content is missing, do nothing
+    if (!dropdown || !dropdownContent) {
+        return;
+    }
+
+    // 💻 Desktop: Show dropdown when mouse enters dropdown area
+    dropdown.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 768) showDropdown();
+    });
+
+    // 💻 Desktop: Hide dropdown when mouse leaves dropdown area
+    dropdown.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 768) hideDropdown();
+    });
+
+    // 💻 Desktop: Keep dropdown visible when mouse is over the content itself
+    dropdownContent.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 768) showDropdown();
+    });
+
+    // 💻 Desktop: Hide dropdown when mouse leaves content area
+    dropdownContent.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 768) hideDropdown();
+    });
+
+    // 📱 Mobile: Toggle dropdown visibility on tap/click on dropdown
+    dropdown.addEventListener('click', function (e) {
+        if (window.innerWidth <= 768) {
+            e.preventDefault(); // 🚫 Prevent link from redirecting
+            e.stopPropagation(); // ✋ Stop event from bubbling up and closing dropdown
+            const isVisible = dropdownContent.style.display === 'block';
+            // 🔄 Toggle dropdown display
+            dropdownContent.style.display = isVisible ? 'none' : 'block';
+        }
+    });
+
+    // 📱 Mobile: Handle clicks on links inside dropdown to prevent page reload
+    const links = dropdownContent.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', function (e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault(); // 🚫 Prevent default navigation
+                e.stopPropagation(); // ✋ Keep dropdown open by stopping event propagation
+                const onclickAttr = this.getAttribute('onclick');
+                if (onclickAttr) {
+                    // ⚡ Run the inline onclick code manually (e.g., theme switch)
+                    eval(onclickAttr);
+                }
+                // ➡️ Do not hide dropdown after link click — keep it visible
+            }
+        });
+    });
+
+    // 📱 Mobile: Clicking outside dropdown hides it
+    document.addEventListener('click', function (e) {
+        if (window.innerWidth <= 768 && !dropdown.contains(e.target)) {
+            hideDropdown(); // 🙈 Hide dropdown when user taps outside
+        }
+    });
+}
+
+// 🚀 Initialize dropdown functionality when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', setupDropdown);
