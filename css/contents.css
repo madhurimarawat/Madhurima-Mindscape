@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: contents.css
 * Author: Madhurima Rawat
-* Date: February 25, 2025
+* Date: June 12, 2025
 * Description: This is the stylesheet for the content pages of the "Madhurima Mindscape" blog website.
 *              It contains specific styles for the body text, headings, quotes, images, and links 
 *              used across various content pages. The CSS ensures consistent and readable design 
@@ -33,6 +33,7 @@ body {
     /* Sets the default text color to black */
     font-size: 18px;
     /* Sets a comfortable font size for the body text */
+    padding-top: 40px;
 }
 
 section {
@@ -159,6 +160,11 @@ h5 {
 
 /* Media query for mobile devices */
 @media (max-width: 768px) {
+
+    body {
+        padding-top: 140px;
+    }
+
     .image {
         width: 100%;
         /* Maintain aspect ratio */

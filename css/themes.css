@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: themes.css
 * Author: Madhurima Rawat
-* Date: May 31, 2025
+* Date: June 12, 2025
 * Description: This stylesheet defines the visual themes for the "Madhurima Mindscape" blog.
 *              It includes custom CSS variables for different themes such as Sunset Vibes, 
 *              Ocean Breeze, Lavender Dream, and more. Each theme adjusts the color palette, 
@@ -36,6 +36,7 @@ body {
     --box-bg-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
     --blockquote-border: 5px solid #6cb2eb;
     --text-color: black;
+    --background-color: transparent;
 }
 
 /* ==== Typography Styling ==== */
@@ -104,6 +105,7 @@ body {
 .header {
     background: var(--header-bg);
     /* Gradient background for header */
+    background-color: var(--background-color);
 }
 
 /* ==== Themes: Custom Variables for Theme Switching ==== */
@@ -177,4 +179,5 @@ body {
     --box-bg-color: #333;
     --blockquote-border: 5px solid rgba(236, 22, 86, 0.6);
     --text-color: whitesmoke;
+    --background-color: #333;
 }
