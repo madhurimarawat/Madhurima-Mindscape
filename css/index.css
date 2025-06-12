@@ -24,7 +24,7 @@
 */
 
 #header-container {
-    margin-bottom: 165px;
+    margin-bottom: 149px;
 }
 
 /* Header Styling */
@@ -35,7 +35,7 @@
     /* Sets background color */
     color: white;
     /* Text color */
-    padding: 2rem;
+    padding: 1.5rem;
     /* Adds padding to the header */
     position: fixed;
     top: 0;
