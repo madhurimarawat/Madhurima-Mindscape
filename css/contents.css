@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: contents.css
 * Author: Madhurima Rawat
-* Date: June 12, 2025
+* Date: June 27, 2025
 * Description: This is the stylesheet for the content pages of the "Madhurima Mindscape" blog website.
 *              It contains specific styles for the body text, headings, quotes, images, and links 
 *              used across various content pages. The CSS ensures consistent and readable design 
@@ -34,6 +34,27 @@ body {
     font-size: 18px;
     /* Sets a comfortable font size for the body text */
     padding-top: 40px;
+}
+
+/* Import the Marcellus font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+
+/* Apply a newspaper-style drop cap to the first letter of the paragraph with class "dropcap" */
+.dropcap::first-letter {
+    font-family: 'Marcellus', serif;
+    /* Elegant serif font (not cursive) */
+    font-size: 3em;
+    /* Large size for drop cap effect */
+    font-weight: bold;
+    /* Make it bold for visual emphasis */
+    float: left;
+    /* Drop the letter to the left of the text */
+    line-height: 1;
+    /* Align it vertically with the text */
+    padding-right: 8px;
+    /* Space between the letter and text */
+    color: var(--dropcap-color);
+    /* Use site-wide variable for color consistency */
 }
 
 section {
