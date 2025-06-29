@@ -74,12 +74,6 @@ A collection of my photography work and creative expressions through the lens.
   
 ---
 
-## Resources
-
-Logos and images were generated using ChatGPT: <a href = "https://chatgpt.com/">ChatGPT</a>
-
----
-
 ## Thanks for Visiting 😄
 
 - Drop a 🌟 if you find this repository useful.<br><br>
