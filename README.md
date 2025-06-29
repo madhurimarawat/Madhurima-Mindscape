@@ -1,6 +1,76 @@
 # Madhurima-Mindscape
 This is a personal blog where I share a variety of content, including personal reflections, tech insights, project diaries, and creative photography. Explore different categories such as personal growth, tech insights, and project experiences.
 
+<p align="center">
+
+  <!-- Repository Size -->
+  <a href="https://github.com/madhurimarawat/Madhurima-Mindscape">
+    <img src="https://img.shields.io/github/repo-size/madhurimarawat/Madhurima-Mindscape?color=%23eaecc6&label=Repo%20Size&labelColor=%23456b84&style=for-the-badge&logo=github" alt="Repo Size">
+  </a>
+
+  <!-- Stars -->
+  <a href="https://github.com/madhurimarawat/Madhurima-Mindscape/stargazers">
+    <img src="https://img.shields.io/github/stars/madhurimarawat/Madhurima-Mindscape?color=%23ff7e5f&label=Stars&labelColor=%23ff4e50&style=for-the-badge&logo=star" alt="GitHub Stars">
+  </a>
+
+  <!-- Forks -->
+  <a href="https://github.com/madhurimarawat/Madhurima-Mindscape/network/members">
+    <img src="https://img.shields.io/github/forks/madhurimarawat/Madhurima-Mindscape?color=%232bc0e4&label=Forks&labelColor=%234b82a7&style=for-the-badge&logo=git" alt="GitHub Forks">
+  </a>
+
+  <!-- Open Issues -->
+  <a href="https://github.com/madhurimarawat/Madhurima-Mindscape/issues">
+    <img src="https://img.shields.io/github/issues/madhurimarawat/Madhurima-Mindscape?color=%23feb47b&label=Open%20Issues&labelColor=%23ff7653&style=for-the-badge&logo=bug" alt="Open Issues">
+  </a>
+
+  <!-- Closed Issues -->
+  <a href="https://github.com/madhurimarawat/Madhurima-Mindscape/issues?q=is%3Aissue+is%3Aclosed">
+    <img src="https://img.shields.io/github/issues-closed/madhurimarawat/Madhurima-Mindscape?color=%23eaecc6&label=Closed%20Issues&labelColor=%23456b84&style=for-the-badge&logo=bug" alt="Closed Issues">
+  </a>
+
+  <!-- Pull Requests -->
+  <a href="https://github.com/madhurimarawat/Madhurima-Mindscape/pulls">
+    <img src="https://img.shields.io/github/issues-pr/madhurimarawat/Madhurima-Mindscape?color=%23f39c12&label=Open%20PRs&labelColor=%23d68910&style=for-the-badge&logo=git" alt="Open Pull Requests">
+  </a>
+
+  <!-- Closed PRs -->
+  <a href="https://github.com/madhurimarawat/Madhurima-Mindscape/pulls?q=is%3Apr+is%3Aclosed">
+    <img src="https://img.shields.io/github/issues-pr-closed/madhurimarawat/Madhurima-Mindscape?color=%23e65f73&label=Closed%20PRs&labelColor=%23ff6b8b&style=for-the-badge&logo=git" alt="Closed Pull Requests">
+  </a>
+
+  <!-- Discussions -->
+  <a href="https://github.com/madhurimarawat/Madhurima-Mindscape/discussions">
+    <img src="https://img.shields.io/github/discussions/madhurimarawat/Madhurima-Mindscape?color=%234b82a7&label=Discussions&labelColor=%23eaecc6&style=for-the-badge&logo=discourse" alt="GitHub Discussions">
+  </a>
+
+  <!-- Contributors -->
+  <a href="https://github.com/madhurimarawat/Madhurima-Mindscape/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/madhurimarawat/Madhurima-Mindscape?color=%23ff4e50&label=Contributors&labelColor=%23ff7e5f&style=for-the-badge&logo=github" alt="GitHub Contributors">
+  </a>
+
+  <!-- License -->
+  <a href="https://github.com/madhurimarawat/Madhurima-Mindscape/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/madhurimarawat/Madhurima-Mindscape?color=%23ec1656&label=License&labelColor=%234b82a7&style=for-the-badge&logo=open-source-initiative" alt="License">
+  </a>
+
+  <!-- Last Commit -->
+  <a href="https://github.com/madhurimarawat/Madhurima-Mindscape/commits/main">
+    <img src="https://img.shields.io/github/last-commit/madhurimarawat/Madhurima-Mindscape?color=%23d68910&label=Last%20Commit&labelColor=%23f39c12&style=for-the-badge&logo=github" alt="Last Commit">
+  </a>
+
+  <!-- Watchers -->
+  <a href="https://github.com/madhurimarawat/Madhurima-Mindscape/watchers">
+    <img src="https://img.shields.io/github/watchers/madhurimarawat/Madhurima-Mindscape?color=%23fca3b0&label=Watchers&labelColor=%23ec1656&style=for-the-badge&logo=github" alt="GitHub Watchers">
+  </a>
+
+  <!-- Blogs (manual) -->
+  <img src="https://img.shields.io/badge/Blogs-8-%23ff7653?style=for-the-badge&labelColor=%23456b84&logo=bookstack&logoColor=white" alt="Blogs Count">
+
+<!-- Made with: Love 💙 -->
+<img src="https://img.shields.io/badge/Made%20with-Love%20%F0%9F%92%99-%23feb47b?style=for-the-badge&labelColor=%234b82a7" alt="Made with Love">
+
+</p>
+
 <a href="https://madhurimarawat.github.io/Madhurima-Mindscape" target="_blank">
   <img src="website_snapshots/Website_Working.gif" alt="Website Working" width = "100%"/>
 </a>
