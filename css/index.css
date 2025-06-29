@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: index.css
 * Author: Madhurima Rawat
-* Date: June 12, 2025
+* Date: June 29, 2025
 * Description: This is the main stylesheet for "Madhurima Mindscape", a personal blog website.
 *              It defines the unique design elements, including layouts, color schemes, typography, 
 *              and responsive behavior to create a visually appealing and functional blog experience.
@@ -354,6 +354,14 @@ body {
     transform: scale(1.05);
 }
 
+a[href="mailto:rawatmadhurima@gmail.com"] {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    /* Make it bold */
+    text-decoration: underline;
+    /* Remove underline */
+}
+
 @media (min-width: 769px) {
 
     /*  CSS rules for screens between 769px and 1024px */
@@ -398,6 +406,11 @@ body {
 
 /* Responsive Adjustments for Path Container */
 @media screen and (max-width: 600px) {
+
+    .h2-big-heading {
+        font-size: 1.5em;
+    }
+
     .path-container {
         flex-direction: column;
         /* Stacks items vertically */

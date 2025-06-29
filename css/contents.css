@@ -129,16 +129,12 @@ h2 {
     /* Centers image captions */
     margin-top: 9px;
     /* Adds a small space above captions */
-    color: black;
-    /* Sets caption text color to black */
     font-family: monospace;
     /* Uses monospace font for a unique look */
 }
 
 /* Styling for image captions that are links */
 .image-caption-link {
-    color: black;
-    /* Sets the link color to black */
     text-decoration: underline;
     /* Underlines the text to indicate it's a link */
 }
