@@ -1,0 +1,294 @@
+---
+permalink: /2025-reflections
+---
+
+<!-- Jekyll is a static site generator often used with GitHub Pages to build websites from markdown or HTML. -->
+<!-- Front matter is the section at the top of a file (enclosed in `---`) that contains metadata like `title`, `layout`, or `permalink`, which Jekyll uses to process the page. -->
+<!-- This comment means the file includes front matter to define a permalink, ensuring a custom or consistent URL for the page. -->
+<!-- Front matter is written in YAML format and must be placed at the very beginning of the file. -->
+
+<!--
+*********************************************************************************************
+* File: 2025-reflections.html
+* Author: Madhurima Rawat
+* Date: December 29, 2025
+* Description: This file represents the "2025 Reflections" page of Madhurima Rawat's personal 
+*              website "Madhurima Mindscape". It contains content highlighting key events, 
+*              achievements, and personal growth from the year 2025, structured for easy readability 
+*              and a visually engaging presentation.
+* Version: 1.0
+* GitHub Repository: https://github.com/madhurimarawat/Madhurima-Mindscape
+* Issues/Bugs: For any issues or bugs, please visit the GitHub repository issues section.
+* Comments:
+    - The page includes sections for achievements, lessons learned, and goals for the upcoming year.
+    - Designed with a focus on clean layout and accessibility, featuring responsive design elements.
+    - Provides links to related resources and the main portfolio for additional context.
+    - Optimized for seamless integration with the site's navigation and theme selection options.
+* Dependencies:
+    - This page uses shared styles and scripts from the site's global CSS and JavaScript files.
+*********************************************************************************************
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--
+      The <base> tag sets the base URL for all relative paths.
+       moves up two folders from current file.
+      Use it to correctly link CSS/JS from nested pages.
+      Only one <base> allowed, placed inside <head>.
+    -->
+    <base href="{{ site.baseurl }}/">
+
+
+    <meta charset="UTF-8">
+    <!-- The viewport meta tag is used to control the layout and scaling of the page on different devices. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 
+        - "width=device-width" ensures that the page width matches the screen width of the user's device. 
+        - "initial-scale=1.0" sets the initial zoom level to 1 (no zoom), ensuring the page is displayed at its natural size.
+        - Together, these settings improve the mobile responsiveness of the site, making it user-friendly on all screen sizes.
+        -->
+
+    <!-- The description meta tag provides a brief summary of the page's content for search engines and social sharing. -->
+    <meta name="description" content="Madhurima Mindscape: Reflecting on the lessons and experiences of 2025.">
+    <!-- 
+        - The content here describes the purpose or focus of the page, which is useful for SEO (Search Engine Optimization).
+        - Search engines like Google use this description to generate the snippet shown in search results.
+        - Social media platforms may also use this when the page is shared.
+        -->
+
+    <!-- Meta Keywords -->
+    <meta name="keywords"
+        content="Madhurima Mindscape, reflections 2025, personal growth, lessons, experiences, self-improvement">
+    <!-- 
+        - Keywords relevant to the content, helping search engines better understand the topic.
+        -->
+
+    <!-- Meta Author -->
+    <meta name="author" content="Madhurima Rawat">
+    <!-- 
+        - Specifies the content author for better attribution.
+        -->
+
+    <!-- 
+                Specifies the publication date and time in ISO 8601 format. 
+                The structure includes:
+                - Date in YYYY-MM-DD format: 
+                  YYYY = 4-digit year (e.g., 2025)
+                  MM   = 2-digit month (e.g., 12 for December)
+                  DD   = 2-digit day (e.g., 18)
+                - A literal 'T' separator between date and time.
+                - Time in HH:MM:SS format: 
+                  HH = 2-digit hour in 24-hour format (e.g., 15 for 3 PM in UTC)
+                  MM = 2-digit minutes (e.g., 20)
+                  SS = 2-digit seconds (e.g., 13)
+                - 'Z' at the end indicates the time is in Coordinated Universal Time (UTC).
+                Example: "2025-12-18T15:20:13Z" represents December 18, 2025, at 3:20:13 PM UTC.
+            -->
+
+    <!-- Specifies the publication date and time in ISO 8601 format -->
+    <meta name="date" content="2025-12-29T15:20:13Z" />
+
+    <!-- Last Updated -->
+    <meta name="last-modified" content="2025-12-29T20:49:28Z">
+
+
+    <!-- Open Graph Meta Tags for social sharing -->
+    <meta property="og:title" content="Madhurima Mindscape - Explore Personal and Tech Insights" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://madhurimarawat.github.io/Madhurima-Mindscape/2025-reflections" />
+    <meta property="og:description"
+        content="Dive into Madhurima Mindscape - a space for personal reflections, tech insights, project stories, and creative photography." />
+    <meta property="og:image"
+        content="https://julieverse.com/wp-content/uploads/2024/12/reflecting-on-lessons-learned-and-future-goals.jpg" />
+    <meta property="og:image:alt" content="Madhurima Mindscape Blog Snapshot" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Madhurima Mindscape - Explore Personal and Tech Insights" />
+    <meta name="twitter:description"
+        content="Dive into Madhurima Mindscape - a space for personal reflections, tech insights, project stories, and creative photography." />
+    <meta name="twitter:image"
+        content="https://julieverse.com/wp-content/uploads/2024/12/reflecting-on-lessons-learned-and-future-goals.jpg" />
+
+    <title>Madhurima Mindscape</title>
+    <!-- For PNG and SVG logos -->
+    <link rel="icon" href="images/Logo.png" type="image/png">
+    <!-- Bootstrap CSS  CDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/contents.css">
+    <!-- Link to Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <script defer src="js/index.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Placing the div with a specific id to insert the navbar -->
+    <div id="header-container"></div>
+
+    <h2>2025 Reflections</h2>
+
+    <section class="intro">
+        <p>
+        <blockquote class="blockquote">
+            “Some years teach you by rushing past.
+            Some years teach you by making you wait.”
+        </blockquote>
+        </p>
+
+        <p class="dropcap">
+            2025 felt like a year of waiting. I kept waiting and waiting, without really knowing what for or how long.
+            At
+            the start
+            of the year, everything felt normal: New Year wishes, the usual excitement, and the 7th semester exams
+            almost
+            done.
+            Naturally, my thoughts shifted to the 8th semester, what else do you do at that point? I felt excited, but
+            also strangely
+            nostalgic, knowing that BTech had not ended yet, but it was getting close.
+        </p>
+        <p>
+            As the year went on, there were moments when it felt static, like nothing was really happening. I was
+            waiting
+            for
+            clarity, for answers, for something to finally make sense. But slowly, I realized that even in the waiting,
+            life was
+            quietly teaching me lessons. These phases, moments, and small realizations shaped my final year of college
+            and left me
+            with reflections I know I will carry forward.
+        </p>
+    </section>
+
+    <section class="reflections">
+
+        <div class="reflection-item">
+            <h3>The Weight of Becoming a Graduate</h3>
+            <p>
+                After completing my internship, a recurring thought stayed with me, BTech was coming to an end. Soon, I
+                would not just be a student anymore; I would be a graduate, with real responsibilities waiting ahead.
+                That
+                realization actually hit me back in the 6th semester, especially because my internship was offline and I
+                was not going to college regularly for almost 3 to 4 months.
+            </p>
+
+            <blockquote class="blockquote">
+                <p>
+                    “Cherish moments while you are living them, some phases only feel precious once they are gone.”
+                </p>
+            </blockquote>
+        </div>
+
+        <div class="reflection-item">
+            <h3>Finding Joy in a Quiet Semester</h3>
+            <p>
+                The 8th semester began on a regular Monday. Classes resumed, but the environment felt different. The
+                class
+                strength was much lower than previous semesters, as many students were away doing internships. Barely
+                three or four of us, including me, attended classes regularly. Surprisingly, it was calm, peaceful, and
+                enjoyable in its own way.
+            </p>
+
+            <blockquote class="blockquote">
+                <p>
+                    “Learn to be content with what you have, even when it does not look like what you planned.”
+                </p>
+            </blockquote>
+        </div>
+
+        <div class="reflection-item">
+            <h3>Keep Moving, Keep Searching</h3>
+            <p>
+                One major challenge came during our cloud computing lab. We needed platforms like AWS or Azure, which
+                required a credit card. I did not have one, so I spent weeks searching for free alternatives. For a
+                while,
+                nothing worked, and I almost gave up. But eventually, after more digging, I discovered LocalStack, a
+                simple
+                yet effective solution.
+            </p>
+
+            <blockquote class="blockquote">
+                <p>
+                    “Be like a river, keep flowing, keep searching. Staying still is what makes you feel stuck.”
+                </p>
+            </blockquote>
+        </div>
+
+        <div class="reflection-item">
+            <h3>Turning Boredom into Growth</h3>
+            <p>
+                After semesters of constant exams, suddenly having a two month gap felt overwhelming. With nothing
+                urgent
+                to prepare for, boredom set in. Instead of letting it consume me, I shifted my focus to building
+                projects.
+                I explored new ideas, sharpened my skills, and created things I am genuinely proud of.
+            </p>
+
+            <blockquote class="blockquote">
+                <p>
+                    “Free time is a gift, use it to grow, explore, and become better than yesterday.”
+                </p>
+            </blockquote>
+        </div>
+
+        <div class="reflection-item">
+            <h3>The Last Day That Stayed With Me</h3>
+            <p>
+                The last day at college arrived quietly. We clicked pictures, signed shirts, and shared laughs. It was a
+                strange mix of happiness and nostalgia. Looking back, college turned out far better than I ever expected
+                when I started in 2021, great friends, supportive teachers, meaningful learning, and memories I will
+                always
+                cherish.
+            </p>
+
+            <blockquote class="blockquote">
+                <p>
+                    “Little moments become life’s greatest treasures, never stop making time for the people who matter.”
+                </p>
+            </blockquote>
+        </div>
+
+        <div class="reflection-item">
+            <h3>Doing Things Just for Me</h3>
+            <p>
+                After college ended, I finally made space for hobbies, art, craft, and small creative experiments. I am
+                not
+                an artist in the traditional sense, but creating without pressure felt healing. It reminded me that not
+                everything needs to be productive or perfect.
+            </p>
+
+            <blockquote class="blockquote">
+                <p>
+                    “Do things for joy, not outcomes. Sometimes, happiness itself is the achievement.”
+                </p>
+            </blockquote>
+        </div>
+
+    </section>
+
+    <section class="conclusion">
+        <p>
+            This is what defined this year for me, this semester, my college life, and everything that came with it.
+            Every phase taught me something new, whether it was patience, gratitude, or simply learning to enjoy the
+            moment as it comes. I am looking forward to many more such moments, meaningful people, new experiences,
+            skills, and learning opportunities in my life ahead.
+        </p>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <br>
+
+</body>
+<div id="footer-container"></div>
+
+</html>
