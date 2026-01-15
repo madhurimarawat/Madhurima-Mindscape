@@ -64,7 +64,7 @@ This is a personal blog where I share a variety of content, including personal r
   </a>
 
   <!-- Blogs (manual) -->
-  <img src="https://img.shields.io/badge/Blogs-8-%23ff7653?style=for-the-badge&labelColor=%23456b84&logo=bookstack&logoColor=white" alt="Blogs Count">
+  <img src="https://img.shields.io/badge/Blogs-9-%23ff7653?style=for-the-badge&labelColor=%23456b84&logo=bookstack&logoColor=white" alt="Blogs Count">
 
 <!-- Made with: Love 💙 -->
 <img src="https://img.shields.io/badge/Made%20with-Love%20%F0%9F%92%99-%23feb47b?style=for-the-badge&labelColor=%234b82a7" alt="Made with Love">
