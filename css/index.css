@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: index.css
 * Author: Madhurima Rawat
-* Date: June 29, 2025
+* Date: October 24, 2026
 * Description: This is the main stylesheet for "Madhurima Mindscape", a personal blog website.
 *              It defines the unique design elements, including layouts, color schemes, typography, 
 *              and responsive behavior to create a visually appealing and functional blog experience.
@@ -170,36 +170,6 @@ body {
     /* Space below the path */
 }
 
-/* Individual Path Item Styling */
-.path-item {
-    text-decoration: none;
-    /* Removes underline from links */
-    color: white;
-    /* Text color for path items */
-    font-size: 1.5rem;
-    /* Font size */
-    border: 2px solid #82898f;
-    /* Border around items */
-    padding: 0.8rem 1.5rem;
-    /* Padding inside the path items */
-    border-radius: 8px;
-    /* Rounded corners for items */
-    transition: all 0.3s ease;
-    /* Smooth transition for hover effects */
-    position: relative;
-    /* Position relative to its container */
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
-    /* Glow effect */
-    background: rgba(0, 0, 0, 0.5);
-    /* Semi-transparent black background */
-    transform: translateY(50px);
-    /* Initially place items below */
-    opacity: 0;
-    /* Initially hidden */
-    animation: riseUp 0.8s forwards;
-    /* Animation for upward movement */
-}
-
 /* Delay Animation for Path Items */
 .path-item:nth-child(1) {
     animation-delay: 0.2s;
@@ -234,15 +204,6 @@ body {
     }
 }
 
-/* Hover Effect for Path Items */
-.path-item:hover {
-    color: #1abc9c;
-    /* Text color on hover */
-    box-shadow: 0 0 25px rgba(26, 188, 156, 0.8);
-    /* Glowing shadow on hover */
-    transform: scale(1.05);
-    /* Slight zoom effect on hover */
-}
 
 /* Style for the icon circle */
 .path-item i {
@@ -267,27 +228,6 @@ body {
 }
 
 /* Style for the label (heading) */
-.path-item {
-    display: flex;
-    align-items: center;
-    /* Align icon and label horizontally */
-    font-size: 1.5rem;
-    /* Font size for the label */
-    color: #fff;
-    /* Label text color */
-    text-decoration: none;
-    /* Remove underline */
-}
-
-/* Optional: Hover effect for the path-item */
-.path-item:hover {
-    color: #1abc9c;
-    /* Change label color on hover */
-    box-shadow: 0 0 25px rgba(26, 188, 156, 0.8);
-    /* Glowing shadow on hover */
-    transform: scale(1.05);
-    /* Slight zoom effect on hover */
-}
 
 /* Path Item Container Styling */
 .path-container {
@@ -329,37 +269,51 @@ body {
     /* Adds space between the heading and the next element (the box) */
 }
 
-/* Path Item Styling */
-.path-section .path-item {
-    display: inline-block;
-    /* Makes the links display inline-block */
+/* Individual Path Item Styling */
+.path-item {
+    display: flex;
+    align-items: center;
+    /* Align icon and label horizontally */
+    text-decoration: none;
+    /* Removes underline from links */
+    color: white;
+    /* Text color for path items */
+    font-size: 1.5rem;
+    /* Font size */
+    border: 2px solid #82898f;
+    /* Border around items */
+    padding: 0.8rem 1.5rem;
+    /* Padding inside the path items */
+    border-radius: 8px;
+    /* Rounded corners for items */
+    transition: all 0.3s ease;
+    /* Smooth transition for hover effects */
+    position: relative;
+    /* Position relative to its container */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+    /* Glow effect */
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black background */
+    transform: translateY(50px);
+    /* Initially place items below */
+    opacity: 0;
+    /* Initially hidden */
+    animation: riseUp 0.8s forwards;
+    /* Animation for upward movement */
     margin-right: 1rem;
     /* Adds space between the links */
-    text-decoration: none;
-    color: white;
-    font-size: 1.5rem;
-    border: 2px solid #82898f;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    position: relative;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
-    background: rgba(0, 0, 0, 0.5);
 }
 
 /* Hover Effect for Path Items */
 .path-item:hover {
-    color: #1abc9c;
-    box-shadow: 0 0 25px rgba(26, 188, 156, 0.8);
-    transform: scale(1.05);
-}
-
-a[href="mailto:rawatmadhurima@gmail.com"] {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: bold;
-    /* Make it bold */
-    text-decoration: underline;
-    /* Remove underline */
+    color: #1abc9c !important;
+    /* Text color on hover */
+    /* Change label color on hover */
+    box-shadow: 0 0 25px #FF69B4 !important;
+    /* Glowing shadow on hover */
+    transform: scale(1.05) !important;
+    /* Slight zoom effect on hover */
+    text-decoration: none;
 }
 
 @media (min-width: 769px) {
