@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: contents.css
 * Author: Madhurima Rawat
-* Date: June 27, 2025
+* Date: October 24, 2026
 * Description: This is the stylesheet for the content pages of the "Madhurima Mindscape" blog website.
 *              It contains specific styles for the body text, headings, quotes, images, and links 
 *              used across various content pages. The CSS ensures consistent and readable design 
@@ -133,10 +133,14 @@ h2 {
     /* Uses monospace font for a unique look */
 }
 
-/* Styling for image captions that are links */
-.image-caption-link {
-    text-decoration: underline;
-    /* Underlines the text to indicate it's a link */
+.image-caption:hover {
+    /* Disable hover styling */
+    transform: none;
+    box-shadow: none;
+    filter: none;
+    opacity: 1;
+    background: inherit;
+    color: inherit !important;
 }
 
 h4,
@@ -154,14 +158,10 @@ h5 {
 .link {
     font-family: monospace;
     /* Uses a monospace font for links */
-    color: black;
-    /* Sets the link text color to black */
     text-decoration: underline;
     /* Underlines the link text */
     font-weight: bold;
     /* Makes the link text bold */
-    font-style: italic;
-    /* Italicizes the link text */
 }
 
 /* This is for styling of poem stanzas */
@@ -186,4 +186,46 @@ h5 {
         width: 100%;
         /* Maintain aspect ratio */
     }
+}
+
+/* Meme Image Style */
+.meme {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style the code block container */
+pre {
+    background: #e9eeeb;
+    /* Soft mint-green background */
+    padding: 18px 20px;
+    /* Space around the code */
+    border-radius: 10px;
+    /* Rounded corners */
+    overflow-x: auto;
+    /* Allow horizontal scrolling */
+    border: 1px solid #b8dfc7;
+    /* Subtle green border */
+    box-shadow: 0 4px 12px rgba(35, 100, 65, 0.08);
+    /* Soft shadow */
+}
+
+/* Style the code text */
+pre code {
+    font-family: Consolas, 'Courier New', monospace;
+    /* Simple, readable coding font */
+    color: #000000;
+    /* Pure black text for clear visibility */
+    font-size: 15px;
+    /* Comfortable text size */
+    font-weight: 400;
+    /* Normal font weight for easier reading */
+    line-height: 1.7;
+    /* Comfortable spacing between lines */
+    white-space: pre;
+    /* Preserve code formatting */
+    tab-size: 4;
+    /* Set indentation width */
 }
