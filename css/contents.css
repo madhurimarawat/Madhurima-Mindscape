@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: contents.css
 * Author: Madhurima Rawat
-* Date: October 24, 2026
+* Date: October 25, 2026
 * Description: This is the stylesheet for the content pages of the "Madhurima Mindscape" blog website.
 *              It contains specific styles for the body text, headings, quotes, images, and links 
 *              used across various content pages. The CSS ensures consistent and readable design 
@@ -228,4 +228,38 @@ pre code {
     /* Preserve code formatting */
     tab-size: 4;
     /* Set indentation width */
+}
+
+/* Subtle divider below the main heading */
+.line-below {
+    width: 65%;
+    /* Keeps the line shorter than the content area */
+    border: none;
+    /* Removes the default border */
+    height: 1px;
+    /* Creates a thin, elegant line */
+    background: var(--h2-color);
+    /* Matches the heading color */
+    box-shadow: 0 0 1px var(--h2-color);
+    /* Adds a very subtle glow */
+    margin: 2px auto;
+    /* Centers the line horizontally */
+}
+
+/* Styles the date displayed below the heading */
+.date-class {
+    text-align: center;
+    /* Centers the date */
+    font-family: 'Courier New', Courier, monospace;
+    /* Gives the date a clean, technical look */
+    font-weight: bold;
+    /* Makes the date easy to read */
+    font-size: 1rem;
+    /* Maintains a balanced size beneath the heading */
+    letter-spacing: 0.5px;
+    /* Adds slight spacing between characters */
+    color: var(--h2-color) !important;
+    /* Matches the heading color across themes */
+    margin-top: 10px;
+    /* Adds space between the divider and the date */
 }
