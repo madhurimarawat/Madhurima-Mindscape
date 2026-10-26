@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: index.css
 * Author: Madhurima Rawat
-* Date: October 24, 2026
+* Date: October 26, 2026
 * Description: This is the main stylesheet for "Madhurima Mindscape", a personal blog website.
 *              It defines the unique design elements, including layouts, color schemes, typography, 
 *              and responsive behavior to create a visually appealing and functional blog experience.
@@ -170,63 +170,6 @@ body {
     /* Space below the path */
 }
 
-/* Delay Animation for Path Items */
-.path-item:nth-child(1) {
-    animation-delay: 0.2s;
-}
-
-.path-item:nth-child(2) {
-    animation-delay: 0.4s;
-}
-
-.path-item:nth-child(3) {
-    animation-delay: 0.6s;
-}
-
-.path-item:nth-child(4) {
-    animation-delay: 0.8s;
-}
-
-/* Animation for Path Items (Rise Up) */
-@keyframes riseUp {
-    0% {
-        transform: translateY(50px);
-        /* Start from below */
-        opacity: 0;
-        /* Start hidden */
-    }
-
-    100% {
-        transform: translateY(0);
-        /* End at normal position */
-        opacity: 1;
-        /* Fade in */
-    }
-}
-
-
-/* Style for the icon circle */
-.path-item i {
-    display: inline-block;
-    width: 50px;
-    /* Size of the circle */
-    height: 50px;
-    /* Size of the circle */
-    background-color: #ff9a8b;
-    /* Circle background color */
-    color: white;
-    /* Icon color */
-    border-radius: 50%;
-    /* Makes it circular */
-    text-align: center;
-    line-height: 50px;
-    /* Centers the icon vertically */
-    font-size: 24px;
-    /* Icon size */
-    margin-right: 15px;
-    /* Space between icon and label */
-}
-
 /* Style for the label (heading) */
 
 /* Path Item Container Styling */
@@ -267,41 +210,42 @@ body {
 .path-section h2 {
     margin-bottom: 15px;
     /* Adds space between the heading and the next element (the box) */
+    font-size: 1.9rem;
 }
 
 /* Individual Path Item Styling */
 .path-item {
     display: flex;
     align-items: center;
-    /* Align icon and label horizontally */
+    /* Aligns icon and text */
     text-decoration: none;
-    /* Removes underline from links */
+    /* Removes underline */
     color: white;
-    /* Text color for path items */
-    font-size: 1.5rem;
-    /* Font size */
+    /* Text color */
+    font-size: 1.2rem;
+    /* Text size; reduce for smaller text */
     border: 2px solid #82898f;
-    /* Border around items */
-    padding: 0.8rem 1.5rem;
-    /* Padding inside the path items */
+    /* Box border */
+    padding: 0.5rem 1rem;
+    /* Box size; reduce for smaller boxes */
     border-radius: 8px;
-    /* Rounded corners for items */
+    /* Rounded corners */
     transition: all 0.3s ease;
-    /* Smooth transition for hover effects */
+    /* Smooth hover effect */
     position: relative;
-    /* Position relative to its container */
+    /* Supports positioning */
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
     /* Glow effect */
-    background: rgba(0, 0, 0, 0.5);
-    /* Semi-transparent black background */
     transform: translateY(50px);
-    /* Initially place items below */
+    /* Starting animation position */
     opacity: 0;
-    /* Initially hidden */
+    /* Hidden before animation */
     animation: riseUp 0.8s forwards;
-    /* Animation for upward movement */
-    margin-right: 1rem;
-    /* Adds space between the links */
+    /* Upward animation */
+    margin-right: 1.8rem;
+    /* Gap between boxes; increase for more space */
+    margin-bottom: 1rem;
+    /* Vertical gap when boxes wrap */
 }
 
 /* Hover Effect for Path Items */
@@ -309,11 +253,68 @@ body {
     color: #1abc9c !important;
     /* Text color on hover */
     /* Change label color on hover */
-    box-shadow: 0 0 25px #FF69B4 !important;
+    box-shadow: 0 0 25px #ff69c6 !important;
     /* Glowing shadow on hover */
     transform: scale(1.05) !important;
     /* Slight zoom effect on hover */
     text-decoration: none;
+}
+
+/* Style for the icon circle */
+.path-item i {
+    display: inline-block;
+    width: 40px;
+    /* Circle width */
+    height: 40px;
+    /* Circle height */
+    background-color: #ff9a8b;
+    /* Circle background */
+    color: white;
+    /* Icon color */
+    border-radius: 50%;
+    /* Makes it circular */
+    text-align: center;
+    /* Centers icon horizontally */
+    line-height: 40px;
+    /* Centers icon vertically; match height */
+    font-size: 20px;
+    /* Icon size */
+    margin-right: 10px;
+    /* Gap between icon and text */
+}
+
+/* Delay Animation for Path Items */
+.path-item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.path-item:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.path-item:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.path-item:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+/* Animation for Path Items (Rise Up) */
+@keyframes riseUp {
+    0% {
+        transform: translateY(50px);
+        /* Start from below */
+        opacity: 0;
+        /* Start hidden */
+    }
+
+    100% {
+        transform: translateY(0);
+        /* End at normal position */
+        opacity: 1;
+        /* Fade in */
+    }
 }
 
 @media (min-width: 769px) {
@@ -345,25 +346,39 @@ body {
         /* Add padding to ensure no extra space */
     }
 
-    /* Stacking the links vertically on mobile */
+    /* Mobile link boxes: controls size and spacing */
     .path-section .path-item {
         display: block;
-        /* Stacks the links vertically on smaller screens */
+        /* Shows each link on its own line */
         margin-right: 0;
-        /* Removes the right margin */
-        margin-bottom: 10px;
-        /* Adds space between the stacked items (adjust if needed) */
-        padding: 0.6rem 1rem;
-        /* Adjust padding if needed to reduce size of boxes */
+        /* Removes space on the right */
+        margin-bottom: 20px;
+        /* Gap between boxes; increase for more space */
+        padding: 0.4rem 0.8rem;
+        /* Box size; increase for bigger boxes */
+        font-size: 1rem;
+        /* Text size; increase for larger text */
+        border-radius: 6px;
+        /* Rounded corners; increase for rounder corners */
+    }
+
+    /* Mobile icon circles: controls circle and icon size */
+    .path-section .path-item i {
+        width: 35px;
+        /* Circle width; increase for a bigger circle */
+        height: 35px;
+        /* Circle height; increase for a taller circle */
+        line-height: 35px;
+        /* Centers icon vertically; match circle height */
+        font-size: 18px;
+        /* Icon size; increase for a larger icon */
+        margin-right: 10px;
+        /* Gap between icon and text; increase for more space */
     }
 }
 
 /* Responsive Adjustments for Path Container */
 @media screen and (max-width: 600px) {
-
-    .h2-big-heading {
-        font-size: 1.5em;
-    }
 
     .path-container {
         flex-direction: column;
@@ -447,7 +462,7 @@ body {
 
     /* Adjustments for footer */
     .footer-section {
-        font-size: 1em;
+        font-size: 0.8em;
     }
 }
 
