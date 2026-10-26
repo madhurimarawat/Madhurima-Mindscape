@@ -104,7 +104,7 @@ h3 {
     /* Centers the text for the "About Me" section */
 }
 
-.blockquote {
+blockquote {
     margin: 1em 0;
     /* Adds space above and below the blockquote */
     padding: 1em;

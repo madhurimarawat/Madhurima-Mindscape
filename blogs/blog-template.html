@@ -1,0 +1,157 @@
+---
+permalink: /blog-template
+---
+
+<!--
+*********************************************************************************************
+* File: blog-template.html
+* Author: Madhurima Rawat
+* Date: October 26, 2026
+* Description: Reusable HTML template for a Madhurima Mindscape blog post.
+* Version: 1.0
+* GitHub Repository: https://github.com/madhurimarawat/Madhurima-Mindscape
+* Notes:
+*   - Replace all [PLACEHOLDER] values before publishing.
+*   - Keep shared CSS and JavaScript paths consistent with the website.
+*   - Update SEO, social-sharing metadata, publication dates, and image URLs.
+*********************************************************************************************
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Sets the site's base URL -->
+    <base href="{{ site.baseurl }}/">
+
+    <!-- Defines character encoding and responsive layout -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Adds the page description for search engines -->
+    <meta name="description" content="[Write a concise description of this blog post.]">
+
+    <!-- Adds relevant search keywords -->
+    <meta name="keywords" content="[keyword one, keyword two, keyword three]">
+
+    <!-- Identifies the content author -->
+    <meta name="author" content="Madhurima Rawat">
+
+    <!-- Records the publication and last-updated dates -->
+    <meta name="date" content="[YYYY-MM-DDTHH:MM:SSZ]">
+    <meta name="last-modified" content="[YYYY-MM-DDTHH:MM:SSZ]">
+
+    <!-- Defines how the post appears when shared on social platforms -->
+    <meta property="og:title" content="[Blog Post Title] | Madhurima Rawat">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://madhurimarawat.github.io/Madhurima-Mindscape/[your-blog-slug]">
+    <meta property="og:description" content="[Write a short social-sharing description.]">
+    <meta property="og:image" content="https://example.com/path/to/social-image.jpg">
+    <meta property="og:image:alt" content="[Describe the social-sharing image]">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Madhurima Mindscape">
+
+    <!-- Defines the large-image preview for Twitter/X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="[Blog Post Title] | Madhurima Rawat">
+    <meta name="twitter:description" content="[Write a short social-sharing description.]">
+    <meta name="twitter:image" content="https://example.com/path/to/social-image.jpg">
+
+    <!-- Sets the browser tab title -->
+    <title>[Blog Post Title] | Madhurima Rawat</title>
+
+    <!-- Loads the site favicon -->
+    <link rel="icon" href="images/Logo.png" type="image/png">
+
+    <!-- Loads Bootstrap styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <!-- Loads the site's global and content styles -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/contents.css">
+
+    <!-- Loads Font Awesome icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- Loads the site's shared JavaScript -->
+    <script defer src="js/index.js"></script>
+</head>
+
+<body>
+
+    <!-- Inserts the shared navigation bar -->
+    <div id="header-container"></div>
+
+    <!-- Displays the blog post title -->
+    <h2>[Blog Post Title]</h2>
+
+    <!-- Adds the title divider and publication date -->
+    <div class="line-below"></div>
+    <p class="date-class">[Month DD, YYYY]</p>
+
+    <!-- Introduces the main idea or opening quote -->
+    <section class="intro">
+        <blockquote>
+            “[Optional opening quote goes here.]”
+        </blockquote>
+
+        <!-- Starts the introduction with a drop cap -->
+        <p class="dropcap">
+            [Write your opening paragraph here.]
+        </p>
+
+        <!-- Adds another introductory paragraph if needed -->
+        <p>
+            [Continue the introduction here.]
+        </p>
+    </section>
+
+    <!-- Contains the main sections of the blog post -->
+    <section class="blog-content">
+
+        <!-- Starts a content section -->
+        <div class="blog-section">
+            <h3>[Section Heading]</h3>
+            <p>
+                [Write the section content here.]
+            </p>
+
+            <!-- Adds an optional quote between paragraphs -->
+            <blockquote>
+                “[Optional quote goes here.]”
+            </blockquote>
+
+            <p>
+                [Add more detail or an example here.]
+            </p>
+        </div>
+
+        <!-- Use this section when another heading is needed -->
+        <div class="blog-section">
+            <h3>[Another Section Heading]</h3>
+            <p>
+                [Write the next section here.]
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Wraps up the post with a final thought -->
+    <section class="conclusion">
+        <p>
+            [Write your conclusion here.]
+        </p>
+    </section>
+
+    <!-- Loads Bootstrap's JavaScript dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Inserts the shared footer -->
+    <div id="footer-container"></div>
+
+</body>
+
+</html>
