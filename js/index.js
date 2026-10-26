@@ -1,14 +1,14 @@
 /**
  * File: index.js
  * Author: Madhurima Rawat
- * Date: June 2, 2025
+ * Date: October 26, 2026
  * Description: This JavaScript file controls dynamic interactions on the homepage of 
  *              the "Madhurima Mindscape" blog. It includes functions to apply background 
  *              gradients based on selected themes or custom colors, manage the visibility 
  *              of the Bootstrap carousel (slider), and dynamically load external HTML 
  *              components such as the navbar and footer. The logic now shows the slider 
  *              only for specific themes instead of hiding it for some.
- * Version: 1.1
+ * Version: 1.0
  * GitHub Repository: https://github.com/madhurimarawat/Madhurima-Mindscape
  * Issues/Bugs: For any issues or bugs, please visit the GitHub repository issues section.
  */
@@ -49,7 +49,6 @@ function applyTheme(themeName, color1 = null, color2 = null) {
             "sunset-vibes": ["#ff7e5f", "#feb47b"],
             "ocean-breeze": ["#2bc0e4", "#eaecc6"],
             "lavender-dream": ["#c2a6ff", "#d6c1ff"],
-            "autumn-leaves": ["#ff9a8b", "#ffb8b2"],
             "mysterious-night": ["#1a1a1a", "#333333"],
             "tropical-paradise": ["#00b4db", "#0083b0"]
         };

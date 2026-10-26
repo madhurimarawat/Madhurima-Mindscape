@@ -187,17 +187,6 @@ a[href="mailto:rawatmadhurima@gmail.com"]:hover {
     --dropcap-color: rgba(236, 22, 86, 0.6);
 }
 
-/* 🍁 Autumn Leaves */
-.theme-autumn-leaves {
-    --footer-color: #ec7f6e;
-    --circle-bg: #ffb8b2;
-    --circle-color: #574f4f;
-    --header-bg: linear-gradient(to right, #fe907e, #ff7653, #f7a69f);
-    --box-bg-color: #d16633;
-    --h2-color: whitesmoke;
-    --h3-color: whitesmoke;
-}
-
 /* 🌌 Mysterious Night */
 .theme-mysterious-night {
     --footer-color: #333333;
