@@ -199,6 +199,11 @@ h5 {
     h3 {
         font-size: 1.2em;
     }
+
+    blockquote {
+       font-size: 0.8em;
+    /* Slightly increases the font size for better visibility */
+    }
 }
 
 /* Meme Image Style */
