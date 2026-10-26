@@ -92,6 +92,11 @@ h2 {
     /* Uses pink color for main headings */
     font-weight: bold;
     /* Makes the headings bold */
+    font-size: 1.7em;
+}
+
+h3 {
+    font-size: 1.3em;
 }
 
 .about-me {
@@ -185,6 +190,14 @@ h5 {
     .image {
         width: 100%;
         /* Maintain aspect ratio */
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.2em;
     }
 }
 
