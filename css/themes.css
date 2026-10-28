@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: themes.css
 * Author: Madhurima Rawat
-* Date: October 26, 2026
+* Date: October 28, 2026
 * Description: This stylesheet defines the visual themes for the "Madhurima Mindscape" blog.
 *              It includes custom CSS variables for different themes such as Sunset Vibes, 
 *              Ocean Breeze, Lavender Dream, and more. Each theme adjusts the color palette, 
@@ -34,10 +34,17 @@ body {
     --h3-color: #db4583;
     --box-bg-color: rgba(0, 0, 0, 0.4);
     --box-bg-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
-    --blockquote-border: 5px solid #6cb2eb;
+    --blockquote-border: 5px solid var(--h2-color);
+    --blockquote-text-shadow: none;
     --text-color: black;
     --background-color: transparent;
-    --dropcap-color: #6cb2eb;
+    --dropcap-color: var(--h2-color);
+    --post-action-color: white;
+    --post-action-hover: rgb(131, 131, 228);
+    --post-save-color: var(--h2-color);
+    --post-save-hover: black;
+    --comment-box-color: #f8c471;
+    --comment-box-text-color: var(--text-color);
 }
 
 /* ==== Typography Styling ==== */
@@ -65,8 +72,7 @@ blockquote {
     /* Emphasized left border for quotes */
     color: var(--text-color);
     /* Inherits body text color */
-    text-shadow: 1px 2px 4px color-mix(in srgb, var(--text-color) 25%, transparent);
-    /* Adds a subtle, theme-matched text shadow */
+    text-shadow: var(--blockquote-text-shadow);
 }
 
 /* ==== Path Items (Icon Cards) Styling ==== */
@@ -115,23 +121,73 @@ blockquote {
     color: var(--text-color);
 }
 
-/* Styling for image captions that are links */
-.image-caption-link {
-    color: var(--text-color);
-}
-
-.image-caption:hover,
-.image-caption-link:hover {
+.image-caption:hover {
     color: var(--footer-color);
 }
 
-a[href="mailto:rawatmadhurima@gmail.com"] {
+.post-action-btn {
+    color: var(--text-color);
+    border-color: var(--h2-color);
+}
+
+.post-action-btn i {
+    color: inherit;
+}
+
+.post-action-btn:hover {
+    color: var(--post-action-color);
+    background: var(--h2-color);
+    filter: drop-shadow(0 0 4px var(--post-action-hover));
+}
+
+/* Highlight saved posts with a glowing outline and no fill */
+.post-action-btn.is-saved {
+    color: var(--post-action-color);
+    border-color: var(--post-save-color);
+    background-color: var(--h2-color);
+}
+
+/* Highlight the saved icon */
+.post-action-btn.is-saved:hover {
+    color: var(--post-action-color);
+}
+
+.comment-panel {
+    background: var(--comment-box-color);
+    border-color: var(--h2-color);
+    color: var(--text-color);
+}
+
+.comment-panel h3 {
     color: var(--h2-color);
 }
 
-a[href="mailto:rawatmadhurima@gmail.com"]:hover {
+.comment-send-btn {
+    background-color: var(--h2-color);
+    color: var(--post-action-color);
+}
+
+.comment-send-btn:hover {
+    background-color: color-mix(in srgb, var(--h2-color) 75%, white);
+}
+
+/* Apply the theme text color to all comment box content */
+#comment-template,
+#comment-name,
+.comment-panel .post-action-note,
+#post-comment-form label,
+.comment-panel>p,
+#comment-name::placeholder,
+#custom-comment,
+#custom-comment::placeholder {
     color: var(--text-color);
-    /* Change color on hover */
+}
+
+.comment-panel select,
+.comment-panel select option,
+.comment-panel input,
+.comment-panel input::placeholder {
+    color: var(--comment-box-text-color) !important;
 }
 
 /* ==== Themes: Custom Variables for Theme Switching ==== */
@@ -144,6 +200,8 @@ a[href="mailto:rawatmadhurima@gmail.com"]:hover {
     --h2-color: whitesmoke;
     --h3-color: whitesmoke;
     --box-bg-color: #f26440;
+    --post-action-color: #333;
+    --comment-box-color: #FFA078;
 }
 
 /* 🌊 Ocean Breeze */
@@ -156,8 +214,9 @@ a[href="mailto:rawatmadhurima@gmail.com"]:hover {
     --h3-color: #4b82a7;
     --box-bg-color: #4b82a7;
     --box-bg-shadow: 0 0 15px rgba(236, 22, 86, 0.6);
-    --blockquote-border: 5px solid rgba(236, 22, 86, 0.6);
-    --dropcap-color: rgba(236, 22, 86, 0.6);
+    --blockquote-border: 5px solid #22536b;
+    --dropcap-color: #22536b;
+    --comment-box-color: transparent;
 }
 
 /* 🌸 Lavender Dream */
@@ -169,22 +228,7 @@ a[href="mailto:rawatmadhurima@gmail.com"]:hover {
     --h3-color: #954ba7;
     --box-bg-color: #a57cf6;
     --box-bg-shadow: 0 0 15px rgba(236, 22, 86, 0.6);
-    --blockquote-border: 5px solid rgba(236, 22, 86, 0.6);
-    --dropcap-color: rgba(236, 22, 86, 0.6);
-}
-
-/* 🌿 Tropical Paradise */
-.theme-tropical-paradise {
-    --footer-color: #2193b0;
-    --circle-bg: #6dd5ed;
-    --circle-color: #574f4f;
-    --header-bg: linear-gradient(to right, #38c1e0, #05718d);
-    --h2-color: #124c5e;
-    --h3-color: #266d5b;
-    --box-bg-color: #1b809a;
-    --box-bg-shadow: 0 0 15px rgba(236, 22, 86, 0.6);
-    --blockquote-border: 5px solid rgba(236, 22, 86, 0.6);
-    --dropcap-color: rgba(236, 22, 86, 0.6);
+    --comment-box-color: transparent;
 }
 
 /* 🌌 Mysterious Night */
@@ -195,8 +239,11 @@ a[href="mailto:rawatmadhurima@gmail.com"]:hover {
     --h2-color: bisque;
     --h3-color: beige;
     --box-bg-color: #333;
-    --blockquote-border: 5px solid rgba(236, 22, 86, 0.6);
     --text-color: whitesmoke;
     --background-color: #333;
-    --dropcap-color: rgba(236, 22, 86, 0.6);
+    --blockquote-text-shadow: 1px 2px 4px color-mix(in srgb, var(--text-color) 25%, transparent);
+    --post-action-color: #333;
+    --post-action-hover: whitesmoke;
+    --comment-box-color: #4c454576;
+    --comment-box-text-color: black;
 }

@@ -1,0 +1,114 @@
+---
+---
+
+<!--
+*********************************************************************************************
+* File: post-actions.html
+* Author: Madhurima Rawat
+* Date: October 28, 2026
+* Description: This file contains the reusable blog post actions component for the "Madhurima Mindscape"
+*              website. It provides comment, save, and share functionality for individual blog posts.
+*              The comment panel allows readers to select a predefined comment, optionally enter their
+*              name, and send their feedback through their default email application.
+* Version: 1.0
+* GitHub Repository: https://github.com/madhurimarawat/Madhurima-Mindscape
+* Issues/Bugs: For any issues or bugs, please visit the GitHub repository issues section.
+* Comments:
+*     - The Comment button toggles the visibility of the comment panel.
+*     - The comment form provides predefined messages for readers to choose from.
+*     - The optional name field allows readers to personalize their comments.
+*     - The email button prepares the selected comment for sending through the user's email application.
+*     - The Save button allows readers to save or unsave a blog post.
+*     - The Share button allows readers to share the current blog post.
+*     - The status element displays feedback messages for post actions.
+*     - The data-post-id and data-post-title attributes can identify the associated blog post.
+* Dependencies:
+*     - Font Awesome icons for the comment, bookmark, share, and email buttons.
+*     - CSS styles for the post actions, comment panel, form fields, and status messages.
+*     - JavaScript functionality for toggling comments, saving posts, sharing links, and handling form submission.
+*********************************************************************************************
+-->
+
+
+<!-- Blog Post Actions -->
+<div class="post-actions" id="post-actions" data-post-id="/data-stories"
+    data-post-title="Big Data in Real Life: Applications & Case Studies">
+
+    <!-- Comment -->
+    <div class="post-action-item">
+        <button type="button" class="post-action-btn" id="comment-toggle" aria-expanded="false"
+            aria-controls="comment-panel">
+            <i class="far fa-comment"></i>
+            <span>Comment</span>
+        </button>
+    </div>
+
+    <!-- Save -->
+    <div class="post-action-item">
+        <button type="button" class="post-action-btn" id="save-post-btn" aria-pressed="false">
+            <i class="far fa-bookmark"></i>
+            <span>Save</span>
+        </button>
+    </div>
+
+    <!-- Share -->
+    <div class="post-action-item">
+        <button type="button" class="post-action-btn" id="share-post-btn">
+            <i class="fas fa-share-alt"></i>
+            <span>Share</span>
+        </button>
+    </div>
+
+</div>
+
+<!-- Comment Panel -->
+<div class="comment-panel" id="comment-panel" hidden>
+    <h3>Leave a comment 💬</h3>
+    <p>Choose a message to share your thoughts about this article.</p>
+
+    <form id="post-comment-form">
+        <label for="comment-template">Choose your comment</label>
+
+        <select id="comment-template" required>
+            <option value="">-- Select a comment --</option>
+            <option value="Loved this post! ❤️">Loved this post! ❤️</option>
+            <option value="This was really helpful. Thank you! 🙌">
+                This was really helpful. Thank you! 🙌
+            </option>
+            <option value="I learned something new today! ✨">
+                I learned something new today! ✨
+            </option>
+            <option value="Beautifully explained! 💖">
+                Beautifully explained! 💖
+            </option>
+            <option value="Keep sharing more posts like this! 🌸">
+                Keep sharing more posts like this! 🌸
+            </option>
+            <option value="I would love to read more about this topic.">
+                I would love to read more about this topic.
+            </option>
+            <option value="other">Write your own message ✍️</option>
+        </select>
+
+        <!-- Custom comment field; shown only when Other is selected -->
+        <div id="custom-comment-container" hidden>
+            <label for="custom-comment">Write your comment</label>
+            <textarea id="custom-comment" rows="4" maxlength="1000"
+                placeholder="Write your thoughts here..."></textarea>
+        </div>
+
+        <label for="comment-name">Your name (optional)</label>
+        <input type="text" id="comment-name" maxlength="60" placeholder="Enter your name">
+
+        <button type="submit" class="comment-send-btn">
+            <i class="far fa-envelope"></i>
+            Send comment by email
+        </button>
+    </form>
+
+    <p class="post-action-note">
+        Your email app will open with your comment ready to send.
+    </p>
+</div>
+
+<p id="post-action-status" class="post-action-status" role="status" aria-live="polite"></p>

@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: contents.css
 * Author: Madhurima Rawat
-* Date: October 26, 2026
+* Date: October 28, 2026
 * Description: This is the stylesheet for the content pages of the "Madhurima Mindscape" blog website.
 *              It contains specific styles for the body text, headings, quotes, images, and links 
 *              used across various content pages. The CSS ensures consistent and readable design 
@@ -201,8 +201,8 @@ h5 {
     }
 
     blockquote {
-       font-size: 1em;
-    /* Slightly increases the font size for better visibility */
+        font-size: 1em;
+        /* Slightly increases the font size for better visibility */
     }
 }
 
@@ -280,4 +280,373 @@ pre code {
     /* Matches the heading color across themes */
     margin-top: 10px;
     /* Adds space between the divider and the date */
+}
+
+/* =========================================
+   POST ACTIONS
+========================================= */
+
+/* Center the action buttons and reduce excess top spacing */
+.post-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 8px 0 20px;
+    padding: 4px 0;
+    border: none;
+    background: transparent;
+}
+
+/* Preserve each button item's centered layout */
+.post-action-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Create smaller glossy-outline buttons with transparent fill */
+.post-action-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin: 0;
+    padding: 9px 16px;
+    border: 1px solid rgba(255, 224, 184, 0.8);
+    border-radius: 30px;
+    background: transparent;
+    background-color: transparent;
+    color: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    cursor: pointer;
+    box-shadow:
+        0 0 8px rgba(255, 224, 184, 0.08),
+        inset 0 1px 2px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition:
+        border-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Remove the glossy overlay to keep the button unfilled */
+.post-action-btn::before {
+    display: none;
+}
+
+/* Highlight the outline on hover without filling the button */
+.post-action-btn:hover {
+    background: transparent;
+    background-color: transparent;
+    border-color: rgba(255, 224, 184, 1);
+    color: #ffe0b8;
+    transform: translateY(-2px);
+    box-shadow:
+        0 0 10px rgba(255, 224, 184, 0.2),
+        0 0 18px rgba(255, 224, 184, 0.08),
+        inset 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+/* Add a subtle pressed-button animation */
+.post-action-btn:active {
+    transform: translateY(0) scale(0.97);
+}
+
+/* Keep keyboard focus clearly visible */
+.post-action-btn:focus-visible,
+.comment-send-btn:focus-visible {
+    outline: 2px solid #ffe0b8;
+    outline-offset: 3px;
+}
+
+/* Keep icons neatly sized without borders */
+.post-action-btn i {
+    position: relative;
+    z-index: 1;
+    border: none;
+    font-size: 14px;
+    transition:
+        color 0.3s ease,
+        filter 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Keep button labels above decorative layers */
+.post-action-btn span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Add a gentle glow to icons on hover */
+.post-action-btn:hover i {
+    transform: scale(1.08);
+}
+
+/* Highlight saved posts with a glowing outline and no fill */
+.post-action-btn.is-saved {
+    background: transparent;
+    background-color: transparent;
+    box-shadow:
+        0 0 10px rgba(255, 224, 184, 0.16),
+        inset 0 1px 2px rgba(255, 255, 255, 0.15);
+    text-align: center;
+}
+
+/* Highlight the saved icon */
+.post-action-btn.is-saved i {
+    filter: drop-shadow(0 0 4px rgba(255, 224, 184, 0.4));
+}
+
+/* =========================================
+   POST ACTION STATUS MESSAGES
+========================================= */
+
+.post-action-status {
+    margin: 12px 0 0;
+    padding: 0;
+    border: none;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #6b5b73;
+
+    opacity: 1;
+    transition: opacity 0.8s ease;
+}
+
+/* Hide when there is no message */
+.post-action-status:empty {
+    display: none;
+}
+
+/* Fade-out effect */
+.post-action-status.fade-out {
+    opacity: 0;
+}
+
+/* Style the comment panel container */
+.comment-panel {
+    max-width: 620px;
+    margin: 24px auto;
+    padding: 28px;
+    border: 1px solid;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(91, 55, 112, 0.08);
+    animation: commentPanelIn 0.35s ease;
+}
+
+/* Hide the panel when the hidden attribute is present */
+.comment-panel[hidden] {
+    display: none;
+}
+
+/* Style the comment panel heading */
+.comment-panel h3 {
+    margin: 0 0 10px;
+    font-size: 1.45rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* Style the introductory paragraph */
+.comment-panel>p {
+    margin: 0 0 22px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Arrange the form fields vertically */
+#post-comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Style form labels */
+#post-comment-form label {
+    margin-top: 8px;
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+/* Style the comment dropdown and name input */
+#comment-template,
+#comment-name {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+    border: 1px solid #dfd0eb;
+    border-radius: 10px;
+    background: #ffffff;
+    font: inherit;
+    font-size: 0.94rem;
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    box-sizing: border-box;
+}
+
+/* Give the dropdown a comfortable height */
+#comment-template {
+    cursor: pointer;
+}
+
+/* Highlight fields when selected */
+#comment-template:focus,
+#comment-name:focus {
+    border-color: #a779c5;
+    box-shadow: 0 0 0 3px rgba(167, 121, 197, 0.16);
+}
+
+/* Style the email submission button */
+.comment-send-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: 100%;
+    min-height: 48px;
+    margin-top: 14px;
+    padding: 13px 18px;
+    border: none;
+    border-radius: 11px;
+    font: inherit;
+    font-size: 0.96rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(112, 69, 138, 0.18);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+/* Add a subtle hover effect to the button */
+.comment-send-btn:hover {
+    box-shadow: 0 8px 18px rgba(112, 69, 138, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Show a visible keyboard focus indicator */
+.comment-send-btn:focus-visible {
+    outline: 3px solid #c9a8df;
+    outline-offset: 3px;
+}
+
+/* Give the button a pressed effect */
+.comment-send-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(112, 69, 138, 0.18);
+}
+
+/* Style the email helper note */
+.comment-panel .post-action-note {
+    margin: 16px 0 0;
+    font-size: 0.82rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+#custom-comment {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid var(--comment-box-color);
+    border-radius: 8px;
+    background-color: transparent;
+    font: inherit;
+    resize: vertical;
+}
+
+#custom-comment::placeholder {
+    opacity: 1;
+}
+
+#custom-comment-container[hidden] {
+    display: none;
+}
+
+/* Animate the comment panel as it appears */
+@keyframes commentPanelIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adapt the comment panel for small screens */
+@media (max-width: 600px) {
+    .comment-panel {
+        margin: 18px 0;
+        padding: 20px 16px;
+        border-radius: 14px;
+    }
+
+    .comment-panel h3 {
+        font-size: 1.25rem;
+    }
+
+    #comment-template,
+    #comment-name {
+        font-size: 16px;
+    }
+
+    .comment-send-btn {
+        font-size: 0.9rem;
+    }
+}
+
+/* Respect visitors who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .comment-panel,
+    .comment-send-btn,
+    #comment-template,
+    #comment-name {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* Make action buttons smaller on mobile screens */
+@media (max-width: 576px) {
+    .post-actions {
+        gap: 8px;
+        margin-top: 4px;
+        padding-top: 2px;
+    }
+
+    .post-action-btn {
+        gap: 6px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .post-action-btn i {
+        font-size: 13px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+    .post-action-btn,
+    .post-action-btn i,
+    .comment-send-btn {
+        transition: none;
+    }
 }

@@ -1,7 +1,7 @@
 /**
  * File: index.js
  * Author: Madhurima Rawat
- * Date: October 26, 2026
+ * Date: October 28, 2026
  * Description: This JavaScript file controls dynamic interactions on the homepage of 
  *              the "Madhurima Mindscape" blog. It includes functions to apply background 
  *              gradients based on selected themes or custom colors, manage the visibility 
@@ -50,7 +50,6 @@ function applyTheme(themeName, color1 = null, color2 = null) {
             "ocean-breeze": ["#2bc0e4", "#eaecc6"],
             "lavender-dream": ["#c2a6ff", "#d6c1ff"],
             "mysterious-night": ["#1a1a1a", "#333333"],
-            "tropical-paradise": ["#00b4db", "#0083b0"]
         };
 
         let [startColor, endColor] = backgroundGradients[themeName] || ["white", "white"];
@@ -115,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('Error loading the footer:', error);
         });
 });
+
 
 function showDropdown() {
     // 🔍 Find dropdown content element
