@@ -249,6 +249,27 @@
         flex-basis: 320px;
         max-width: 380px;
     }
+
+    .explore-container .explore-section {
+        margin-bottom: 55px;
+    }
+
+    .explore {
+        margin-top: -30px;
+    }
+
+    .explore-container .explore-card .explore-card-content .explore-card-title {
+        font-size: 1.15rem;
+    }
+
+    .explore-container .explore-card .explore-card-content .explore-card-description {
+        font-size: 1rem;
+    }
+
+    /* Card Descriptions */
+    .explore-card-content p {
+        margin-top: 6px;
+    }
 }
 
 
@@ -263,12 +284,29 @@
     }
 
     .explore-container .explore-section {
-        margin-bottom: 35px;
+        margin-bottom: 45px;
+    }
+
+    .explore {
+        margin-top: -30px;
     }
 
     .explore-container .explore-section h3 {
         font-size: 1.55rem;
         margin-bottom: 20px;
+    }
+
+    .explore-container .explore-card .explore-card-content .explore-card-title {
+        font-size: 1.15rem;
+    }
+
+    .explore-container .explore-card .explore-card-content .explore-card-description {
+        font-size: 1rem;
+    }
+
+    /* Card Descriptions */
+    .explore-card-content p {
+        margin-top: 1px;
     }
 
     .explore-card-grid {
@@ -290,10 +328,6 @@
         padding: 18px;
     }
 
-    /* Card Descriptions */
-    .explore-card-content p {
-        margin-top: 15px;
-    }
 }
 
 
