@@ -1,11 +1,11 @@
-
 /**
  * File: js/post-actions.js
  * Author: Madhurima Rawat
  * Date: October 28, 2026
  * Description:
  * Reusable post actions for Madhurima Mindscape.
- * Supports commenting through mailto, saving posts, sharing links,
+ * Supports commenting through mailto, saving posts,
+ * browser bookmark instructions, sharing links,
  * temporary status messages, and GitHub Pages/local development.
  */
 
@@ -35,17 +35,20 @@ function initializePostActions(container) {
     const commentPanel = container.querySelector("#comment-panel");
     const commentForm = container.querySelector("#post-comment-form");
     const commentSelect = container.querySelector("#comment-template");
+
     const customCommentContainer =
         container.querySelector("#custom-comment-container");
+
     const customCommentInput =
         container.querySelector("#custom-comment");
+
     const nameInput = container.querySelector("#comment-name");
     const shareButton = container.querySelector("#share-post-btn");
 
-    // Your blog email address.
+    // Blog email address.
     const BLOG_EMAIL = "rawatmadhurima4@gmail.com";
 
-    // Use the first CSS class to keep each blog's saved posts separate.
+    // Keep saved posts separate for each blog component.
     const rawBlogName = container.classList[0] || "default";
 
     const blogName = rawBlogName
@@ -62,7 +65,7 @@ function initializePostActions(container) {
     let statusTimeout;
     let fadeTimeout;
 
-    function showStatus(message) {
+    function showStatus(message, duration = 8000) {
         if (!status) {
             console.info("Post Actions:", message);
             return;
@@ -85,7 +88,43 @@ function initializePostActions(container) {
                 status.style.display = "";
                 status.style.opacity = "";
             }, 800);
-        }, 3000);
+        }, duration);
+    }
+
+    // --------------------------------------------------
+    // BROWSER BOOKMARK INSTRUCTIONS
+    // --------------------------------------------------
+
+    function promptBrowserBookmark() {
+        const isMobile = /Android|iPhone|iPad|iPod/i.test(
+            navigator.userAgent
+        );
+
+        const isMac = /Mac|iPhone|iPad|iPod/i.test(
+            navigator.platform
+        );
+
+        let message;
+
+        if (isMobile) {
+            message =
+                "To add this article to browser bookmarks, " +
+                "open your browser menu (⋮ on Chrome) and tap " +
+                "'Bookmark' or the bookmark icon. " +
+                "This article is saved in this site's Saved Articles too.";
+        } else if (isMac) {
+            message =
+                "To bookmark this article in your browser, " +
+                "press Command (⌘) + D. Your article is also " +
+                "saved in this site's Saved Articles.";
+        } else {
+            message =
+                "To bookmark this article in your browser, " +
+                "press Ctrl + D. Your article is also " +
+                "saved in this site's Saved Articles.";
+        }
+
+        showStatus(message, 12000);
     }
 
     // --------------------------------------------------
@@ -113,7 +152,11 @@ function initializePostActions(container) {
         const isSaved = savedPosts.includes(postId);
 
         saveButton.classList.toggle("is-saved", isSaved);
-        saveButton.setAttribute("aria-pressed", String(isSaved));
+
+        saveButton.setAttribute(
+            "aria-pressed",
+            String(isSaved)
+        );
 
         saveButton.innerHTML = isSaved
             ? '<i class="fas fa-bookmark" aria-hidden="true"></i>' +
@@ -122,6 +165,7 @@ function initializePostActions(container) {
             "<span>Save</span>";
     }
 
+    // Update the button without displaying instructions on page load.
     updateSaveButton();
 
     if (saveButton) {
@@ -143,17 +187,28 @@ function initializePostActions(container) {
 
                 updateSaveButton();
 
-                showStatus(
-                    index === -1
-                        ? "Article saved in this browser."
-                        : "Article removed from saved posts."
-                );
+                if (index === -1) {
+                    // Saved successfully in this website.
+                    showStatus(
+                        "Article saved in this Website Saved Articles.",
+                        4000
+                    );
+
+                    // Then show browser bookmark instructions.
+                    statusTimeout = setTimeout(() => {
+                        promptBrowserBookmark();
+                    }, 1200);
+                } else {
+                    showStatus(
+                        "Article removed from Saved Articles."
+                    );
+                }
             } catch (error) {
                 savedPosts = previousPosts;
                 updateSaveButton();
 
                 showStatus(
-                    "Unable to save this article. Check browser storage settings."
+                    "Unable to save this article. Check your browser's storage settings."
                 );
 
                 console.error("Could not save article:", error);
@@ -213,10 +268,6 @@ function initializePostActions(container) {
     // --------------------------------------------------
 
     if (commentForm) {
-        /*
-         * Handle validation in JavaScript so a hidden required
-         * textarea cannot silently block the submit event.
-         */
         commentForm.noValidate = true;
 
         commentForm.addEventListener("submit", function (event) {
@@ -224,30 +275,23 @@ function initializePostActions(container) {
 
             console.log("Post Actions: Send Mail button clicked.");
 
-            // Confirm that the email address is configured.
             if (
                 !BLOG_EMAIL ||
                 BLOG_EMAIL === "your-email@example.com"
             ) {
                 showStatus("Please configure your blog email address.");
-                console.error("Post Actions: BLOG_EMAIL is not configured.");
+                console.error("BLOG_EMAIL is not configured.");
                 return;
             }
 
-            // Check the selected comment.
             if (!commentSelect || !commentSelect.value) {
                 showStatus("Please select a comment first.");
-
-                if (commentSelect) {
-                    commentSelect.focus();
-                }
-
+                commentSelect?.focus();
                 return;
             }
 
             let selectedComment = commentSelect.value;
 
-            // If Other is selected, use the visitor's own message.
             if (selectedComment === "other") {
                 selectedComment = customCommentInput
                     ? customCommentInput.value.trim()
@@ -255,25 +299,18 @@ function initializePostActions(container) {
 
                 if (!selectedComment) {
                     showStatus("Please write your comment first.");
-
-                    if (customCommentInput) {
-                        customCommentInput.focus();
-                    }
-
+                    customCommentInput?.focus();
                     return;
                 }
             }
 
-            // Get the visitor's name, if provided.
             const visitorName =
                 nameInput && nameInput.value.trim()
                     ? nameInput.value.trim()
                     : "Anonymous";
 
-            // Build the email subject.
             const subject = "Comment on " + postTitle;
 
-            // Build the email body.
             const body = [
                 "Hello Madhurima,",
                 "",
@@ -289,19 +326,11 @@ function initializePostActions(container) {
                 "Sent from Madhurima Mindscape."
             ].join("\n");
 
-            /*
-             * Encode the subject and body so spaces, punctuation,
-             * and multiline comments work correctly in mailto URLs.
-             */
             const mailtoUrl =
                 "mailto:" + BLOG_EMAIL +
                 "?subject=" + encodeURIComponent(subject) +
                 "&body=" + encodeURIComponent(body);
 
-            /*
-             * Use a temporary link to invoke the browser's mailto
-             * handler directly from the visitor's click action.
-             */
             try {
                 const mailLink = document.createElement("a");
 
@@ -322,13 +351,16 @@ function initializePostActions(container) {
                     "Could not open your email app. Check your browser's mail settings."
                 );
 
-                // Provide the generated email link as a fallback.
                 const fallbackLink = document.createElement("a");
+
                 fallbackLink.href = mailtoUrl;
-                fallbackLink.textContent = "Click here to open your email";
+                fallbackLink.textContent =
+                    "Click here to open your email";
+
                 fallbackLink.style.display = "block";
                 fallbackLink.style.textAlign = "center";
                 fallbackLink.style.marginTop = "10px";
+                fallbackLink.className = "mailto-fallback";
 
                 const existingFallback =
                     container.querySelector(".mailto-fallback");
@@ -337,8 +369,10 @@ function initializePostActions(container) {
                     existingFallback.remove();
                 }
 
-                fallbackLink.className = "mailto-fallback";
-                status?.insertAdjacentElement("afterend", fallbackLink);
+                status?.insertAdjacentElement(
+                    "afterend",
+                    fallbackLink
+                );
             }
         });
     } else {

@@ -1,0 +1,368 @@
+/*
+*********************************************************************************************
+* File: saved-articles.css
+* Author: Madhurima Rawat
+* Date: October 29, 2026
+* Description: This stylesheet defines the layout and visual styling for the Saved Articles page
+*              of the "Madhurima Mindscape" website. It styles the saved articles grid, individual
+*              article cards, images, headings, descriptions, action buttons, loading messages,
+*              empty reading list state, and status notifications. It also provides responsive
+*              layouts for desktop, tablet, and mobile devices while maintaining the site's
+*              elegant, glossy, transparent, and centered card design.
+* Version: 1.0
+* GitHub Repository: https://github.com/madhurimarawat/Madhurima-Mindscape
+* Issues/Bugs: For any issues or bugs, please visit the GitHub repository issues section.
+* Comments:
+*     - The saved articles grid displays cards in a centered, responsive layout.
+*     - Article cards feature transparent backgrounds, subtle borders, blur effects, and shadows.
+*     - Article titles, dates, descriptions, and action buttons are styled for readability.
+*     - The Read and Remove buttons include interactive hover and keyboard focus effects.
+*     - The loading message appears while saved articles are being retrieved.
+*     - The empty reading list panel appears when no articles have been saved.
+*     - Status messages provide feedback when articles are removed.
+*     - Responsive media queries adjust card sizes and layouts for tablets and mobile devices.
+*     - Reduced-motion preferences are respected for improved accessibility.
+* Dependencies:
+*     - Font Awesome 5.15.4: Icons used for article actions and the empty reading list state.
+*     - Bootstrap 4.6.1: Responsive framework used by the website.
+*     - Global and content stylesheets: Shared layout and typography styles.
+*     - Custom JavaScript (saved-articles.js): Handles displaying and managing saved article cards.
+*********************************************************************************************
+*/
+
+/* Introduction */
+.saved-intro {
+    max-width: 580px;
+    margin: 0 auto 20px;
+    color: #71675f;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* Larger, centered card grid */
+.saved-articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 380px));
+    justify-content: center;
+    justify-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1220px;
+    margin: 0 auto;
+}
+
+/* Larger transparent, glossy article card */
+.saved-card {
+    display: flex;
+    width: 100%;
+    max-width: 380px;
+    min-width: 0;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgb(189 164 142 / 35%);
+    border-radius: 11px;
+    background: rgb(255 255 255 / 18%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow:
+        inset 0 1px 0 rgb(255 255 255 / 50%),
+        0 4px 13px rgb(65 45 30 / 5%);
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.saved-card:hover {
+    transform: translateY(-3px);
+    border-color: rgb(189 164 142 / 65%);
+    box-shadow:
+        inset 0 1px 0 rgb(255 255 255 / 65%),
+        0 8px 18px rgb(65 45 30 / 10%);
+}
+
+/* Article image */
+.saved-card-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 6;
+    object-fit: cover;
+    background: rgb(241 236 230 / 35%);
+}
+
+/* Larger card content */
+.saved-card-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+}
+
+/* Article date */
+.saved-card-date {
+    width: 100%;
+    margin-bottom: 8px;
+    font-size: 0.76rem;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+/* Larger, centered article title */
+.saved-card h3 {
+    width: 100%;
+    margin: 0 0 10px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+/* Larger article description */
+.saved-card-description {
+    width: 100%;
+    margin: 0 0 14px;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    text-align: justify;
+}
+
+/* Card action buttons */
+.saved-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 5px;
+}
+
+/* Shared glossy button styles */
+.saved-read-link,
+.saved-remove-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px 11px;
+    border: 1px solid rgb(255 255 255 / 45%);
+    border-radius: 6px;
+    font: inherit;
+    font-size: 0.8rem;
+    line-height: 1.3;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow:
+        inset 0 1px 0 rgb(255 255 255 / 35%),
+        0 2px 6px rgb(65 45 30 / 8%);
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+    font-weight: bold;
+}
+
+.saved-read-link:hover,
+.saved-read-link:focus {
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow:
+        inset 0 1px 0 rgb(255 255 255 / 45%),
+        0 4px 10px rgb(65 45 30 / 15%);
+}
+
+/* Glossy remove button */
+.saved-remove-button {
+    background: transparent;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.saved-remove-button:hover,
+.saved-remove-button:focus {
+    background: rgb(244 236 229 / 75%);
+    color: #50392d;
+    transform: translateY(-2px);
+    box-shadow:
+        inset 0 1px 0 rgb(255 255 255 / 65%),
+        0 4px 8px rgb(65 45 30 / 8%);
+}
+
+/* Keyboard focus */
+.saved-read-link:focus-visible,
+.saved-remove-button:focus-visible,
+.saved-explore-link:focus-visible {
+    outline: 2px solid #6b4f3f;
+    outline-offset: 3px;
+}
+
+/* Loading message */
+.saved-loading {
+    grid-column: 1 / -1;
+    padding: 22px 0;
+    color: #71675f;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Empty reading list */
+.saved-empty {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 30px 18px;
+    border: 1px dashed rgb(189 164 142 / 65%);
+    border-radius: 12px;
+    background: rgb(255 255 255 / 15%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+/* Empty-list icon */
+.saved-empty>i {
+    margin-bottom: 12px;
+    color: #98765b;
+    font-size: 1.8rem;
+}
+
+/* Empty-list heading */
+.saved-empty h3 {
+    margin-bottom: 9px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+/* Empty-list description */
+.saved-empty p {
+    max-width: 420px;
+    margin: 0 auto 16px;
+    color: #71675f;
+    font-size: 0.88rem;
+    line-height: 1.7;
+}
+
+/* Explore articles link */
+.saved-explore-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-underline-offset: 4px;
+    transition: color 0.2s ease;
+    text-decoration: underline;
+}
+
+.saved-explore-link i {
+    margin-left: 5px;
+}
+
+/* Hidden states */
+.saved-articles-grid[hidden],
+.saved-empty[hidden] {
+    display: none !important;
+}
+
+/* Centered removal/status message */
+#saved-status {
+    width: fit-content;
+    max-width: calc(100% - 30px);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+/* Smooth fade-out */
+#saved-status.status-fade {
+    opacity: 0;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    #saved-status {
+        transition: none;
+    }
+}
+
+/* Tablets: two centered cards per row */
+@media (min-width: 701px) and (max-width: 1000px) {
+    .saved-articles-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 790px;
+        gap: 18px;
+    }
+
+    .saved-card {
+        max-width: 370px;
+    }
+}
+
+/* Mobile: one centered card per row */
+@media (max-width: 700px) {
+    .saved-articles-grid {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 390px;
+        gap: 17px;
+    }
+
+    .saved-card {
+        max-width: 370px;
+    }
+
+    .saved-card-content {
+        padding: 15px;
+    }
+
+    .saved-card h3 {
+        font-size: 1.15rem;
+    }
+
+    .saved-card-description {
+        font-size: 0.88rem;
+    }
+}
+
+/* Narrow mobile screens */
+@media (max-width: 360px) {
+    .saved-articles-grid {
+        max-width: calc(100% - 24px);
+    }
+
+    .saved-card-content {
+        padding: 11px;
+    }
+
+    .saved-card-actions {
+        gap: 5px;
+    }
+
+    .saved-read-link,
+    .saved-remove-button {
+        padding: 7px 8px;
+        font-size: 0.69rem;
+    }
+}
+
+/* Accessibility: reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .saved-card,
+    .saved-read-link,
+    .saved-remove-button,
+    .saved-explore-link {
+        transition: none;
+    }
+
+    .saved-card:hover,
+    .saved-read-link:hover,
+    .saved-remove-button:hover {
+        transform: none;
+    }
+}

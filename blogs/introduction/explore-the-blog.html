@@ -1,0 +1,266 @@
+---
+permalink: /explore-the-blog
+---
+
+<!--
+*********************************************************************************************
+* File: explore.html
+* Author: Madhurima Rawat
+* Date: October 30, 2026
+* Description: Explore the Blog page of Madhurima Mindscape. This page organizes existing
+*              blog posts into six categories using glossy preview cards. Each card dynamically
+*              retrieves its title, description, and preview image from the Open Graph metadata
+*              of the corresponding blog page.
+* Version: 1.0
+* GitHub Repository: https://github.com/madhurimarawat/Madhurima-Mindscape
+*
+* Categories:
+*   1. Introduction
+*   2. Personal Insights
+*   3. Tech Insights
+*   4. Project Diaries
+*   5. Creative Clicks
+*   6. Poem Perspectives
+*
+* Dependencies:
+*   - Bootstrap 4.6.1
+*   - jQuery 3.5.1
+*   - Font Awesome 5.15.4
+*   - Custom CSS: index.css, contents.css, explore.css
+*   - Custom JavaScript: index.js, post-actions.js, explore.js
+*********************************************************************************************
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Base URL -->
+    <base href="{{ site.baseurl }}/">
+
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Explore Madhurima Mindscape through personal reflections, technology explorations, project diaries, creative photography, and poetry.">
+
+    <meta name="keywords"
+        content="Madhurima Mindscape, blog, personal insights, tech insights, project diaries, creative clicks, poetry">
+
+    <meta name="author" content="Madhurima Rawat">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Explore the Blog | Madhurima Mindscape">
+    <meta property="og:type" content="website">
+
+    <meta property="og:url" content="https://madhurimarawat.github.io/Madhurima-Mindscape/explore">
+
+    <meta property="og:description"
+        content="Explore thoughts, experiences, technology, projects, creative moments, and poetry at Madhurima Mindscape.">
+
+    <meta property="og:image"
+        content="https://cdn.vectorstock.com/i/500p/92/32/explore-word-trendy-composition-concept-banner-vector-22379232.jpg">
+
+    <meta property="og:image:alt" content="Madhurima Mindscape website preview">
+
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Specifies the publication date and time in ISO 8601 format -->
+    <meta name="date" content="2026-10-30T15:20:13Z" />
+
+    <!-- Last Updated -->
+    <meta name="last-modified" content="2026-10-30T20:49:28Z">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Explore the Blog | Madhurima Mindscape">
+    <meta name="twitter:description"
+        content="Explore thoughts, experiences, technology, projects, creative moments, and poetry at Madhurima Mindscape.">
+
+    <meta name="twitter:image"
+        content="https://cdn.vectorstock.com/i/500p/92/32/explore-word-trendy-composition-concept-banner-vector-22379232.jpg">
+
+    <!-- Page Title -->
+    <title>Explore the Blog | Madhurima Mindscape</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/Logo.png" type="image/png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Existing Custom CSS -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/contents.css">
+    <link rel="stylesheet" href="css/themes.css">
+
+    <!-- Explore Page CSS -->
+    <link rel="stylesheet" href="css/explore.css">
+
+    <!-- Existing Custom JavaScript -->
+    <script defer src="js/index.js"></script>
+    <script defer src="js/post-actions.js"></script>
+
+    <!-- Explore Page JavaScript -->
+    <script defer src="js/explore.js"></script>
+
+</head>
+
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div id="header-container"></div>
+
+    <h2>Explore the Blog!</h2>
+
+    <div class="line-below"></div>
+    <p class="date-class">October 30, 2026</p>
+
+    <!-- Post Actions Component -->
+    <post-actions class="explore-the-blog"></post-actions>
+
+    <section>
+        <p class="dropcap">
+            From personal reflections and practical wisdom to
+            technology, projects, creative photography, and poetry,
+            explore the different corners of Madhurima Mindscape.
+        </p>
+        <p>Discover detailed descriptions and preview images of all the posts in one place. This
+            page offers a
+            closer look at each article, helping you find the topics and stories that interest you most.</p>
+    </section>
+
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <main class="explore">
+
+            <div class="explore-container explore-container">
+
+
+                <!-- First Section -->
+                <div class="explore-section">
+
+                    <h2>Introduction</h2>
+
+                    <a href="{{ site.baseurl }}/explore-the-blog" class="explore-item">
+                        <i class="fas fa-compass"></i> Explore the Blog
+                    </a>
+
+                    <a href="{{ site.baseurl }}/introduction" class="explore-item">
+                        <i class="fas fa-info-circle"></i> Introduction
+                    </a>
+
+                    <a href="{{ site.baseurl }}/about-me" class="explore-item">
+                        <i class="fas fa-user"></i> About Me
+                    </a>
+
+                </div>
+
+
+                <!-- Second Section -->
+                <div class="explore-section">
+
+                    <h2>Personal Insights</h2>
+
+                    <a href="{{ site.baseurl }}/2025-reflections" class="explore-item">
+                        <i class="fas fa-lightbulb"></i> 2025 Reflections
+                    </a>
+
+                    <a href="{{ site.baseurl }}/practical-wisdom" class="explore-item">
+                        <i class="fas fa-hands-helping"></i> Practical Wisdom
+                    </a>
+
+                    <a href="{{ site.baseurl }}/2024-reflections" class="explore-item">
+                        <i class="fas fa-calendar"></i> 2024 Reflections
+                    </a>
+
+                </div>
+
+
+                <!-- Third Section -->
+                <div class="explore-section">
+
+                    <h2>Tech Insights</h2>
+
+                    <a href="{{ site.baseurl }}/github-helpful-tips" class="explore-item">
+                        <i class="fab fa-github"></i> GitHub Helpful Tips
+                    </a>
+
+                    <a href="{{ site.baseurl }}/github-anniversary-month" class="explore-item">
+                        <i class="fas fa-calendar-alt"></i> GitHub Anniversary Month
+                    </a>
+
+                    <a href="{{ site.baseurl }}/data-stories" class="explore-item">
+                        <i class="fas fa-database"></i> Data Stories
+                    </a>
+
+                </div>
+
+
+                <!-- Fourth Section -->
+                <div class="explore-section">
+
+                    <h2>Project Diaries</h2>
+
+                    <a href="{{ site.baseurl }}/library-management" class="explore-item">
+                        <i class="fas fa-book"></i> Library Management
+                    </a>
+
+                </div>
+
+
+                <!-- Fifth Section -->
+                <div class="explore-section">
+
+                    <h2>Creative Clicks</h2>
+
+                    <a href="{{ site.baseurl }}/floral-photography" class="explore-item">
+                        <i class="fas fa-seedling"></i> Floral Photography
+                    </a>
+
+                </div>
+
+
+                <!-- Sixth Section -->
+                <div class="explore-section">
+
+                    <h2>Poem Perspectives</h2>
+
+                    <a href="{{ site.baseurl }}/the-solitary-reaper" class="explore-item">
+                        <i class="fas fa-music"></i> The Solitary Reaper
+                    </a>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+
+    <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>

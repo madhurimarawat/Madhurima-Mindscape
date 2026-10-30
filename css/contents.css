@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: contents.css
 * Author: Madhurima Rawat
-* Date: October 28, 2026
+* Date: October 30, 2026
 * Description: This is the stylesheet for the content pages of the "Madhurima Mindscape" blog website.
 *              It contains specific styles for the body text, headings, quotes, images, and links 
 *              used across various content pages. The CSS ensures consistent and readable design 
@@ -184,7 +184,7 @@ h5 {
 @media (max-width: 768px) {
 
     body {
-        padding-top: 140px;
+        padding-top: 100px;
     }
 
     .image {
@@ -588,28 +588,6 @@ pre code {
     }
 }
 
-/* Adapt the comment panel for small screens */
-@media (max-width: 600px) {
-    .comment-panel {
-        margin: 18px 0;
-        padding: 20px 16px;
-        border-radius: 14px;
-    }
-
-    .comment-panel h3 {
-        font-size: 1.25rem;
-    }
-
-    #comment-template,
-    #comment-name {
-        font-size: 16px;
-    }
-
-    .comment-send-btn {
-        font-size: 0.9rem;
-    }
-}
-
 /* Respect visitors who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
 
@@ -648,5 +626,224 @@ pre code {
     .post-action-btn i,
     .comment-send-btn {
         transition: none;
+    }
+}
+
+/* =========================================
+   MOBILE COMMENT PANEL
+========================================= */
+@media screen and (max-width: 600px) {
+
+    /* Small, centered comment panel */
+    .comment-panel {
+        width: 280px;
+        max-width: calc(100% - 24px);
+        margin: 14px auto;
+        padding: 12px;
+        border-radius: 12px;
+        box-sizing: border-box;
+    }
+
+    /* Compact heading */
+    .comment-panel h3 {
+        margin: 0 0 8px;
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    /* Compact introductory text */
+    .comment-panel>p {
+        margin: 0 0 10px;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    /* Form spacing */
+    #post-comment-form {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        min-width: 0;
+    }
+
+    /* Labels */
+    #post-comment-form label {
+        margin-top: 3px;
+        font-size: 13px;
+    }
+
+    /* Dropdown and name input */
+    #comment-template,
+    #comment-name {
+        width: 100%;
+        min-width: 0;
+        min-height: 38px;
+        padding: 8px;
+        font-size: 16px;
+        border-radius: 7px;
+        box-sizing: border-box;
+    }
+
+    /* Comment textarea */
+    #custom-comment {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        min-height: 80px;
+        padding: 8px;
+        font-size: 16px;
+        border-radius: 7px;
+        box-sizing: border-box;
+        resize: vertical;
+    }
+
+    /* Send button */
+    .comment-send-btn {
+        width: 100%;
+        min-height: 40px;
+        margin-top: 6px;
+        padding: 8px;
+        font-size: 13px;
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
+
+    /* Helper note */
+    .comment-panel .post-action-note {
+        margin: 8px 0 0;
+        font-size: 12px;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    /* Keep the dropdown inside the comment panel */
+    #comment-template {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        font-size: 0.7em;
+        padding: 8px 6px;
+        box-sizing: border-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    #comment-template option {
+        font-size: 0.8em;
+        padding: 6px;
+        white-space: normal;
+    }
+
+    #post-comment-form {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    #post-comment-form select#comment-template {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        margin: 0;
+        padding: 8px 22px 8px 6px;
+        font-size: 13px;
+        box-sizing: border-box;
+    }
+
+    /* Custom mobile-safe comment dropdown */
+    .comment-select-wrap {
+        position: relative;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .comment-select-wrap .comment-native-select {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    .comment-select-button {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        min-height: 42px;
+        padding: 10px 36px 10px 12px;
+        border: 1px solid #dfd0eb;
+        border-radius: 8px;
+        background: #fff;
+        color: #222;
+        font: inherit;
+        font-size: 16px;
+        text-align: left;
+        overflow-wrap: anywhere;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .comment-select-button::after {
+        content: "▾";
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .comment-select-menu {
+        position: fixed;
+        z-index: 999999;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+        box-sizing: border-box;
+        padding: 5px;
+        border: 1px solid #dfd0eb;
+        border-radius: 10px;
+        background: #fff;
+        color: #222;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .comment-select-menu[hidden] {
+        display: none;
+    }
+
+    .comment-select-option {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        padding: 11px 10px;
+        border: 0;
+        border-radius: 6px;
+        background: #fff;
+        color: #222;
+        font: inherit;
+        font-size: 15px;
+        line-height: 1.4;
+        text-align: left;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        cursor: pointer;
+    }
+
+    .comment-select-option:hover,
+    .comment-select-option:focus {
+        background: #f5eafa;
+        outline: none;
+    }
+
+    /* Your name input font size */
+    #comment-name {
+        font-size: 0.8em;
     }
 }

@@ -1,0 +1,261 @@
+/*
+*********************************************************************************************
+* File: icon-hero-section.css
+* Author: Madhurima Rawat
+* Date: October 30, 2026
+* Description: Styles a minimal, icon-only navigation section for Madhurima Mindscape.
+*              Features simple floating icons, generous spacing, subtle hover effects,
+*              consistent theme colors, and responsive layouts.
+* Version: 1.0
+*********************************************************************************************
+*/
+
+/* Main Section */
+
+.icon-hero-section {
+    width: 100%;
+    margin: 35px auto;
+    padding: 35px 25px;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Header */
+
+.icon-hero-header {
+    max-width: 850px;
+    margin: 0 auto 55px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Description */
+
+.icon-hero-header p {
+    max-width: 800px;
+    margin: 0 auto;
+
+    color: var(--text-color);
+    font-size: 1.05rem;
+    line-height: 1.9;
+}
+
+/* Icon Grid */
+
+.icon-hero-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+
+    column-gap: 75px;
+    row-gap: 55px;
+}
+
+/* Individual Icon Links - No Cards or Boxes */
+
+.icon-hero-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100px;
+    height: 95px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+
+    color: var(--h2-color);
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+/* Icons */
+
+.icon-hero-item i {
+    display: inline-block;
+
+    width: auto;
+    height: auto;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+
+    color: var(--h2-color);
+    font-size: 2.4rem;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+/* Hover Effects */
+
+.icon-hero-item:hover {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    color: var(--h2-color);
+    text-decoration: none;
+
+    transform: translateY(-4px);
+}
+
+.icon-hero-item:hover i {
+    color: var(--h2-color);
+    transform: scale(1.12);
+    opacity: 0.75;
+}
+
+/* Visited and Active Links */
+
+.icon-hero-item:visited,
+.icon-hero-item:active {
+    background: transparent;
+    color: var(--h2-color);
+    text-decoration: none;
+}
+
+/* Keyboard Accessibility */
+
+.icon-hero-item:focus-visible {
+    outline: 2px solid var(--h2-color);
+    outline-offset: 8px;
+    border-radius: 8px;
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+
+    .icon-hero-section {
+        padding: 30px 20px;
+    }
+
+    .icon-hero-header {
+        margin-bottom: 45px;
+    }
+
+    .icon-hero-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .icon-hero-header p {
+        font-size: 0.98rem;
+    }
+
+    .icon-hero-grid {
+        column-gap: 35px;
+        row-gap: 40px;
+    }
+
+    .icon-hero-item {
+        width: 90px;
+        height: 85px;
+    }
+
+    .icon-hero-item i {
+        font-size: 2.1rem;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+    .icon-hero-section {
+        margin: 20px auto;
+        padding: 25px 12px;
+    }
+
+    .icon-hero-header {
+        margin-bottom: 38px;
+    }
+
+    .icon-hero-label {
+        font-size: 0.82rem;
+        padding: 7px 15px;
+    }
+
+    .icon-hero-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .icon-hero-header p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .icon-hero-grid {
+        column-gap: 15px;
+        row-gap: 30px;
+    }
+
+    .icon-hero-item {
+        width: 75px;
+        height: 70px;
+    }
+
+    .icon-hero-item i {
+        font-size: 1.8rem;
+    }
+}
+
+/* Very Small Screens */
+
+@media (max-width: 350px) {
+
+    .icon-hero-section {
+        padding: 20px 8px;
+    }
+
+    .icon-hero-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .icon-hero-grid {
+        column-gap: 8px;
+        row-gap: 25px;
+    }
+
+    .icon-hero-item {
+        width: 65px;
+        height: 60px;
+    }
+
+    .icon-hero-item i {
+        font-size: 1.6rem;
+    }
+}
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .icon-hero-item,
+    .icon-hero-item i {
+        transition: none;
+    }
+
+    .icon-hero-item:hover,
+    .icon-hero-item:hover i {
+        transform: none;
+        opacity: 1;
+    }
+}

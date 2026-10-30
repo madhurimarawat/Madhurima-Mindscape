@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: themes.css
 * Author: Madhurima Rawat
-* Date: October 28, 2026
+* Date: October 30, 2026
 * Description: This stylesheet defines the visual themes for the "Madhurima Mindscape" blog.
 *              It includes custom CSS variables for different themes such as Sunset Vibes, 
 *              Ocean Breeze, Lavender Dream, and more. Each theme adjusts the color palette, 
@@ -31,7 +31,6 @@ body {
     --header-bg: linear-gradient(to right, #f8c471, #db4583, #b0e6b2);
     --circle-color: white;
     --h2-color: #db4583;
-    --h3-color: #db4583;
     --box-bg-color: rgba(0, 0, 0, 0.4);
     --box-bg-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
     --blockquote-border: 5px solid var(--h2-color);
@@ -54,7 +53,7 @@ h2 {
 }
 
 section h3 {
-    color: var(--h3-color);
+    color: var(--h2-color);
     /* Subsection heading color */
     font-weight: bold;
     /* Makes h3 stand out */
@@ -117,7 +116,8 @@ blockquote {
     background-color: var(--background-color);
 }
 
-.image-caption {
+.image-caption,
+.footer-social-links a:hover {
     color: var(--text-color);
 }
 
@@ -162,13 +162,19 @@ blockquote {
     color: var(--h2-color);
 }
 
-.comment-send-btn {
+.comment-send-btn,
+.saved-read-link {
     background-color: var(--h2-color);
     color: var(--post-action-color);
 }
 
-.comment-send-btn:hover {
+.comment-send-btn:hover,
+.saved-read-link:hover {
     background-color: color-mix(in srgb, var(--h2-color) 75%, white);
+}
+
+.saved-read-link:hover {
+    color: var(--post-save-hover);
 }
 
 /* Apply the theme text color to all comment box content */
@@ -179,7 +185,8 @@ blockquote {
 .comment-panel>p,
 #comment-name::placeholder,
 #custom-comment,
-#custom-comment::placeholder {
+#custom-comment::placeholder,
+.saved-remove-button {
     color: var(--text-color);
 }
 
@@ -190,6 +197,43 @@ blockquote {
     color: var(--comment-box-text-color) !important;
 }
 
+.saved-empty p,
+.saved-card-description,
+.saved-card-date {
+    color: var(--text-color);
+}
+
+.saved-explore-link {
+    color: var(--h2-color);
+}
+
+.saved-explore-link:hover {
+    color: color-mix(in srgb, var(--h2-color) 75%, black);
+}
+
+/* Explore the blog page */
+
+.explore-container .explore-section h3,
+.explore-card-content h4 {
+    color: var(--h2-color);
+}
+
+.path-card-content p {
+    color: var(--text-color);
+}
+
+.explore-read-button,
+.featured-button {
+    color: var(--post-action-color);
+    background: var(--h2-color);
+}
+
+.path-read-button:hover,
+.featured-button:hover {
+    background-color: color-mix(in srgb, var(--h2-color) 75%, black);
+    color: var(--post-action-color);
+}
+
 /* ==== Themes: Custom Variables for Theme Switching ==== */
 
 /* 🌇 Sunset Vibes */
@@ -198,7 +242,6 @@ blockquote {
     --circle-bg: #feb47b;
     --header-bg: linear-gradient(to right, #ff7e5f, #ff4e50);
     --h2-color: whitesmoke;
-    --h3-color: whitesmoke;
     --box-bg-color: #f26440;
     --post-action-color: #333;
     --comment-box-color: #FFA078;
@@ -211,7 +254,6 @@ blockquote {
     --header-bg: linear-gradient(to right, #2bc0e4, #4b82a7, #eaecc6);
     --circle-color: #333;
     --h2-color: #4b82a7;
-    --h3-color: #4b82a7;
     --box-bg-color: #4b82a7;
     --box-bg-shadow: 0 0 15px rgba(236, 22, 86, 0.6);
     --blockquote-border: 5px solid #22536b;
@@ -225,7 +267,6 @@ blockquote {
     --header-bg: linear-gradient(to right, #c2a6ff, #a57cf6);
     --circle-color: beige;
     --h2-color: #954ba7;
-    --h3-color: #954ba7;
     --box-bg-color: #a57cf6;
     --box-bg-shadow: 0 0 15px rgba(236, 22, 86, 0.6);
     --comment-box-color: transparent;
@@ -237,7 +278,6 @@ blockquote {
     --circle-bg: #d1d1d176;
     --header-bg: linear-gradient(to right, #d1d1d176, #333333);
     --h2-color: bisque;
-    --h3-color: beige;
     --box-bg-color: #333;
     --text-color: whitesmoke;
     --background-color: #333;

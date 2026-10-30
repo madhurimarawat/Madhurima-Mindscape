@@ -1,7 +1,7 @@
 /**
  * File: index.js
  * Author: Madhurima Rawat
- * Date: October 28, 2026
+ * Date: October 30, 2026
  * Description: This JavaScript file controls dynamic interactions on the homepage of 
  *              the "Madhurima Mindscape" blog. It includes functions to apply background 
  *              gradients based on selected themes or custom colors, manage the visibility 
@@ -103,6 +103,17 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(error => {
             console.error('Error loading the header:', error);
         });
+
+    // Load hero section
+    fetch('components/icon-hero-section.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('hero-container').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error loading the hero:', error);
+        });
+
 
     // Load footer
     fetch('components/footer.html')

@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: index.css
 * Author: Madhurima Rawat
-* Date: October 26, 2026
+* Date: October 30, 2026
 * Description: This is the main stylesheet for "Madhurima Mindscape", a personal blog website.
 *              It defines the unique design elements, including layouts, color schemes, typography, 
 *              and responsive behavior to create a visually appealing and functional blog experience.
@@ -154,6 +154,228 @@ body {
     font-weight: bold;
 }
 
+/* Mobile Header Styling */
+@media screen and (max-width: 600px) {
+
+    #header-container {
+        margin-top: -140px;
+        margin-bottom: 0px;
+    }
+
+    /* Add this as margin 0 in contetnt */
+    body {
+        margin-top: 40px;
+    }
+
+    .header {
+        position: static;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 0.9rem 1rem;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0;
+        box-sizing: border-box;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header p {
+        font-size: 0.85rem;
+    }
+
+    .header-link {
+        font-size: 0.85rem;
+        margin-left: 0.4rem;
+        /* Space between the theme button and link */
+    }
+
+    .dropdown-toggle {
+        font-size: 0.85rem;
+    }
+}
+
+/* =========================================================
+   Featured Resources Card
+   ========================================================= */
+
+.featured-resources {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+
+    width: 80%;
+    margin: 0 auto 45px;
+    padding: 35px 30px;
+
+    text-align: center;
+
+    border: 1px solid rgba(91, 225, 216, 0.4);
+    border-radius: 20px;
+
+    background: linear-gradient(140deg,
+            rgba(255, 255, 255, 0.13),
+            rgba(255, 255, 255, 0.035));
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18),
+        inset 0 1px 1px rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.featured-resources:hover {
+    border-color: rgba(91, 225, 216, 0.65);
+
+    box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.2),
+        0 0 18px rgba(91, 225, 216, 0.1);
+}
+
+/* Heading */
+
+.featured-resources h2 {
+    margin-bottom: 14px;
+    color: var(--h2-color);
+    font-size: 2rem;
+}
+
+/* Description */
+
+.featured-resources p {
+    max-width: 780px;
+    margin: 0 auto 27px;
+
+    color: var(--text-color);
+    font-size: 0.98rem;
+    line-height: 1.8;
+}
+
+/* Buttons Container */
+
+.featured-resources-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+/* Buttons */
+
+.featured-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    min-width: 140px;
+    padding: 8px 15px;
+
+    border: 1px solid rgba(91, 225, 216, 0.55);
+    border-radius: 25px;
+
+    color: var(--h2-color);
+
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.featured-button:hover {
+    box-shadow: 0 0 15px rgba(91, 225, 216, 0.2);
+    transform: translateY(-3px);
+
+    text-decoration: none;
+}
+
+/* Keyboard Accessibility */
+
+.featured-button:focus-visible {
+    outline: 3px solid var(--h2-color);
+    outline-offset: 4px;
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+    .featured-resources {
+        padding: 30px 22px;
+    }
+
+    .featured-resources h2 {
+        font-size: 1.75rem;
+    }
+
+    .featured-resources-buttons {
+        gap: 12px;
+    }
+
+    .featured-button {
+        min-width: 155px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+    .featured-resources {
+        margin-bottom: 30px;
+        padding: 27px 18px;
+        border-radius: 16px;
+    }
+
+    .featured-resources h2 {
+        font-size: 1.55rem;
+    }
+
+    .featured-resources p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .featured-resources-buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .featured-button {
+        width: 100%;
+        max-width: 200px;
+        padding: 7px 12px;
+        font-size: 0.78rem;
+        gap: 5px;
+    }
+}
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .featured-resources,
+    .featured-button {
+        transition: none;
+    }
+
+    .featured-button:hover {
+        transform: none;
+    }
+}
+
 /* Path Container Styling */
 .path {
     display: flex;
@@ -202,13 +424,13 @@ body {
     /* Ensures each section takes up the full width */
     text-align: center;
     /* Centers text within each section */
-    margin-bottom: -20px;
+    margin-bottom: -5px;
     /* Adds space after each section, including the heading and its box */
 }
 
 /* Add margin-bottom to the heading to create space */
 .path-section h2 {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     /* Adds space between the heading and the next element (the box) */
     font-size: 1.9rem;
 }
@@ -335,7 +557,7 @@ body {
 @media (max-width: 768px) {
 
     body {
-        padding-top: 100px;
+        padding-top: 140px;
     }
 
     /* Reduce the space between sections on smaller screens */
@@ -375,6 +597,14 @@ body {
         margin-right: 10px;
         /* Gap between icon and text; increase for more space */
     }
+
+    .path-section h2 {
+        font-size: 1.5em;
+    }
+
+    .featured-resources {
+        margin-top: -20px;
+    }
 }
 
 /* Responsive Adjustments for Path Container */
@@ -403,6 +633,105 @@ body {
     flex-shrink: 0;
     height: auto;
     margin-bottom: 0;
+}
+
+/* Social Links */
+.footer-social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+/* Glossy Social Icon Cards */
+.footer-social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+
+    color: white;
+    font-size: 1.2rem;
+
+    background: linear-gradient(145deg,
+            rgba(255, 255, 255, 0.22),
+            rgba(255, 255, 255, 0.06));
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 13px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.15),
+        inset 0 1px 2px rgba(255, 255, 255, 0.25);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+/* Hover Effect */
+.footer-social-links a:hover {
+
+    background: linear-gradient(145deg,
+            rgba(255, 255, 255, 0.32),
+            rgba(255, 255, 255, 0.12));
+
+    border-color: var(--h2-color);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.2),
+        0 0 12px rgba(91, 225, 216, 0.2),
+        inset 0 1px 3px rgba(255, 255, 255, 0.3);
+}
+
+/* Keyboard Accessibility */
+.footer-social-links a:focus-visible {
+    outline: 2px solid var(--h2-color);
+    outline-offset: 5px;
+    border-radius: 13px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .footer-social-links {
+        gap: 14px;
+    }
+
+    .footer-social-links a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .footer-section {
+        padding: 20px 12px;
+        gap: 10px;
+    }
+
+    .footer-copyright {
+        font-size: 0.8rem;
+    }
+
+    .footer-social-links {
+        gap: 20px;
+    }
+
+    .footer-social-links a {
+        font-size: 1.15rem;
+    }
 }
 
 /* Media Queries for Responsiveness */

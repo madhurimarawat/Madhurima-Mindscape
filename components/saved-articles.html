@@ -1,0 +1,166 @@
+---
+permalink: /saved-articles
+---
+
+<!--
+*********************************************************************************************
+* File: saved-articles.html
+* Author: Madhurima Rawat
+* Date: October 29, 2026
+* Description: This file displays the articles saved by readers on the "Madhurima Mindscape"
+*              website. It provides a personal reading list where readers can revisit saved
+*              blog posts, read article summaries, and manage their saved articles.
+* Version: 1.0
+* GitHub Repository: https://github.com/madhurimarawat/Madhurima-Mindscape
+* Issues/Bugs: For any issues or bugs, please visit the GitHub repository issues section.
+* Comments:
+*     - The shared navigation bar and footer are loaded using the site's common JavaScript.
+*     - The page heading, introductory text, and current date introduce the saved articles collection.
+*     - The saved article count displays the number of articles in the reader's collection.
+*     - Article cards are dynamically generated using the saved article data.
+*     - Each article card provides options to read the article or remove it from the reading list.
+*     - The loading message appears while saved articles are being retrieved.
+*     - The empty-state panel appears when the reader has no saved articles.
+*     - The status element displays feedback when an article is removed.
+*     - Saved article paths are retrieved from the existing localStorage keys used by post-actions.js.
+*     - The article collection and its interactions are managed by saved-articles.js.
+* Dependencies:
+*     - Bootstrap styles and JavaScript for responsive layout and framework functionality.
+*     - Font Awesome icons for the empty reading list and article actions.
+*     - Global, content, and Saved Articles CSS for page styling and responsive presentation.
+*     - Shared JavaScript for loading the navigation bar and footer.
+*     - saved-articles.js for displaying saved articles, updating the article count, and handling removal.
+*     - Existing post-actions.js localStorage keys for retrieving saved article paths.
+*********************************************************************************************
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Sets the site's base URL -->
+    <base href="{{ site.baseurl }}/">
+
+    <!-- Defines character encoding and responsive layout -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Adds the page description for search engines -->
+    <meta name="description"
+        content="Revisit your favourite reads in your personal Saved Articles collection on Madhurima Mindscape.">
+
+    <!-- Identifies the content author -->
+    <meta name="author" content="Madhurima Rawat">
+
+    <!-- Specifies the publication date and time in ISO 8601 format -->
+    <meta name="date" content="2026-10-29T15:20:13Z" />
+
+    <meta name="last-modified" content="2026-10-29T10:30:00Z">
+
+    <!-- Sets the browser tab title -->
+    <title>Saved Articles | Madhurima Rawat</title>
+
+    <!-- Loads the site favicon -->
+    <link rel="icon" href="images/Logo.png" type="image/png">
+
+    <!-- Loads Bootstrap styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <!-- Loads the site's global, content, and Saved Articles styles -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/contents.css">
+    <link rel="stylesheet" href="css/saved-articles.css">
+
+    <!-- Loads Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Loads the site's shared JavaScript -->
+    <script defer src="js/index.js"></script>
+    <script defer src="js/saved-articles.js"></script>
+</head>
+
+<body>
+
+    <!-- Inserts the shared navigation bar -->
+    <div id="header-container"></div>
+
+    <!-- Displays the page heading -->
+    <h2>Saved Articles</h2>
+
+    <!-- Adds the title divider and current date -->
+    <div class="line-below"></div>
+    <p class="date-class" id="today-date">Loading date...</p>
+
+    <!-- Introduces the Saved Articles collection -->
+    <section>
+        <p class="dropcap">
+            A personal collection of stories, thoughts, and ideas to revisit whenever you wish. Save articles using the
+            Save button
+            on any post, and remove them from your reading list whenever you like. You can also remove an article
+            directly from its
+            original post by pressing the highlighted Save button again. The button stays highlighted while the article
+            is saved,
+            making it easy to see which posts are already in your collection.</p>
+        <p>To bookmark a page in your browser,
+            use your
+            browser’s built-in bookmark feature, as website security restrictions prevent websites from bookmarking
+            pages on
+            your behalf.
+            On desktop, use your browser’s bookmark option; on mobile, tap your browser’s bookmark icon to save a page
+            for later. </p>
+    </section>
+
+    <!-- Displays the saved article collection -->
+    <section class="blog-content saved-list-section">
+
+        <div class="blog-section">
+
+            <h3>
+                <p id="saved-count" aria-live="polite">
+                    Loading saved articles...
+                </p>
+            </h3>
+
+            <!-- Displays feedback when an article is removed -->
+            <p id="saved-status" role="status" aria-live="polite"></p>
+
+            <!-- JavaScript inserts saved article cards here -->
+            <div id="saved-articles-list" class="saved-articles-grid">
+                <p class="saved-loading">
+                    Gathering your saved stories...
+                </p>
+            </div>
+
+            <!-- Displays when no saved articles are available -->
+            <div id="saved-empty" class="saved-empty" hidden>
+                <i class="far fa-bookmark" aria-hidden="true"></i>
+
+                <h3>Your reading list is waiting</h3>
+
+                <p>
+                    When an article catches your attention,
+                    save it using the Save button on that post.
+                    You will find it here next time.
+                </p>
+
+                <a href="index.html" class="saved-explore-link">
+                    Explore Madhurima Mindscape
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Loads Bootstrap's JavaScript dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Inserts the shared footer -->
+    <div id="footer-container"></div>
+
+</body>
+
+</html>

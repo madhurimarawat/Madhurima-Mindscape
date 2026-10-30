@@ -97,6 +97,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
+
     <!-- Link to Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
@@ -109,14 +110,64 @@
     <!-- Place the div with a specific id to insert the navbar -->
     <div id="header-container"></div>
 
+    <!-- Place the div with a specific id to insert the navbar -->
+    <div id="hero-container"></div>
+
+    <!-- Featured Resources Section -->
+    <section class="featured-resources">
+
+        <h2>Special Features</h2>
+
+        <p>
+            Discover more ways to enjoy Madhurima Mindscape! Save your favourite articles using the
+            <strong>Save</strong> icon at the top of each blog post. You can
+            revisit all
+            your saved articles anytime in <strong>Saved Articles</strong>.
+        </p>
+
+        <p>Visit the <strong>Blog Template</strong> to explore the
+            design and layout of individual blog posts and get
+            inspiration for creating your own blogging space.
+        </p>
+
+        <p>
+            Visit <strong>Explore the Blog</strong> to browse all articles, complete with descriptions and preview
+            images, and
+            discover stories, insights, and ideas that interest you.
+        </p>
+
+        <div class="featured-resources-buttons">
+
+            <a href="{{ site.baseurl }}/saved-articles" class="featured-button">
+                <i class="fas fa-bookmark"></i>
+                Saved Articles
+            </a>
+
+            <a href="{{ site.baseurl }}/blog-template" class="featured-button">
+                <i class="fas fa-code"></i>
+                Blog Template
+            </a>
+
+            <a href="{{ site.baseurl }}/explore-the-blog" class="featured-button">
+                <i class="fas fa-compass"></i>
+                Explore the Blog
+            </a>
+
+        </div>
+
+    </section>
+
     <div class="main-content">
         <main class="path">
             <div class="path-container">
                 <!-- First Section -->
                 <div class="path-section">
                     <h2>Introduction</h2>
+                    <a href="{{ site.baseurl }}/explore-the-blog" class="path-item">
+                        <i class="fas fa-compass"></i> Explore the Blog
+                    </a>
                     <a href="{{ site.baseurl }}/introduction" class="path-item">
-                        <i class="fas fa-info-circle"></i> Explore the Blog
+                        <i class="fas fa-info-circle"></i> Introduction
                     </a>
                     <a href="{{ site.baseurl }}/about-me" class="path-item">
                         <i class="fas fa-user"></i> About Me
@@ -144,7 +195,7 @@
                         <i class="fab fa-github"></i> GitHub Helpful Tips
                     </a>
                     <a href="{{ site.baseurl }}/github-anniversary-month" class="path-item">
-                        <i class="fas fa-calendar-alt"></i> GitHub Anniversary Month
+                        <i class="fas fa-award"></i> GitHub Anniversary Month
                     </a>
                     <a href="{{ site.baseurl }}/data-stories" class="path-item">
                         <i class="fas fa-database"></i> Data Stories
