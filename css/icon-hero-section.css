@@ -144,10 +144,6 @@
 
 @media (max-width: 768px) {
 
-    #header-container {
-        margin-bottom: 20px;
-    }
-
     .icon-hero-section {
         padding: 30px 20px;
     }
@@ -178,10 +174,6 @@
 /* Mobile */
 
 @media (max-width: 480px) {
-
-    #header-container {
-        margin-top: -20px;
-    }
 
     .icon-hero-section {
         margin: 20px auto;

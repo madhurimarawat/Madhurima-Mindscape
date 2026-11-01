@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: slider-carousel.css
 * Author: Madhurima Rawat
-* Date: November 1, 2026
+* Date: November 01, 2026
 * Description: Styles the Special Features carousel of Madhurima Mindscape.
 *              Features centered slide content, spacious layouts, prominent icons,
 *              responsive typography, styled feature buttons, navigation arrows,
@@ -154,7 +154,7 @@
 
     /* Adjust feature slide spacing */
     .featured-slide {
-        gap: 33px;
+        gap: 20px;
     }
 
     /* Reduce icon size */
