@@ -633,6 +633,7 @@ body {
     flex-shrink: 0;
     height: auto;
     margin-bottom: 0;
+    margin-top: 45px;
 }
 
 /* Social Links */
@@ -708,8 +709,8 @@ body {
     }
 
     .footer-social-links a {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
         font-size: 1.1rem;
     }
 }

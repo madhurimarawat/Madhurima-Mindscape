@@ -1,12 +1,12 @@
 /**
  * File: js/post-actions.js
  * Author: Madhurima Rawat
- * Date: October 28, 2026
+ * Date: November 01, 2026
  * Description:
  * Reusable post actions for Madhurima Mindscape.
  * Supports commenting through mailto, saving posts,
  * browser bookmark instructions, sharing links,
- * temporary status messages, and GitHub Pages/local development.
+ * temporary status messages, and Jekyll includes.
  */
 
 function initializePostActions(container) {
@@ -188,13 +188,11 @@ function initializePostActions(container) {
                 updateSaveButton();
 
                 if (index === -1) {
-                    // Saved successfully in this website.
                     showStatus(
                         "Article saved in this Website Saved Articles.",
                         4000
                     );
 
-                    // Then show browser bookmark instructions.
                     statusTimeout = setTimeout(() => {
                         promptBrowserBookmark();
                     }, 1200);
@@ -425,63 +423,59 @@ function initializePostActions(container) {
 // ==================================================
 // REGISTER THE REUSABLE CUSTOM ELEMENT
 // ==================================================
+//
+// Jekyll inserts components/post-actions.html directly
+// inside <post-actions> using the Liquid include.
+//
+// Do NOT fetch the component again with JavaScript.
 
 if (!customElements.get("post-actions")) {
     customElements.define(
         "post-actions",
         class extends HTMLElement {
-            async connectedCallback() {
-                if (
-                    this.dataset.loaded === "true" ||
-                    this.dataset.loaded === "loading"
-                ) {
+            connectedCallback() {
+                // Prevent duplicate initialization.
+                if (this.dataset.initialized === "true") {
                     return;
                 }
 
-                this.dataset.loaded = "loading";
+                // Check for the HTML inserted by Jekyll.
+                const actions = this.querySelector("#post-actions");
 
-                try {
-                    const pathParts = window.location.pathname
-                        .split("/")
-                        .filter(Boolean);
-
-                    const projectName = "Madhurima-Mindscape";
-
-                    const hasProjectPrefix =
-                        pathParts[0] === projectName;
-
-                    const basePath = hasProjectPrefix
-                        ? "/" + projectName
-                        : "";
-
-                    const componentPath =
-                        basePath + "/components/post-actions.html";
-
-                    const response = await fetch(componentPath);
-
-                    if (!response.ok) {
-                        throw new Error(
-                            "Could not load " + componentPath +
-                            " (HTTP " + response.status + ")"
-                        );
-                    }
-
-                    const html = await response.text();
-
-                    this.innerHTML = html;
-
-                    initializePostActions(this);
-
-                    this.dataset.loaded = "true";
-                } catch (error) {
-                    this.dataset.loaded = "false";
-
+                if (!actions) {
                     console.error(
-                        "Post Actions loading error:",
-                        error
+                        "Post Actions: Jekyll-included #post-actions markup was not found inside <post-actions>."
                     );
+                    return;
                 }
+
+                initializePostActions(this);
+                this.dataset.initialized = "true";
             }
         }
     );
 }
+
+// Wait until the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Get the reading time element and article content
+    const readingTimeElement = document.getElementById("reading-time");
+    const article = document.querySelector("main");
+
+    // Stop execution if required elements are missing
+    if (!article || !readingTimeElement) return;
+
+    // Extract the article text
+    const text = article.innerText || article.textContent;
+
+    // Count the total number of words
+    const words = text.trim().split(/\s+/).filter(Boolean).length;
+
+    // Estimate reading time at 200 words per minute
+    const readingMinutes = Math.max(1, Math.ceil(words / 200));
+
+    // Display the estimated reading time
+    readingTimeElement.textContent = `${readingMinutes} min read`;
+
+});

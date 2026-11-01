@@ -1,0 +1,33 @@
+# GitHub Helpful Tips - SEO and Social Sharing Metadata
+
+title: "GitHub Helpful Tips | Madhurima Mindscape"
+
+description: >-
+    Discover practical GitHub tips for organizing starred repositories, creating
+    Gists, improving README files, choosing repository names, adding topics, and
+    managing projects effectively.
+
+date: "2026-10-24T00:00:00Z"
+last_modified: "2026-10-29T00:00:00Z"
+
+image: "https://octodex.github.com/images/labtocat.png"
+image_alt: "GitHub Labtocat illustration"
+
+author: "Madhurima Rawat"
+robots: "index, follow"
+
+og_title: "GitHub Helpful Tips | Madhurima Mindscape"
+og_type: "article"
+
+og_description: >-
+    Make your GitHub experience better with practical tips for repositories,
+    README files, project visibility, and developer productivity.
+
+twitter_card: "summary_large_image"
+twitter_title: "GitHub Helpful Tips 🚀"
+
+twitter_description: >-
+    Small GitHub improvements that make a big difference. Organize, document,
+    showcase, and maintain your projects better.
+
+favicon: "images/Logo.png"

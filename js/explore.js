@@ -1,4 +1,3 @@
-
 /*
 *********************************************************************************************
 * File: explore.js
@@ -215,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Update title
         if (title) {
 
-            cardData.title.textContent = title;
+            cardData.title.textContent = title.replace(/\s*\|\s*Madhurima Rawat\s*$/i, "").trim();
 
         }
 

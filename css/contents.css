@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: contents.css
 * Author: Madhurima Rawat
-* Date: October 30, 2026
+* Date: November 01, 2026
 * Description: This is the stylesheet for the content pages of the "Madhurima Mindscape" blog website.
 *              It contains specific styles for the body text, headings, quotes, images, and links 
 *              used across various content pages. The CSS ensures consistent and readable design 
@@ -875,5 +875,32 @@ pre code {
     /* Your name input font size */
     #comment-name {
         font-size: 0.8em;
+    }
+}
+
+/* Center and bold the reading information */
+.reading-info {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Style the reading time */
+.reading-time {
+    color: var(--h2-color);
+    font-size: 14px;
+    margin-left: 0.3em;
+}
+
+/* Add spacing between the clock icon and reading time */
+.reading-time i {
+    margin-right: 5px;
+}
+
+/* Adjust reading time spacing on mobile devices */
+@media (max-width: 768px) {
+
+    /* Reduce the left margin on mobile */
+    .reading-time {
+        margin-left: 0.05em;
     }
 }

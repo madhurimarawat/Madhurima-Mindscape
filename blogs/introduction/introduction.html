@@ -1,5 +1,7 @@
 ---
+layout: blog
 permalink: /introduction
+seo: introduction/introduction
 ---
 
 <!-- Jekyll is a static site generator often used with GitHub Pages to build websites from markdown or HTML. -->
@@ -38,240 +40,123 @@ permalink: /introduction
 *********************************************************************************************
 -->
 
+<h2>Introduction</h2>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <!--
-      The <base> tag sets the base URL for all relative URLs in this document.
-    
-       means:
-    
-      - "Start resolving relative URLs from two folders above the current file location."
-      - Each "../" moves up one directory level.
-        So "../../" moves up two levels.
-    
-      Example:
-        If this file is at /blogs/tech/article.html,
-        then "../../" points to the root folder of your project.
-    
-      Why use "../../"?
-      - To correctly link shared resources like CSS, JS, images,
-        which are stored at higher directory levels.
-      
-      Why not use "./" or "/"?
-      - "./" means current directory; won't work for deeply nested files.
-      - "/" means site root; may break if hosted in subfolders or GitHub Pages.
-    
-      Place the <base> tag inside <head> before all relative URLs.
-      Only one <base> tag is allowed per document.
-    -->
-    <base href="{{ site.baseurl }}/">
-
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Welcome to the Introduction page of Madhurima Mindscape. Learn about the journey behind the website, its purpose, and explore the main categories of content including tech insights, personal reflections, project diaries, and creative photography.">
-    <meta name="keywords"
-        content="Madhurima Mindscape, personal website, tech insights, creative photography, personal reflections, project diaries, introduction">
-    <meta name="author" content="Madhurima Rawat">
-    <meta name="robots" content="index, follow">
-
-    <!-- 
-        Specifies the publication date and time in ISO 8601 format. 
-        The structure includes:
-        - Date in YYYY-MM-DD format: 
-          YYYY = 4-digit year (e.g., 2024)
-          MM   = 2-digit month (e.g., 12 for December)
-          DD   = 2-digit day (e.g., 18)
-        - A literal 'T' separator between date and time.
-        - Time in HH:MM:SS format: 
-          HH = 2-digit hour in 24-hour format (e.g., 15 for 3 PM in UTC)
-          MM = 2-digit minutes (e.g., 20)
-          SS = 2-digit seconds (e.g., 13)
-        - 'Z' at the end indicates the time is in Coordinated Universal Time (UTC).
-        Example: "2024-12-18T15:20:13Z" represents December 18, 2024, at 3:20:13 PM UTC.
-    -->
-
-    <!-- Specifies the publication date and time in ISO 8601 format -->
-    <meta name="date" content="2024-12-18T15:20:13Z" />
-
-    <!-- Last Updated -->
-    <meta name="last-modified" content="2026-10-30T20:49:28Z">
-
-
-    <!-- Open Graph Meta Tags for social sharing -->
-    <meta property="og:title" content="Madhurima Mindscape - Explore Personal and Tech Insights" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://madhurimarawat.github.io/Madhurima-Mindscape/introduction" />
-    <meta property="og:description"
-        content="Dive into Madhurima Mindscape - a space for personal reflections, tech insights, project stories, and creative photography." />
-    <meta property="og:image"
-        content="https://raw.githubusercontent.com/madhurimarawat/Madhurima-Mindscape/main/website_snapshots/website_1.png" />
-    <meta property="og:image:alt" content="Madhurima Mindscape Blog Snapshot" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Madhurima Mindscape - Explore Personal and Tech Insights" />
-    <meta name="twitter:description"
-        content="Dive into Madhurima Mindscape - a space for personal reflections, tech insights, project stories, and creative photography." />
-    <meta name="twitter:image"
-        content="https://raw.githubusercontent.com/madhurimarawat/Madhurima-Mindscape/main/website_snapshots/website_1.png" />
-
-    <title>Madhurima Mindscape</title>
-    <!-- For PNG and SVG logos -->
-    <link rel="icon" href="images/Logo.png" type="image/png">
-    <!-- Bootstrap CSS  CDN-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/contents.css">
-    <!-- Link to Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
-    <script defer src="js/index.js"></script>
-    <script defer src="js/post-actions.js"></script>
-</head>
-
-<body>
-
-    <!-- Placing the div with a specific id to insert the navbar -->
-    <div id="header-container"></div>
-
-    <h2>Introduction</h2>
-
+<top>
     <!-- Divider and publication date below the main heading -->
     <div class="line-below"></div>
     <p class="date-class">November 12, 2024</p>
+</top>
 
-    <!-- Post Actions Component -->
-    <post-actions class="introduction"></post-actions>
+<section class="startings">
 
-    <section class="startings">
+    <p class="dropcap">
+        Welcome to Madhurima Mindscape, a personal space for my thoughts, experiences, and interests. I am Madhurima
+        Rawat,
+        a B.Tech (Hons.) graduate in Computer Science and Engineering (Data Science), exploring the things I learn,
+        create,
+        and enjoy along the way.
+    </p>
+</section>
 
-        <p class="dropcap">
-            Welcome to Madhurima Mindscape, a personal space for my thoughts, experiences, and interests. I am Madhurima
-            Rawat,
-            a B.Tech (Hons.) graduate in Computer Science and Engineering (Data Science), exploring the things I learn,
-            create,
-            and enjoy along the way.
-        </p>
-    </section>
+<section class="intro">
+    <h3>Welcome to My Personal Space!</h3>
+    <p>
+        This is my personal blog, where I share reflections, life experiences, things I am learning, and occasional
+        tech-related explorations. It is a little corner of the internet where I can express myself beyond a résumé
+        or
+        portfolio.
+    </p>
+</section>
 
-    <section class="intro">
-        <h3>Welcome to My Personal Space!</h3>
-        <p>
-            This is my personal blog, where I share reflections, life experiences, things I am learning, and occasional
-            tech-related explorations. It is a little corner of the internet where I can express myself beyond a résumé
-            or
-            portfolio.
-        </p>
-    </section>
+<section class="idea">
+    <h3>How It All Started</h3>
 
-    <section class="idea">
-        <h3>How It All Started</h3>
+    <p>
+        I wanted a space to share my thoughts and experiences in a way that felt more personal than GitHub and less
+        formal than LinkedIn. That is how this blog came to be: a place for the things I think about, the things I
+        discover, and the experiences I want to write about.
+    </p>
 
-        <p>
-            I wanted a space to share my thoughts and experiences in a way that felt more personal than GitHub and less
-            formal than LinkedIn. That is how this blog came to be: a place for the things I think about, the things I
-            discover, and the experiences I want to write about.
-        </p>
+    <p>
+        I also wanted the website itself to feel different from the polished, minimal, almost perfect-looking
+        websites we see everywhere online. There is nothing wrong with that kind of design, but I feel like
+        perfection can get a little boring when everything starts looking the same. I wanted this space to have
+        a personality of its own, even if that meant being a little tacky or cliché at times.
+    </p>
 
-        <p>
-            I also wanted the website itself to feel different from the polished, minimal, almost perfect-looking
-            websites we see everywhere online. There is nothing wrong with that kind of design, but I feel like
-            perfection can get a little boring when everything starts looking the same. I wanted this space to have
-            a personality of its own, even if that meant being a little tacky or cliché at times.
-        </p>
+    <p>
+        The gradients and bright colors came from that idea, especially the yellow-and-pink combination. Honestly,
+        that gradient was one of the first things I had in mind when I started designing the site. I also drew
+        inspiration from Ocean Blue and a bunch of other colors, ideas, and little things I came across along the
+        way. Eventually, they all found their way into the design.
+    </p>
 
-        <p>
-            The gradients and bright colors came from that idea, especially the yellow-and-pink combination. Honestly,
-            that gradient was one of the first things I had in mind when I started designing the site. I also drew
-            inspiration from Ocean Blue and a bunch of other colors, ideas, and little things I came across along the
-            way. Eventually, they all found their way into the design.
-        </p>
+    <p>
+        This is the first version of the website, and I know it will probably change as I keep experimenting with
+        it. But for now, I like that it is a little loud, a little unconventional, and hopefully a little more
+        memorable than another perfectly polished website. I did not want it to look like everything else.
+        I wanted it to feel like mine.
+    </p>
+</section>
 
-        <p>
-            This is the first version of the website, and I know it will probably change as I keep experimenting with
-            it. But for now, I like that it is a little loud, a little unconventional, and hopefully a little more
-            memorable than another perfectly polished website. I did not want it to look like everything else.
-            I wanted it to feel like mine.
-        </p>
-    </section>
+<section class="categories">
+    <h3>Categories You Will Explore</h3>
+    <ul>
+        <li><strong>Introduction:</strong> A little about me and this space.</li>
 
-    <section class="categories">
-        <h3>Categories You Will Explore</h3>
-        <ul>
-            <li><strong>Introduction:</strong> A little about me and this space.</li>
+        <li><strong>Personal Insights:</strong> Personal reflections, experiences, and lessons from everyday life.
+        </li>
 
-            <li><strong>Personal Insights:</strong> Personal reflections, experiences, and lessons from everyday life.
-            </li>
+        <li><strong>Tech Insights:</strong> Things I learn and explore in the world of technology.</li>
 
-            <li><strong>Tech Insights:</strong> Things I learn and explore in the world of technology.</li>
+        <li><strong>Project Diaries:</strong> Stories, challenges, and lessons from the projects I work on.</li>
 
-            <li><strong>Project Diaries:</strong> Stories, challenges, and lessons from the projects I work on.</li>
+        <li><strong>Creative Clicks:</strong> Moments, places, and little details I capture through photography.
+        </li>
+    </ul>
+</section>
 
-            <li><strong>Creative Clicks:</strong> Moments, places, and little details I capture through photography.
-            </li>
-        </ul>
-    </section>
+<section class="about-tech">
+    <h3>Tech Insights</h3>
+    <p>
+        Alongside my personal writing, I occasionally share my experiences with tools, technologies, and things I
+        learn.
+        These posts reflect my own explorations, discoveries, and challenges.
+    </p>
+</section>
 
-    <section class="about-tech">
-        <h3>Tech Insights</h3>
-        <p>
-            Alongside my personal writing, I occasionally share my experiences with tools, technologies, and things I
-            learn.
-            These posts reflect my own explorations, discoveries, and challenges.
-        </p>
-    </section>
+<section class="purpose">
+    <h3>Why This Website?</h3>
+    <p>
+        I wanted a personal space where I could share more than just my professional work. This blog is primarily
+        about
+        personal reflections, experiences, and the little things that shape how I see the world, with some
+        technology
+        and creative explorations along the way.
+    </p>
+    <p>
+        I like keeping things personal and expressive, so the blog may include a little humor, random thoughts, and
+        the
+        occasional meme. Not everything needs to be serious all the time!
+    </p>
+    <p>
+        If you would like to get in touch, feel free to reach out via my <a href="mailto:rawatmadhurima4@gmail.com"
+            class="link">email</a>. I am always open to feedback, conversations, or new
+        ideas!
+    </p>
+    <p>
+        I also maintain a separate portfolio for my projects. You can find the GitHub repository for this blog
+        linked in
+        the navigation bar if you would like to explore how it was built or share suggestions.
+    </p>
+</section>
 
-    <section class="purpose">
-        <h3>Why This Website?</h3>
-        <p>
-            I wanted a personal space where I could share more than just my professional work. This blog is primarily
-            about
-            personal reflections, experiences, and the little things that shape how I see the world, with some
-            technology
-            and creative explorations along the way.
-        </p>
-        <p>
-            I like keeping things personal and expressive, so the blog may include a little humor, random thoughts, and
-            the
-            occasional meme. Not everything needs to be serious all the time!
-        </p>
-        <p>
-            If you would like to get in touch, feel free to reach out via my <a href="mailto:rawatmadhurima4@gmail.com"
-                class="link">email</a>. I am always open to feedback, conversations, or new
-            ideas!
-        </p>
-        <p>
-            I also maintain a separate portfolio for my projects. You can find the GitHub repository for this blog
-            linked in
-            the navigation bar if you would like to explore how it was built or share suggestions.
-        </p>
-    </section>
-
-    <section class="organization">
-        <h3>How I Organized It All</h3>
-        <p>
-            The blog is organized into categories to make exploring different topics easier. Posts are sorted by date,
-            with the
-            newest ones appearing first. I will keep adding new posts and updating the blog as it grows.
-        </p>
-    </section>
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    <br>
-
-</body>
-
-<!-- Place the div with a specific id to insert the footer -->
-<div id="footer-container"></div>
-
-</html>
+<section class="organization">
+    <h3>How I Organized It All</h3>
+    <p>
+        The blog is organized into categories to make exploring different topics easier. Posts are sorted by date,
+        with the
+        newest ones appearing first. I will keep adding new posts and updating the blog as it grows.
+    </p>
+</section>

@@ -30,6 +30,12 @@
 *********************************************************************************************
 */
 
+/* Spacer Class */
+.spacer {
+    display: block;
+    margin-bottom: 35px;
+}
+
 /* Introduction */
 .saved-intro {
     max-width: 580px;
@@ -282,6 +288,10 @@
 /* Smooth fade-out */
 #saved-status.status-fade {
     opacity: 0;
+}
+
+#footer-container {
+    margin-top: 65px;
 }
 
 /* Respect reduced-motion preferences */
