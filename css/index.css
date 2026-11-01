@@ -424,13 +424,13 @@ body {
     /* Ensures each section takes up the full width */
     text-align: center;
     /* Centers text within each section */
-    margin-bottom: -5px;
+    margin-bottom: 30px;
     /* Adds space after each section, including the heading and its box */
 }
 
 /* Add margin-bottom to the heading to create space */
 .path-section h2 {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     /* Adds space between the heading and the next element (the box) */
     font-size: 1.9rem;
 }

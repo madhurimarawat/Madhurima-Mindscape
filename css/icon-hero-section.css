@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: icon-hero-section.css
 * Author: Madhurima Rawat
-* Date: October 30, 2026
+* Date: November 01, 2026
 * Description: Styles a minimal, icon-only navigation section for Madhurima Mindscape.
 *              Features simple floating icons, generous spacing, subtle hover effects,
 *              consistent theme colors, and responsive layouts.
@@ -144,13 +144,12 @@
 
 @media (max-width: 768px) {
 
-    .icon-hero-section {
-        padding: 30px 20px;
+    #header-container {
+        margin-bottom: 20px;
     }
 
-    .icon-hero-header {
-        margin-bottom: 45px;
-        margin-top: -155px;
+    .icon-hero-section {
+        padding: 30px 20px;
     }
 
     .icon-hero-header h2 {
@@ -179,6 +178,10 @@
 /* Mobile */
 
 @media (max-width: 480px) {
+
+    #header-container {
+        margin-top: -20px;
+    }
 
     .icon-hero-section {
         margin: 20px auto;

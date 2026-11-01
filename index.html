@@ -1,4 +1,5 @@
 ---
+layout: index
 ---
 
 <!--
@@ -28,200 +29,77 @@
 *********************************************************************************************
 -->
 
+<div class="main-content">
+    <main class="path">
+        <div class="path-container">
+            <!-- First Section -->
+            <div class="path-section">
+                <h2>Introduction</h2>
+                <a href="{{ site.baseurl }}/explore-the-blog" class="path-item">
+                    <i class="fas fa-compass"></i> Explore the Blog
+                </a>
+                <a href="{{ site.baseurl }}/introduction" class="path-item">
+                    <i class="fas fa-info-circle"></i> Introduction
+                </a>
+                <a href="{{ site.baseurl }}/about-me" class="path-item">
+                    <i class="fas fa-user"></i> About Me
+                </a>
+            </div>
 
-<!DOCTYPE html>
-<html lang="en">
+            <!-- Second Section -->
+            <div class="path-section">
+                <h2>Personal Insights</h2>
+                <a href="{{ site.baseurl }}/2025-reflections" class="path-item">
+                    <i class="fas fa-lightbulb"></i> 2025 Reflections
+                </a>
+                <a href="{{ site.baseurl }}/practical-wisdom" class="path-item">
+                    <i class="fas fa-hands-helping"></i> Practical Wisdom
+                </a>
+                <a href="{{ site.baseurl }}/2024-reflections" class="path-item">
+                    <i class="fas fa-calendar"></i> 2024 Reflections
+                </a>
+            </div>
 
-<head>
+            <!-- Third Section -->
+            <div class="path-section">
+                <h2>Tech Insights</h2>
+                <a href="{{ site.baseurl }}/github-helpful-tips" class="path-item">
+                    <i class="fab fa-github"></i> GitHub Helpful Tips
+                </a>
+                <a href="{{ site.baseurl }}/github-anniversary-month" class="path-item">
+                    <i class="fas fa-award"></i> GitHub Anniversary Month
+                </a>
+                <a href="{{ site.baseurl }}/data-stories" class="path-item">
+                    <i class="fas fa-database"></i> Data Stories
+                </a>
+            </div>
 
-    {% include imports/import-tags-index.html %}
-
-    <!-- Meta tags for SEO -->
-    <meta name="description"
-        content="Welcome to Madhurima Mindscape, a personal blog by Madhurima Rawat. Explore personal reflections, tech insights, project diaries, and creative photography.">
-    <meta name="keywords"
-        content="Madhurima Rawat, blog, personal blog, tech insights, photography, creative content, project diaries, personal reflections">
-
-    <!-- 
-        Specifies the publication date and time in ISO 8601 format. 
-        The structure includes:
-        - Date in YYYY-MM-DD format: 
-          YYYY = 4-digit year (e.g., 2024)
-          MM   = 2-digit month (e.g., 12 for December)
-          DD   = 2-digit day (e.g., 18)
-        - A literal 'T' separator between date and time.
-        - Time in HH:MM:SS format: 
-          HH = 2-digit hour in 24-hour format (e.g., 15 for 3 PM in UTC)
-          MM = 2-digit minutes (e.g., 20)
-          SS = 2-digit seconds (e.g., 13)
-        - 'Z' at the end indicates the time is in Coordinated Universal Time (UTC).
-        Example: "2024-12-18T15:20:13Z" represents December 18, 2024, at 3:20:13 PM UTC.
-    -->
-
-    <!-- Specifies the publication date and time in ISO 8601 format -->
-    <meta name="date" content="2024-12-18T15:20:13Z" />
-
-    <!-- Last Updated -->
-    <meta name="last-modified" content="2026-10-24T05:30:00Z">
-
-
-    <!-- Open Graph Meta Tags for social sharing -->
-    <meta property="og:title" content="Madhurima Mindscape - Explore Personal and Tech Insights" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://madhurimarawat.github.io/Madhurima-Mindscape/" />
-    <meta property="og:description"
-        content="Dive into Madhurima Mindscape - a space for personal reflections, tech insights, project stories, and creative photography." />
-    <meta property="og:image"
-        content="https://raw.githubusercontent.com/madhurimarawat/Madhurima-Mindscape/main/website_snapshots/website_1.png" />
-    <meta property="og:image:alt" content="Madhurima Mindscape Blog Snapshot" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Madhurima Mindscape - Explore Personal and Tech Insights" />
-    <meta name="twitter:description"
-        content="Dive into Madhurima Mindscape - a space for personal reflections, tech insights, project stories, and creative photography." />
-    <meta name="twitter:image"
-        content="https://raw.githubusercontent.com/madhurimarawat/Madhurima-Mindscape/main/website_snapshots/website_1.png" />
-
-
-    <title>Madhurima Mindscape</title>
-    <!-- For PNG and SVG logos -->
-    <link rel="icon" href="images/Logo.png" type="image/png">
-
-</head>
-
-<body>
-
-    <!-- Place the div with a specific id to insert the navbar -->
-    <div id="header-container">{% include components/header.html %}</div>
-
-    <!-- Place the div with a specific id to insert the navbar -->
-    <div id="hero-container">{% include components/icon-hero-section.html %}</div>
-
-    <!-- Featured Resources Section -->
-    <section class="featured-resources">
-
-        <h2>Special Features</h2>
-
-        <p>
-            Discover more ways to enjoy Madhurima Mindscape! Save your favourite articles using the
-            <strong>Save</strong> icon at the top of each blog post. You can
-            revisit all
-            your saved articles anytime in <strong>Saved Articles</strong>.
-        </p>
-
-        <p>Visit the <strong>Blog Template</strong> to explore the
-            design and layout of individual blog posts and get
-            inspiration for creating your own blogging space.
-        </p>
-
-        <p>
-            Visit <strong>Explore the Blog</strong> to browse all articles, complete with descriptions and preview
-            images, and
-            discover stories, insights, and ideas that interest you.
-        </p>
-
-        <div class="featured-resources-buttons">
-
-            <a href="{{ site.baseurl }}/saved-articles" class="featured-button">
-                <i class="fas fa-bookmark"></i>
-                Saved Articles
-            </a>
-
-            <a href="{{ site.baseurl }}/blog-template" class="featured-button">
-                <i class="fas fa-code"></i>
-                Blog Template
-            </a>
-
-            <a href="{{ site.baseurl }}/explore-the-blog" class="featured-button">
-                <i class="fas fa-compass"></i>
-                Explore the Blog
-            </a>
-
-        </div>
-
-    </section>
-
-    <div class="main-content">
-        <main class="path">
-            <div class="path-container">
-                <!-- First Section -->
-                <div class="path-section">
-                    <h2>Introduction</h2>
-                    <a href="{{ site.baseurl }}/explore-the-blog" class="path-item">
-                        <i class="fas fa-compass"></i> Explore the Blog
-                    </a>
-                    <a href="{{ site.baseurl }}/introduction" class="path-item">
-                        <i class="fas fa-info-circle"></i> Introduction
-                    </a>
-                    <a href="{{ site.baseurl }}/about-me" class="path-item">
-                        <i class="fas fa-user"></i> About Me
-                    </a>
-                </div>
-
-                <!-- Second Section -->
-                <div class="path-section">
-                    <h2>Personal Insights</h2>
-                    <a href="{{ site.baseurl }}/2025-reflections" class="path-item">
-                        <i class="fas fa-lightbulb"></i> 2025 Reflections
-                    </a>
-                    <a href="{{ site.baseurl }}/practical-wisdom" class="path-item">
-                        <i class="fas fa-hands-helping"></i> Practical Wisdom
-                    </a>
-                    <a href="{{ site.baseurl }}/2024-reflections" class="path-item">
-                        <i class="fas fa-calendar"></i> 2024 Reflections
-                    </a>
-                </div>
-
-                <!-- Third Section -->
-                <div class="path-section">
-                    <h2>Tech Insights</h2>
-                    <a href="{{ site.baseurl }}/github-helpful-tips" class="path-item">
-                        <i class="fab fa-github"></i> GitHub Helpful Tips
-                    </a>
-                    <a href="{{ site.baseurl }}/github-anniversary-month" class="path-item">
-                        <i class="fas fa-award"></i> GitHub Anniversary Month
-                    </a>
-                    <a href="{{ site.baseurl }}/data-stories" class="path-item">
-                        <i class="fas fa-database"></i> Data Stories
-                    </a>
-                </div>
-
-                <!-- Fourth Section -->
-                <div class="path-section">
-                    <h2>Project Diaries</h2>
-                    <a href="{{ site.baseurl }}/library-management" class="path-item">
-                        <i class="fas fa-book"></i> Library Management
-                    </a>
-
-                </div>
-
-                <!-- Fifth Section -->
-                <div class="path-section">
-                    <h2>Creative Clicks</h2>
-                    <a href="{{ site.baseurl }}/floral-photography" class="path-item">
-                        <i class="fas fa-seedling"></i> Floral Photography
-                    </a>
-
-                </div>
-
-                <!-- Sixth Section Poems -->
-                <div class="path-section">
-                    <h2>Poem Perspectives</h2>
-                    <a href="{{ site.baseurl }}/the-solitary-reaper" class="path-item">
-                        <i class="fas fa-music"></i> The Solitary Reaper
-                    </a>
-                </div>
+            <!-- Fourth Section -->
+            <div class="path-section">
+                <h2>Project Diaries</h2>
+                <a href="{{ site.baseurl }}/library-management" class="path-item">
+                    <i class="fas fa-book"></i> Library Management
+                </a>
 
             </div>
-        </main>
-    </div>
 
-</body>
+            <!-- Fifth Section -->
+            <div class="path-section">
+                <h2>Creative Clicks</h2>
+                <a href="{{ site.baseurl }}/floral-photography" class="path-item">
+                    <i class="fas fa-seedling"></i> Floral Photography
+                </a>
 
-<!-- Footer Section -->
-<div id="footer-container">{% include components/footer.html %}</div>
+            </div>
 
-</html>
+            <!-- Sixth Section Poems -->
+            <div class="path-section">
+                <h2>Poem Perspectives</h2>
+                <a href="{{ site.baseurl }}/the-solitary-reaper" class="path-item">
+                    <i class="fas fa-music"></i> The Solitary Reaper
+                </a>
+            </div>
+
+        </div>
+    </main>
+</div>

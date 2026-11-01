@@ -1,0 +1,232 @@
+/*
+*********************************************************************************************
+* File: slider-carousel.css
+* Author: Madhurima Rawat
+* Date: November 1, 2026
+* Description: Styles the Special Features carousel of Madhurima Mindscape.
+*              Features centered slide content, spacious layouts, prominent icons,
+*              responsive typography, styled feature buttons, navigation arrows,
+*              and carousel indicators.
+* Version: 1.0
+*********************************************************************************************
+*/
+
+/* Center the carousel content */
+.carousel-features {
+    width: 100%;
+    text-align: center;
+}
+
+/* Set the carousel to use the full available width */
+.carousel-features-carousel {
+    width: 100%;
+    margin: 25px auto 35px;
+    padding-bottom: 50px;
+}
+
+/* Make the carousel inner container fill the available width */
+.carousel-features-carousel .carousel-inner {
+    width: 100%;
+}
+
+/* Give every carousel slide the same height */
+.carousel-features-carousel .carousel-item {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Arrange and center the feature content like a banner */
+.featured-slide {
+    width: 100%;
+    height: 100%;
+    padding: 45px 90px 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    gap: 45px;
+}
+
+/* Style the feature icons */
+.featured-slide .featured-icon {
+    font-size: 48px;
+    color: var(--h2-color);
+    margin-bottom: 0;
+}
+
+/* Style the feature headings */
+.featured-slide h2 {
+    color: var(--h2-color);
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Style the feature descriptions */
+.featured-slide p {
+    max-width: 760px;
+    margin: 0;
+    font-size: 19px;
+    line-height: 1.8;
+    text-align: center;
+    color: var(--text-color);
+}
+
+/* Style the feature buttons */
+.carousel-features .featured-button {
+    display: inline-block;
+    background-color: var(--h2-color);
+    color: var(--post-action-color);
+    padding: 15px 34px;
+    margin-top: 5px;
+    border-radius: 35px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Style the icon inside the feature button */
+.carousel-features .featured-button i {
+    margin-right: 5px;
+}
+
+/* Add hover effects to feature buttons */
+.carousel-features .featured-button:hover {
+    opacity: 0.9;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.18);
+    color: white;
+    text-decoration: none;
+}
+
+/* Position the carousel indicators */
+.carousel-features-carousel .carousel-indicators {
+    bottom: 0;
+    margin-bottom: 0;
+}
+
+/* Style the carousel indicators */
+.carousel-features-carousel .carousel-indicators li {
+    background-color: var(--h2-color);
+    opacity: 0.35;
+    width: 28px;
+    height: 4px;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+/* Highlight the active carousel indicator */
+.carousel-features-carousel .carousel-indicators .active {
+    opacity: 1;
+}
+
+/* Style the previous and next carousel controls */
+.carousel-features-carousel .carousel-control-prev,
+.carousel-features-carousel .carousel-control-next {
+    width: 55px;
+    color: var(--h2-color);
+    opacity: 0.65;
+    transition: opacity 0.3s ease;
+}
+
+/* Highlight carousel controls on hover */
+.carousel-features-carousel .carousel-control-prev:hover,
+.carousel-features-carousel .carousel-control-next:hover {
+    opacity: 1;
+}
+
+/* Style carousel navigation arrows */
+.carousel-features-carousel .carousel-control-prev i,
+.carousel-features-carousel .carousel-control-next i {
+    font-size: 25px;
+}
+
+/* Adjust the carousel for tablet and mobile screens */
+@media (max-width: 768px) {
+
+    /* Adjust feature slide spacing */
+    .featured-slide {
+        gap: 33px;
+    }
+
+    /* Reduce icon size */
+    .featured-slide .featured-icon {
+        font-size: 30px;
+    }
+
+    /* Reduce heading size */
+    .featured-slide h2 {
+        font-size: 24px;
+    }
+
+    /* Adjust description spacing and size */
+    .featured-slide p {
+        max-width: 550px;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    /* Adjust feature button */
+    .carousel-features .featured-button {
+        padding: 11px 25px;
+        font-size: 12px;
+    }
+
+    /* Narrow carousel controls */
+    .carousel-features-carousel .carousel-control-prev,
+    .carousel-features-carousel .carousel-control-next {
+        width: 35px;
+    }
+
+    /* Reduce navigation arrow size */
+    .carousel-features-carousel .carousel-control-prev i,
+    .carousel-features-carousel .carousel-control-next i {
+        font-size: 20px;
+    }
+}
+
+/* Adjust the carousel for smaller mobile screens */
+@media (max-width: 480px) {
+
+    /* Reduce slide padding and spacing */
+    .featured-slide {
+        padding: 25px 38px 50px;
+        gap: 35px;
+    }
+
+    /* Reduce icon size */
+    .featured-slide .featured-icon {
+        font-size: 34px;
+    }
+
+    /* Reduce heading size */
+    .featured-slide h2 {
+        font-size: 21px;
+    }
+
+    /* Adjust description typography */
+    .featured-slide p {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    /* Adjust button size */
+    .carousel-features .featured-button {
+        padding: 12px 23px;
+        font-size: 14px;
+    }
+
+    /* Narrow carousel controls */
+    .carousel-features-carousel .carousel-control-prev,
+    .carousel-features-carousel .carousel-control-next {
+        width: 28px;
+    }
+}

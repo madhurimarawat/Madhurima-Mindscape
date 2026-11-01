@@ -1,0 +1,41 @@
+# Madhurima Mindscape - SEO and Social Sharing Metadata
+
+title: "Madhurima Mindscape"
+
+description: >-
+    Welcome to Madhurima Mindscape, a personal blog by Madhurima Rawat.
+    Explore personal reflections, tech insights, project diaries, and creative photography.
+
+date: "2024-12-18T15:20:13Z"
+last_modified: "2026-10-24T05:30:00Z"
+
+author: "Madhurima Rawat"
+robots: "index, follow"
+
+keywords: >-
+    Madhurima Rawat, blog, personal blog, tech insights, photography,
+    creative content, project diaries, personal reflections
+
+# Open Graph image and preview information
+image: "https://raw.githubusercontent.com/madhurimarawat/Madhurima-Mindscape/main/website_snapshots/website_1.png"
+image_alt: "Madhurima Mindscape Blog Snapshot"
+image_width: 1200
+image_height: 630
+
+og_title: "Madhurima Mindscape - Explore Personal and Tech Insights"
+og_type: "website"
+
+og_description: >-
+    Dive into Madhurima Mindscape - a space for personal reflections,
+    tech insights, project stories, and creative photography.
+
+# Twitter Card metadata
+twitter_card: "summary_large_image"
+twitter_title: "Madhurima Mindscape - Explore Personal and Tech Insights"
+
+twitter_description: >-
+    Dive into Madhurima Mindscape - a space for personal reflections,
+    tech insights, project stories, and creative photography.
+
+# Favicon
+favicon: "images/Logo.png"

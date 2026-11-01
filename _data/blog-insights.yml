@@ -1,0 +1,41 @@
+# Blog Insights - SEO and Social Sharing Metadata
+
+title: "Blog Insights | Madhurima Mindscape"
+
+description: >-
+    Explore Blog Insights on Madhurima Mindscape. Discover publishing statistics,
+    article categories, popular topics, and the growth of Madhurima Rawat's blog.
+
+date: "2026-10-31T21:19:00Z"
+last_modified: "2026-10-31T21:19:00Z"
+
+author: "Madhurima Rawat"
+robots: "index, follow"
+
+keywords: >-
+    Blog Insights, blog statistics, publishing statistics, article categories,
+    blog analytics, publishing activity, Madhurima Mindscape, Madhurima Rawat
+
+# Open Graph image and preview information
+image: "https://raw.githubusercontent.com/madhurimarawat/Madhurima-Mindscape/main/website_snapshots/website_1.png"
+image_alt: "Madhurima Mindscape Blog Insights Dashboard"
+image_width: 1200
+image_height: 630
+
+og_title: "Blog Insights | Madhurima Mindscape"
+og_type: "website"
+
+og_description: >-
+    Discover the story behind Madhurima Mindscape through publishing statistics,
+    category breakdowns, article trends, and insights into the blog's growth.
+
+# Twitter Card metadata
+twitter_card: "summary_large_image"
+twitter_title: "Blog Insights | Madhurima Mindscape"
+
+twitter_description: >-
+    Explore Madhurima Mindscape's publishing activity, article categories,
+    blog statistics, and interesting insights about its growth.
+
+# Favicon
+favicon: "images/Logo.png"

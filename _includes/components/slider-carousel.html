@@ -1,0 +1,109 @@
+<!--
+*********************************************************************************************
+* File: slider-carousel.html
+* Author: Madhurima Rawat
+* Description: Bootstrap carousel showcasing special features of Madhurima Mindscape.
+*********************************************************************************************
+-->
+
+<!-- Special Features Carousel -->
+<section class="carousel-features">
+
+    <!-- Bootstrap 4 Carousel -->
+    <div id="specialFeaturesCarousel" class="carousel slide carousel-features-carousel" data-ride="carousel"
+        data-interval="6000" data-pause="hover">
+
+        <!-- Carousel Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#specialFeaturesCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#specialFeaturesCarousel" data-slide-to="1"></li>
+            <li data-target="#specialFeaturesCarousel" data-slide-to="2"></li>
+            <li data-target="#specialFeaturesCarousel" data-slide-to="3"></li>
+            <li data-target="#specialFeaturesCarousel" data-slide-to="4"></li>
+        </ol>
+
+        <!-- Carousel Content -->
+        <div class="carousel-inner">
+
+            <!-- Hero Icon Section -->
+            <div class="carousel-item active">
+                <div id="hero-container">{% include components/icon-hero-section.html %}</div>
+            </div>
+
+            <!-- Saved Articles -->
+            <div class="carousel-item">
+                <div class="featured-slide">
+                    <i class="fas fa-bookmark featured-icon"></i>
+                    <h2>Saved Articles</h2>
+                    <p>
+                        Keep favourite articles organised in one convenient place, so you can revisit useful ideas,
+                        rediscover inspiration, and continue reading whenever you like.
+                    </p>
+                    <a href="{{ site.baseurl }}/saved-articles" class="featured-button">
+                        <i class="fas fa-bookmark"></i> Saved Articles
+                    </a>
+                </div>
+            </div>
+
+            <!-- Blog Template -->
+            <div class="carousel-item">
+                <div class="featured-slide">
+                    <i class="fas fa-code featured-icon"></i>
+                    <h2>Blog Template</h2>
+                    <p>
+                        Explore the structure and design of individual blog posts, discover useful layout ideas,
+                        and find inspiration for creating your own blogging space.
+                    </p>
+                    <a href="{{ site.baseurl }}/blog-template" class="featured-button">
+                        <i class="fas fa-code"></i> Blog Template
+                    </a>
+                </div>
+            </div>
+
+            <!-- Explore the Blog -->
+            <div class="carousel-item">
+                <div class="featured-slide">
+                    <i class="fas fa-compass featured-icon"></i>
+                    <h2>Explore the Blog</h2>
+                    <p>
+                        Browse published articles, read engaging descriptions, preview featured images, and discover
+                        fresh stories, helpful insights, and ideas across the Madhurima Mindscape blog.
+                    </p>
+                    <a href="{{ site.baseurl }}/explore-the-blog" class="featured-button">
+                        <i class="fas fa-compass"></i> Explore the Blog
+                    </a>
+                </div>
+            </div>
+
+            <!-- Blog Statistics -->
+            <div class="carousel-item">
+                <div class="featured-slide">
+                    <i class="fas fa-chart-bar featured-icon"></i>
+                    <h2>Blog Insights</h2>
+                    <p>
+                        Discover the story behind Madhurima Mindscape through publishing totals, category breakdowns,
+                        topic trends, and other interesting insights about the blog over time.
+                    </p>
+                    <a href="{{ site.baseurl }}/blog-insights" class="featured-button">
+                        <i class="fas fa-chart-bar"></i> View Insights
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Previous Slide Control -->
+        <a class="carousel-control-prev" href="#specialFeaturesCarousel" role="button" data-slide="prev"
+            aria-label="Previous feature">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+
+        <!-- Next Slide Control -->
+        <a class="carousel-control-next" href="#specialFeaturesCarousel" role="button" data-slide="next"
+            aria-label="Next feature">
+            <i class="fas fa-chevron-right"></i>
+        </a>
+
+    </div>
+
+</section>
