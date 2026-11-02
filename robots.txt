@@ -1,0 +1,6 @@
+# Allow all search engine crawlers
+User-agent: *
+Allow: /
+
+# Website XML sitemap
+Sitemap: https://madhurimarawat.github.io/Madhurima-Mindscape/sitemap.xml

@@ -24,6 +24,8 @@
   - _data/blogs/*.yml
 
   Version: 2.0
+
+  Date: November 02, 2026
 -->
 
 <!-- Split the SEO path into its category and YAML filename. -->
@@ -139,6 +141,9 @@
 <!-- Load Font Awesome 5.15.4 for icon support throughout the website. -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }} RSS Feed"
+  href="{{ '/feed.xml' | relative_url }}">
+
 <!-- Load the site's primary stylesheet. -->
 <link rel="stylesheet" href="{{ 'css/index.css' | relative_url }}">
 
@@ -147,6 +152,9 @@
 
 <!-- Load the site's theme and appearance stylesheet. -->
 <link rel="stylesheet" href="{{ 'css/themes.css' | relative_url }}">
+
+<!-- Load the site's theme and appearance stylesheet. -->
+<link rel="stylesheet" href="{{ 'css/post-actions.css' | relative_url }}">
 
 <!-- Load the primary website JavaScript after HTML parsing. -->
 <script defer src="{{ 'js/index.js' | relative_url }}"></script>

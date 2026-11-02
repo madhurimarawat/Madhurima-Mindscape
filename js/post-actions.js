@@ -418,6 +418,636 @@ function initializePostActions(container) {
             }
         });
     }
+
+
+
+    // --------------------------------------------------
+    // READ ALOUD WITH WORD HIGHLIGHTING
+    // --------------------------------------------------
+
+    const readAloudButton = container.querySelector("#read-aloud-btn");
+
+    if (readAloudButton && "speechSynthesis" in window) {
+
+        // --------------------------------------------------
+        // VARIABLES
+        // --------------------------------------------------
+
+        let speechIndex = 0;
+        let speechQueue = [];
+
+        let isReading = false;
+        let isPaused = false;
+
+        let currentWordRange = null;
+        let currentBlock = null;
+        let lastScrolledBlock = null;
+
+        let scrollTimer = null;
+        let autoScrollResetTimer = null;
+        let autoScrolling = false;
+
+        let manualScrollUntil = 0;
+        let lastReminderTime = 0;
+
+        const synth = window.speechSynthesis;
+
+        const REMINDER_INTERVAL = 2 * 60 * 1000;
+        const SCROLL_GRACE_PERIOD = 20000;
+
+        const instruction =
+            "Press the highlighted word to stop reading, or press the button at the top to pause or resume.";
+
+        // --------------------------------------------------
+        // DEBUG
+        // --------------------------------------------------
+
+        function debug(message, data = "") {
+
+            console.log(
+                "%c[READ ALOUD] " + message,
+                "color: #b8860b; font-weight: bold;",
+                data
+            );
+        }
+
+        // --------------------------------------------------
+        // VOICE SELECTION
+        // --------------------------------------------------
+
+        function getIndianVoice() {
+
+            const voices = synth.getVoices();
+
+            const indianVoices = voices.filter(voice =>
+                voice.lang.toLowerCase() === "en-in"
+            );
+
+            const femaleVoice = indianVoices.find(voice =>
+                /female|woman|priya|neerja|heera|aditi|raveena/i.test(
+                    voice.name
+                )
+            );
+
+            const selectedVoice =
+                femaleVoice || indianVoices[0] || null;
+
+            if (selectedVoice) {
+                debug("Selected voice:", selectedVoice.name);
+            } else {
+                debug("No Indian English voice found. Using browser default.");
+            }
+
+            return selectedVoice;
+        }
+
+        function createUtterance(text) {
+
+            const utterance = new SpeechSynthesisUtterance(text);
+
+            utterance.lang = "en-IN";
+            utterance.rate = 1;
+            utterance.pitch = 1;
+
+            const voice = getIndianVoice();
+
+            if (voice) {
+                utterance.voice = voice;
+            }
+
+            return utterance;
+        }
+
+        // --------------------------------------------------
+        // BUTTON STATES
+        // --------------------------------------------------
+
+        function updateReadButton(state) {
+
+            const states = {
+
+                idle: {
+                    icon: "fas fa-volume-up",
+                    label: "Read Aloud",
+                    pressed: "false"
+                },
+
+                reading: {
+                    icon: "fas fa-pause",
+                    label: "Pause",
+                    pressed: "true"
+                },
+
+                paused: {
+                    icon: "fas fa-play",
+                    label: "Resume",
+                    pressed: "true"
+                }
+            };
+
+            const current = states[state];
+
+            readAloudButton.innerHTML =
+                `<i class="${current.icon}" aria-hidden="true"></i>
+                 <span>${current.label}</span>`;
+
+            readAloudButton.setAttribute(
+                "aria-pressed",
+                current.pressed
+            );
+        }
+
+        // --------------------------------------------------
+        // CLEAR HIGHLIGHTING
+        // --------------------------------------------------
+
+        function clearHighlight() {
+
+            if (window.CSS && CSS.highlights) {
+                CSS.highlights.delete("read-aloud-highlight");
+            }
+
+            document.querySelectorAll(".read-aloud-active")
+                .forEach(element => {
+                    element.classList.remove("read-aloud-active");
+                });
+
+            currentWordRange = null;
+            currentBlock = null;
+        }
+
+        // --------------------------------------------------
+        // AUTOMATIC SCROLLING
+        // --------------------------------------------------
+
+        function scrollToCurrentBlock() {
+
+            if (!isReading || isPaused || !currentBlock) return;
+
+            if (Date.now() < manualScrollUntil) return;
+
+            if (currentBlock === lastScrolledBlock) return;
+
+            lastScrolledBlock = currentBlock;
+
+            clearTimeout(autoScrollResetTimer);
+
+            autoScrolling = true;
+
+            debug("Automatically following reading position.");
+
+            currentBlock.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+            autoScrollResetTimer = setTimeout(function () {
+                autoScrolling = false;
+            }, 1200);
+        }
+
+        // --------------------------------------------------
+        // MANUAL SCROLLING
+        // --------------------------------------------------
+
+        function registerManualScroll() {
+
+            if (!isReading || isPaused || autoScrolling) return;
+
+            manualScrollUntil = Date.now() + SCROLL_GRACE_PERIOD;
+
+            clearTimeout(scrollTimer);
+
+            debug(
+                "Manual scrolling detected. Automatic scrolling paused for 20 seconds."
+            );
+
+            scrollTimer = setTimeout(function () {
+
+                if (!isReading || isPaused || !currentBlock) return;
+
+                debug("20-second scrolling grace period ended.");
+
+                lastScrolledBlock = null;
+
+                scrollToCurrentBlock();
+
+            }, SCROLL_GRACE_PERIOD);
+        }
+
+        window.addEventListener("scroll", function () {
+
+            if (autoScrolling) return;
+
+            registerManualScroll();
+
+        }, { passive: true });
+
+        window.addEventListener("wheel", function () {
+            registerManualScroll();
+        }, { passive: true });
+
+        window.addEventListener("touchmove", function () {
+            registerManualScroll();
+        }, { passive: true });
+
+        window.addEventListener("keydown", function (event) {
+
+            const scrollKeys = [
+                "ArrowUp",
+                "ArrowDown",
+                "PageUp",
+                "PageDown",
+                "Home",
+                "End",
+                " "
+            ];
+
+            if (scrollKeys.includes(event.key)) {
+                registerManualScroll();
+            }
+
+        });
+
+        // --------------------------------------------------
+        // HIGHLIGHT CURRENT SPOKEN WORD
+        // --------------------------------------------------
+
+        function highlightWord(node, charIndex) {
+
+            const text = node.textContent;
+
+            if (!text || charIndex >= text.length) return;
+
+            let start = charIndex;
+            let end = charIndex;
+
+            while (start > 0 && !/\s/.test(text[start - 1])) {
+                start--;
+            }
+
+            while (end < text.length && !/\s/.test(text[end])) {
+                end++;
+            }
+
+            if (start === end) return;
+
+            const range = document.createRange();
+
+            range.setStart(node, start);
+            range.setEnd(node, end);
+
+            clearHighlight();
+
+            currentWordRange = range;
+
+            currentBlock = node.parentElement?.closest(
+                "p, li, h1, h2, h3, h4, blockquote"
+            ) || node.parentElement;
+
+            if (window.CSS && CSS.highlights && window.Highlight) {
+
+                CSS.highlights.set(
+                    "read-aloud-highlight",
+                    new Highlight(range)
+                );
+
+            } else {
+
+                currentBlock?.classList.add("read-aloud-active");
+            }
+
+            scrollToCurrentBlock();
+        }
+
+        // --------------------------------------------------
+        // CLICK HIGHLIGHTED WORD TO STOP
+        // --------------------------------------------------
+
+        function getCaretAtPoint(x, y) {
+
+            if (document.caretRangeFromPoint) {
+                return document.caretRangeFromPoint(x, y);
+            }
+
+            if (document.caretPositionFromPoint) {
+
+                const position =
+                    document.caretPositionFromPoint(x, y);
+
+                if (position) {
+
+                    const range = document.createRange();
+
+                    range.setStart(
+                        position.offsetNode,
+                        position.offset
+                    );
+
+                    range.collapse(true);
+
+                    return range;
+                }
+            }
+
+            return null;
+        }
+
+        document.addEventListener("click", function (event) {
+
+            if (!isReading || !currentWordRange) return;
+
+            if (event.target.closest("#read-aloud-btn")) return;
+
+            const clickedPosition = getCaretAtPoint(
+                event.clientX,
+                event.clientY
+            );
+
+            if (!clickedPosition) return;
+
+            const node = clickedPosition.startContainer;
+            const offset = clickedPosition.startOffset;
+
+            if (currentWordRange.isPointInRange(node, offset)) {
+
+                debug("Highlighted word clicked. Stopping.");
+
+                stopReading();
+
+                showStatus("Reading stopped.");
+            }
+        });
+
+        // --------------------------------------------------
+        // COLLECT ARTICLE TEXT
+        // --------------------------------------------------
+
+        function collectSpeechNodes() {
+
+            const article = document.querySelector("main");
+
+            if (!article) return [];
+
+            const walker = document.createTreeWalker(
+                article,
+                NodeFilter.SHOW_TEXT,
+                {
+                    acceptNode(node) {
+
+                        if (!node.textContent.trim()) {
+                            return NodeFilter.FILTER_REJECT;
+                        }
+
+                        const excluded = node.parentElement?.closest(
+                            "script, style, noscript, button, nav, footer, " +
+                            "header, textarea, input, select, " +
+                            "#post-actions, post-actions, .reading-info"
+                        );
+
+                        return excluded
+                            ? NodeFilter.FILTER_REJECT
+                            : NodeFilter.FILTER_ACCEPT;
+                    }
+                }
+            );
+
+            const nodes = [];
+
+            while (walker.nextNode()) {
+                nodes.push(walker.currentNode);
+            }
+
+            debug("Article text nodes collected:", nodes.length);
+
+            return nodes;
+        }
+
+        // --------------------------------------------------
+        // STOP READING
+        // --------------------------------------------------
+
+        function stopReading() {
+
+            debug("Stopping reading.");
+
+            isReading = false;
+            isPaused = false;
+
+            synth.cancel();
+
+            clearTimeout(scrollTimer);
+            clearTimeout(autoScrollResetTimer);
+
+            speechIndex = 0;
+            speechQueue = [];
+
+            lastReminderTime = 0;
+            lastScrolledBlock = null;
+            manualScrollUntil = 0;
+
+            autoScrolling = false;
+
+            clearHighlight();
+
+            updateReadButton("idle");
+
+            debug("Reading completely stopped.");
+        }
+
+        // --------------------------------------------------
+        // READ NEXT ARTICLE SECTION
+        // --------------------------------------------------
+
+        function speakNext() {
+
+            if (!isReading || isPaused) return;
+
+            if (speechIndex >= speechQueue.length) {
+
+                stopReading();
+
+                showStatus("Finished reading this article!");
+
+                return;
+            }
+
+            const now = Date.now();
+
+            if (now - lastReminderTime >= REMINDER_INTERVAL) {
+
+                lastReminderTime = now;
+
+                debug("Repeating reading instructions.");
+
+                const reminder = createUtterance(instruction);
+
+                reminder.onend = function () {
+
+                    if (isReading && !isPaused) {
+                        speakNext();
+                    }
+                };
+
+                reminder.onerror = function (event) {
+
+                    debug("Reminder speech error:", event.error);
+
+                    if (isReading && !isPaused) {
+                        speakNext();
+                    }
+                };
+
+                synth.speak(reminder);
+
+                return;
+            }
+
+            const node = speechQueue[speechIndex];
+
+            const utterance = createUtterance(node.textContent);
+
+            utterance.onboundary = function (event) {
+
+                if (event.name === "word") {
+                    highlightWord(node, event.charIndex);
+                }
+            };
+
+            utterance.onend = function () {
+
+                if (!isReading || isPaused) return;
+
+                speechIndex++;
+
+                speakNext();
+            };
+
+            utterance.onerror = function (event) {
+
+                if (
+                    event.error === "canceled" ||
+                    event.error === "interrupted"
+                ) {
+                    return;
+                }
+
+                debug("Speech error:", event.error);
+
+                stopReading();
+
+                showStatus("Unable to continue reading this article.");
+            };
+
+            synth.speak(utterance);
+        }
+
+        // --------------------------------------------------
+        // START READING WITH INSTRUCTIONS
+        // --------------------------------------------------
+
+        function startReading() {
+
+            speechQueue = collectSpeechNodes();
+
+            if (!speechQueue.length) {
+
+                showStatus("No readable article content was found.");
+
+                return;
+            }
+
+            speechIndex = 0;
+
+            isReading = true;
+            isPaused = false;
+
+            lastReminderTime = Date.now();
+
+            manualScrollUntil = 0;
+            lastScrolledBlock = null;
+
+            updateReadButton("reading");
+
+            debug("Reading started.");
+
+            const instructionUtterance = createUtterance(instruction);
+
+            instructionUtterance.onend = function () {
+
+                if (!isReading || isPaused) return;
+
+                speakNext();
+            };
+
+            instructionUtterance.onerror = function (event) {
+
+                debug("Instruction speech error:", event.error);
+
+                if (isReading && !isPaused) {
+                    speakNext();
+                }
+            };
+
+            synth.speak(instructionUtterance);
+        }
+
+        // --------------------------------------------------
+        // PLAY / PAUSE / RESUME
+        // --------------------------------------------------
+
+        readAloudButton.addEventListener("click", function () {
+
+            if (!isReading) {
+
+                startReading();
+
+            } else if (isPaused) {
+
+                isPaused = false;
+
+                synth.resume();
+
+                updateReadButton("reading");
+
+                debug("Reading resumed.");
+
+            } else {
+
+                isPaused = true;
+
+                synth.pause();
+
+                clearTimeout(scrollTimer);
+                clearTimeout(autoScrollResetTimer);
+
+                autoScrolling = false;
+
+                updateReadButton("paused");
+
+                debug("Reading paused.");
+            }
+        });
+
+        // --------------------------------------------------
+        // STOP WHEN LEAVING THE PAGE
+        // --------------------------------------------------
+
+        window.addEventListener("pagehide", stopReading);
+
+        debug("Read Aloud feature initialized.");
+
+    } else if (readAloudButton) {
+
+        readAloudButton.disabled = true;
+
+        const label = readAloudButton.querySelector("span");
+
+        if (label) {
+            label.textContent = "Read Aloud Unavailable";
+        }
+    }
+
 }
 
 // ==================================================

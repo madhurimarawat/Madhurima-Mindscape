@@ -1,0 +1,157 @@
+/* CSS for Error 404 Page */
+
+/* Centre the error message on the screen */
+body {
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: color-mix(in srgb, var(--text-color) 15%, white);
+    margin-top: -10px;
+}
+
+/* Style the main error content */
+.error-container {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    min-height: 35vh;
+    max-width: 550px;
+    padding: 15px 30px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    gap: 0.8em;
+    /* Space between each item */
+}
+
+/* 404 Error Code */
+.error-code {
+    font-size: clamp(100px, 20vw, 140px);
+    font-weight: 900;
+    line-height: 1;
+    margin: 0;
+    letter-spacing: -8px;
+    color: var(--error-link-color);
+    -webkit-text-stroke: 3px var(--error-code-highlight);
+
+    text-shadow:
+        3px 3px 0 var(--error-code-highlight),
+        6px 6px 0 var(--error-code-highlight);
+
+    user-select: none;
+}
+
+/* Error Message */
+.error-message {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+/* Home Button */
+.home-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 22px;
+    border: 2px solid var(--error-code-highlight);
+    border-radius: 30px;
+
+    background: var(--error-link-color);
+    color: var(--post-action-color);
+    text-decoration: none;
+    font-weight: bold;
+
+    box-shadow: 0 0 0 transparent;
+    transition: all 0.3s ease;
+    font-size: 0.8em;
+}
+
+/* Glowing Hover Effect */
+.home-link:hover {
+    color: var(--post-action-color);
+    background: var(--h2-color);
+
+    border-color: var(--error-code-highlight);
+
+    box-shadow:
+        0 0 8px var(--error-code-highlight),
+        0 0 18px var(--error-code-highlight),
+        0 0 30px var(--error-code-highlight);
+
+    transform: translateY(-3px);
+}
+
+/* ==========================
+   Tablet Responsive (481px - 768px)
+   ========================== */
+@media (min-width: 481px) and (max-width: 768px) {
+
+    .error-container {
+        min-height: calc(100svh - 350px);
+        max-width: 90%;
+        padding: 30px 25px;
+        gap: 1.8em;
+    }
+
+    .error-code {
+        font-size: clamp(120px, 20vw, 150px);
+        letter-spacing: -7px;
+        -webkit-text-stroke: 3px var(--error-code-highlight);
+    }
+
+    .error-message {
+        font-size: 26px;
+    }
+
+    .home-link {
+        padding: 13px 26px;
+        font-size: 1em;
+    }
+}
+
+
+/* ==========================
+   Mobile Responsive (480px and below)
+   ========================== */
+@media (max-width: 480px) {
+
+    body {
+        margin-top: 0;
+    }
+
+    .error-container {
+        min-height: calc(100svh - 250px);
+        max-width: 100%;
+        padding: 25px 20px;
+        gap: 0.6em;
+    }
+
+    .error-code {
+        font-size: clamp(85px, 25vw, 110px);
+        letter-spacing: -5px;
+        -webkit-text-stroke: 2px var(--error-code-highlight);
+
+        text-shadow:
+            2px 2px 0 var(--error-code-highlight),
+            4px 4px 0 var(--error-code-highlight);
+    }
+
+    .error-message {
+        font-size: 19px;
+        line-height: 1.4;
+    }
+
+    .error-container p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .home-link {
+        padding: 10px 15px;
+        margin-top: 10px;
+        font-size: 0.7em;
+    }
+}
