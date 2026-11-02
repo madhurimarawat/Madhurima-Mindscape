@@ -1,29 +1,29 @@
 # Madhurima Mindscape - Project Documentation
 
-**Technical documentation for the architecture, technologies, features, and development workflow of Madhurima Mindscape.**
+**Technical documentation covering the architecture, technologies, features, and development workflow of Madhurima Mindscape.**
 
 ## Introduction
 
-Madhurima Mindscape is a Jekyll-powered personal blogging platform built to publish and organize articles across personal reflections, technology, project experiences, poetry, and creative photography.
+Madhurima Mindscape is a Jekyll-powered personal blogging platform for publishing and organizing articles on personal reflections, technology, project experiences, poetry, and creative photography.
 
-The website combines Jekyll's static site generation capabilities with reusable Liquid templates, structured YAML data, responsive frontend design, and JavaScript-powered interactive features.
+The website uses Jekyll's static site generation capabilities along with reusable Liquid templates, structured YAML data, responsive frontend design, and JavaScript for interactive features.
 
-This documentation provides a technical overview of the project, covering its technology stack, key functionalities, Jekyll architecture, directory structure, content management workflow, local development setup, and instructions for adding new blog posts.
+This document explains the technologies used in the project, its main features, Jekyll architecture, directory structure, and website generation process. It also covers local development, content management, and the steps involved in adding new blog posts.
 
 ## Documentation Overview
 
-This document serves as a technical reference for understanding how Madhurima Mindscape is structured, how its components work together, and how the website can be maintained and extended.
+This document is intended as a technical reference for anyone who wants to understand, maintain, or extend Madhurima Mindscape.
 
 It covers:
 
-- **Technology Stack:** Tools, languages, frameworks, and browser APIs used.
-- **Features and Functionalities:** Implementation of the website's interactive and content-management features.
-- **Jekyll Architecture:** Layouts, includes, structured data, and content organization.
-- **Project Structure:** Organization of directories, files, stylesheets, and scripts.
-- **Website Workflow:** How Jekyll processes content and generates the website.
-- **Local Development:** Prerequisites, installation, and running the website locally.
-- **Content Management:** Steps for creating and publishing new blog posts.
-- **Contribution Guidelines:** How to suggest improvements and contribute to the project.
+- **Technology Stack:** Languages, frameworks, tools, and browser APIs used in the project.
+- **Features and Functionalities:** How the website's interactive and content-related features work.
+- **Jekyll Architecture:** The role of layouts, includes, structured data, and content files.
+- **Project Structure:** How directories, files, stylesheets, and scripts are organized.
+- **Website Workflow:** How Jekyll processes the source files and generates the website.
+- **Local Development:** Required tools, installation, and instructions for running the website locally.
+- **Content Management:** How to create and publish new blog posts.
+- **Contribution Guidelines:** Steps for suggesting changes and contributing to the project.
 
 ---
 
@@ -49,39 +49,39 @@ It covers:
 
 ## About the Project
 
-Madhurima Mindscape is more than a traditional blogging website. It is a space for documenting experiences, sharing technical knowledge, exploring creative interests, and continuously learning.
+Madhurima Mindscape is a personal space for documenting experiences, sharing technical knowledge, exploring creative interests, and learning through writing.
 
-The platform is built using Jekyll, a static site generator that transforms structured content, reusable layouts, and templates into a complete static website.
+The website is built with Jekyll, a static site generator that converts content, data files, and reusable templates into a complete static website.
 
-The migration to Jekyll introduced a more organized and maintainable architecture, separating blog content, metadata, reusable components, layouts, stylesheets, and JavaScript functionality.
+Moving the project to Jekyll helped organize its code and content more clearly. Blog posts, metadata, reusable components, layouts, stylesheets, and JavaScript functionality are maintained separately.
 
-The website brings together:
+The website includes:
 
-- Personal storytelling and reflections.
+- Personal stories and reflections.
 - Technical articles and tutorials.
 - Project development experiences.
 - Poetry and creative writing.
-- Photography and visual storytelling.
-- Interactive blog-reading functionality.
-- Article discovery and bookmarking tools.
-- Blog analytics and reusable content templates.
+- Photography and visual content.
+- Interactive features for reading and engaging with articles.
+- Tools for discovering and bookmarking posts.
+- Blog insights and reusable content templates.
 
 ## Technology Stack
 
-The project combines static site generation, frontend technologies, structured data, and browser-native APIs.
+Madhurima Mindscape uses Jekyll for static site generation and frontend technologies for its design and interactive features.
 
 | Technology | Purpose |
 |---|---|
 | **Jekyll** | Static site generation and blog management |
 | **Ruby** | Jekyll runtime and dependency environment |
-| **Liquid** | Dynamic templates, layouts, loops, conditions, and data rendering |
+| **Liquid** | Templates, loops, conditions, and data rendering |
 | **HTML5** | Website structure and content |
 | **CSS3** | Styling, responsive layouts, and visual design |
 | **JavaScript** | Interactive components and client-side functionality |
 | **YAML** | Website configuration, structured metadata, and SEO data |
-| **Font Awesome** | Icons used in the navigation and blog hero sections |
-| **LocalStorage** | Persistent storage of saved articles in the browser |
-| **Web Share API** | Native content-sharing functionality where supported |
+| **Font Awesome** | Icons used in navigation and blog sections |
+| **LocalStorage** | Storing saved articles in the browser |
+| **Web Share API** | Native content sharing where supported |
 | **Clipboard API** | Copying blog links |
 | **Web Speech API** | Browser-based read-aloud functionality |
 | **XML** | RSS feed generation |
@@ -90,15 +90,15 @@ The project combines static site generation, frontend technologies, structured d
 
 ### Development and Browser Technologies
 
-The website also makes use of browser-native capabilities to improve the reading experience without requiring a dedicated backend for every interaction.
+Several browser-native APIs are used to provide interactive features without requiring a dedicated backend for each one.
 
-Examples include:
+These include:
 
-- Browser storage for saved articles.
-- Native and fallback sharing mechanisms.
-- Clipboard-based link sharing.
+- LocalStorage for saving articles in the browser.
+- Web Share API for native sharing on supported devices and browsers.
+- Clipboard API for copying article links.
 - Speech synthesis for reading blog content aloud.
-- Responsive CSS and theme-aware styling.
+- CSS media queries and theme-aware styles for responsive presentation.
 
 ---
 
@@ -106,116 +106,119 @@ Examples include:
 
 ### 1. Responsive Website Design
 
-- Responsive interface designed for desktop, tablet, and mobile devices.
-- Flexible layouts and content presentation.
-- Theme-aware visual elements.
-- Consistent styling across different website sections.
+- Adapts the interface to desktop, tablet, and mobile screen sizes.
+- Uses flexible layouts to present content across different devices.
+- Adjusts visual elements according to the active theme.
+- Maintains consistent styling across website sections.
 
 ### 2. Multiple Website Themes
 
-- Theme customization for different visual preferences.
-- Dynamic color changes across website elements.
-- Theme-aware headings, icons, and hero sections.
-- Consistent styling of interactive components.
+- Offers multiple themes to suit different visual preferences.
+- Updates colors across website elements when the theme changes.
+- Applies theme-aware styling to headings, icons, and hero sections.
+- Keeps interactive components consistent with the selected theme.
 
 ### 3. Interactive Icon-Based Hero Section
 
-- Displays Font Awesome icons associated with individual blog posts.
-- Provides direct navigation to corresponding articles.
-- Includes an interactive slider/carousel experience.
-- Updates icon colors according to the active website theme and heading colors.
-- Helps visitors discover blog content visually.
+- Displays Font Awesome icons linked to individual blog posts.
+- Allows visitors to open the corresponding articles directly.
+- Includes an interactive slider/carousel.
+- Changes icon colors according to the active website theme and heading colors.
+- Provides another way to browse and discover articles.
 
 ### 4. Reusable Blog Templates
 
-- Shared Jekyll layout for individual blog posts.
-- Consistent structure and styling across articles.
-- Reusable post-action components.
-- Structured categories, tags, and metadata.
-- Centralized presentation logic for easier maintenance.
+- Uses a shared Jekyll layout for individual blog posts.
+- Maintains a consistent structure and appearance across articles.
+- Includes reusable components for post actions.
+- Supports structured categories, tags, and metadata.
+- Keeps common presentation logic in shared files rather than repeating it in every post.
 
 ### 5. Interactive Blog Post Actions
 
-Every blog post includes a reusable set of reading and engagement tools.
+Each blog post uses a shared set of components for bookmarking, commenting, and sharing.
 
 **Save Articles**
+
 - Save and unsave individual blog posts.
 - Store saved article information using browser LocalStorage.
-- Retain saved articles across browser sessions.
-- Access bookmarked content through the Saved Articles page.
+- Keep saved articles available across browser sessions.
+- View bookmarked posts on the Saved Articles page.
 
 **Comment on Articles**
-- Interactive comment form.
-- Predefined comment options.
-- Support for custom comments.
-- Email-based comment submission.
+
+- Provides an interactive comment form.
+- Offers predefined comment options.
+- Allows visitors to enter custom comments.
+- Supports email-based comment submission.
 
 **Share Articles**
-- Share blog posts through the native Web Share API where supported.
-- Copy article URLs using the Clipboard API.
-- Provide fallback sharing options when native sharing is unavailable.
-- Display status messages to communicate the result of user actions.
+
+- Uses the native Web Share API where supported.
+- Allows article URLs to be copied through the Clipboard API.
+- Provides fallback sharing options when native sharing is unavailable.
+- Displays status messages to indicate the result of an action.
 
 ### 6. Reading Time Estimation
 
-- Displays estimated reading time for individual blog posts.
-- Integrated into the reusable post-actions component.
-- Helps readers understand the approximate time required to read an article.
+- Shows an estimated reading time for individual blog posts.
+- Displays the estimate through the reusable post-actions component.
+- Gives readers an idea of how long an article may take to read.
 
 ### 7. Read Aloud Functionality
 
-- Provides a read-aloud option for blog posts.
-- Uses browser speech synthesis capabilities.
-- Makes written content more accessible and convenient to consume.
+- Provides an option to listen to blog posts.
+- Uses the browser's speech synthesis capabilities.
+- Offers an alternative way to consume written content.
 
 ### 8. Explore the Blog
 
-A dedicated content-discovery page that presents blog articles in an organized and visually appealing format.
+The Explore the Blog page provides a central place to browse published articles.
 
-- Displays blog preview images.
-- Shows article titles and descriptions.
-- Provides links to individual blog posts.
-- Helps readers browse available content in one place.
+- Displays article preview images.
+- Shows titles and descriptions.
+- Links directly to individual blog posts.
+- Organizes articles so visitors can browse available content more easily.
 
 ### 9. Saved Articles
 
-A dedicated page for managing bookmarked blog posts.
+The Saved Articles page brings together posts bookmarked by the reader.
 
 - Displays previously saved articles.
 - Retrieves saved information from LocalStorage.
-- Supports removing saved articles.
-- Provides convenient access to bookmarked content.
+- Allows readers to remove saved articles.
+- Provides direct access to bookmarked content.
 
 ### 10. Blog Insights Dashboard
 
-A dedicated dashboard that presents information about the blog collection.
+The Blog Insights Dashboard presents an overview of the blog's content and metadata.
 
 - Retrieves article information from structured Jekyll data.
 - Displays blog categories and tags.
 - Uses article permalinks to associate metadata with individual posts.
-- Organizes content information for easier exploration.
-- Supports a centralized overview of blog content.
+- Organizes content information for browsing and reference.
+- Provides a central overview of the published blog collection.
 
 ### 11. Blog Template Library
 
-A dedicated collection of reusable blog templates.
+The Blog Template Library stores reusable templates separately from published articles.
 
-- Organizes templates separately from published blog articles.
+- Organizes templates independently of published blog posts.
 - Includes structured tags and categories.
 - Maintains additional template values and metadata.
-- Provides reusable starting points for creating future content.
+- Provides starting points for creating future blog content.
 
 ### 12. Custom 404 Error Page
 
-- Dedicated 404 page for unavailable or incorrect URLs.
-- Custom responsive design.
-- Provides a more consistent experience when visitors encounter missing pages.
+- Displays a dedicated page when a requested URL cannot be found.
+- Uses a responsive design.
+- Provides navigation back to the website and keeps the error page consistent with the rest of the site.
 
 ---
 
 ## Blog Categories
 
-The blog contains articles across different topics and creative interests.
+Articles on Madhurima Mindscape are organized into the following categories:
 
 | Category | Description |
 |---|---|
@@ -226,19 +229,16 @@ The blog contains articles across different topics and creative interests.
 | **Creative Clicks** | Photography and visual creativity |
 | **Poem Perspectives** | Poetry, literary interpretations, and creative perspectives |
 
-Each article is organized under its corresponding category within Jekyll's `_posts` directory.
+Each article is stored in its corresponding category directory inside Jekyll's `_posts` directory.
 
 ---
 
 ## Blog Reading Experience
 
-The website focuses on making individual articles easier to navigate, explore, and consume.
+The individual blog layout provides a consistent structure for reading articles. Shared post-action components add features that readers can use while viewing a post.
 
-The reusable blog layout provides a consistent reading experience across articles, while the post-actions component adds interactive functionality.
+These include:
 
-The reading experience includes:
-
-- Consistent blog layouts.
 - Estimated reading time.
 - Read-aloud functionality.
 - Comment submission.
@@ -246,13 +246,13 @@ The reading experience includes:
 - Link sharing.
 - Structured article metadata.
 
-These features are integrated into the individual blog posts through reusable Jekyll includes rather than maintaining separate implementations for every article.
+The features are integrated into blog posts through reusable Jekyll includes, so their implementation does not need to be repeated for every article.
 
 ---
 
 ## Blog Discovery and Management Tools
 
-In addition to published articles, Madhurima Mindscape includes dedicated tools for exploring and managing blog content.
+Alongside published articles, the project includes separate pages for browsing and managing blog content.
 
 | Tool | Functionality |
 |---|---|
@@ -261,13 +261,13 @@ In addition to published articles, Madhurima Mindscape includes dedicated tools 
 | **Blog Insights** | Explore article categories, tags, and associated metadata |
 | **Blog Templates** | Access reusable content templates with structured metadata |
 
-These tools are maintained separately from published blog articles in the `blog-tools` directory.
+These tools are maintained separately from published articles in the `blog-tools` directory.
 
 ---
 
 ## SEO and Website Optimization
 
-Search engine optimization and content discoverability are important parts of the website architecture.
+The project includes several features that help organize page metadata and make content easier for search engines to discover.
 
 ### SEO Features
 
@@ -284,25 +284,23 @@ Search engine optimization and content discoverability are important parts of th
 
 Each blog post has a corresponding YAML file inside `_data`, organized by category.
 
-This separates SEO-related information from the actual article content and makes metadata easier to maintain.
+Keeping SEO metadata separate from article content makes it easier to update and maintain without changing the actual post files.
 
 ### RSS Feed
 
-The website provides an RSS feed to help readers follow published content.
+The website provides an RSS feed so readers can follow newly published content.
 
-An RSS feed link is also included in the website footer.
+A link to the feed is also available in the website footer.
 
 ### Sitemap
 
-A sitemap is included to help search engines discover the website's pages and published articles.
+The project includes a sitemap to help search engines discover website pages and published articles.
 
 ---
 
 ## Jekyll Architecture
 
-The website was migrated to Jekyll to establish a modular and maintainable architecture.
-
-The migration introduced a clear separation of responsibilities.
+Jekyll provides the structure used to manage content and generate the website. The project separates articles, data, layouts, reusable components, and frontend assets into different directories.
 
 | Directory | Responsibility |
 |---|---|
@@ -318,30 +316,28 @@ The migration introduced a clear separation of responsibilities.
 
 ### 1. Content Management with `_posts`
 
-All published articles are maintained inside Jekyll's `_posts` directory.
+All published articles are stored inside Jekyll's `_posts` directory.
 
-Articles are organized into category-based subdirectories, making the content easier to navigate and maintain.
-
-Jekyll-compatible filenames and front matter are used for article identification and metadata.
+Articles are grouped into category-based subdirectories. Each post follows Jekyll's filename convention and uses front matter to define its layout, title, date, categories, tags, and other metadata.
 
 ### 2. Structured Data with `_data`
 
-The `_data` directory contains YAML files used to maintain structured website and article information.
+The `_data` directory contains YAML files used to store structured website and article information.
 
 It includes:
 
 - Category-wise SEO metadata.
 - Blog insights data.
 - Blog template information.
-- Saved articles page data.
+- Saved Articles page data.
 - Homepage configuration data.
 - Custom 404 page data.
 
-Each published article has a corresponding YAML metadata file organized using the same category and filename convention.
+Each published article has a corresponding YAML metadata file, organized using the same category and filename convention.
 
 ### 3. Reusable Layouts with `_layouts`
 
-The `_layouts` directory contains shared page layouts.
+The `_layouts` directory contains the page layouts used across the website.
 
 | Layout | Purpose |
 |---|---|
@@ -357,7 +353,7 @@ The `_includes` directory is divided into `components` and `imports`.
 
 **Components**
 
-Reusable interface elements shared across the website:
+These files contain interface elements that are reused across the website:
 
 - `header.html` – Website navigation header.
 - `footer.html` – Footer with navigation and social links.
@@ -367,7 +363,7 @@ Reusable interface elements shared across the website:
 
 **Imports**
 
-Section-level HTML files used to organize page content:
+These files contain the HTML sections used to build individual pages:
 
 - `404.html`
 - `blog-insights.html`
@@ -378,7 +374,7 @@ Section-level HTML files used to organize page content:
 
 ### 5. Separate Blog Tools
 
-The `blog-tools` directory maintains standalone blog utilities independently of published articles.
+The `blog-tools` directory contains standalone utilities that are maintained separately from published articles.
 
 It currently contains:
 
@@ -386,11 +382,11 @@ It currently contains:
 - Blog Insights.
 - Blog Template.
 
-This separation keeps the `_posts` directory focused on actual published content.
+This keeps `_posts` focused on published blog content.
 
 ### 6. Modular Frontend Assets
 
-CSS and JavaScript files are organized separately according to their respective website sections and functionality.
+The CSS and JavaScript files are grouped by website section and functionality.
 
 **CSS**
 
@@ -414,13 +410,13 @@ CSS and JavaScript files are organized separately according to their respective 
 - `saved-articles.js`
 - `slider-carousel.js`
 
-This organization makes individual features easier to maintain, update, and extend.
+Keeping these assets in separate files makes it easier to locate and update the code for a particular feature.
 
 ---
 
 ## Project Directory Structure
 
-The following structure represents the current organization of Madhurima Mindscape.
+The following tree shows how the main directories and files in Madhurima Mindscape are organized.
 
 ```text
 Madhurima-Mindscape/
@@ -579,61 +575,61 @@ Madhurima-Mindscape/
 
 ## How the Website Works
 
-Madhurima Mindscape uses Jekyll's static site generation workflow.
+Madhurima Mindscape uses Jekyll to process blog content, structured data, and reusable templates before generating the static website.
 
-The general content-generation process is:
+The general workflow is:
 
-1. Blog articles are maintained inside `_posts`.
+1. Blog articles are stored inside `_posts`.
 2. Corresponding metadata is maintained in `_data` using YAML files.
-3. Jekyll uses Liquid templates to process structured content and data.
-4. Reusable layouts and includes provide a consistent website structure.
-5. CSS and JavaScript provide styling and interactive functionality.
+3. Jekyll processes the content and data through Liquid templates.
+4. Layouts and includes define the structure of the generated pages.
+5. CSS and JavaScript handle the website's styling and interactive features.
 6. Jekyll generates the static website inside the `_site` directory.
 7. The generated website is deployed through GitHub Pages.
 
 ### Architecture Overview
 
 ```text
-        Blog Articles
-         (_posts)
-             |
-             v
-      Structured Data
-         (_data)
-             |
-             v
-     Jekyll + Liquid
-             |
-       +-----+-----+
-       |           |
-       v           v
-    Layouts     Includes
+       Blog Articles
+          (_posts)
+              |
+              v
+       Structured Data
+          (_data)
+              |
+              v
+        Jekyll + Liquid
+              |
+        +-----+-----+
+        |           |
+        v           v
+     Layouts     Includes
    (_layouts)  (_includes)
-       |           |
-       +-----+-----+
-             |
-             v
-       Generated HTML
-             |
-       +-----+-----+
-       |           |
-       v           v
-      CSS       JavaScript
-       |           |
-       +-----+-----+
-             |
-             v
-       Complete Website
-             |
-             v
-        GitHub Pages
+        |           |
+        +-----+-----+
+              |
+              v
+        Generated HTML
+              |
+        +-----+-----+
+        |           |
+        v           v
+       CSS       JavaScript
+        |           |
+        +-----+-----+
+              |
+              v
+        Complete Website
+              |
+              v
+         GitHub Pages
 ```
 
 ---
 
 ## Getting Started
 
-To run Madhurima Mindscape locally, you need the following installed:
+To run Madhurima Mindscape locally, make sure the following tools are installed:
 
 - Git
 - Ruby
@@ -643,7 +639,7 @@ To run Madhurima Mindscape locally, you need the following installed:
 
 ### Prerequisites
 
-Verify the installations:
+Check that Ruby, RubyGems, and Bundler are available:
 
 ```bash
 ruby --version
@@ -653,11 +649,13 @@ bundle --version
 
 ### Clone the Repository
 
+Clone the project from GitHub:
+
 ```bash
 git clone https://github.com/madhurimarawat/Madhurima-Mindscape.git
 ```
 
-Navigate to the project directory:
+Move into the project directory:
 
 ```bash
 cd Madhurima-Mindscape
@@ -665,7 +663,7 @@ cd Madhurima-Mindscape
 
 ### Install Dependencies
 
-Install the required Ruby gems:
+Install the Ruby gems required by the project:
 
 ```bash
 bundle install
@@ -675,27 +673,27 @@ bundle install
 
 ## Running Locally
 
-Start the Jekyll development server:
+Start the Jekyll development server with:
 
 ```bash
 bundle exec jekyll serve
 ```
 
-Open the following URL in your browser:
+Open the following address in your browser:
 
 ```text
 http://127.0.0.1:4000/Madhurima-Mindscape/
 ```
 
-Jekyll automatically rebuilds the website when supported source files are modified.
+Jekyll rebuilds the website when supported source files are changed.
 
-To build the website without starting the server:
+To generate the website without starting the development server, run:
 
 ```bash
 bundle exec jekyll build
 ```
 
-The generated website will be available inside:
+The generated website files will be available in:
 
 ```text
 _site/
@@ -703,7 +701,7 @@ _site/
 
 ### Local Development Documentation
 
-For additional setup instructions, refer to:
+For more detailed setup instructions, refer to:
 
 - [Jekyll Localhost Setup (Markdown)](jekyll-localhost-setup.md)
 
@@ -711,11 +709,11 @@ For additional setup instructions, refer to:
 
 ## Adding a New Blog Post
 
-The website uses Jekyll's `_posts` directory to organize published articles.
+New articles are added to Jekyll's `_posts` directory and organized under the appropriate category.
 
 ### Step 1: Create a Blog Post
 
-Create a new HTML file inside the appropriate category directory.
+Create a new HTML file inside the relevant category directory.
 
 For example:
 
@@ -727,7 +725,7 @@ _posts/
 
 ### Step 2: Add Front Matter
 
-Include Jekyll front matter at the beginning of the article.
+Add Jekyll front matter at the beginning of the file.
 
 ```yaml
 ---
@@ -746,11 +744,11 @@ seo: /tech-insight/my-new-article
 
 ### Step 3: Add Article Content
 
-Write your article using HTML and the supported content structure of the existing blog layout.
+Write the article using HTML and the content structure supported by the existing blog layout.
 
 ### Step 4: Add Corresponding SEO Data
 
-Create a matching YAML file inside the corresponding `_data` category directory.
+Create a matching YAML file in the corresponding category directory inside `_data`.
 
 For example:
 
@@ -760,72 +758,76 @@ _data/
     └── my-new-article.yml
 ```
 
-Maintain the existing metadata schema used by the other blog entries.
+Follow the metadata structure used by the existing blog entries.
 
 ### Step 5: Update Content Discovery Data
 
-After creating a new blog post, update the relevant sections in the following three files so the article appears in the appropriate places across the website:
+After adding the article and its metadata, update the following three files so the new post appears in the relevant sections of the website.
 
-1\. `_includes/components/icon-hero-header.html`
+**1. `_includes/components/icon-hero-section.html`**
 
-Add a new icon entry inside the `icon-hero-grid` container, following the existing `icon-hero-item` class and structure.
+Add a new icon entry inside the `icon-hero-grid` container. Follow the existing `icon-hero-item` structure and use an appropriate Font Awesome icon.
 
-```
+Example:
+
+```html
 <a target="_blank" rel="noopener noreferrer" href="{{ site.baseurl }}/article-url" class="icon-hero-item"
-    aria-label="Article Title" title="Article Title">
+   aria-label="Article Title" title="Article Title">
     <i class="fas fa-icon-name"></i>
 </a>
 ```
 
-2\. `explore-the-blog.html`\
-Add a new `explore-item` link under the appropriate category section, using the article URL, a relevant Font Awesome icon, and the article title.
+**2. `_posts/introduction/2026-10-30-explore-the-blog.html`**
 
-3\. `index.html`\
+Add a new `explore-item` link under the appropriate category section. Use the article URL, a relevant Font Awesome icon, and the article title.
+
+**3. `index.html`**
+
 Add a new `path-item` link under the corresponding category in the homepage's blog discovery section.
 
-Example: For a new article under Tech Insights, add its link inside the existing Tech Insights section in both `explore-the-blog.html` and `index.html`.
+For example, if the new article belongs to Tech Insights, add its link under the existing Tech Insights section in both `explore-the-blog.html` and `index.html`.
 
-This keeps the homepage, icon hero section, and Explore the Blog page updated whenever a new article is published.
+These updates add the article to the homepage discovery section, icon hero section, and Explore the Blog page.
 
 ### Step 6: Test Locally
 
-Run:
+Start the local development server:
 
 ```bash
 bundle exec jekyll serve
 ```
 
-Verify the article, its metadata, navigation links, and interactive post actions before deploying.
+Check that the new article appears in the correct sections. Also verify its metadata, navigation links, and interactive post actions before deploying the changes.
 
 ---
 
 ## Contributing
 
-Suggestions, improvements, and contributions are always welcome!
+Suggestions, bug reports, and improvements are welcome!
 
-If you have an idea or find an issue:
+If you would like to contribute:
 
-1. Fork this repository.
+1. Fork the repository.
 2. Create a new feature branch.
 3. Make your changes.
-4. Test your changes locally.
+4. Test the changes locally.
 5. Submit a pull request.
 
-You can also participate through:
+You can also report issues or share ideas through:
 
 - [GitHub Issues](https://github.com/madhurimarawat/Madhurima-Mindscape/issues)
 - [Pull Requests](https://github.com/madhurimarawat/Madhurima-Mindscape/pulls)
 - [GitHub Discussions](https://github.com/madhurimarawat/Madhurima-Mindscape/discussions)
 
-If you find this project interesting or useful, consider giving the repository a ⭐!
+If you find the project useful or interesting, consider giving the repository a ⭐!
 
 ---
 
 ## Connect With Me
 
-Thank you for exploring Madhurima Mindscape!
+Thank you for taking the time to explore Madhurima Mindscape!
 
-I enjoy learning, building projects, sharing experiences, and connecting with people who have similar interests.
+I enjoy learning, building projects, sharing experiences, and connecting with others who have similar interests.
 
 Feel free to reach out:
 
