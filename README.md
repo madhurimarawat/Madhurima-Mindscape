@@ -168,6 +168,12 @@ Poetry, literary reflections, and interpretations of meaningful works.
   
 ---
 
+## Documentation
+
+For a detailed technical overview of Madhurima Mindscape, including its technology stack, features, Jekyll architecture, project structure, local development setup, and instructions for adding new blog posts, refer to the **[Project Documentation](Project_Documentation.md)**.
+
+---
+
 ## Directory Structure
 
 ```text
