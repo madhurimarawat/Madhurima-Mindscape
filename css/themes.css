@@ -25,6 +25,7 @@
 */
 
 /* ==== Default Theme Variables (used globally unless overridden by theme) ==== */
+root,
 body {
     --footer-color: #db4583;
     --circle-bg: #ff9a8b;

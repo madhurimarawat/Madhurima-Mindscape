@@ -26,6 +26,9 @@
 *********************************************************************************************
 */
 
+/* Import the Marcellus font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+
 body {
     text-align: justify;
     /* Justifies text for better readability */
@@ -35,9 +38,6 @@ body {
     /* Sets a comfortable font size for the body text */
     padding-top: 40px;
 }
-
-/* Import the Marcellus font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
 
 /* Apply a newspaper-style drop cap to the first letter of the paragraph with class "dropcap" */
 .dropcap::first-letter {
