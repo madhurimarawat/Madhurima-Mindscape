@@ -142,6 +142,10 @@ Poetry, literary reflections, and interpretations of meaningful works.
 <a href="https://madhurimarawat.github.io/Madhurima-Mindscape" target="_blank">
   <img src="website_snapshots/website_8.png" alt="Snapshot 8" />
 </a>
+<br><br>
+<a href="https://madhurimarawat.github.io/Madhurima-Mindscape" target="_blank">
+  <img src="website_snapshots/404-page.png" alt="Custom 404" />
+</a>
 
 ---
 
