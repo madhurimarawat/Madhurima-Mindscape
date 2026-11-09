@@ -1,0 +1,862 @@
+---
+layout: blog
+permalink: /jekyll-migration
+seo: tech-insights/jekyll-migration
+
+categories:
+- Tech Insights
+
+tags:
+- Jekyll
+- Static Site Generator
+- Web Development
+- Website Architecture
+- HTML
+- CSS
+- Liquid
+- Frontend Development
+- Website Organization
+- Code Reusability
+- Project Structure
+- Web Development Tips
+- Blogging
+- GitHub Pages
+- Software Development
+- Programming
+---
+
+<!--
+*****************************************************************************
+* File: jekyll-migration.html
+* Author: Madhurima Rawat
+* Date: November 7, 2026
+* Description: A practical introduction to migrating a static website
+*              to Jekyll, organizing layouts, includes, data files,
+*              and deciding when Jekyll is worth using.
+* Version: 1.1
+*****************************************************************************
+-->
+
+<top>
+    <h2>Jekyll Migration</h2>
+    <div class="line-below"></div>
+    <p class="date-class">November 7, 2026</p>
+</top>
+
+<section class="intro">
+    <div>
+        <p class="dropcap">
+            Recently, I started exploring Jekyll as a static site generator,
+            and I found some of its features extremely useful, especially
+            when working on websites that contain multiple pages, articles,
+            and reusable components.
+        </p>
+
+        <p>
+            Initially, managing a static website using separate HTML, CSS,
+            and JavaScript files might seem perfectly fine. However, as the
+            website grows, maintaining everything becomes increasingly
+            difficult. You might have hundreds of articles, multiple pages,
+            repeated HTML structures, and CSS files that keep getting longer.
+        </p>
+
+        <div class="meme">
+            <img src="https://www.userx.co.za/assets/images/journal/jekyll-logo-820x418.png" alt="Jekyll Logo"
+                height="250px" class="image">
+        </div>
+
+        <div>
+            <p class="image-caption">Jekyll Logo(<a
+                    href="https://www.userx.co.za/assets/images/journal/jekyll-logo-820x418.png" target="_blank"
+                    class="link">Source</a>)</p>
+        </div>
+
+        <p>
+            This is where Jekyll becomes particularly useful. It provides a
+            structured way of organizing your website using layouts, includes,
+            data files, Liquid variables, and other features that make
+            maintaining a larger static website considerably easier.
+        </p>
+
+        <p>
+            I have actually deployed my website using Jekyll, and in this
+            article, I want to discuss some of the features I found useful,
+            how I organize my project, and when I think using Jekyll makes sense.
+        </p>
+    </div>
+
+    <blockquote>
+        The biggest advantage of Jekyll isn't simply generating static HTML
+        pages. It's having a maintainable structure when your website starts growing.
+    </blockquote>
+</section>
+
+<section class="self-help">
+
+    <!-- SECTION 1 -->
+    <div class="tip-item">
+        <h3>📂 1. Start With a Data Folder</h3>
+
+        <p>
+            One of the first things I recommend when organizing a Jekyll
+            project is creating a proper data folder.
+        </p>
+
+        <p>
+            You can store commonly used information, configuration data,
+            and other reusable content in this folder instead of repeatedly
+            writing the same information across different files.
+        </p>
+
+        <p>
+            Jekyll provides a <code>_data</code> directory where you can store
+            structured data in YAML, JSON, or CSV formats. You can then access
+            that information using Liquid.
+        </p>
+
+        <p>
+            For example, suppose you have several navigation links that you
+            want to display across your website. Instead of manually writing
+            those links in every page, you can maintain them in a single YAML file.
+        </p>
+
+        <p>
+            You can also maintain reusable information such as categories,
+            social links, website settings, blog insights, and SEO metadata.
+        </p>
+
+        <p>
+            In my project, the <code>_data</code> directory contains structured
+            information for different article categories, homepage content,
+            blog insights, templates, saved-article page content, and the
+            custom 404 page.
+        </p>
+
+        <p>
+            Another useful approach is keeping your configuration centralized.
+            Whenever you need to update something that is used across multiple
+            pages, you have a single place to make that change. This becomes
+            especially helpful when your website contains a large number of pages.
+        </p>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="tip-item">
+        <h3>📄 2. Use Include Files for Reusable Components</h3>
+
+        <p>
+            The next important thing is the <code>_includes</code> folder.
+            This is where you can keep reusable components that you want to
+            include across multiple pages.
+        </p>
+
+        <p>
+            For example, consider a website where you have the same navigation
+            header, footer, social links, and other HTML elements appearing
+            on multiple pages. Instead of copying and pasting the same HTML
+            everywhere, you can create separate include files for these components.
+        </p>
+
+        <p>
+            In Madhurima Mindscape, I group reusable interface components
+            inside a <code>components</code> directory and page-specific
+            content sections inside an <code>imports</code> directory.
+            The structure looks like this:
+        </p>
+
+        <pre><code>_includes/
+├── components/
+│   ├── footer.html
+│   ├── header.html
+│   ├── icon-hero-section.html
+│   ├── post-actions.html
+│   └── slider-carousel.html
+└── imports/
+    ├── 404.html
+    ├── blog-insights.html
+    ├── blog.html
+    ├── explore-the-blog.html
+    ├── index.html
+    └── saved-articles.html</code></pre>
+
+        <p>
+            You can then include these components wherever you need them using
+            Liquid. For example, the following is a simplified illustration
+            using the actual component paths in my project:
+        </p>
+
+        <pre><code>{% raw %}{% include components/header.html %}
+
+&lt;main&gt;
+    &lt;h1&gt;Welcome to my website&lt;/h1&gt;
+&lt;/main&gt;
+
+{% include components/footer.html %}{% endraw %}</code></pre>
+
+        <p>
+            The really useful thing here is that you only need to maintain
+            the component in one place. Suppose you want to change your
+            navigation header. You don't have to search through hundreds
+            of HTML files and update the same structure everywhere.
+            You simply update the corresponding include file, and the
+            change is reflected wherever that component is used during
+            site generation.
+        </p>
+
+        <p>
+            You can also pass variables to include files, which makes them
+            even more reusable. I personally find this approach particularly
+            useful for websites with many pages and repeated components.
+        </p>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="tip-item">
+        <h3>🧩 3. Use Layouts to Maintain a Consistent Website Structure</h3>
+
+        <p>
+            Another feature I really like about Jekyll is its layout system.
+            Imagine having hundreds of blog posts. Most of them follow the
+            same general structure: a heading, publication date, article
+            content, and some common elements around the content.
+        </p>
+
+        <p>
+            Writing the entire HTML structure separately for every article
+            would be unnecessarily repetitive. Instead, you can create a
+            layout file and reuse it across multiple pages.
+        </p>
+
+        <p>
+            My project uses layouts for individual blog posts, the homepage,
+            the Explore the Blog page, the Blog Insights dashboard, and the
+            custom 404 page. A simplified layout directory looks like this:
+        </p>
+
+        <pre><code>_layouts/
+├── 404.html
+├── blog-insights.html
+├── blog.html
+├── explore-the-blog.html
+└── index.html</code></pre>
+
+        <p>
+            Your blog layout can contain the common structure required by
+            every article. A simplified example would look something like this:
+        </p>
+
+        <pre><code>{% raw %}---
+layout: default
+---
+
+&lt;article&gt;
+    &lt;h1&gt;{{ page.title }}&lt;/h1&gt;
+    &lt;p&gt;{{ page.date | date: "%B %d, %Y" }}&lt;/p&gt;
+    {{ content }}
+&lt;/article&gt;{% endraw %}</code></pre>
+
+        <p>
+            Now, whenever you create a new article, you only need to specify
+            the layout in its front matter. Jekyll automatically places the
+            page content inside the layout.
+        </p>
+
+        <p>
+            This makes it extremely easy to maintain a consistent structure
+            across hundreds or even thousands of articles. If you decide to
+            change the overall blog layout, you only need to update the
+            layout file instead of modifying every individual article.
+        </p>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="tip-item">
+        <h3>🔖 4. Organize Your Articles Using Front Matter and Liquid</h3>
+
+        <p>
+            Another thing I found useful is how Jekyll handles page-specific
+            information through front matter. Every article can have its own
+            metadata, such as its title, permalink, categories, tags,
+            publication date, and other custom information.
+        </p>
+
+        <p>
+            For example, you can define something like this at the beginning
+            of an article:
+        </p>
+
+        <pre><code>---
+layout: blog
+title: "My First Article"
+date: 2026-11-05
+permalink: /my-first-article
+categories:
+  - Tech Insights
+tags:
+  - Web Development
+  - Programming
+  - Developer Tips
+---</code></pre>
+
+        <p>
+            You can then access these values using Liquid variables.
+            For example, <code>{% raw %}{{ page.title }}{% endraw %}</code>
+            gives you the article title, while
+            <code>{% raw %}{{ page.categories }}{% endraw %}</code> and
+            <code>{% raw %}{{ page.tags }}{% endraw %}</code> allow you to
+            access its categories and tags.
+        </p>
+
+        <p>
+            This is especially useful when building dynamic-looking sections
+            of a static website. For instance, you can create a category page
+            that automatically displays all articles belonging to a particular
+            category. Similarly, you can generate tag pages, related article
+            sections, and article listings without manually maintaining every link.
+        </p>
+
+        <p>
+            The best part is that whenever you add a new article with the
+            appropriate metadata, your existing Liquid templates can
+            automatically accommodate it.
+        </p>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div class="tip-item">
+        <h3>🔗 5. Permalinks: Keep Your URLs Independent of File Structure</h3>
+
+        <p>
+            One of my favourite features of Jekyll is the
+            <code>permalink</code> option. Normally, the URL structure of a
+            static website can become closely connected to the way you
+            organize your files and folders.
+        </p>
+
+        <p>
+            However, Jekyll allows you to explicitly define the URL at which
+            a particular page should be served.
+        </p>
+
+        <p>For example, suppose your article is located inside a nested folder:</p>
+
+        <pre><code>_posts/
+└── tech-insights/
+    └── 2026-11-07-jekyll-migration.html</code></pre>
+
+        <p>You can still define its permalink in the front matter:</p>
+
+        <pre><code>---
+permalink: /jekyll-migration
+---</code></pre>
+
+        <p>
+            Now the article will be available at
+            <code>/jekyll-migration</code>, regardless of the original
+            folder structure. When the site is hosted as a GitHub Pages
+            project site, the configured base URL is also part of the
+            public path. For this project, that means the local URL is
+            <code>/Madhurima-Mindscape/jekyll-migration</code>.
+        </p>
+
+        <p>
+            This gives you much more flexibility when organizing your
+            project. You can move files into different directories or
+            restructure your website without necessarily changing the
+            public URLs.
+        </p>
+
+        <p>
+            I find this particularly useful when migrating an existing
+            website because you can preserve the URLs that people are
+            already familiar with. It also helps avoid unnecessary broken
+            links when reorganizing a large collection of articles.
+        </p>
+    </div>
+
+    <!-- SECTION 6 -->
+    <div class="tip-item">
+        <h3>🎨 6. Split Large CSS and JavaScript Files Into Smaller Parts</h3>
+
+        <p>
+            Another problem I frequently encounter when maintaining a
+            website is that CSS and JavaScript files keep growing.
+            Initially, you might have a single CSS file containing all
+            your styling. That is perfectly reasonable for a small project.
+        </p>
+
+        <p>
+            But as you introduce new components, pages, and features,
+            the file can become extremely long and difficult to manage.
+            With a Jekyll project, you can organize your stylesheets into
+            smaller, logically separated files.
+        </p>
+
+        <p>For example:</p>
+
+        <pre><code>css/
+├── 404.css
+├── blog-insights.css
+├── contents.css
+├── explore.css
+├── icon-hero-section.css
+├── index.css
+├── post-actions.css
+├── saved-articles.css
+├── slider-carousel.css
+└── themes.css</code></pre>
+
+        <p>
+            The same idea applies to JavaScript. Instead of maintaining one
+            enormous file, you can separate different functionalities into
+            individual files.
+        </p>
+
+        <pre><code>js/
+├── blog-insights.js
+├── explore.js
+├── index.js
+├── post-actions.js
+├── saved-articles.js
+└── slider-carousel.js</code></pre>
+
+        <p>
+            Whenever you want to update a particular component, you know
+            exactly where to look. This becomes increasingly valuable as
+            your website grows. You can introduce new features without
+            turning your existing codebase into one massive collection
+            of unrelated code.
+        </p>
+    </div>
+
+    <!-- SECTION 7 -->
+    <div class="tip-item">
+        <h3>📚 7. Jekyll Becomes Especially Useful When Your Website Grows</h3>
+
+        <p>
+            This is probably the biggest reason why I would recommend
+            considering Jekyll for a larger static website. Suppose you
+            have hundreds or thousands of blog posts. You are continuously
+            adding new articles, introducing new sections, updating your
+            navigation, and improving different components.
+        </p>
+
+        <p>
+            Managing all of this using individual HTML files can eventually
+            become frustrating. You might want to introduce a new feature
+            that needs to appear across all articles. Perhaps you want to
+            update the article structure, change the navigation, add a new
+            CSS component, or modify the footer.
+        </p>
+
+        <p>
+            Without a reusable structure, you might have to modify hundreds
+            of files individually. With Jekyll, you can often make the same
+            change by updating just one include file, layout, stylesheet,
+            or data file.
+        </p>
+
+        <p>For example:</p>
+
+        <ul>
+            <li><strong>New navigation feature:</strong> Update the header component.</li>
+            <li><strong>New article structure:</strong> Update the blog layout.</li>
+            <li><strong>New reusable component:</strong> Create an include file.</li>
+            <li><strong>Updated website information:</strong> Modify the relevant data file.</li>
+            <li><strong>New styling:</strong> Add or update the appropriate CSS file.</li>
+        </ul>
+
+        <p>
+            This is what makes Jekyll particularly attractive when building
+            and maintaining a large static website. You can keep adding new
+            articles and features while maintaining a relatively organized codebase.
+        </p>
+    </div>
+
+    <!-- SECTION 8 -->
+    <div class="tip-item">
+        <h3>⚖️ 8. When Should You Actually Use Jekyll?</h3>
+
+        <p>
+            Now, despite all these advantages, I don't think Jekyll is
+            something you should use for every static website. It introduces
+            an additional layer of complexity. You need to understand its
+            folder conventions, layouts, includes, front matter, Liquid syntax,
+            and the build process.
+        </p>
+
+        <p>
+            Initially, setting everything up can take some time. You also
+            need to understand how the different parts of your project
+            interact with each other. So, I would divide the decision into
+            two scenarios.
+        </p>
+
+        <h4>🌱 Small Projects With Limited Future Scope</h4>
+
+        <p>
+            If you are building a very small website with only a few pages,
+            and you don't expect it to grow much, I would recommend sticking
+            with a simple HTML, CSS, and JavaScript structure.
+        </p>
+
+        <p>
+            For example, if you are creating a personal landing page, a small
+            portfolio, or a simple static webpage, introducing Jekyll might
+            be unnecessary.
+        </p>
+
+        <pre><code>my-website/
+├── index.html
+├── about.html
+├── style.css
+└── script.js</code></pre>
+
+        <p>
+            There is nothing wrong with this approach. In fact, for smaller
+            projects, keeping things simple is often the better decision.
+            You don't need layouts, includes, data files, and a build system
+            if your website doesn't actually need them.
+        </p>
+
+        <h4>🚀 Larger Projects With Significant Future Scope</h4>
+
+        <p>
+            However, if you are planning to build a website that will
+            continuously grow, Jekyll becomes much more interesting.
+            Suppose you are planning to publish hundreds of articles,
+            introduce multiple categories, create reusable components,
+            and continuously add new features.
+        </p>
+
+        <p>
+            In that situation, having a proper structure from the beginning
+            can save you a considerable amount of maintenance work later.
+            You can organize your content, reuse layouts, maintain common
+            components, and update the website centrally.
+        </p>
+
+        <p>
+            The initial setup might be slightly complicated, but the
+            benefits become more noticeable as the project grows.
+        </p>
+    </div>
+</section>
+
+<!-- ADDITIONAL PROJECT DOCUMENTATION -->
+<section class="self-help">
+    <div class="tip-item">
+        <h3>🏗️ 9. How I Organized Madhurima Mindscape</h3>
+
+        <p>
+            To make these ideas more practical, I want to share how I have
+            organized my own website, Madhurima Mindscape. It is a Jekyll-powered
+            personal blogging platform where I publish technical articles,
+            personal reflections, project experiences, poetry, and photography.
+        </p>
+
+        <p>
+            The project uses Jekyll for static site generation, Ruby for the
+            runtime environment, Liquid for templates, YAML for structured
+            data, and HTML, CSS, and JavaScript for the frontend.
+        </p>
+
+        <p>
+            I have separated published articles, metadata, layouts, reusable
+            components, standalone blog tools, and frontend assets. This makes
+            it easier to locate a particular feature and maintain it without
+            unnecessarily changing unrelated parts of the website.
+        </p>
+
+        <h4>My Main Project Structure</h4>
+
+        <pre><code>Madhurima-Mindscape/
+├── _data/
+│   ├── 404/
+│   ├── creative-clicks/
+│   ├── introduction/
+│   ├── personal-insights/
+│   ├── poem-perspectives/
+│   ├── project-diaries/
+│   ├── tech-insights/
+│   ├── blog-insights.yml
+│   ├── blog-template.yml
+│   ├── index.yml
+│   └── saved-articles.yml
+│
+├── _includes/
+│   ├── components/
+│   │   ├── footer.html
+│   │   ├── header.html
+│   │   ├── icon-hero-section.html
+│   │   ├── post-actions.html
+│   │   └── slider-carousel.html
+│   └── imports/
+│       ├── 404.html
+│       ├── blog-insights.html
+│       ├── blog.html
+│       ├── explore-the-blog.html
+│       ├── index.html
+│       └── saved-articles.html
+│
+├── _layouts/
+│   ├── 404.html
+│   ├── blog-insights.html
+│   ├── blog.html
+│   ├── explore-the-blog.html
+│   └── index.html
+│
+├── _posts/
+│   ├── creative-clicks/
+│   ├── introduction/
+│   ├── personal-insights/
+│   ├── poem-perspectives/
+│   ├── project-diaries/
+│   └── tech-insights/
+│
+├── blog-tools/
+├── css/
+├── images/
+├── js/
+├── website_snapshots/
+├── 404.html
+├── _config.yml
+├── Gemfile
+├── Gemfile.lock
+└── index.html</code></pre>
+
+        <p>
+            This is a simplified overview of the repository rather than
+            every individual file. The category folders inside
+            <code>_posts</code> keep articles grouped by subject, while
+            the matching folders inside <code>_data</code> hold related
+            structured information.
+        </p>
+
+        <p>
+            The <code>blog-tools</code> directory contains standalone tools
+            such as Saved Articles, Blog Insights, and the Blog Template
+            Library. Keeping these separate from <code>_posts</code> helps
+            keep the posts directory focused on published articles.
+        </p>
+    </div>
+
+    <div class="tip-item">
+        <h3>🛠️ 10. Technologies and Browser Features Behind the Website</h3>
+
+        <p>
+            Jekyll handles the generation and organization of the website,
+            while standard frontend technologies provide the visual design
+            and interactive experience.
+        </p>
+
+        <ul>
+            <li><strong>Jekyll:</strong> Generates the static website and manages blog content.</li>
+            <li><strong>Ruby and Bundler:</strong> Provide the runtime and dependency environment.</li>
+            <li><strong>Liquid:</strong> Renders templates, variables, loops, and conditional content.</li>
+            <li><strong>YAML:</strong> Stores configuration, article metadata, and structured website data.</li>
+            <li><strong>HTML5:</strong> Defines the structure and content of pages.</li>
+            <li><strong>CSS3:</strong> Handles styling, responsive layouts, and themes.</li>
+            <li><strong>JavaScript:</strong> Powers interactive components and client-side features.</li>
+            <li><strong>Font Awesome:</strong> Supplies icons used throughout the interface.</li>
+            <li><strong>Git and GitHub:</strong> Support version control and repository management.</li>
+            <li><strong>GitHub Pages:</strong> Hosts the generated website.</li>
+        </ul>
+
+        <p>
+            I also use browser-native APIs to provide useful features without
+            requiring a separate backend for every interaction.
+        </p>
+
+        <ul>
+            <li><strong>LocalStorage:</strong> Saves bookmarked articles in the visitor's browser.</li>
+            <li><strong>Web Share API:</strong> Enables native sharing on supported browsers and devices.</li>
+            <li><strong>Clipboard API:</strong> Copies article links.</li>
+            <li><strong>Web Speech API:</strong> Provides browser-based read-aloud functionality.</li>
+        </ul>
+
+        <p>
+            These technologies work together to create a website that is
+            statically generated but still offers interactive features
+            in the browser.
+        </p>
+    </div>
+
+    <div class="tip-item">
+        <h3>🔄 11. How Jekyll Builds the Website</h3>
+
+        <p>
+            One thing worth understanding when working with Jekyll is what
+            happens when the website is built. Jekyll reads the source files,
+            processes front matter and Liquid templates, combines content
+            with layouts and includes, and writes the generated website
+            into the <code>_site</code> directory.
+        </p>
+
+        <p>The overall workflow looks like this:</p>
+
+        <pre><code>Blog Articles (_posts)     Structured Data (_data)
+          \                         /
+           \                       /
+            v                     v
+                 Jekyll + Liquid
+                        |
+              +---------+---------+
+              |                   |
+              v                   v
+           Layouts              Includes
+         (_layouts)            (_includes)
+              |                   |
+              +---------+---------+
+                        |
+                        v
+                Generated HTML
+                        |
+              +---------+---------+
+              |                   |
+              v                   v
+             CSS              JavaScript
+              |                   |
+              +---------+---------+
+                        |
+                        v
+                 Complete Website
+                        |
+                        v
+                  GitHub Pages</code></pre>
+
+        <p>
+            In simple terms, the source files are used to generate the final
+            pages. Visitors receive the generated HTML, CSS, JavaScript, and
+            assets rather than needing Jekyll or Ruby installed on their devices.
+        </p>
+    </div>
+
+    <div class="tip-item">
+        <h3>💻 12. Running a Jekyll Website Locally</h3>
+
+        <p>
+            Before deploying changes, it is useful to run the website locally.
+            This lets you check whether pages build correctly, whether links
+            work, and whether the layout looks as expected.
+        </p>
+
+        <p>
+            For a typical Jekyll project, you need Git, Ruby, RubyGems,
+            and Bundler. You can check whether Ruby and Bundler are installed
+            by running:
+        </p>
+
+        <pre><code>ruby --version
+gem --version
+bundle --version</code></pre>
+
+        <p>
+            After cloning the repository and moving into the project directory,
+            install the dependencies:
+        </p>
+
+        <pre><code>git clone https://github.com/madhurimarawat/Madhurima-Mindscape.git
+cd Madhurima-Mindscape
+bundle install</code></pre>
+
+        <p>Then start the local Jekyll server:</p>
+
+        <pre><code>bundle exec jekyll serve</code></pre>
+
+        <p>
+            Open the local address in your browser:
+        </p>
+
+        <pre><code>http://127.0.0.1:4000/Madhurima-Mindscape/</code></pre>
+
+        <p>
+            Jekyll rebuilds the website when supported source files change.
+            If you only want to generate the website without starting the
+            development server, use:
+        </p>
+
+        <pre><code>bundle exec jekyll build</code></pre>
+
+        <p>
+            The generated files will be available in the
+            <code>_site</code> directory. If a build fails, check the terminal
+            output carefully. Missing include files, invalid Liquid syntax,
+            and incorrect paths are common issues to investigate.
+        </p>
+
+        <p>
+            One important detail when writing technical articles about Jekyll:
+            Liquid examples inside an article can be interpreted as real
+            template instructions during the build. If you want to display
+            Liquid syntax as code, wrap the example in
+            Liquid's raw and endraw tags around the example so Jekyll
+            displays the Liquid code instead of executing it.
+        </p>
+    </div>
+</section>
+
+<section class="conclusion">
+    <h3>💜 Decide Based on the Future Scope of Your Project</h3>
+
+    <p>
+        Overall, I think Jekyll is a very useful tool, especially if you are
+        working on a static website that contains a large number of pages
+        and articles. Features such as data files, includes, layouts, Liquid
+        variables, and custom permalinks make maintaining a growing website
+        considerably easier.
+    </p>
+
+    <p>
+        What I particularly like is that you don't have to repeatedly modify
+        hundreds of individual files whenever you want to introduce a common
+        change. You can update the relevant component or layout in one place
+        and let Jekyll generate the updated pages.
+    </p>
+
+    <p>
+        Working on Madhurima Mindscape has also helped me understand how
+        important project organization becomes as a website grows. Separating
+        posts, metadata, layouts, reusable components, stylesheets, and scripts
+        makes the project easier to understand and maintain.
+    </p>
+
+    <p>
+        However, I wouldn't recommend migrating every small static website
+        to Jekyll. If your project consists of only a handful of pages and
+        you don't anticipate adding many new features, a simple HTML, CSS,
+        and JavaScript structure is absolutely fine.
+    </p>
+
+    <p>
+        The important thing is to understand the future scope of your project
+        before choosing its architecture. If you are planning to build
+        something that will continuously grow, investing time in a proper
+        structure is worthwhile. But if the project is small and is likely
+        to remain that way, don't introduce unnecessary complexity.
+    </p>
+
+    <blockquote>
+        Don't overcomplicate a small project, but don't underestimate the
+        importance of a good structure when building something that is
+        expected to grow.
+    </blockquote>
+
+    <p class="text-center">
+        <strong>Have you used Jekyll for any of your projects?</strong>
+        I would love to know how you organize your static websites and
+        whether you prefer using a static site generator or maintaining
+        individual HTML files.
+    </p>
+
+    <p class="text-center">
+        <a href="https://github.com/madhurimarawat" target="_blank" rel="noopener noreferrer" class="font-weight-bold">
+            <i class="fab fa-github"></i> Explore my GitHub
+        </a>
+        &nbsp; | &nbsp;
+        <a href="https://www.linkedin.com/in/madhurima-rawat/" target="_blank" rel="noopener noreferrer"
+            class="font-weight-bold">
+            <i class="fab fa-linkedin"></i> Connect on LinkedIn
+        </a>
+    </p>
+</section>

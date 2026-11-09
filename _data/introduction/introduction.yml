@@ -1,0 +1,47 @@
+# Introduction Page - SEO and Social Sharing Metadata
+
+title: "Madhurima Mindscape"
+
+description: >-
+  Welcome to the Introduction page of Madhurima Mindscape. Learn about the
+  journey behind the website, its purpose, and explore the main categories
+  of content including tech insights, personal reflections, project diaries,
+  and creative photography.
+
+date: "2024-12-19T15:20:13Z"
+last_modified: "2026-10-30T20:49:28Z"
+
+author: "Madhurima Rawat"
+robots: "index, follow"
+
+keywords: >-
+  Madhurima Mindscape, personal website, tech insights, creative photography,
+  personal reflections, project diaries, introduction
+
+# Open Graph Metadata
+og_title: "Madhurima Mindscape - Explore Personal and Tech Insights"
+og_type: "website"
+
+og_description: >-
+  Dive into Madhurima Mindscape - a space for personal reflections,
+  tech insights, project stories, and creative photography.
+
+image: "https://raw.githubusercontent.com/madhurimarawat/Madhurima-Mindscape/main/website_snapshots/website_1.png"
+image_alt: "Madhurima Mindscape Blog Snapshot"
+image_width: 1200
+image_height: 630
+
+og_site_name: "Madhurima Mindscape"
+
+# Twitter/X Card Metadata
+twitter_card: "summary_large_image"
+twitter_title: "Madhurima Mindscape - Explore Personal and Tech Insights"
+
+twitter_description: >-
+  Dive into Madhurima Mindscape - a space for personal reflections,
+  tech insights, project stories, and creative photography.
+
+twitter_image: "https://raw.githubusercontent.com/madhurimarawat/Madhurima-Mindscape/main/website_snapshots/website_1.png"
+
+# Favicon
+favicon: "images/Logo.png"

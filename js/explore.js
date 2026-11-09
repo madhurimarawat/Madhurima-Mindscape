@@ -2,20 +2,20 @@
 *********************************************************************************************
 * File: explore.js
 * Author: Madhurima Rawat
-* Date: October 30, 2026
-* Description: Dynamically transforms the existing blog navigation structure into glossy
-*              preview cards. Retrieves Open Graph metadata from individual blog pages,
-*              including titles, descriptions, and preview images.
+* Date: November 09, 2026
+* Description: Dynamically transforms the blog navigation structure from index.html into
+*              glossy preview cards on the Explore the Blog page.
 *
 * Features:
-*   - Automatically detects blog categories.
-*   - Reads existing category headings and article links.
-*   - Retrieves Open Graph metadata from linked pages.
+*   - Fetches blog categories and article links directly from index.html.
+*   - Automatically detects existing blog categories.
+*   - Retrieves Open Graph metadata from individual blog pages.
 *   - Generates responsive blog preview cards.
+*   - Displays article titles, descriptions, and preview images.
 *   - Provides fallback content when metadata is unavailable.
-*   - Generates a closing note and homepage navigation.
+*   - Automatically reflects changes made to index.html.
 *
-* Version: 1.0
+* Version: 2.0
 *********************************************************************************************
 */
 
@@ -25,18 +25,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!container) return;
 
-    const sections = container.querySelectorAll(".explore-section");
+
+    // ----------------------------------------------------------------
+    // Helper: Determine Homepage URL
+    // ----------------------------------------------------------------
+
+    function getHomepageUrl() {
+
+        const currentPath = window.location.pathname;
+
+        // Remove the Explore page permalink while preserving the Jekyll baseurl.
+        const basePath = currentPath.replace(
+            /\/explore-the-blog\/?$/,
+            "/"
+        );
+
+        return new URL(basePath || "/", window.location.origin);
+
+    }
 
 
     // ----------------------------------------------------------------
-    // Helper: Get clean text from navigation link
+    // Helper: Get Clean Text from Navigation Link
     // ----------------------------------------------------------------
 
     function getLinkTitle(link) {
 
         const clone = link.cloneNode(true);
 
-        // Remove icons before extracting text
+        // Remove icons before extracting text.
         clone.querySelectorAll("i").forEach(icon => icon.remove());
 
         return clone.textContent.trim();
@@ -45,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // ----------------------------------------------------------------
-    // Helper: Retrieve Open Graph metadata
+    // Helper: Retrieve Open Graph Metadata
     // ----------------------------------------------------------------
 
     async function fetchMetadata(url) {
@@ -102,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // ----------------------------------------------------------------
-    // Helper: Generate a blog card
+    // Helper: Generate a Blog Card
     // ----------------------------------------------------------------
 
     function createBlogCard(link, categoryHeading) {
@@ -123,19 +140,19 @@ document.addEventListener("DOMContentLoaded", () => {
         card.dataset.fallbackTitle = fallbackTitle;
 
 
-        // Image container
+        // Image container.
         const imageContainer = document.createElement("div");
 
         imageContainer.className = "explore-card-image";
 
 
-        // Card content
+        // Card content.
         const content = document.createElement("div");
 
         content.className = "explore-card-content";
 
 
-        // Card title
+        // Card title.
         const title = document.createElement("h4");
 
         title.className = "explore-card-title";
@@ -143,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
         title.textContent = fallbackTitle;
 
 
-        // Card description
+        // Card description.
         const description = document.createElement("p");
 
         description.className = "explore-card-description";
@@ -152,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
             `Explore ${fallbackTitle} in ${categoryHeading}.`;
 
 
-        // Read More button
+        // Read More button.
         const readButton = document.createElement("a");
 
         readButton.className = "explore-read-button";
@@ -163,7 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
             'Read More <i class="fas fa-arrow-right"></i>';
 
 
-        // Assemble card
+        // Assemble card.
         content.appendChild(title);
 
         content.appendChild(description);
@@ -195,10 +212,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // ----------------------------------------------------------------
-    // Helper: Populate card using Open Graph metadata
+    // Helper: Populate Card Using Open Graph Metadata
     // ----------------------------------------------------------------
 
-    async function populateCard(cardData, categoryHeading) {
+    async function populateCard(cardData) {
 
         const metadata = await fetchMetadata(cardData.pageUrl);
 
@@ -211,15 +228,17 @@ document.addEventListener("DOMContentLoaded", () => {
         } = metadata;
 
 
-        // Update title
+        // Update title.
         if (title) {
 
-            cardData.title.textContent = title.replace(/\s*\|\s*Madhurima Rawat\s*$/i, "").trim();
+            cardData.title.textContent = title
+                .replace(/\s*\|\s*Madhurima Rawat\s*$/i, "")
+                .trim();
 
         }
 
 
-        // Update description
+        // Update description.
         if (description) {
 
             cardData.description.textContent = description;
@@ -227,7 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-        // Update preview image
+        // Update preview image.
         if (image) {
 
             const imageElement = document.createElement("img");
@@ -258,73 +277,202 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // ----------------------------------------------------------------
-    // Generate cards for each category
+    // Generate Cards From Homepage Navigation
     // ----------------------------------------------------------------
 
     async function generateExploreCards() {
 
-        const metadataTasks = [];
+        try {
 
-        sections.forEach(section => {
+            const homepageUrl = getHomepageUrl();
 
-            const heading = section.querySelector("h2, h3");
-
-            if (!heading) return;
-
-            const categoryHeading = heading.textContent.trim();
-
-            const links = Array.from(
-                section.querySelectorAll("a.explore-item")
+            console.log(
+                "Explore Page: Fetching blog directory from:",
+                homepageUrl.href
             );
 
-            // Skip empty categories
-            if (!links.length) return;
 
+            // Fetch homepage.
+            const response = await fetch(homepageUrl.href, {
+                credentials: "same-origin"
+            });
 
-            // Create card grid
-            const cardGrid = document.createElement("div");
+            if (!response.ok) {
 
-            cardGrid.className = "explore-card-grid";
-
-
-            // Change category heading to h3
-            const newHeading = document.createElement("h3");
-
-            newHeading.textContent = categoryHeading;
-
-            newHeading.className = heading.className;
-
-            heading.replaceWith(newHeading);
-
-
-            // Generate cards from existing links
-            links.forEach(link => {
-
-                const cardData = createBlogCard(
-                    link,
-                    categoryHeading
+                throw new Error(
+                    `Unable to load homepage. HTTP Error: ${response.status}`
                 );
 
-                cardGrid.appendChild(cardData.card);
+            }
 
-                metadataTasks.push(
-                    populateCard(cardData, categoryHeading)
+
+            // Parse homepage HTML.
+            const html = await response.text();
+
+            const parser = new DOMParser();
+
+            const homepage = parser.parseFromString(
+                html,
+                "text/html"
+            );
+
+
+            // Retrieve existing homepage categories.
+            const sections = homepage.querySelectorAll(
+                ".path-container .path-section"
+            );
+
+            if (!sections.length) {
+
+                throw new Error(
+                    "No .path-section elements were found in index.html."
                 );
+
+            }
+
+
+            const metadataTasks = [];
+
+            const generatedSections = [];
+
+
+            // --------------------------------------------------------
+            // Generate Explore Sections
+            // --------------------------------------------------------
+
+            sections.forEach(section => {
+
+                const heading = section.querySelector("h2, h3");
+
+                if (!heading) return;
+
+                const categoryHeading = heading.textContent.trim();
+
+                const links = Array.from(
+                    section.querySelectorAll("a.path-item")
+                );
+
+
+                // Skip categories without article links.
+                if (!links.length) return;
+
+
+                // Create category section.
+                const exploreSection = document.createElement("div");
+
+                exploreSection.className = "explore-section";
+
+
+                // Create category heading.
+                const newHeading = document.createElement("h3");
+
+                newHeading.textContent = categoryHeading;
+
+                newHeading.className = heading.className;
+
+
+                // Create card grid.
+                const cardGrid = document.createElement("div");
+
+                cardGrid.className = "explore-card-grid";
+
+
+                // Generate cards from homepage links.
+                links.forEach(link => {
+
+                    const href = link.getAttribute("href");
+
+                    if (!href) return;
+
+
+                    // Ignore external links.
+                    const pageUrl = new URL(
+                        href,
+                        homepageUrl.href
+                    );
+
+                    if (pageUrl.origin !== window.location.origin) {
+                        return;
+                    }
+
+
+                    const cardData = createBlogCard(
+                        link,
+                        categoryHeading
+                    );
+
+
+                    // Add card to category grid.
+                    cardGrid.appendChild(cardData.card);
+
+
+                    // Retrieve article metadata.
+                    metadataTasks.push(
+                        populateCard(cardData)
+                    );
+
+                });
+
+
+                // Assemble category.
+                exploreSection.appendChild(newHeading);
+
+                exploreSection.appendChild(cardGrid);
+
+
+                generatedSections.push(exploreSection);
 
             });
 
 
-            // Replace original navigation links
-            section.replaceChildren(
-                newHeading,
-                cardGrid
+            // --------------------------------------------------------
+            // Display Generated Categories
+            // --------------------------------------------------------
+
+            if (!generatedSections.length) {
+
+                throw new Error(
+                    "No valid blog categories or article links were found."
+                );
+
+            }
+
+
+            container.replaceChildren(...generatedSections);
+
+
+            // --------------------------------------------------------
+            // Load All Article Metadata Concurrently
+            // --------------------------------------------------------
+
+            await Promise.allSettled(metadataTasks);
+
+
+            console.log(
+                `Explore Page: Successfully generated ${generatedSections.length} categories.`
             );
 
-        });
+
+        } catch (error) {
+
+            console.error(
+                "Explore Page: Unable to generate blog cards:",
+                error
+            );
 
 
-        // Load all metadata concurrently
-        await Promise.allSettled(metadataTasks);
+            // Display a helpful fallback message.
+            const message = document.createElement("p");
+
+            message.className = "explore-error";
+
+            message.textContent =
+                "Unable to load the blog directory. Please refresh the page or try again later.";
+
+
+            container.replaceChildren(message);
+
+        }
 
     }
 

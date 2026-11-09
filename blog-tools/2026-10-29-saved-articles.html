@@ -1,6 +1,6 @@
 ---
 permalink: /saved-articles
-seo: /saved-articles
+seo: blog-tools/saved-articles
 ---
 
 <!--
@@ -39,7 +39,13 @@ seo: /saved-articles
 <html lang="en">
 
 <head>
-    {% include imports/saved-articles.html %}
+    {% include imports/blog.html %}
+
+    <!-- Load the stylesheet dedicated to the Saved Articles page. -->
+    <link rel="stylesheet" href="{{ 'css/saved-articles.css' | relative_url }}">
+
+    <!-- Load the JavaScript responsible for Saved Articles functionality. -->
+    <script defer src="{{ 'js/saved-articles.js' | relative_url }}"></script>
 
 </head>
 

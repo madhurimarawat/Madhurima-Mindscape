@@ -1,0 +1,48 @@
+# Notice Board Page - SEO and Social Sharing Metadata
+
+title: "Notice Board | Madhurima Mindscape"
+
+description: >-
+  Stay updated with the latest announcements, blog publications, feature
+  releases, and website updates on the Madhurima Mindscape Notice Board.
+  Explore recent additions, discover new articles, and keep track of
+  everything happening across the website.
+
+date: "2026-11-09T00:00:00Z"
+last_modified: "2026-11-09T00:00:00Z"
+
+author: "Madhurima Rawat"
+robots: "index, follow"
+
+keywords: >-
+  Madhurima Mindscape, notice board, website updates, blog announcements,
+  latest blog posts, new features, blog updates, announcements,
+  saved articles, blog tools
+
+# Open Graph Metadata
+og_title: "Notice Board - Latest Updates | Madhurima Mindscape"
+og_type: "website"
+
+og_description: >-
+  Discover the latest blog posts, feature announcements, and website updates
+  on the Madhurima Mindscape Notice Board. Stay informed about everything new.
+
+image: "https://thumbs.dreamstime.com/b/public-school-notice-board-illustration-creative-display-showing-different-sizes-pinned-paper-notes-398580497.jpg"
+image_alt: "Madhurima Mindscape Notice Board"
+image_width: 1200
+image_height: 630
+
+og_site_name: "Madhurima Mindscape"
+
+# Twitter/X Card Metadata
+twitter_card: "summary_large_image"
+twitter_title: "Notice Board - Latest Updates | Madhurima Mindscape"
+
+twitter_description: >-
+  Explore the latest announcements, newly published blogs, and feature
+  updates from Madhurima Mindscape.
+
+twitter_image: "https://thumbs.dreamstime.com/b/public-school-notice-board-illustration-creative-display-showing-different-sizes-pinned-paper-notes-398580497.jpg"
+
+# Favicon
+favicon: "images/Logo.png"

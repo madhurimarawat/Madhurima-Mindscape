@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: contents.css
 * Author: Madhurima Rawat
-* Date: November 01, 2026
+* Date: November 06, 2026
 * Description: This is the stylesheet for the content pages of the "Madhurima Mindscape" blog website.
 *              It contains specific styles for the body text, headings, quotes, images, and links 
 *              used across various content pages. The CSS ensures consistent and readable design 
@@ -97,6 +97,8 @@ h2 {
 
 h3 {
     font-size: 1.3em;
+    margin-bottom: 35px !important;
+    margin-top: 35px;
 }
 
 .about-me {
@@ -132,10 +134,11 @@ blockquote {
     /* Adjusts the font size for readability */
     text-align: center;
     /* Centers image captions */
-    margin-top: 9px;
+    margin-top: 15px;
     /* Adds a small space above captions */
     font-family: monospace;
     /* Uses monospace font for a unique look */
+    margin-bottom: 35px;
 }
 
 .image-caption:hover {
@@ -156,8 +159,11 @@ h5 {
     /* Applies a monospace font */
     font-weight: bold;
     /* Makes headings bold */
-    margin-bottom: 25px;
+    margin-top: 30px;
+    /* Adds space above the headings */
+    margin-bottom: 30px;
     /* Adds space below the headings */
+    font-size: 1.1em;
 }
 
 .link {
@@ -193,12 +199,16 @@ h5 {
     }
 
     h2 {
-        font-size: 1.4em;
+        font-size: 1.3em;
         margin-top: 45px;
     }
 
     h3 {
         font-size: 1.1em;
+    }
+
+    h4 {
+        font-size: 1em;
     }
 
     blockquote {
@@ -213,7 +223,7 @@ h5 {
 
 /* Meme Image Style */
 .meme {
-    margin-bottom: 15px;
+    margin-top: 35px;
     display: flex;
     justify-content: center;
     align-items: center;

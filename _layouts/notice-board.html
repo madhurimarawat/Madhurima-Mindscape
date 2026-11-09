@@ -1,0 +1,48 @@
+<!--
+*********************************************************************************************
+* File: notice-board.html
+* Author: Madhurima Rawat
+* Date: October 31, 2026
+* Description: Defines the shared layout for all blog pages, automatically positioning
+*              the Post Actions component immediately after the blog's top section.
+* Version: 1.0
+* GitHub Repository: https://github.com/madhurimarawat/Madhurima-Mindscape
+* Comments:
+*     - Uses Jekyll Liquid to separate content around the closing </top> tag.
+*     - Automatically inserts the Post Actions component using the page permalink as its CSS class.
+*     - Includes shared imports, navigation header, blog content, and footer.
+*     - Eliminates repetitive component markup across individual blog pages.
+*********************************************************************************************
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include imports/blog.html %}
+    <link rel="stylesheet" href="css/notice-board.css">
+    <script src="{{ '/js/notice-board.js' | relative_url }}" defer></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div id="header-container">
+        {% include components/header.html %}
+    </div>
+
+    <!-- Blog Content -->
+    <main>
+
+        {{content}}
+
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container">
+        {% include components/footer.html %}
+    </div>
+
+</body>
+
+</html>

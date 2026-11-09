@@ -1,7 +1,7 @@
 /**
  * File: js/post-actions.js
  * Author: Madhurima Rawat
- * Date: November 01, 2026
+ * Date: November 09, 2026
  * Description:
  * Reusable post actions for Madhurima Mindscape.
  * Supports commenting through mailto, saving posts,
@@ -57,6 +57,7 @@ function initializePostActions(container) {
         .replace(/[^a-z0-9_-]/g, "-");
 
     const savedKey = "mindscape-saved-posts-" + blogName;
+    const savedDateKey = "mindscape-saved-post-dates-" + blogName;
 
     // --------------------------------------------------
     // TEMPORARY STATUS MESSAGES
@@ -183,6 +184,30 @@ function initializePostActions(container) {
                 localStorage.setItem(
                     savedKey,
                     JSON.stringify(savedPosts)
+                );
+
+                const savedDates = (() => {
+                    try {
+                        const storedDates = JSON.parse(
+                            localStorage.getItem(savedDateKey) || "{}"
+                        );
+                        return storedDates && typeof storedDates === "object" &&
+                            !Array.isArray(storedDates) ? storedDates : {};
+                    } catch (error) {
+                        console.error("Could not read saved article dates:", error);
+                        return {};
+                    }
+                })();
+
+                if (index === -1) {
+                    savedDates[postId] = new Date().toISOString();
+                } else {
+                    delete savedDates[postId];
+                }
+
+                localStorage.setItem(
+                    savedDateKey,
+                    JSON.stringify(savedDates)
                 );
 
                 updateSaveButton();

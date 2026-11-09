@@ -1,0 +1,20 @@
+---
+layout: notice-board
+permalink: /notice-board
+seo: blog-tools/notice-board
+---
+
+<h2>Notice Board</h2>
+
+<div class="line-below"></div>
+<p class="date-class">November 09, 2026</p>
+
+<div class="notice-board" id="noticeBoard" data-baseurl="{{ site.baseurl }}" hidden>
+
+    <script id="noticeData" type="application/json">
+        {{ site.data.json.notice-board | jsonify }}
+    </script>
+
+    <div class="notice-history" id="noticeHistory"></div>
+
+</div>

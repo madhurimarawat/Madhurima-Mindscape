@@ -1,0 +1,42 @@
+# Saved Articles - SEO and Social Sharing Metadata
+
+title: "Saved Articles"
+
+description: >-
+    Revisit your favourite reads in your personal Saved Articles collection
+    on Madhurima Mindscape.
+
+date: "2026-10-29T15:20:13Z"
+last_modified: "2026-10-29T10:30:00Z"
+
+author: "Madhurima Rawat"
+robots: "index, follow"
+
+keywords: >-
+    Saved Articles, bookmarked articles, favourite reads, reading collection,
+    personal library, Madhurima Mindscape, saved posts
+
+# Open Graph image and preview information
+image: "https://static.vecteezy.com/system/resources/previews/049/823/565/large_2x/bookmark-accessory-icon-color-illustration-vector.jpg"
+image_alt: "Bookmark accessory illustration representing saved articles"
+image_width: 1200
+image_height: 630
+
+og_title: "Saved Articles | Madhurima Rawat"
+og_type: "website"
+
+og_description: >-
+    Revisit your favourite reads in your personal Saved Articles collection
+    on Madhurima Mindscape. Keep your bookmarked articles organised and
+    easily accessible.
+
+# Twitter Card metadata
+twitter_card: "summary_large_image"
+twitter_title: "Saved Articles | Madhurima Rawat"
+
+twitter_description: >-
+    Your personal collection of saved reads on Madhurima Mindscape.
+    Revisit your favourite articles whenever you like.
+
+# Favicon
+favicon: "images/Logo.png"

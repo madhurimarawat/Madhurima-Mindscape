@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: explore.css
 * Author: Madhurima Rawat
-* Date: October 31, 2026
+* Date: November 09, 2026
 * Description: This is the dedicated stylesheet for the "Explore the Blog" page of
 *              "Madhurima Mindscape". It defines the visual presentation of categorized
 *              blog post cards, including responsive layouts, glossy card effects,
@@ -38,6 +38,7 @@
     max-width: 1250px;
     margin: 0 auto;
     padding: 25px 30px 55px;
+    margin-top: -40px;
 }
 
 

@@ -1,7 +1,7 @@
 /**
  * File: js/saved-articles.js
  * Author: Madhurima Rawat
- * Date: October 29, 2026
+ * Date: November 09, 2026
  * Description:
  * Displays and manages the saved articles collection for Madhurima Mindscape.
  * Retrieves saved article paths from the existing localStorage keys used by
@@ -37,10 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function displayTodayDate() {
         if (!todayDate) return;
 
-        todayDate.textContent = new Intl.DateTimeFormat("en-IN", {
-            weekday: "long",
-            day: "numeric",
+        todayDate.textContent = new Intl.DateTimeFormat("en-US", {
             month: "long",
+            day: "2-digit",
             year: "numeric"
         }).format(new Date());
     }
@@ -101,16 +100,46 @@ document.addEventListener("DOMContentLoaded", () => {
     function getAllSavedArticles() {
         const keys = getStorageKeys();
         const uniquePaths = new Set();
+        const savedAtByPath = {};
 
         keys.forEach(key => {
             readKey(key).forEach(path => {
                 if (path) uniquePaths.add(path);
             });
+
+            const blogName = key.slice(STORAGE_PREFIX.length);
+            const dateKey = "mindscape-saved-post-dates-" + blogName;
+
+            try {
+                const savedDates = JSON.parse(
+                    localStorage.getItem(dateKey) || "{}"
+                );
+
+                if (savedDates && typeof savedDates === "object" &&
+                    !Array.isArray(savedDates)) {
+                    Object.entries(savedDates).forEach(([path, savedAt]) => {
+                        if (path && savedAt) {
+                            const timestamp = Date.parse(savedAt);
+
+                            if (
+                                Number.isFinite(timestamp) &&
+                                (!savedAtByPath[path] ||
+                                    timestamp > Date.parse(savedAtByPath[path]))
+                            ) {
+                                savedAtByPath[path] = savedAt;
+                            }
+                        }
+                    });
+                }
+            } catch (error) {
+                console.error("Could not read saved article dates:", dateKey, error);
+            }
         });
 
         return {
             keys,
-            paths: [...uniquePaths]
+            paths: [...uniquePaths],
+            savedAtByPath
         };
     }
 
@@ -142,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // FETCH AN ARTICLE'S DETAILS
     // --------------------------------------------------
 
-    async function fetchArticleDetails(savedPath) {
+    async function fetchArticleDetails(savedPath, savedAt = "") {
         const url = getArticleUrl(savedPath);
 
         if (!url) {
@@ -152,6 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Saved article",
                 description: "This article's address could not be read.",
                 date: "",
+                savedAt,
                 image: "",
                 unavailable: true
             };
@@ -227,6 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 title,
                 description,
                 date: publicationDate,
+                savedAt,
                 image: imageUrl,
                 unavailable: false
             };
@@ -244,6 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 description:
                     "We couldn't load this article's details. You can still try opening it.",
                 date: "",
+                savedAt,
                 image: "",
                 unavailable: true
             };
@@ -411,8 +443,18 @@ document.addEventListener("DOMContentLoaded", () => {
         list.appendChild(loading);
 
         const articles = await Promise.all(
-            saved.paths.map(fetchArticleDetails)
+            saved.paths.map(path =>
+                fetchArticleDetails(path, saved.savedAtByPath[path] || "")
+            )
         );
+
+        // Newest saved articles appear first. Older entries without a
+        // recorded save date remain at the bottom.
+        articles.sort((a, b) => {
+            const dateA = Date.parse(a.savedAt) || 0;
+            const dateB = Date.parse(b.savedAt) || 0;
+            return dateB - dateA;
+        });
 
         list.replaceChildren();
 

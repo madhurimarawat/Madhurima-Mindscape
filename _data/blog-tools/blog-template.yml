@@ -1,0 +1,41 @@
+# Blog Template - SEO and Social Sharing Metadata
+
+title: "[Blog Post Title] | Madhurima Mindscape"
+
+description: >-
+    [Write a concise description of the blog post. Summarize its main
+    topic, key ideas, and what readers can learn.]
+
+date: "2026-11-07T15:15:00+05:30"
+last_modified: "2026-11-07T15:15:00+05:30"
+
+image: "https://placehold.co/800x400?text=Image+Placeholder"
+image_alt: "[Describe the featured image]"
+image_width: 1200
+image_height: 630
+
+author: "Madhurima Rawat"
+robots: "noindex, nofollow"
+
+keywords: >-
+    [Add relevant primary keywords, secondary keywords, topic-specific
+    phrases, and related search terms.]
+
+# Open Graph Metadata
+og_title: "[Blog Post Title] | Madhurima Mindscape"
+
+og_type: "article"
+
+og_description: >-
+    [Write a short description for social media sharing.]
+
+# Twitter/X Card Metadata
+twitter_card: "summary_large_image"
+
+twitter_title: "[Blog Post Title] | Madhurima Mindscape"
+
+twitter_description: >-
+    [Write an engaging summary for Twitter/X sharing.]
+
+# Favicon
+favicon: "images/Logo.png"

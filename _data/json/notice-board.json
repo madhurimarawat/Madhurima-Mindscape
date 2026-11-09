@@ -1,0 +1,107 @@
+{
+  "notices": [
+    {
+      "date": "2026-11-09",
+      "blogs": [
+        {
+  "title": "The Browning Version",
+  "text": "Explore the literary work The Browning Version.",
+  "url": "/the-browning-version",
+  "icon": "fas fa-chalkboard-teacher"
+},
+{
+  "title": "Kindred",
+  "text": "Explore Kindred and discover its literary themes.",
+  "url": "/kindred",
+  "icon": "fas fa-link"
+}
+      ],
+    "features": [
+        {
+          "title": "Notice Board",
+          "text": "A dedicated space to explore the latest blog updates, announcements, and new features.",
+          "url": "/notice-board",
+          "icon": "fas fa-bullhorn"
+        },
+  {
+    "title": "Saved Articles Sorting",
+    "text": "Saved articles are now automatically sorted from newest to oldest based on their saved dates, making it easier to find your most recently saved reads.",
+    "url": "/saved-articles",
+    "icon": "fas fa-sort-amount-down"
+  }
+]
+    },
+    {
+      "date": "2026-11-07",
+      "blogs": [
+        {
+          "title": "Jekyll Migration",
+          "text": "Explore the Jekyll migration and its implementation.",
+          "url": "/jekyll-migration",
+          "icon": "fas fa-sync-alt"
+        },
+        {
+          "title": "Personal Blog",
+          "text": "Discover the Personal Blog section.",
+          "url": "/personal-blog",
+          "icon": "fas fa-journal-whills"
+        },
+        {
+          "title": "Importance: Temporary & Subjective",
+          "text": "An exploration of the temporary and subjective nature of importance.",
+          "url": "/importance-temporary-subjective",
+          "icon": "fas fa-hourglass-half"
+        },
+        {
+          "title": "Embracing Failures",
+          "text": "A reflection on accepting failures and learning from them.",
+          "url": "/embracing-failure",
+          "icon": "fas fa-seedling"
+        }
+      ],
+      "features": []
+    },
+    {
+      "date": "2026-11-06",
+      "blogs": [
+        {
+          "title": "Rime of Ancient Mariner",
+          "text": "Explore this literary journey through Samuel Taylor Coleridge's famous poem.",
+          "url": "/the-rime-of-the-ancient-mariner",
+          "icon": "fas fa-ship"
+        },
+        {
+          "title": "Road Not Taken",
+          "text": "Explore Robert Frost's famous poem about choices and life's paths.",
+          "url": "/the-road-not-taken",
+          "icon": "fas fa-road"
+        },
+        {
+          "title": "Aunt Jennifer's Tigers",
+          "text": "Discover the poem exploring freedom, oppression, and artistic expression.",
+          "url": "/aunt-jennifers-tigers",
+          "icon": "fas fa-cat"
+        },
+        {
+          "title": "Hope Is the Thing with Feathers",
+          "text": "Explore Emily Dickinson's celebrated reflection on hope.",
+          "url": "/hope-is-the-thing-with-feathers",
+          "icon": "fas fa-feather-alt"
+        },
+        {
+          "title": "Ozymandias",
+          "text": "Discover the poem exploring power, pride, and the passage of time.",
+          "url": "/ozymandias",
+          "icon": "fas fa-landmark"
+        },
+        {
+          "title": "Unfinished Projects",
+          "text": "A collection of thoughts and reflections on unfinished projects.",
+          "url": "/unfinished-projects",
+          "icon": "fas fa-puzzle-piece"
+        }
+      ],
+      "features": []
+    }
+  ]
+}

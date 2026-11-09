@@ -1,0 +1,345 @@
+/*
+*********************************************************************************************
+* File: notice-board.css
+* Author: Madhurima Rawat
+* Date: November 09, 2026
+* Description: This is the dedicated stylesheet for the "Notice Board" section of
+*              "Madhurima Mindscape". It defines the visual presentation of dated
+*              notice cards, including categorized announcements, blog updates,
+*              feature highlights, and optional navigation links.
+*              The stylesheet uses a flexible, centered layout with glossy card effects
+*              to maintain a consistent and visually appealing appearance across
+*              different screen sizes.
+* Version: 1.0
+* GitHub Repository: https://github.com/madhurimarawat/Madhurima-Mindscape
+* Issues/Bugs: For any issues or bugs, please visit the GitHub repository issues section.
+* Comments:
+    - The Notice Board layout is fully responsive, adapting to desktop, tablet, and mobile screens.
+    - Flexbox is used to organize dated notice groups and their respective content sections.
+    - Individual notice cards feature dashed gradient borders, translucent backgrounds,
+      subtle shadows, animated glowing effects, and glossy shine transitions.
+    - Notice groups display their corresponding dates above each notice card.
+    - Blog and Features sections use consistent heading styles and spacing.
+    - Individual notice items feature subtle hover effects and smooth background transitions.
+    - Notice titles, icons, descriptions, and optional links maintain consistent alignment.
+    - The notice board supports conditional visibility through the HTML hidden attribute.
+    - Accessibility features include reduced-motion support for animated effects and transitions.
+* Dependencies:
+    - CSS Custom Properties: Uses theme variables such as --background-color, --text-color,
+      --h2-color, and --link-color for consistent styling across light and dark themes.
+    - Custom CSS: index.css, contents.css.
+    - Font Awesome 5.15.4: Provides icons used within notice headings and individual notice titles.
+    - Custom JavaScript: Dynamically manages notice board visibility and content presentation.
+*********************************************************************************************
+*/
+
+/* Notice board wrapper */
+.notice-board {
+    width: 80%;
+    margin: 55px auto 0;
+}
+
+.notice-board[hidden] {
+    display: none;
+}
+
+/* Notice history */
+.notice-history {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* Each dated group */
+.notice-date-group {
+    width: 100%;
+}
+
+/* Date outside the notice card */
+.notice-group-date {
+    margin: 0 0 14px;
+
+    color: var(--h2-color);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+/* Individual date card */
+.notice-card {
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    padding: 25px 26px;
+    box-sizing: border-box;
+
+    border: 2px dashed var(--h2-color);
+    border-radius: 16px;
+
+    background:
+        linear-gradient(135deg,
+            var(--background-color),
+            var(--background-color)) padding-box,
+        linear-gradient(120deg,
+            #ffffff66,
+            var(--link-color),
+            #ffffff88,
+            var(--link-color)) border-box;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08),
+        inset 0 1px 1px rgba(255, 255, 255, 0.35);
+
+    animation: notice-glow 4s ease-in-out infinite;
+}
+
+/* Glossy shine on each card */
+.notice-card::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: -100%;
+
+    width: 60%;
+    height: 100%;
+
+    background: linear-gradient(110deg,
+            transparent,
+            rgba(255, 255, 255, 0.12),
+            transparent);
+
+    transform: skewX(-20deg);
+    animation: notice-shine 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* Card content */
+.notice-card-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Blogs and Features sections */
+.notice-section+.notice-section {
+    margin-top: 24px;
+}
+
+/* Section heading */
+.notice-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    margin: 0 0 16px;
+    padding-bottom: 12px;
+
+    color: var(--h2-color);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.notice-heading i {
+    color: var(--link-color);
+    font-size: 0.95em;
+}
+
+/* Notice list */
+.notice-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Individual notice boxes */
+.notice-item {
+    margin: 0;
+    padding: 14px 16px;
+
+    color: var(--text-color);
+    border-radius: 9px;
+
+    background: rgba(128, 128, 128, 0.07);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.notice-item:hover {
+    background: rgba(128, 128, 128, 0.14);
+    transform: translateX(5px);
+}
+
+/* Notice title and icon */
+.notice-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 0 0 8px;
+
+    color: var(--h2-color);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.notice-title i {
+    flex-shrink: 0;
+    color: var(--link-color);
+    font-size: 0.95em;
+}
+
+/* Description */
+.notice-text {
+    margin: 0;
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* Optional link */
+.notice-link {
+    display: inline-block;
+    margin-top: 9px;
+
+    color: var(--link-color);
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+
+/* Card glow */
+@keyframes notice-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(128, 128, 128, 0.1);
+    }
+
+    50% {
+        box-shadow: 0 0 15px rgba(128, 128, 128, 0.25);
+    }
+}
+
+/* Card shine */
+@keyframes notice-shine {
+
+    0%,
+    65% {
+        left: -100%;
+    }
+
+    100% {
+        left: 150%;
+    }
+}
+
+/* Tablet and mobile */
+@media (max-width: 768px) {
+
+    .notice-board {
+        width: 80%;
+        margin-top: 35px;
+    }
+
+    .notice-history {
+        gap: 24px;
+    }
+
+    .notice-group-date {
+        margin-bottom: 12px;
+        font-size: 1.08rem;
+    }
+
+    .notice-card {
+        padding: 21px 18px;
+    }
+
+    .notice-heading {
+        font-size: 1.1rem;
+        gap: 9px;
+    }
+
+    .notice-section+.notice-section {
+        margin-top: 20px;
+    }
+
+    .notice-item {
+        padding: 12px 13px;
+    }
+
+    .notice-title {
+        font-size: 0.96rem;
+    }
+
+    .notice-text {
+        font-size: 0.92rem;
+    }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+
+    .notice-board {
+        margin-top: 28px;
+        width: 80%;
+    }
+
+    .notice-history {
+        gap: 21px;
+    }
+
+    .notice-group-date {
+        font-size: 1rem;
+    }
+
+    .notice-card {
+        padding: 18px 13px;
+        border-radius: 13px;
+    }
+
+    .notice-heading {
+        font-size: 1rem;
+        gap: 7px;
+        margin-bottom: 13px;
+    }
+
+    .notice-list {
+        gap: 11px;
+    }
+
+    .notice-item {
+        padding: 11px 10px;
+    }
+
+    .notice-title {
+        font-size: 0.92rem;
+        gap: 8px;
+    }
+
+    .notice-text {
+        font-size: 0.87rem;
+        line-height: 1.55;
+    }
+
+    .notice-link {
+        font-size: 0.85rem;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    .notice-card,
+    .notice-card::before {
+        animation: none;
+    }
+
+    .notice-item {
+        transition: none;
+    }
+}
