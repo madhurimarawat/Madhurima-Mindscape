@@ -188,6 +188,7 @@ The Saved Articles page brings together posts bookmarked by the reader.
 - Retrieves saved information from LocalStorage.
 - Allows readers to remove saved articles.
 - Provides direct access to bookmarked content.
+- - Sorted from new to old based on date saved.
 
 ### 10. Blog Insights Dashboard
 
@@ -208,7 +209,19 @@ The Blog Template Library stores reusable templates separately from published ar
 - Maintains additional template values and metadata.
 - Provides starting points for creating future blog content.
 
-### 12. Custom 404 Error Page
+### 12. Notice Board
+
+The Notice Board provides a centralized space for viewing the latest updates across Madhurima Mindscape, including newly published blog articles and recently introduced website features.
+
+- Displays the latest published blog articles and their descriptions.
+- Highlights newly introduced website features and enhancements.
+- Organizes updates chronologically by date, with the newest updates appearing first.
+- Separates blog publications from feature announcements for easy navigation.
+- Includes relevant icons, titles, descriptions, and links to access each update.
+- Maintains a history of previous announcements, allowing visitors to explore past updates.
+- Automatically displays available updates using dynamically generated notice cards.
+
+### 13. Custom 404 Error Page
 
 - Displays a dedicated page when a requested URL cannot be found.
 - Uses a responsive design.
@@ -777,17 +790,15 @@ Example:
 </a>
 ```
 
-**2. `_posts/introduction/2026-10-30-explore-the-blog.html`**
-
-Add a new `explore-item` link under the appropriate category section. Use the article URL, a relevant Font Awesome icon, and the article title.
-
-**3. `index.html`**
+2. `index.html`
 
 Add a new `path-item` link under the corresponding category in the homepage's blog discovery section.
 
-For example, if the new article belongs to Tech Insights, add its link under the existing Tech Insights section in both `explore-the-blog.html` and `index.html`.
+For example, if the new article belongs to Tech Insights, add its link under the existing Tech Insights section in `index.html`.
 
-These updates add the article to the homepage discovery section, icon hero section, and Explore the Blog page.
+3. `explore-the-blog.html`
+
+Automatically fetches and displays blog categories and article links from `index.html`, requiring no manual updates.
 
 ### Step 6: Test Locally
 
