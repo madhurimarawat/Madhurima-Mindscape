@@ -200,14 +200,14 @@ The Blog Insights Dashboard presents an overview of the blog's content and metad
 - Organizes content information for browsing and reference.
 - Provides a central overview of the published blog collection.
 
-### 11. Blog Template Library
+### 11. Blog Template
 
-The Blog Template Library stores reusable templates separately from published articles.
+The Blog Template page provides a reusable structure for creating future blog posts.
 
-- Organizes templates independently of published blog posts.
-- Includes structured tags and categories.
-- Maintains additional template values and metadata.
-- Provides starting points for creating future blog content.
+- Offers a predefined layout for drafting new articles.
+- Includes structured sections, tags, and categories.
+- Maintains template-specific values and metadata.
+- Provides a consistent starting point for creating blog content.
 
 ### 12. Notice Board
 
