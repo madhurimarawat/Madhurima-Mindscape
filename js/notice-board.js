@@ -1,18 +1,17 @@
 /**
  * File: js/notice-board.js
  * Author: Madhurima Rawat
- * Date: November 09, 2026
+ * Date: November 10, 2026
  * Description:
  * Dynamically generates and manages the Notice Board section for Madhurima
  * Mindscape. Retrieves notice data from the embedded JSON data element,
  * validates and filters notice entries, sorts notice groups by date in
  * descending order, and displays categorized Blogs and Features updates.
  * Creates individual notice cards with icons, titles, descriptions, and
- * optional navigation links. Formats dates into a readable display format,
- * highlights the latest notice group, and automatically manages the
- * visibility of the Notice Board based on the availability of valid notices.
- * Includes error handling for invalid JSON data and supports responsive
- * presentation through the associated stylesheet.
+ * optional navigation links. Automatically fetches and displays the latest
+ * notice date in the main date heading. Highlights the latest notice group
+ * and manages Notice Board visibility based on available valid notices.
+ * Includes error handling for invalid JSON data.
  */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -21,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const noticeBoard = document.getElementById("noticeBoard");
     const noticeDataElement = document.getElementById("noticeData");
     const noticeHistory = document.getElementById("noticeHistory");
+    const dateElement = document.querySelector(".date-class");
 
     if (!noticeBoard || !noticeDataElement || !noticeHistory) {
         return;
@@ -41,6 +41,58 @@ document.addEventListener("DOMContentLoaded", function () {
             day: "2-digit",
             year: "numeric"
         }).format(date);
+    }
+
+
+    // Update main heading with the latest valid notice date
+    function updateLatestNoticeDate(notices) {
+
+        if (!dateElement || !Array.isArray(notices)) {
+            return;
+        }
+
+        const latestNotice = notices
+            .filter(function (entry) {
+
+                if (!entry || typeof entry.date !== "string") {
+                    return false;
+                }
+
+                // Validate date
+                const date = new Date(entry.date + "T00:00:00");
+
+                if (Number.isNaN(date.getTime())) {
+                    return false;
+                }
+
+                // Only include entries containing actual notices
+                const hasBlogs =
+                    Array.isArray(entry.blogs) &&
+                    entry.blogs.some(item =>
+                        item && (item.title || item.text)
+                    );
+
+                const hasFeatures =
+                    Array.isArray(entry.features) &&
+                    entry.features.some(item =>
+                        item && (item.title || item.text)
+                    );
+
+                return hasBlogs || hasFeatures;
+            })
+            .sort(function (a, b) {
+
+                return new Date(b.date + "T00:00:00") -
+                    new Date(a.date + "T00:00:00");
+
+            })[0];
+
+        if (!latestNotice) {
+            dateElement.textContent = "";
+            return;
+        }
+
+        dateElement.textContent = formatDate(latestNotice.date);
     }
 
 
@@ -111,7 +163,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const section = document.createElement("section");
         section.className = "notice-section";
 
-        // Section heading with icon
+
+        // Section heading
         const heading = document.createElement("h3");
         heading.className = "notice-heading";
 
@@ -126,6 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
         heading.appendChild(headingText);
 
         section.appendChild(heading);
+
 
         // Notice list
         const list = document.createElement("div");
@@ -153,10 +207,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+    // Create date group
     function createDateGroup(entry, isLatest) {
 
         const group = document.createElement("div");
         group.className = "notice-date-group";
+
 
         // Previous dates appear outside their cards
         if (!isLatest) {
@@ -168,12 +224,14 @@ document.addEventListener("DOMContentLoaded", function () {
             group.appendChild(dateHeading);
         }
 
+
         // Individual date card
         const card = document.createElement("div");
         card.className = "notice-card";
 
         const cardContent = document.createElement("div");
         cardContent.className = "notice-card-content";
+
 
         // Blogs
         const blogs = createSection(
@@ -186,6 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
             cardContent.appendChild(blogs);
         }
 
+
         // Features
         const features = createSection(
             "Features",
@@ -196,6 +255,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (features) {
             cardContent.appendChild(features);
         }
+
 
         card.appendChild(cardContent);
         group.appendChild(card);
@@ -209,8 +269,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const data = JSON.parse(noticeDataElement.textContent);
 
-        if (!Array.isArray(data.notices)) {
+
+        // Validate notice data
+        if (!data || !Array.isArray(data.notices)) {
             noticeBoard.hidden = true;
+
+            if (dateElement) {
+                dateElement.textContent = "";
+            }
+
             return;
         }
 
@@ -218,17 +285,27 @@ document.addEventListener("DOMContentLoaded", function () {
         // Keep only valid date groups containing notices
         const validNotices = data.notices.filter(function (entry) {
 
-            if (!entry || !entry.date) {
+            if (!entry || typeof entry.date !== "string") {
+                return false;
+            }
+
+            const date = new Date(entry.date + "T00:00:00");
+
+            if (Number.isNaN(date.getTime())) {
                 return false;
             }
 
             const hasBlogs =
                 Array.isArray(entry.blogs) &&
-                entry.blogs.some(item => item && (item.title || item.text));
+                entry.blogs.some(item =>
+                    item && (item.title || item.text)
+                );
 
             const hasFeatures =
                 Array.isArray(entry.features) &&
-                entry.features.some(item => item && (item.title || item.text));
+                entry.features.some(item =>
+                    item && (item.title || item.text)
+                );
 
             return hasBlogs || hasFeatures;
         });
@@ -237,9 +314,18 @@ document.addEventListener("DOMContentLoaded", function () {
         // Sort newest date first
         validNotices.sort(function (a, b) {
 
-            return new Date(b.date) - new Date(a.date);
+            return new Date(b.date + "T00:00:00") -
+                new Date(a.date + "T00:00:00");
 
         });
+
+
+        // Update main date from the latest valid notice
+        updateLatestNoticeDate(validNotices);
+
+
+        // Clear previous notice history
+        noticeHistory.replaceChildren();
 
 
         // Render notice groups

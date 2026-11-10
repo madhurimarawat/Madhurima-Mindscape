@@ -1,35 +1,95 @@
 {
   "notices": [
     {
+      "date": "2026-11-10",
+      "blogs": [
+        {
+          "title": "Debugging Tips",
+          "text": "Discover practical debugging tips for HTML, CSS, JavaScript, Python, and AI-generated code.",
+          "url": "/debugging-tips",
+          "icon": "fas fa-bug"
+        },
+        {
+          "title": "Tech Analogy",
+          "text": "Understand complex technical concepts through simple and relatable everyday analogies.",
+          "url": "/tech-analogy",
+          "icon": "fas fa-lightbulb"
+        },
+        {
+          "title": "Waiting for Godot",
+          "text": "Explore Samuel Beckett's absurdist play about waiting, uncertainty, and the passage of time.",
+          "url": "/waiting-for-godot",
+          "icon": "fas fa-hourglass-half"
+        },
+        {
+          "title": "Lord of the Flies",
+          "text": "Explore William Golding's novel about human nature, civilisation, savagery, and the darkness within society.",
+          "url": "/lord-of-flies",
+          "icon": "fas fa-dove"
+        },
+        {
+          "title": "Paradise Lost",
+          "text": "Explore John Milton's epic poem about the forbidden fruit, temptation, and the Fall of Man.",
+          "url": "/paradise-lost-book-1",
+          "icon": "fas fa-apple-alt"
+        },
+        {
+          "title": "The Canterbury Tales",
+          "text": "Discover Geoffrey Chaucer's collection of stories told by travelling pilgrims on their journey to Canterbury.",
+          "url": "/the-canterbury-tales",
+          "icon": "fas fa-users"
+        },
+        {
+          "title": "The Monk",
+          "text": "Explore Matthew Lewis's Gothic novel examining monastic life, religious hypocrisy, temptation, and corruption.",
+          "url": "/the-monk",
+          "icon": "fas fa-church"
+        },
+        {
+          "title": "Doctor Faustus",
+          "text": "Explore Christopher Marlowe's tragic play about knowledge, ambition, forbidden learning, and the consequences of making a pact with the devil.",
+          "url": "/doctor-faustus",
+          "icon": "fas fa-book-open"
+        },
+        {
+          "title": "The Zoo Story",
+          "text": "Discover Edward Albee's one-act play exploring isolation, alienation, human relationships, and Jerry's story.",
+          "url": "/the-zoo-story",
+          "icon": "fas fa-paw"
+        }
+      ],
+      "features": []
+    },
+    {
       "date": "2026-11-09",
       "blogs": [
         {
-  "title": "The Browning Version",
-  "text": "Explore the literary work The Browning Version.",
-  "url": "/the-browning-version",
-  "icon": "fas fa-chalkboard-teacher"
-},
-{
-  "title": "Kindred",
-  "text": "Explore Kindred and discover its literary themes.",
-  "url": "/kindred",
-  "icon": "fas fa-link"
-}
+          "title": "The Browning Version",
+          "text": "Explore the literary work The Browning Version.",
+          "url": "/the-browning-version",
+          "icon": "fas fa-chalkboard-teacher"
+        },
+        {
+          "title": "Kindred",
+          "text": "Explore Kindred and discover its literary themes.",
+          "url": "/kindred",
+          "icon": "fas fa-link"
+        }
       ],
-    "features": [
+      "features": [
         {
           "title": "Notice Board",
           "text": "A dedicated space to explore the latest blog updates, announcements, and new features.",
           "url": "/notice-board",
           "icon": "fas fa-bullhorn"
         },
-  {
-    "title": "Saved Articles Sorting",
-    "text": "Saved articles are now automatically sorted from newest to oldest based on their saved dates, making it easier to find your most recently saved reads.",
-    "url": "/saved-articles",
-    "icon": "fas fa-sort-amount-down"
-  }
-]
+        {
+          "title": "Saved Articles Sorting",
+          "text": "Saved articles are now automatically sorted from newest to oldest based on their saved dates, making it easier to find your most recently saved reads.",
+          "url": "/saved-articles",
+          "icon": "fas fa-sort-amount-down"
+        }
+      ]
     },
     {
       "date": "2026-11-07",

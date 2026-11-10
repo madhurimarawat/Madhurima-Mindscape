@@ -53,6 +53,7 @@
 /* Each dated group */
 .notice-date-group {
     width: 100%;
+    margin-bottom: 35px;
 }
 
 /* Date outside the notice card */

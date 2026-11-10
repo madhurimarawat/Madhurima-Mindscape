@@ -1,0 +1,1008 @@
+---
+layout: blog
+permalink: /debugging-tips
+seo: tech-insights/debugging-tips
+
+categories:
+- Tech Insights
+
+tags:
+- Debugging
+- Debugging Tips
+- Web Development
+- HTML
+- CSS
+- JavaScript
+- Python
+- Programming
+- Error Handling
+- AI Coding
+- Vibe Coding
+- Software Development
+- Code Optimization
+- Code Reusability
+- Frontend Development
+- Developer Tips
+- Problem Solving
+- Artificial Intelligence
+---
+
+<!--
+*****************************************************************************
+* File: debugging-tips.html
+* Author: Madhurima Rawat
+* Date: November 10, 2026
+* Description: Practical debugging techniques for HTML, CSS,
+*              JavaScript, Python, and AI-generated code.
+* Version: 1.0
+*****************************************************************************
+-->
+
+<top>
+    <h2>Debugging Tips</h2>
+    <div class="line-below"></div>
+    <p class="date-class">November 10, 2026</p>
+</top>
+
+<section class="intro">
+    <div>
+        <p class="dropcap">
+            Oh my God! You write beautiful code, everything
+            looks perfectly fine, and then your code refuses to work.
+            Suddenly, you are questioning your entire life choices.
+            I am sure every developer has experienced this at least once.
+        </p>
+
+        <p>
+            You know what is even worse? When you run your website and
+            instead of getting the expected output, you are greeted
+            with a completely blank screen. Honestly, a blank screen
+            is sometimes more terrifying than a huge error message.
+            At least when you see an error, you have something to
+            investigate. You can read it, understand what happened,
+            and start figuring out where things went wrong.
+        </p>
+
+        <div class="meme">
+            <img src="https://static.vecteezy.com/system/resources/previews/070/485/794/non_2x/error-handling-debugging-illustration-image-vector.jpg"
+                alt="Debugging Illustration" height="400px" class="image">
+        </div>
+
+        <div>
+            <p class="image-caption">Debugging Illustration (<a
+                    href="https://static.vecteezy.com/system/resources/previews/070/485/794/non_2x/error-handling-debugging-illustration-image-vector.jpg"
+                    target="_blank" rel="noopener noreferrer" class="link">Source</a>)</p>
+        </div>
+
+        <p>
+            But a blank screen? You have absolutely no idea what happened.
+            Was it HTML? CSS? JavaScript? Did a file fail to load?
+            Did you accidentally break something? There are so many
+            possibilities.
+        </p>
+
+        <p>
+            Over time, while working on my own website and different
+            development projects, I have developed a few debugging
+            habits that make this entire process considerably easier.
+            These are not necessarily the most advanced debugging
+            techniques, but they are practical approaches that I
+            personally use whenever something refuses to work.
+        </p>
+    </div>
+
+    <blockquote>
+        Debugging is not always about finding a complicated programming
+        mistake. Sometimes, the problem is just one missing file,
+        one incorrect character, or one property that refuses to apply.
+    </blockquote>
+</section>
+
+<section class="self-help">
+
+    <!-- SECTION 1 -->
+    <div class="tip-item">
+        <h3>🔍 1. Always Have a Fallback for HTML Elements</h3>
+
+        <p>
+            The first thing I would recommend, especially when working
+            with HTML, is always having a fallback wherever possible.
+            This might sound like a small thing, but it can save you
+            quite a lot of debugging time.
+        </p>
+
+        <p>
+            Let me give you an example. Suppose you are using a custom
+            font called Marcellus throughout your website. Everything
+            looks beautiful when the font loads correctly. But what
+            happens when the font fails to load?
+        </p>
+
+        <p>
+            Instead of displaying the expected typography, your website
+            might suddenly look completely different. You might even
+            start wondering whether your CSS is broken.
+        </p>
+
+        <p>
+            This is why I always recommend defining fallback fonts.
+            For example:
+        </p>
+
+        <pre><code>body {
+    font-family: 'Marcellus', Georgia, serif;
+}</code></pre>
+
+        <p>
+            Now, if Marcellus fails to load, the browser can fall back
+            to Georgia or another available serif font.
+        </p>
+
+        <p>
+            The same principle applies to other parts of your website.
+            If you are loading images, fonts, external resources, or
+            dynamically generated content, think about what should
+            happen when the primary resource is unavailable.
+        </p>
+
+        <p>For example, an image can have a fallback:</p>
+
+        <pre><code>&lt;img
+    src="/images/profile.jpg"
+    alt="Profile photograph"
+    onerror="this.onerror=null; this.src='/images/fallback.jpg';"
+&gt;</code></pre>
+
+        <p>
+            The idea is simple: never assume that everything will
+            load perfectly every single time. Having a fallback
+            ensures that even if something fails, your website
+            remains usable and you have a better idea of what
+            is happening.
+        </p>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="tip-item">
+        <h3>⚠️ 2. Use Error Statements and Console Logs in JavaScript</h3>
+
+        <p>
+            The next thing is something I cannot emphasize enough:
+            use error statements and debugging messages in JavaScript.
+        </p>
+
+        <p>
+            One of the interesting things about HTML is that browsers
+            are generally very forgiving. Even when you make certain
+            mistakes in HTML, the browser tries its best to render
+            whatever it can. Sometimes, you might not even realize
+            that something is incorrect.
+        </p>
+
+        <p>
+            JavaScript, on the other hand, can be much less forgiving
+            when it comes to runtime errors. A small issue in your
+            script can prevent an entire functionality from working.
+            And if you are not checking the console, you might spend
+            hours trying to understand what happened.
+        </p>
+
+        <p>
+            This is why I recommend using <code>console.log()</code>,
+            <code>console.warn()</code>, and <code>console.error()</code>
+            wherever they are useful.
+        </p>
+
+        <pre><code>function loadArticles() {
+    console.log("Loading articles...");
+
+    try {
+        const articles = JSON.parse(
+            localStorage.getItem("articles")
+        );
+
+        console.log("Articles loaded:", articles);
+
+    } catch (error) {
+        console.error("Unable to load articles:", error);
+    }
+}</code></pre>
+
+        <p>
+            You can also use meaningful error messages instead of
+            simply printing random values.
+        </p>
+
+        <p>
+            For example, if a particular element is not available
+            in the DOM, you can explicitly check for it:
+        </p>
+
+        <pre><code>const header = document.querySelector(".header");
+
+if (!header) {
+    console.error("Header element was not found!");
+} else {
+    console.log("Header element found:", header);
+}</code></pre>
+
+        <p>
+            This makes debugging considerably easier because you
+            immediately know which part of your code is failing.
+        </p>
+
+        <p>
+            Also, do not forget about the browser's Developer Tools.
+            The Console tab is useful for JavaScript errors, while
+            the Network tab helps identify missing files, failed
+            requests, and resources that are not loading correctly.
+        </p>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="tip-item">
+        <h3>⌨️ 3. Never Underestimate Small Typos</h3>
+
+        <p>
+            This is something I personally struggle with quite often.
+            Sometimes, the entire problem is not a complicated logical
+            error. It is simply a typo.
+        </p>
+
+        <p>
+            I have had situations where I wrote
+            <code>lord-of-files</code> instead of
+            <code>lord-of-flies</code>, or accidentally used
+            <code>blockquotoes.js</code> instead of
+            <code>blockquotes.js</code>.
+        </p>
+
+        <p>
+            And the funniest part? You can spend a considerable amount
+            of time investigating your JavaScript or CSS, only to
+            eventually discover that the actual problem is an
+            incorrectly named file.
+        </p>
+
+        <p>
+            This becomes particularly frustrating when working with
+            multiple folders, imports, include files, and external
+            resources.
+        </p>
+
+        <p>For example, consider this:</p>
+
+        <pre><code>&lt;script src="/js/blockquote.js"&gt;&lt;/script&gt;</code></pre>
+
+        <p>
+            But suppose your actual file is named:
+        </p>
+
+        <pre><code>blockquotes.js</code></pre>
+
+        <p>
+            The browser will not magically understand what you intended.
+            It will simply fail to find the requested file.
+        </p>
+
+        <p>
+            So, whenever something is not working, double-check:
+        </p>
+
+        <ul>
+            <li>File names and folder names.</li>
+            <li>Spelling of HTML classes and IDs.</li>
+            <li>JavaScript variable and function names.</li>
+            <li>CSS selectors and property names.</li>
+            <li>File extensions such as <code>.js</code>, <code>.css</code>, and <code>.html</code>.</li>
+            <li>Relative paths and import statements.</li>
+            <li>Capitalization in file names, especially when deploying to Linux-based hosting.</li>
+        </ul>
+
+        <p>
+            Sometimes, the smallest spelling mistake can create
+            the biggest debugging headache.
+        </p>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="tip-item">
+        <h3>🎨 4. My Personal Approach to Debugging CSS</h3>
+
+        <p>
+            Now, this is probably one of my favourite debugging
+            techniques. I am not saying this is the most technically
+            sophisticated way of debugging CSS, but it works
+            surprisingly well for me.
+        </p>
+
+        <p>
+            Whenever I have a CSS property that refuses to work,
+            I first identify the exact element I want to modify.
+            Then, instead of immediately changing multiple properties,
+            I try to determine whether the particular property
+            is actually being applied.
+        </p>
+
+        <h4>Step 1: Test With an Extreme Value</h4>
+
+        <p>
+            Suppose I want to increase the top margin of a particular
+            element, but nothing seems to happen. Instead of
+            experimenting with values such as 10px, 15px, or 20px,
+            I temporarily use an extremely large value.
+        </p>
+
+        <pre><code>.my-element {
+    margin-top: 1000px;
+}</code></pre>
+
+        <p>
+            Now, if the element moves significantly, I immediately
+            know that the property is working. If nothing changes,
+            something else might be interfering with it.
+        </p>
+
+        <p>
+            The purpose is not to keep that value. It is simply
+            to make the effect so obvious that there is no room
+            for confusion.
+        </p>
+
+        <h4>Step 2: Temporarily Use !important</h4>
+
+        <p>
+            If the property still does not seem to apply, I sometimes
+            test it using <code>!important</code>.
+        </p>
+
+        <pre><code>.my-element {
+    margin-top: 1000px !important;
+}</code></pre>
+
+        <p>
+            If the property suddenly starts working, it is a useful
+            indication that another CSS declaration, specificity
+            issue, or cascade rule may be involved.
+        </p>
+
+        <p>
+            However, I would recommend using this only as a temporary
+            debugging technique. Do not start adding
+            <code>!important</code> to every property in your actual
+            stylesheet. It can make future CSS maintenance much harder.
+        </p>
+
+        <h4>Step 3: Try Negative Values</h4>
+
+        <p>
+            Another thing I sometimes do is test the reverse direction.
+            For example, if I want to check whether a margin is
+            actually affecting an element, I might temporarily
+            apply a negative margin.
+        </p>
+
+        <pre><code>.my-element {
+    margin-top: -100px;
+}</code></pre>
+
+        <p>
+            This helps me observe whether the element is responding
+            to the property at all. It is particularly useful when
+            multiple elements are overlapping or when spacing
+            becomes difficult to understand.
+        </p>
+
+        <h4>Step 4: Use Completely Different Colours</h4>
+
+        <p>
+            Now, another small trick I use is changing the colour
+            to something completely different.
+        </p>
+
+        <p>
+            Suppose your website already uses red and black.
+            If you are trying to change the background colour
+            of a particular element, temporarily use bright yellow.
+        </p>
+
+        <pre><code>.my-element {
+    background-color: yellow !important;
+}</code></pre>
+
+        <p>
+            If the element suddenly turns yellow, you know that
+            your CSS selector is targeting the correct element
+            and that the background property is being applied.
+        </p>
+
+        <p>
+            If nothing changes, you might be targeting the wrong
+            element, using an incorrect class name, or dealing
+            with another styling issue.
+        </p>
+
+        <p>
+            I find this particularly useful when debugging complex
+            layouts because a completely different colour makes
+            the affected element immediately visible.
+        </p>
+
+        <p>
+            Once you identify the problem, remember to remove
+            all the temporary debugging styles and restore
+            the intended values.
+        </p>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div class="tip-item">
+        <h3>🧪 5. Start With Static Values Before Using Dynamic Values</h3>
+
+        <p>
+            This is another approach I personally find extremely
+            useful, especially when working with complicated
+            JavaScript or Python logic.
+        </p>
+
+        <p>
+            I know this might sound slightly counterintuitive.
+            We generally want our applications to use dynamic
+            values because that is what makes them interactive
+            and flexible.
+        </p>
+
+        <p>
+            However, whenever I am working on a complicated feature,
+            I prefer starting with static values first.
+        </p>
+
+        <p>
+            Let me explain why. Suppose you are building a section
+            that dynamically displays blog articles using data
+            retrieved from a particular source. You have multiple
+            functions, filtering conditions, data transformations,
+            and fallback values involved.
+        </p>
+
+        <p>
+            If you directly start testing the entire dynamic system,
+            and the final output is incorrect, you have too many
+            possibilities to investigate.
+        </p>
+
+        <p>
+            Is the problem in the data? Is the filtering condition
+            incorrect? Is the function returning the wrong value?
+            Is the fallback being triggered? Or is the rendering
+            logic failing?
+        </p>
+
+        <p>
+            Instead, temporarily replace the dynamic values with
+            simple static values.
+        </p>
+
+        <pre><code>// Instead of immediately using dynamic data
+const articles = getArticlesFromStorage();
+
+// Temporarily test with static data
+const articles = [
+    {
+        title: "Understanding Jekyll",
+        category: "Tech Insights"
+    },
+    {
+        title: "Debugging Tips",
+        category: "Tech Insights"
+    }
+];</code></pre>
+
+        <p>
+            Now you can check whether the rendering logic works
+            correctly with known data.
+        </p>
+
+        <p>
+            If the static version works perfectly, you have already
+            narrowed down the problem. Your HTML structure and
+            rendering logic are probably functioning as expected,
+            so you can investigate the dynamic data flow separately.
+        </p>
+
+        <p>
+            After confirming that the static version works,
+            gradually introduce the dynamic values again.
+            Check the output at every stage and identify
+            where things start going wrong.
+        </p>
+
+        <p>
+            This is particularly useful when dealing with
+            complicated functions, API responses, LocalStorage,
+            filtering logic, and dynamically generated content.
+        </p>
+
+        <blockquote>
+            First make the simple version work. Then introduce
+            complexity one step at a time.
+        </blockquote>
+    </div>
+</section>
+
+<!-- AI-ASSISTED DEBUGGING -->
+<section class="self-help">
+
+    <!-- SECTION 6 -->
+    <div class="tip-item">
+        <h3>🤖 6. Debugging AI-Generated Code and Vibe Coding</h3>
+
+        <p>
+            Now, this is something I particularly want to discuss
+            because AI-assisted coding has become a huge part of
+            software development.
+        </p>
+
+        <p>
+            Whether you are a beginner, intermediate developer,
+            or someone with years of experience, you have probably
+            used AI tools to generate code, build functions,
+            create features, or solve programming problems.
+        </p>
+
+        <p>
+            And honestly, there is nothing wrong with that.
+            AI can make development considerably faster.
+            It is especially useful for boilerplate code,
+            repetitive functions, unfamiliar syntax, and
+            features that you do not remember how to implement.
+        </p>
+
+        <p>
+            However, there is something important I have noticed.
+            AI-generated code can work perfectly for the immediate
+            requirement without necessarily being the most
+            maintainable or scalable implementation.
+        </p>
+
+        <p>
+            Sometimes, it introduces unnecessary dependencies,
+            makes assumptions about your existing architecture,
+            modifies unrelated files, or creates logic that
+            becomes difficult to maintain later.
+        </p>
+
+        <p>
+            This is why I believe debugging becomes even more
+            important when you are using AI for development.
+            You should never blindly assume that generated
+            code is correct simply because it works once.
+        </p>
+
+        <p>
+            Here are a few things I personally recommend
+            whenever you are using AI for coding.
+        </p>
+    </div>
+
+    <!-- SECTION 7 -->
+    <div class="tip-item">
+        <h3>🛡️ 7. Always Ask AI to Include Error Handling and Debugging Code</h3>
+
+        <p>
+            The first thing I recommend is adding a specific
+            instruction to your AI coding prompts.
+        </p>
+
+        <p>
+            Whenever you ask an AI tool to generate a function
+            or implement a feature, explicitly ask it to include
+            clean error handling, meaningful error messages,
+            and appropriate debugging statements.
+        </p>
+
+        <p>
+            For example, you can add the following instruction
+            to your prompts:
+        </p>
+
+        <blockquote>
+            Write clean, maintainable, and scalable code.
+            Include appropriate error handling, meaningful
+            error messages, fallback values, and debugging
+            statements wherever necessary. Make sure that
+            failures can be identified easily during development.
+        </blockquote>
+
+        <p>
+            This makes a significant difference when you are
+            working with multiple functions and files.
+            Instead of having to guess which particular
+            operation failed, you can use the error messages
+            to narrow down the problem.
+        </p>
+
+        <p>
+            Also, do not confuse adding more error-handling
+            statements with making code better. The objective
+            is to handle failures meaningfully rather than
+            hiding errors behind empty catch blocks.
+        </p>
+
+        <pre><code>try {
+    loadBlogData();
+} catch (error) {
+    console.error("Failed to load blog data:", error);
+}</code></pre>
+
+        <p>
+            Good debugging messages should help you understand
+            what failed and why, instead of simply telling you
+            that something went wrong.
+        </p>
+    </div>
+
+    <!-- SECTION 8 -->
+    <div class="tip-item">
+        <h3>🎯 8. Give AI the Relevant Code Instead of the Entire Project</h3>
+
+        <p>
+            This is another mistake I see people making quite often.
+            Whenever something goes wrong, they immediately provide
+            an entire HTML file, CSS file, or even a huge collection
+            of project files to an AI tool.
+        </p>
+
+        <p>
+            Now, sometimes providing additional context is necessary.
+            However, giving too much unrelated code can make it
+            considerably harder to identify the actual problem.
+        </p>
+
+        <p>
+            Instead, first try to understand which particular
+            element or functionality is failing.
+        </p>
+
+        <p>
+            Suppose your homepage contains multiple sections,
+            but only the article carousel is not working.
+            Rather than immediately sharing your entire website,
+            start by providing:
+        </p>
+
+        <ul>
+            <li>The HTML responsible for the carousel.</li>
+            <li>The CSS associated with that component.</li>
+            <li>The JavaScript responsible for its functionality.</li>
+            <li>Any relevant error messages from the browser console.</li>
+        </ul>
+
+        <p>
+            This gives the AI enough information to investigate
+            the specific functionality without unnecessarily
+            introducing unrelated code.
+        </p>
+
+        <p>
+            Of course, if the issue depends on another component,
+            imported function, or shared stylesheet, provide
+            that additional context too.
+        </p>
+
+        <p>
+            The idea is not to provide as little code as possible.
+            It is to provide the relevant code that helps identify
+            the actual problem.
+        </p>
+    </div>
+
+    <!-- SECTION 9 -->
+    <div class="tip-item">
+        <h3>🧩 9. Maintain Independent and Modular Code</h3>
+
+        <p>
+            This is something I strongly recommend, particularly
+            when using AI-assisted coding.
+        </p>
+
+        <p>
+            Try to organize your project into independent,
+            logically separated components instead of keeping
+            everything inside a few enormous files.
+        </p>
+
+        <p>
+            For example, if you have a homepage, a notice board,
+            and a blog page, keep their respective HTML,
+            CSS, and JavaScript responsibilities organized.
+        </p>
+
+        <p>Something like this:</p>
+
+        <pre><code>website/
+├── index.html
+├── notice-board.html
+├── blog.html
+│
+├── css/
+│   ├── index.css
+│   ├── notice-board.css
+│   └── blog.css
+│
+└── js/
+    ├── index.js
+    ├── notice-board.js
+    └── blog.js</code></pre>
+
+        <p>
+            The reason I recommend this is that AI tools can
+            sometimes introduce unexpected changes while
+            modifying existing code.
+        </p>
+
+        <p>
+            Suppose you ask an AI tool to update your notice board.
+            If your entire website is tightly coupled, a change
+            intended for one feature might accidentally affect
+            another component.
+        </p>
+
+        <p>
+            This becomes particularly frustrating with CSS.
+            A general selector or an incorrectly modified class
+            can affect multiple pages without you immediately
+            realizing what happened.
+        </p>
+
+        <p>
+            By keeping your code logically independent,
+            you reduce unnecessary interference between
+            different parts of your project.
+        </p>
+
+        <p>
+            However, independent does not mean that absolutely
+            no files should depend on one another. Shared
+            components, utilities, and common styles are
+            perfectly reasonable.
+        </p>
+
+        <p>
+            The important thing is to maintain clear
+            responsibilities and avoid unnecessary coupling.
+            The more predictable your project structure is,
+            the easier it becomes to debug changes introduced
+            by AI.
+        </p>
+    </div>
+
+    <!-- SECTION 10 -->
+    <div class="tip-item">
+        <h3>🧠 10. Take Responsibility for AI-Generated Code</h3>
+
+        <p>
+            This is probably the most important point in this
+            entire section, and honestly, it goes beyond debugging.
+        </p>
+
+        <p>
+            If you are using AI to write your code, please
+            take responsibility for the code you are actually
+            using in your project.
+        </p>
+
+        <p>
+            I am not saying that you need to understand every
+            single line immediately. That might not even be
+            realistic, especially if you are a beginner.
+            But you should at least try to understand the
+            overall logic and flow of the code.
+        </p>
+
+        <p>
+            Understand what each major function does,
+            where the data comes from, how it is processed,
+            and where the final output is generated.
+        </p>
+
+        <p>
+            This becomes incredibly useful when something
+            eventually stops working.
+        </p>
+
+        <p>
+            Let me give you an example from website development.
+            Suppose you have built a website with AI assistance.
+            One day, you notice that the header is not displaying
+            correctly.
+        </p>
+
+        <p>
+            If you have some understanding of your project,
+            you can immediately narrow down the possibilities.
+            You know which HTML file contains the header,
+            which stylesheet controls its appearance,
+            and which JavaScript file handles its functionality.
+        </p>
+
+        <p>
+            You can start investigating the header's HTML,
+            check whether the relevant CSS properties are
+            being applied, and then move towards JavaScript
+            if necessary.
+        </p>
+
+        <p>
+            You might not immediately identify the exact line
+            causing the problem, but at least you know where
+            to begin.
+        </p>
+
+        <p>
+            On the other hand, if you have no understanding
+            of the codebase, every small issue becomes a
+            completely new problem that you have to explain
+            to AI from scratch.
+        </p>
+
+        <p>
+            This is why I recommend understanding at least:
+        </p>
+
+        <ul>
+            <li>The overall flow of your application.</li>
+            <li>The purpose of important files and folders.</li>
+            <li>The major functions and their responsibilities.</li>
+            <li>How data moves between different components.</li>
+            <li>Which CSS files control particular sections.</li>
+            <li>Where errors are likely to originate.</li>
+        </ul>
+
+        <p>
+            You do not have to become an expert in everything
+            before using AI. But you should gradually develop
+            enough understanding to investigate and maintain
+            the code you are using.
+        </p>
+
+        <blockquote>
+            If you are using AI to write your code, you should
+            still understand enough of that code to take
+            responsibility for maintaining it.
+        </blockquote>
+    </div>
+
+    <!-- SECTION 11 -->
+    <div class="tip-item">
+        <h3>🔧 11. Try Debugging the Problem Yourself Before Asking AI</h3>
+
+        <p>
+            One final thing I would recommend is not immediately
+            jumping to AI whenever you encounter an error.
+        </p>
+
+        <p>
+            I know it is tempting. You see something that is
+            not working, copy the error, paste it into an AI
+            tool, and ask it to fix everything.
+        </p>
+
+        <p>
+            But sometimes, you should first spend a little
+            time investigating the problem yourself.
+        </p>
+
+        <p>
+            For example, suppose a particular margin is not
+            being applied correctly. Before asking AI to rewrite
+            your entire CSS file, try a few simple things:
+        </p>
+
+        <ul>
+            <li>Inspect the exact HTML element in Developer Tools.</li>
+            <li>Check whether the intended CSS selector matches it.</li>
+            <li>Temporarily apply an extreme margin value.</li>
+            <li>Try a different background colour to identify the element.</li>
+            <li>Check whether another CSS declaration is overriding the property.</li>
+            <li>Inspect the computed styles in the browser.</li>
+        </ul>
+
+        <p>
+            You might discover that the problem is simply an
+            incorrect selector or an existing CSS rule with
+            higher specificity.
+        </p>
+
+        <p>
+            The same approach applies to JavaScript. Check
+            the console, inspect the variables, verify the
+            function output, and test the logic with static
+            values before asking AI to modify everything.
+        </p>
+
+        <p>
+            You can absolutely use AI after that. In fact,
+            providing the debugging steps you have already
+            performed can help it investigate the issue
+            more effectively.
+        </p>
+
+        <p>
+            The point is to develop your own debugging
+            ability instead of becoming completely dependent
+            on AI for every small issue.
+        </p>
+    </div>
+</section>
+
+<section class="conclusion">
+    <h3>💜 Debugging Is a Skill You Develop With Experience</h3>
+
+    <p>
+        Overall, I think debugging is one of those skills
+        that becomes increasingly important as you work
+        on larger and more complicated projects.
+    </p>
+
+    <p>
+        Whether you are working with HTML, CSS, JavaScript,
+        Python, or AI-generated code, the basic approach
+        remains quite similar. Identify the problem,
+        isolate the affected component, test your assumptions,
+        and gradually narrow down the possible causes.
+    </p>
+
+    <p>
+        Personally, I find techniques such as using fallback
+        values, adding meaningful error statements, testing
+        CSS with extreme values, and replacing dynamic data
+        with static values extremely useful.
+    </p>
+
+    <p>
+        And when it comes to AI-assisted development,
+        I would particularly emphasize maintaining modular
+        code, providing relevant context, and understanding
+        the code you are using.
+    </p>
+
+    <p>
+        Most importantly, do not underestimate the smallest
+        mistakes. Sometimes, after spending an hour debugging
+        an application, you discover that the entire issue
+        was caused by one incorrectly spelled file name.
+        Yes, it happens!
+    </p>
+
+    <p>
+        So, the next time your website displays a blank screen,
+        do not immediately panic or rewrite your entire project.
+        Start small, inspect the output, check the console,
+        and investigate one thing at a time.
+    </p>
+
+    <blockquote>
+        Good developers do not necessarily avoid errors.
+        They learn how to find them, understand them,
+        and fix them systematically.
+    </blockquote>
+
+    <p class="text-center">
+        <strong>What are your favourite debugging techniques?</strong>
+        Do you prefer debugging everything manually, using browser
+        Developer Tools, or taking help from AI coding assistants?
+        I would love to know what approaches work best for you!
+    </p>
+
+    <p class="text-center">
+        <a href="https://github.com/madhurimarawat" target="_blank" rel="noopener noreferrer" class="font-weight-bold">
+            <i class="fab fa-github"></i> Explore my GitHub
+        </a>
+        &nbsp; | &nbsp;
+        <a href="https://www.linkedin.com/in/madhurima-rawat/" target="_blank" rel="noopener noreferrer"
+            class="font-weight-bold">
+            <i class="fab fa-linkedin"></i> Connect on LinkedIn
+        </a>
+    </p>
+</section>

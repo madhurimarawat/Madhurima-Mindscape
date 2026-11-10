@@ -14,10 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (dateElement) {
         const today = new Date();
 
-        dateElement.textContent = today.toLocaleDateString("en-GB", {
-            weekday: "long",
-            day: "numeric",
+        dateElement.textContent = today.toLocaleDateString("en-US", {
             month: "long",
+            day: "2-digit",
             year: "numeric"
         });
     }
