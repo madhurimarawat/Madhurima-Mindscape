@@ -1,6 +1,24 @@
 {
   "notices": [
     {
+      "date": "2026-11-12",
+      "blogs": [
+        {
+          "title": "The Beauty of Having Too Many Interests",
+          "text": "Explore the joy and challenges of having multiple interests, from programming and literature to psychology, music, creativity, and self-discovery.",
+          "url": "/beauty-of-many-interests",
+          "icon": "fas fa-palette"
+        },
+        {
+          "title": "If My Life Were a Git Repository",
+          "text": "Explore life through the lens of Git, using commits, branches, versions, and merges as analogies for memories, experiences, identity, and personal growth.",
+          "url": "/life-as-git-repo",
+          "icon": "fas fa-code-branch"
+        }
+      ],
+      "features": []
+    },
+    {
       "date": "2026-11-10",
       "blogs": [
         {
