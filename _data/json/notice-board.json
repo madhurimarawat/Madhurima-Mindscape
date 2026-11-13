@@ -1,6 +1,18 @@
 {
   "notices": [
     {
+      "date": "2026-11-13",
+      "blogs": [
+        {
+          "title": "The Old Man and the Sea by Ernest Hemingway",
+          "text": "Explore Ernest Hemingway's The Old Man and the Sea through a personal literary perspective, examining Santiago's struggle with the great marlin and themes of perseverance, ageing, loneliness, dignity, friendship, and humanity's relationship with nature.",
+          "url": "/old-man-and-sea",
+          "icon": "fas fa-water"
+        }
+      ],
+      "features": []
+    },
+    {
       "date": "2026-11-12",
       "blogs": [
         {
