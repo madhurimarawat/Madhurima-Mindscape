@@ -70,7 +70,7 @@ This is a personal blogging platform where I document my journey, share knowledg
   </a>
 
   <!-- Blogs (manual) -->
-  <img src="https://img.shields.io/badge/Blogs-12-%23ff7653?style=for-the-badge&labelColor=%23456b84&logo=bookstack&logoColor=white" alt="Blogs Count">
+  <img src="https://img.shields.io/badge/Blogs-36-%23ff7653?style=for-the-badge&labelColor=%23456b84&logo=bookstack&logoColor=white" alt="Blogs Count">
 
 <!-- Made with: Love 💙 -->
 <img src="https://img.shields.io/badge/Made%20with-Love%20%F0%9F%92%99-%23feb47b?style=for-the-badge&labelColor=%234b82a7" alt="Made with Love">
@@ -169,6 +169,8 @@ Poetry, literary reflections, and interpretations of meaningful works.
 - **Custom 404 Page:** Dedicated responsive error page for unavailable URLs.
 - **Social & Navigation Links:** Integrated navigation and footer links to LinkedIn, GitHub, Portfolio, and RSS feed.
 - **Creative Exploration:** A platform for personal reflections, technology, project diaries, poetry, and photography.
+- **Automatic Table of Contents (TOC):** Automatically generates a navigable Table of Contents for each blog post based on its headings, with responsive styling and smooth section navigation.
+- **Floating Back to Top Button:** Provides a fixed bottom-right button on each blog post for smooth scrolling back to the top, with responsive styling and hover effects.
   
 ---
 
