@@ -1,7 +1,8 @@
+
 /**
  * File: js/notice-board.js
  * Author: Madhurima Rawat
- * Date: November 10, 2026
+ * Date: November 13, 2026
  * Description:
  * Dynamically generates and manages the Notice Board section for Madhurima
  * Mindscape. Retrieves notice data from the embedded JSON data element,
@@ -58,14 +59,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     return false;
                 }
 
-                // Validate date
                 const date = new Date(entry.date + "T00:00:00");
 
                 if (Number.isNaN(date.getTime())) {
                     return false;
                 }
 
-                // Only include entries containing actual notices
                 const hasBlogs =
                     Array.isArray(entry.blogs) &&
                     entry.blogs.some(item =>
@@ -332,6 +331,16 @@ document.addEventListener("DOMContentLoaded", function () {
         validNotices.forEach(function (entry, index) {
 
             const isLatest = index === 0;
+
+            // Insert heading exactly once before the first older notice
+            if (index === 1) {
+
+                const historyHeading = document.createElement("h3");
+                historyHeading.className = "notice-history-heading";
+                historyHeading.textContent = "Previous Notices";
+
+                noticeHistory.appendChild(historyHeading);
+            }
 
             const group = createDateGroup(entry, isLatest);
 
