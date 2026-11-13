@@ -227,6 +227,18 @@ The Notice Board provides a centralized space for viewing the latest updates acr
 - Uses a responsive design.
 - Provides navigation back to the website and keeps the error page consistent with the rest of the site.
 
+### 14. Automatic Table of Contents (TOC) and Floating Back to Top Button
+
+- Automatically generates a Table of Contents (TOC) from blog post headings.
+- Displays a glossy TOC card with curved corners, attractive styling, and hover effects.
+- Provides smooth navigation to the corresponding sections when TOC links are clicked.
+- Uses a responsive layout for desktop, tablet, and mobile devices.
+- Includes keyboard-focus and accessibility enhancements for TOC navigation links.
+- Displays a floating Back to Top button fixed in the bottom-right corner of the screen.
+- Keeps the Back to Top button in a consistent position while scrolling.
+- Provides smooth scrolling to the top of the page when clicked.
+- Supports accessible reduced-motion preferences.
+
 ---
 
 ## Blog Categories
