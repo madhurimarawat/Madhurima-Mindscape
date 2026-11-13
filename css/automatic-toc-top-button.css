@@ -1,0 +1,367 @@
+/*
+*********************************************************************************************
+* File: automatic-toc-top-button.css
+* Author: Madhurima Rawat
+* Date: November 13, 2026
+* Description:
+*   Dedicated responsive stylesheet for the blog navigation elements of
+*   "Madhurima Mindscape".
+*
+*   Includes:
+*   - Automatically generated Table of Contents (TOC).
+*   - Glossy TOC card with curved corners and hover effects.
+*   - Responsive TOC layout for desktop, tablet, and mobile.
+*   - TOC navigation link hover and keyboard-focus effects.
+*   - Floating Back to Top button with arrow and text.
+*   - Smooth scrolling and accessible reduced-motion support.
+*
+* Dependencies:
+*   - CSS variables: --text-color, --h2-color, --border-color,
+*     --card-color, --post-action-color, --post-action-hover.
+*   - Custom HTML: blog.html.
+*   - Custom JavaScript: TOC generation and Back to Top functionality.
+*********************************************************************************************
+*/
+
+
+/* =========================================
+   1. Automatic Table of Contents
+========================================= */
+
+/* Main Glossy TOC Card */
+.blog-toc {
+    display: block;
+
+    width: 75%;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    /* Center the card */
+    margin: 45px auto 30px;
+    padding: 22px 25px;
+
+    /* Glossy glass-like background */
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.14),
+            rgba(255, 255, 255, 0.04));
+
+    /* Curved card border */
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+
+    /* Glass effect */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    /* Subtle shadow */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    /* Hover transition */
+    transition: box-shadow 0.3s ease;
+
+    font-size: 0.90em;
+}
+
+/* Subtle Glow on Hover */
+.blog-toc:hover {
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.08),
+        0 0 12px var(--post-action-hover),
+        inset 0 1px 2px rgba(255, 255, 255, 0.22);
+}
+
+
+/* =========================================
+   2. TOC Heading
+========================================= */
+
+.blog-toc>h3 {
+    margin: 0 0 5px !important;
+    padding: 0 !important;
+
+    color: var(--h2-color);
+
+    font-size: 1.3rem;
+    line-height: 1.3 !important;
+}
+
+/* Instruction Below Heading */
+.blog-toc>.blog-toc-instruction {
+    margin: 0 0 12px !important;
+    padding: 0 !important;
+
+    font-size: 0.88rem;
+    line-height: 1.5;
+
+    color: var(--text-color, #777);
+    font-style: italic;
+}
+
+
+/* =========================================
+   3. TOC Navigation Links
+========================================= */
+
+/* TOC Links */
+.blog-toc a {
+    color: var(--text-color);
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+/* Link Hover */
+.blog-toc a:hover {
+    color: var(--h2-color);
+    text-decoration: underline;
+}
+
+/* Keyboard Focus */
+.blog-toc a:focus-visible {
+    outline: 2px solid var(--h2-color);
+    outline-offset: 4px;
+
+    border-radius: 3px;
+}
+
+/* TOC List */
+.blog-toc ol {
+    padding-left: 25px;
+}
+
+/* TOC List Items */
+.blog-toc li {
+    margin: 7px 0;
+    padding-left: 3px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   4. Back to Top Button
+========================================= */
+
+/* Floating Circular Button */
+.back-to-top {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 55px;
+    height: 55px;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    /* Stack arrow and text vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+
+    /* Circular appearance */
+    border: none;
+    border-radius: 50%;
+
+    background: var(--h2-color);
+    color: var(--post-action-color);
+
+    cursor: pointer;
+    z-index: 999;
+
+    /* Shadow */
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+
+    /* Initially hidden */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    /* Initial animation position */
+    transform: translateY(10px);
+
+    /* Smooth transitions */
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Arrow Above Text */
+.back-to-top-arrow {
+    display: block;
+
+    font-size: 16px;
+    line-height: 1;
+}
+
+/* Top Text */
+.back-to-top-text {
+    display: block;
+
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Visible State */
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateY(0);
+}
+
+/* Button Hover */
+.back-to-top:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Keyboard Focus */
+.back-to-top:focus-visible {
+    outline: 3px solid var(--text-color);
+    outline-offset: 4px;
+}
+
+
+/* =========================================
+   5. Tablet Responsive Styles
+   Screens up to 768px
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* TOC Card */
+    .blog-toc {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+
+        padding: 20px;
+        font-size: 0.8em;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+        right: 20px;
+        bottom: 20px;
+
+        width: 52px;
+        height: 52px;
+    }
+
+    .back-to-top-arrow {
+        font-size: 21px;
+    }
+
+    .back-to-top-text {
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================
+   6. Small Mobile Responsive Styles
+   Screens up to 480px
+========================================= */
+
+@media (max-width: 480px) {
+
+    /* Centered TOC Card */
+    .blog-toc {
+        display: block;
+
+        width: 90%;
+        max-width: 100%;
+
+        box-sizing: border-box;
+
+        margin: 25px auto !important;
+        padding: 18px;
+
+        font-size: 0.8em;
+    }
+
+    /* TOC Heading */
+    .blog-toc>h3 {
+        margin-bottom: 5px !important;
+        font-size: 1.2rem;
+    }
+
+    /* TOC Instruction */
+    .blog-toc>.blog-toc-instruction {
+        margin-bottom: 12px !important;
+        font-size: 0.85rem;
+    }
+
+    /* TOC List Indentation */
+    .blog-toc ol {
+        padding-left: 22px;
+    }
+
+    /* TOC List Items */
+    .blog-toc li {
+        margin: 8px 0;
+        padding-left: 3px;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+        right: 16px;
+        bottom: 18px;
+
+        width: 46px;
+        height: 46px;
+    }
+
+    .back-to-top-arrow {
+        font-size: 19px;
+    }
+
+    .back-to-top-text {
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================
+   7. Smooth Scrolling
+========================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* =========================================
+   8. Accessibility: Reduced Motion
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    /* Disable smooth scrolling */
+    html {
+        scroll-behavior: auto;
+    }
+
+    /* Disable navigation transitions */
+    .blog-toc,
+    .blog-toc a,
+    .back-to-top {
+        transition: none;
+    }
+
+    /* Remove button movement animations */
+    .back-to-top,
+    .back-to-top.visible,
+    .back-to-top:hover {
+        transform: none;
+    }
+}

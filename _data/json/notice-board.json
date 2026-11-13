@@ -10,7 +10,20 @@
           "icon": "fas fa-water"
         }
       ],
-      "features": []
+      "features": [
+        {
+          "title": "Automatic Table of Contents",
+          "text": "Every blog post now includes an automatically generated Table of Contents with clickable links to individual headings, making it easier to navigate articles and jump directly to any section.",
+          "url": "/blogs",
+          "icon": "fas fa-list-ol"
+        },
+        {
+          "title": "Back to Top Button",
+          "text": "A convenient floating Back to Top button is now available on blog posts, allowing readers to quickly return to the beginning of an article without manually scrolling through the entire page.",
+          "url": "/blogs",
+          "icon": "fas fa-arrow-up"
+        }
+      ]
     },
     {
       "date": "2026-11-12",
