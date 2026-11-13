@@ -23,9 +23,9 @@
   - Jekyll
   - _data/blogs/*.yml
 
-  Version: 2.0
+  Version: 1.0
 
-  Date: November 06, 2026
+  Date: November 13, 2026
 -->
 
 <!-- Split the SEO path into its category and YAML filename. -->
@@ -156,6 +156,9 @@
 <!-- Load the site's theme and appearance stylesheet. -->
 <link rel="stylesheet" href="{{ 'css/post-actions.css' | relative_url }}">
 
+<!-- Stylesheet for TOC and Top Button -->
+<link rel="stylesheet" href="{{ 'css/automatic-toc-top-button.css' | relative_url }}">
+
 <!-- Load the primary website JavaScript after HTML parsing. -->
 <script defer src="{{ 'js/index.js' | relative_url }}"></script>
 
@@ -164,3 +167,6 @@
 
 <!-- Load the JavaScript responsible for blockquotes quotes around. -->
 <script defer src="{{ 'js/blockquotes.js' | relative_url }}"></script>
+
+<!-- Load the JavaScript responsible for TOC and Top Button. -->
+<script defer src="{{ 'js/automatic-toc-top-button.js' | relative_url }}"></script>
