@@ -2,32 +2,47 @@
 *********************************************************************************************
 * File: slider-carousel.html
 * Author: Madhurima Rawat
-* Description: Bootstrap carousel showcasing special features of Madhurima Mindscape.
+* Description: Bootstrap 5.3.9 carousel showcasing special features of Madhurima Mindscape.
+* Date: 15 November, 2026
 *********************************************************************************************
 -->
 
 <!-- Special Features Carousel -->
 <section class="carousel-features">
 
-    <!-- Bootstrap 4 Carousel -->
-    <div id="specialFeaturesCarousel" class="carousel slide carousel-features-carousel" data-ride="carousel"
-        data-interval="6000" data-pause="hover">
+    <!-- Bootstrap 5.3.9 Carousel -->
+    <div id="specialFeaturesCarousel" class="carousel slide carousel-features-carousel" data-bs-ride="carousel"
+        data-bs-interval="6000" data-bs-pause="hover">
 
         <!-- Carousel Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#specialFeaturesCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#specialFeaturesCarousel" data-slide-to="1"></li>
-            <li data-target="#specialFeaturesCarousel" data-slide-to="2"></li>
-            <li data-target="#specialFeaturesCarousel" data-slide-to="3"></li>
-            <li data-target="#specialFeaturesCarousel" data-slide-to="4"></li>
-        </ol>
+        <div class="carousel-indicators">
+
+            <button type="button" data-bs-target="#specialFeaturesCarousel" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1">
+            </button>
+
+            <button type="button" data-bs-target="#specialFeaturesCarousel" data-bs-slide-to="1" aria-label="Slide 2">
+            </button>
+
+            <button type="button" data-bs-target="#specialFeaturesCarousel" data-bs-slide-to="2" aria-label="Slide 3">
+            </button>
+
+            <button type="button" data-bs-target="#specialFeaturesCarousel" data-bs-slide-to="3" aria-label="Slide 4">
+            </button>
+
+            <button type="button" data-bs-target="#specialFeaturesCarousel" data-bs-slide-to="4" aria-label="Slide 5">
+            </button>
+
+        </div>
 
         <!-- Carousel Content -->
         <div class="carousel-inner">
 
             <!-- Hero Icon Section -->
             <div class="carousel-item active">
-                <div id="hero-container">{% include components/icon-hero-section.html %}</div>
+                <div id="hero-container">
+                    {% include components/icon-hero-section.html %}
+                </div>
             </div>
 
             <!-- Saved Articles -->
@@ -93,16 +108,22 @@
         </div>
 
         <!-- Previous Slide Control -->
-        <a class="carousel-control-prev" href="#specialFeaturesCarousel" role="button" data-slide="prev"
-            aria-label="Previous feature">
-            <i class="fas fa-chevron-left"></i>
-        </a>
+        <button class="carousel-control-prev" type="button" data-bs-target="#specialFeaturesCarousel"
+            data-bs-slide="prev" aria-label="Previous feature">
+
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            <span class="visually-hidden">Previous</span>
+
+        </button>
 
         <!-- Next Slide Control -->
-        <a class="carousel-control-next" href="#specialFeaturesCarousel" role="button" data-slide="next"
-            aria-label="Next feature">
-            <i class="fas fa-chevron-right"></i>
-        </a>
+        <button class="carousel-control-next" type="button" data-bs-target="#specialFeaturesCarousel"
+            data-bs-slide="next" aria-label="Next feature">
+
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            <span class="visually-hidden">Next</span>
+
+        </button>
 
     </div>
 

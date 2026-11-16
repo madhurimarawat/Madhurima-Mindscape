@@ -2,30 +2,33 @@
   File: 404.html
 
   Description:
-  Centralized resource loader and metadata generator for all blog pages.
-  Dynamically retrieves each article's SEO metadata from its corresponding
-  YAML data file located inside the _data/blogs/ directory.
+  Centralized resource loader and metadata generator for the custom
+  404 error page. Dynamically retrieves SEO metadata from its
+  corresponding YAML data file located inside the _data/blogs/ directory.
 
   Usage:
-  Each blog page must define a 'seo' key in its front matter.
-  Example: seo: practical-wisdom
+  The 404 page must define a 'seo' key in its front matter.
+  Example: seo: page-not-found
 
   The value identifies the YAML file to load.
-  Example: _data/blogs/practical-wisdom.yml
+  Example: _data/blogs/page-not-found.yml
 
   Architecture:
-  1. Loads the corresponding YAML metadata using site.data.blogs.
+  1. Loads the YAML metadata using site.data.
   2. Generates standard SEO, Open Graph, and Twitter Card metadata.
   3. Generates canonical URLs using the current page URL.
-  4. Loads shared stylesheets, scripts, and external resources.
+  4. Loads shared stylesheets and external resources.
+  5. Loads the JavaScript required by the website.
 
   Dependencies:
   - Jekyll
   - _data/blogs/*.yml
+  - Bootstrap 5.3.9
+  - Font Awesome 7.3.1
 
-  Version: 2.0
+  Version: 3.0
 
-  Date: November 02, 2026
+  Date: November 15, 2026
 -->
 
 <!-- Split the SEO path into its category and YAML filename. -->
@@ -80,7 +83,7 @@
 <!-- Define the Open Graph title for social media previews. -->
 <meta property="og:title" content="{{ seo.og_title | default: seo.title | append: ' | Madhurima Rawat' | escape }}">
 
-<!-- Define the Open Graph content type for the blog article. -->
+<!-- Define the Open Graph content type for the page. -->
 <meta property="og:type" content="{{ seo.og_type | default: 'article' | escape }}">
 
 <!-- Define the Open Graph URL using the current page's canonical address. -->
@@ -112,7 +115,7 @@
 <meta property="og:image:height" content="{{ seo.image_height }}">
 {% endif %}
 
-<!-- Define the Twitter Card format used when sharing the article. -->
+<!-- Define the Twitter Card format used when sharing the page. -->
 <meta name="twitter:card" content="{{ seo.twitter_card | default: 'summary_large_image' | escape }}">
 
 <!-- Define the Twitter Card title with suitable fallback values. -->
@@ -134,13 +137,14 @@
 <!-- Load the article-specific favicon or fall back to the site's default favicon. -->
 <link rel="icon" href="{{ seo.favicon | default: 'images/Logo.png' | relative_url }}" type="image/png">
 
-<!-- Load Bootstrap 4.6.1 CSS from its official CDN with integrity verification. -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<!-- Load Bootstrap 5.3.9 CSS from jsDelivr with integrity verification. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css"
+    integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
 
-<!-- Load Font Awesome 5.15.4 for icon support throughout the website. -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<!-- Load Font Awesome 7.3.1 for icon support throughout the website. -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
 
+<!-- Provide the website's RSS feed. -->
 <link rel="alternate" type="application/atom+xml" title="{{ site.title }} RSS Feed"
     href="{{ '/feed.xml' | relative_url }}">
 
@@ -153,7 +157,7 @@
 <!-- Load the site's theme and appearance stylesheet. -->
 <link rel="stylesheet" href="{{ 'css/themes.css' | relative_url }}">
 
-<!-- Load the site's theme and appearance stylesheet. -->
+<!-- Load the stylesheet responsible for the 404 error page. -->
 <link rel="stylesheet" href="{{ 'css/404.css' | relative_url }}">
 
 <!-- Load the primary website JavaScript after HTML parsing. -->

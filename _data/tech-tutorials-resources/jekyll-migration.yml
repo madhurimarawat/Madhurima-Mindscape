@@ -1,0 +1,54 @@
+# Jekyll Migration - SEO and Social Sharing Metadata
+
+title: "Migrating to Jekyll | Website Structure, Layouts and Includes | Madhurima Rawat"
+
+description: >-
+    Learn how to migrate a static website to Jekyll and organize a growing
+    project using layouts, includes, data files, Liquid, front matter, and
+    reusable components. Explore the project structure, build process,
+    local development setup, GitHub Pages deployment, and practical
+    considerations for choosing Jekyll.
+
+date: "2026-11-07T15:15:00+05:30"
+last_modified: "2026-11-07T15:15:00+05:30"
+
+image: "https://www.userx.co.za/assets/images/journal/jekyll-logo-820x418.png"
+image_alt: "Jekyll static site generator logo"
+image_width: 1200
+image_height: 630
+
+author: "Madhurima Rawat"
+robots: "index, follow"
+
+keywords: >-
+    Jekyll migration, migrating to Jekyll, Jekyll tutorial, Jekyll static site
+    generator, static website development, Jekyll website structure,
+    Jekyll layouts, Jekyll includes, Jekyll data files, Liquid templates,
+    Jekyll front matter, Jekyll permalinks, Jekyll project structure,
+    reusable HTML components, website organization, code reusability,
+    HTML CSS JavaScript, Ruby, Bundler, GitHub Pages, Jekyll local server,
+    static site architecture, web development tips, blogging platform,
+    website maintenance, frontend development
+
+# Open Graph Metadata
+og_title: "Migrating to Jekyll | Organizing a Growing Static Website"
+
+og_type: "article"
+
+og_description: >-
+    A practical guide to migrating a static website to Jekyll, organizing
+    layouts, includes, data files, Liquid templates, and reusable components,
+    with a look at the architecture behind Madhurima Mindscape.
+
+# Twitter/X Card Metadata
+twitter_card: "summary_large_image"
+
+twitter_title: "Migrating to Jekyll | Practical Website Development Guide"
+
+twitter_description: >-
+    Discover how Jekyll makes growing static websites easier to maintain.
+    Explore layouts, includes, Liquid, data files, project organization,
+    local development, and GitHub Pages.
+
+# Favicon
+favicon: "images/Logo.png"

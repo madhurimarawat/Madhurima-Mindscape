@@ -2,14 +2,19 @@
 *********************************************************************************************
 * File: slider-carousel.css
 * Author: Madhurima Rawat
-* Date: November 01, 2026
+* Date: November 15, 2026
 * Description: Styles the Special Features carousel of Madhurima Mindscape.
 *              Features centered slide content, spacious layouts, prominent icons,
 *              responsive typography, styled feature buttons, navigation arrows,
-*              and carousel indicators.
-* Version: 1.0
+*              and Bootstrap 5.3.9 carousel indicators.
+* Dependencies: Bootstrap 5.3.9, Font Awesome 7.3.1
+* Version: 2.1
 *********************************************************************************************
 */
+
+/* =========================================================
+   CAROUSEL CONTAINER
+========================================================= */
 
 /* Center the carousel content */
 .carousel-features {
@@ -22,6 +27,7 @@
     width: 100%;
     margin: 25px auto 35px;
     padding-bottom: 50px;
+    position: relative;
 }
 
 /* Make the carousel inner container fill the available width */
@@ -29,15 +35,20 @@
     width: 100%;
 }
 
-/* Give every carousel slide the same height */
+/* Give every carousel slide consistent sizing */
 .carousel-features-carousel .carousel-item {
     width: 100%;
     box-sizing: border-box;
 }
 
+/* =========================================================
+   FEATURE SLIDE CONTENT
+========================================================= */
+
 /* Arrange and center the feature content like a banner */
 .featured-slide {
     width: 100%;
+    min-height: 320px;
     height: 100%;
     padding: 45px 90px 65px;
     display: flex;
@@ -74,6 +85,10 @@
     color: var(--text-color);
 }
 
+/* =========================================================
+   FEATURE BUTTONS
+========================================================= */
+
 /* Style the feature buttons */
 .carousel-features .featured-button {
     display: inline-block;
@@ -107,26 +122,58 @@
     text-decoration: none;
 }
 
+/* Provide a visible keyboard focus state */
+.carousel-features .featured-button:focus-visible {
+    outline: 3px solid var(--h2-color);
+    outline-offset: 4px;
+}
+
+/* =========================================================
+   CAROUSEL INDICATORS - BOOTSTRAP 5
+========================================================= */
+
 /* Position the carousel indicators */
 .carousel-features-carousel .carousel-indicators {
     bottom: 0;
     margin-bottom: 0;
+    align-items: center;
 }
 
-/* Style the carousel indicators */
-.carousel-features-carousel .carousel-indicators li {
-    background-color: var(--h2-color);
-    opacity: 0.35;
+/* Style Bootstrap 5 indicator buttons */
+.carousel-features-carousel .carousel-indicators button {
     width: 28px;
     height: 4px;
     margin: 0 5px;
+    padding: 0;
+    border: 0;
     border-radius: 5px;
+    background-color: var(--h2-color);
+    opacity: 0.35;
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
 }
 
 /* Highlight the active carousel indicator */
-.carousel-features-carousel .carousel-indicators .active {
+.carousel-features-carousel .carousel-indicators button.active {
     opacity: 1;
+    transform: scaleX(1.1);
 }
+
+/* Improve indicator visibility on hover */
+.carousel-features-carousel .carousel-indicators button:hover {
+    opacity: 0.8;
+}
+
+/* Provide a visible keyboard focus state */
+.carousel-features-carousel .carousel-indicators button:focus-visible {
+    outline: 2px solid var(--h2-color);
+    outline-offset: 4px;
+}
+
+/* =========================================================
+   CAROUSEL NAVIGATION CONTROLS
+========================================================= */
 
 /* Style the previous and next carousel controls */
 .carousel-features-carousel .carousel-control-prev,
@@ -147,13 +194,27 @@
 .carousel-features-carousel .carousel-control-prev i,
 .carousel-features-carousel .carousel-control-next i {
     font-size: 25px;
+    color: var(--h2-color);
 }
 
-/* Adjust the carousel for tablet and mobile screens */
+/* Provide visible keyboard focus for navigation controls */
+.carousel-features-carousel .carousel-control-prev:focus-visible,
+.carousel-features-carousel .carousel-control-next:focus-visible {
+    outline: 2px solid var(--h2-color);
+    outline-offset: -5px;
+    opacity: 1;
+}
+
+/* =========================================================
+   TABLET AND MOBILE RESPONSIVENESS
+========================================================= */
+
 @media (max-width: 768px) {
 
     /* Adjust feature slide spacing */
     .featured-slide {
+        min-height: 290px;
+        padding: 45px 90px 65px;
         gap: 20px;
     }
 
@@ -191,15 +252,33 @@
     .carousel-features-carousel .carousel-control-next i {
         font-size: 20px;
     }
+
+    /* Adjust indicator dimensions */
+    .carousel-features-carousel .carousel-indicators button {
+        width: 23px;
+        height: 4px;
+        margin: 0 4px;
+    }
 }
 
-/* Adjust the carousel for smaller mobile screens */
+/* =========================================================
+   SMALL MOBILE SCREENS
+========================================================= */
+
 @media (max-width: 480px) {
 
     /* Reduce slide padding and spacing */
     .featured-slide {
+        min-height: 280px;
         padding: 25px 38px 50px;
         gap: 35px;
+    }
+
+    /* Adjust carousel spacing */
+    .carousel-features-carousel {
+        margin-top: 25px;
+        margin-bottom: 35px;
+        padding-bottom: 50px;
     }
 
     /* Reduce icon size */
@@ -228,5 +307,36 @@
     .carousel-features-carousel .carousel-control-prev,
     .carousel-features-carousel .carousel-control-next {
         width: 28px;
+    }
+
+    /* Reduce indicator dimensions */
+    .carousel-features-carousel .carousel-indicators button {
+        width: 19px;
+        height: 4px;
+        margin: 0 3px;
+    }
+
+    /* Reduce navigation arrow size */
+    .carousel-features-carousel .carousel-control-prev i,
+    .carousel-features-carousel .carousel-control-next i {
+        font-size: 18px;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .carousel-features-carousel .carousel-indicators button,
+    .carousel-features .featured-button,
+    .carousel-features-carousel .carousel-control-prev,
+    .carousel-features-carousel .carousel-control-next {
+        transition: none;
+    }
+
+    .carousel-features .featured-button:hover {
+        transform: none;
     }
 }

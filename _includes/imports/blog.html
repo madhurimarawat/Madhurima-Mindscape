@@ -22,10 +22,12 @@
   Dependencies:
   - Jekyll
   - _data/blogs/*.yml
+  - Bootstrap 5.3.9
+  - Font Awesome 7.3.1
 
   Version: 1.0
 
-  Date: November 13, 2026
+  Date: November 15, 2026
 -->
 
 <!-- Split the SEO path into its category and YAML filename. -->
@@ -134,13 +136,14 @@
 <!-- Load the article-specific favicon or fall back to the site's default favicon. -->
 <link rel="icon" href="{{ seo.favicon | default: 'images/Logo.png' | relative_url }}" type="image/png">
 
-<!-- Load Bootstrap 4.6.1 CSS from its official CDN with integrity verification. -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-  integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<!-- Load Bootstrap 5.3.9 CSS from jsDelivr with integrity verification. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css"
+  integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
 
-<!-- Load Font Awesome 5.15.4 for icon support throughout the website. -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<!-- Load Font Awesome 7.3.1 for icon support throughout the website. -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
 
+<!-- Provide the website's RSS feed. -->
 <link rel="alternate" type="application/atom+xml" title="{{ site.title }} RSS Feed"
   href="{{ '/feed.xml' | relative_url }}">
 
@@ -153,10 +156,10 @@
 <!-- Load the site's theme and appearance stylesheet. -->
 <link rel="stylesheet" href="{{ 'css/themes.css' | relative_url }}">
 
-<!-- Load the site's theme and appearance stylesheet. -->
+<!-- Load the stylesheet responsible for post actions. -->
 <link rel="stylesheet" href="{{ 'css/post-actions.css' | relative_url }}">
 
-<!-- Stylesheet for TOC and Top Button -->
+<!-- Load the stylesheet responsible for the table of contents and top button. -->
 <link rel="stylesheet" href="{{ 'css/automatic-toc-top-button.css' | relative_url }}">
 
 <!-- Load the primary website JavaScript after HTML parsing. -->
@@ -165,8 +168,8 @@
 <!-- Load the JavaScript responsible for blog post actions. -->
 <script defer src="{{ 'js/post-actions.js' | relative_url }}"></script>
 
-<!-- Load the JavaScript responsible for blockquotes quotes around. -->
+<!-- Load the JavaScript responsible for blockquote interactions. -->
 <script defer src="{{ 'js/blockquotes.js' | relative_url }}"></script>
 
-<!-- Load the JavaScript responsible for TOC and Top Button. -->
+<!-- Load the JavaScript responsible for the table of contents and top button. -->
 <script defer src="{{ 'js/automatic-toc-top-button.js' | relative_url }}"></script>

@@ -1,6 +1,60 @@
 {
   "notices": [
     {
+      "date": "2026-11-16",
+      "blogs": [
+        {
+          "title": "Personality Behind Code",
+          "text": "Explore the different developer personalities behind the code, from perfectionists and experimentalists to minimalists, curious explorers, and over-engineers. Discover how our habits, thinking patterns, and experiences shape the way we write code.",
+          "url": "/personality-behind-code",
+          "icon": "fas fa-brain"
+        }
+      ],
+      "features": [
+        {
+          "title": "Introduced Tech Tutorials & Resources",
+          "text": "Added a new Tech Tutorials & Resources category to organise practical and educational technology content separately from Tech Insights. Moved four existing articles into this new category: Debugging Tips, Jekyll Migration, GitHub Helpful Tips, and GitHub Anniversary Month.",
+          "icon": "fas fa-graduation-cap"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "blogs": [
+        {
+          "title": "Making a Website Feel Alive",
+          "text": "Explore how micro-interactions, thoughtful animations, seasonal colours, typography, and personal design choices give a website its own personality. Discover why a personal website doesn't need to be perfect to feel memorable.",
+          "url": "/making-website-feel-alive",
+          "icon": "fas fa-heart"
+        }
+      ],
+      "features": []
+    },
+    {
+      "date": "2026-11-14",
+      "blogs": [
+        {
+          "title": "The Invisible Architecture of a Developer",
+          "text": "Explore the hidden layers of a developer's journey, from visible projects and development processes to problem-solving, critical thinking, adaptability, and the habits that shape continuous growth.",
+          "url": "/invisible-architecture-of-developer",
+          "icon": "fas fa-layer-group"
+        },
+        {
+          "title": "Betty at the Party",
+          "text": "Explore Betty at the Party through a personal literary perspective, examining its humorous twist and reflecting on empathy, kindness, embarrassment, bullying, and the difference between laughing with someone and laughing at someone.",
+          "url": "/betty-at-the-party",
+          "icon": "fas fa-chair"
+        },
+        {
+          "title": "A House, A Home by Lorraine M. Halli",
+          "text": "Explore Lorraine M. Halli's A House, A Home through a personal literary perspective, examining the difference between a physical house and a loving home, with reflections on family, kindness, loneliness, belonging, and emotional happiness.",
+          "url": "/a-house-a-home",
+          "icon": "fas fa-home"
+        }
+      ],
+      "features": []
+    },
+    {
       "date": "2026-11-13",
       "blogs": [
         {

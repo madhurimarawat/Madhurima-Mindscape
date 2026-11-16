@@ -1,0 +1,50 @@
+# Personal Blog Guide - SEO and Social Sharing Metadata
+
+title: "Personal Blog | Ideas, Writing, Design and Blogging | Madhurima Rawat"
+
+description: >-
+    Explore how to start a personal blog, choose the right blogging platform,
+    create meaningful content, and design a website that reflects your
+    personality. Discover ideas for travel diaries, personal reflections,
+    creative projects, and more.
+
+date: "2026-11-07T15:20:13Z"
+last_modified: "2026-11-07T15:20:13Z"
+
+image: "https://static.vecteezy.com/system/resources/previews/041/171/010/non_2x/personal-blog-concept-flat-illustration-vector.jpg"
+image_alt: "Personal Blog Concept Illustration"
+image_width: 1200
+image_height: 630
+
+author: "Madhurima Rawat"
+robots: "index, follow"
+
+keywords: >-
+    personal blog, how to start a personal blog, personal blogging,
+    blogging platforms, personal website, creative expression,
+    writing tips, content creation, blog design ideas,
+    personal branding, Jekyll blog, LinkedIn articles,
+    Medium blogging, personal reflections, travel diaries,
+    creative projects, website development, blog user experience,
+    blogging ideas, website design inspiration
+
+# Open Graph Metadata
+og_title: "Personal Blog | Ideas, Writing and Creative Expression"
+og_type: "article"
+
+og_description: >-
+    A practical and personal guide to starting a blog, choosing a platform,
+    creating meaningful content, improving user experience, and making
+    your website reflect your interests and personality.
+
+# Twitter/X Card Metadata
+twitter_card: "summary_large_image"
+twitter_title: "Personal Blog | Blogging Ideas and Tips"
+
+twitter_description: >-
+    Thinking about starting a personal blog? Explore blogging platforms,
+    content ideas, website design, writing tips, travel diaries,
+    and creative ways to make your website your own.
+
+# Favicon
+favicon: "images/Logo.png"
