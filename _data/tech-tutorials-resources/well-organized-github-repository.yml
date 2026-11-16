@@ -1,0 +1,75 @@
+# Well-Organized GitHub Repository - SEO and Social Sharing Metadata
+
+title: "How to Build a Well-Organized GitHub Repository | GitHub README, Structure and Documentation | Madhurima Rawat"
+
+description: >-
+    Learn how to build and maintain a well-organized GitHub repository
+    with practical examples from a real academic project. Explore
+    clear folder structures, informative README files, Markdown
+    tables of contents, separate documentation, organized assets,
+    screenshots, GitHub badges, issues, pull requests, discussions,
+    and repository topics. Discover how to improve project
+    navigation, documentation, collaboration, and discoverability
+    through effective GitHub repository organization.
+
+date: "2026-11-16T19:52:00+05:30"
+last_modified: "2026-11-16T19:52:00+05:30"
+
+image: "https://thumbs.dreamstime.com/b/digital-directory-illustrated-as-tree-file-folder-foliage-white-stylized-shows-folders-leaves-branches-representing-396263055.jpg?w=576"
+image_alt: "Digital directory illustrated as an organized tree of folders and files, representing GitHub repository structure and file organization"
+image_width: 1200
+image_height: 630
+
+author: "Madhurima Rawat"
+robots: "index, follow"
+
+keywords: >-
+    well organized GitHub repository, GitHub repository organization,
+    how to organize a GitHub repository, GitHub folder structure,
+    repository structure, GitHub project organization,
+    organize project files, GitHub README, README design,
+    how to write a good README, README best practices,
+    GitHub README examples, Markdown documentation,
+    GitHub Markdown, README table of contents,
+    GitHub collapsible sections, HTML details summary,
+    repository documentation, CONTRIBUTING.md,
+    HOW_TO_USE.md, CHANGELOG.md, GitHub LICENSE,
+    project documentation best practices, GitHub assets,
+    organize project images, GitHub screenshots, README images,
+    README GIF demonstrations, GitHub badges, Shields.io badges,
+    GitHub stars badge, GitHub forks badge, repository statistics,
+    GitHub issues, GitHub pull requests, GitHub discussions,
+    open source collaboration, GitHub contribution guidelines,
+    GitHub repository topics, GitHub discoverability,
+    GitHub Pages, project website, live project demonstration,
+    academic GitHub repository, Semester Notes repository,
+    Computer Science study materials, academic resource organization,
+    software development, version control, GitHub best practices,
+    developer portfolio, project presentation, repository maintenance,
+    maintainable projects, clean project structure,
+    software project organization, Madhurima Mindscape
+
+# Open Graph Metadata
+og_title: "How to Build a Well-Organized GitHub Repository"
+
+og_type: "article"
+
+og_description: >-
+    Discover practical GitHub repository organization techniques.
+    Learn to structure folders, design useful README files,
+    organize documentation and assets, add badges, and use
+    GitHub collaboration features through a real-world example.
+
+# Twitter/X Card Metadata
+twitter_card: "summary_large_image"
+
+twitter_title: "Well-Organized GitHub Repository | GitHub Best Practices"
+
+twitter_description: >-
+    Want a cleaner GitHub repository? Learn practical ways to
+    organize folders, improve README files, structure documentation,
+    manage assets, add badges, and make projects easier to explore
+    and maintain.
+
+# Favicon
+favicon: "images/Logo.png"

@@ -4,6 +4,30 @@
       "date": "2026-11-16",
       "blogs": [
         {
+          "title": "Websites Interactive Browser APIs",
+          "text": "Learn how Browser APIs make websites interactive and dynamic. Explore how JavaScript interacts with browser features to handle events, access device capabilities, and create engaging user experiences.",
+          "url": "/website-interactive-browser-apis",
+          "icon": "fas fa-globe"
+        },
+        {
+          "title": "Designing a GitHub Profile",
+          "text": "Learn how to design an attractive and professional GitHub profile. Explore profile README customization, useful sections, badges, statistics, and design ideas to showcase your skills and projects.",
+          "url": "/designing-github-profile",
+          "icon": "fab fa-github"
+        },
+        {
+          "title": "Bootstrap 4 to Bootstrap 5 Migration",
+          "text": "Understand the key changes when migrating from Bootstrap 4 to Bootstrap 5. Explore updated classes, removed components, JavaScript changes, and practical tips for upgrading your projects smoothly.",
+          "url": "/bootstrap-4-to-bootstrap-5-migration",
+          "icon": "fab fa-bootstrap"
+        },
+        {
+          "title": "Well-Organized GitHub Repository",
+          "text": "Discover how to structure and organize a GitHub repository for better readability and maintainability. Learn about folder structures, file naming, documentation, and best practices for keeping projects clean and easy to navigate.",
+          "url": "/well-organized-github-repository",
+          "icon": "fas fa-folder-open"
+        },
+        {
           "title": "Personality Behind Code",
           "text": "Explore the different developer personalities behind the code, from perfectionists and experimentalists to minimalists, curious explorers, and over-engineers. Discover how our habits, thinking patterns, and experiences shape the way we write code.",
           "url": "/personality-behind-code",

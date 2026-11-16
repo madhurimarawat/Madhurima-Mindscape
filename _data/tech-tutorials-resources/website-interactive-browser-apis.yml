@@ -1,0 +1,71 @@
+# Making Websites Interactive with Browser APIs - SEO and Social Sharing Metadata
+
+title: "Making Websites Interactive with Browser APIs | JavaScript Web Development | Madhurima Rawat"
+
+description: >-
+    Explore how to make websites interactive using native browser APIs
+    and JavaScript. Learn practical implementations of LocalStorage
+    for saving themes and articles, Clipboard API for copying links,
+    Web Share API for sharing content, Web Speech API for text-to-speech
+    and word highlighting, ResizeObserver for responsive carousel
+    layouts, and CSS Custom Highlight API. Discover how these browser
+    capabilities improve website accessibility, user experience,
+    frontend development, and JavaScript project organization.
+
+date: "2026-11-16T19:52:00+05:30"
+last_modified: "2026-11-16T19:52:00+05:30"
+
+image: "https://img.magnific.com/free-vector/gradient-api-illustration_23-2149370938.jpg"
+image_alt: "Browser APIs illustration representing JavaScript, browser capabilities, and interactive web development"
+image_width: 1200
+image_height: 630
+
+author: "Madhurima Rawat"
+robots: "index, follow"
+
+keywords: >-
+    browser APIs, JavaScript browser APIs, interactive websites,
+    making websites interactive, web development, frontend development,
+    JavaScript web development, native browser APIs, browser features,
+    LocalStorage, JavaScript LocalStorage, save user preferences,
+    remember website themes, save articles with JavaScript,
+    Clipboard API, navigator clipboard, copy article URLs,
+    Web Share API, native sharing interface, share website links,
+    Web Speech API, speech synthesis, text to speech JavaScript,
+    SpeechSynthesisUtterance, read aloud feature, JavaScript read aloud,
+    speech boundary events, word highlighting, CSS Custom Highlight API,
+    CSS.highlights, JavaScript DOM Range, ResizeObserver,
+    responsive carousel, dynamic carousel height, responsive web design,
+    browser storage, browser compatibility, browser permissions,
+    secure contexts, JavaScript error handling, feature detection,
+    browser API fallbacks, website accessibility, accessible websites,
+    JavaScript projects, practical JavaScript examples,
+    JavaScript techniques, HTML CSS JavaScript, website interactions,
+    interactive web features, web development best practices,
+    modular JavaScript, JavaScript file organization,
+    frontend development tips, software development,
+    Madhurima Mindscape
+
+# Open Graph Metadata
+og_title: "Making Websites Interactive with Browser APIs"
+
+og_type: "article"
+
+og_description: >-
+    Discover practical ways to make websites interactive using
+    JavaScript and native browser APIs. Explore LocalStorage,
+    Clipboard API, Web Share API, Web Speech API, ResizeObserver,
+    and CSS Custom Highlight API through real-world website features.
+
+# Twitter/X Card Metadata
+twitter_card: "summary_large_image"
+
+twitter_title: "Making Websites Interactive with Browser APIs"
+
+twitter_description: >-
+    Learn how to build interactive websites using JavaScript browser
+    APIs. Explore theme preferences, saved articles, link sharing,
+    text-to-speech, word highlighting, and responsive carousel layouts.
+
+# Favicon
+favicon: "images/Logo.png"

@@ -1,0 +1,899 @@
+---
+layout: blog
+permalink: /website-interactive-browser-apis
+seo: tech-tutorials-resources/website-interactive-browser-apis
+
+categories:
+- Tech Tutorials and Resources
+
+tags:
+- JavaScript
+- Browser APIs
+- Web Development
+- LocalStorage
+- Clipboard API
+- Web Share API
+- Web Speech API
+- ResizeObserver
+- CSS Custom Highlight API
+- Interactive Websites
+- Frontend Development
+- HTML
+- CSS
+- Website Accessibility
+- JavaScript Projects
+- Software Development
+---
+
+<!-- ******************************************************************
+* File: making-websites-interactive-with-browser-apis.html
+* Author: Madhurima Rawat
+* Date: November 16, 2026
+* Description: Exploring browser APIs through practical website
+*              features such as theme preferences, article sharing,
+*              text-to-speech, and responsive carousel layouts.
+* Version: 1.0
+* GitHub Repository: https://github.com/madhurimarawat/Madhurima-Mindscape
+****************************************************************** -->
+
+<top>
+    <h2>
+        Making Websites Interactive with Browser APIs
+    </h2>
+
+    <div class="line-below"></div>
+    <p class="date-class">November 16, 2026</p>
+</top>
+
+<section class="intro">
+
+    <div>
+
+        <p class="dropcap">
+            A website doesn't have to be static to be simple.
+            With JavaScript and the browser APIs already available
+            to us, we can build useful interactive features without
+            depending on additional libraries or a complicated backend.
+        </p>
+
+        <p>
+            While developing <strong>Madhurima Mindscape</strong>,
+            I explored several browser capabilities to make the
+            reading and browsing experience more engaging. These
+            included remembering a visitor's theme preference,
+            saving articles, sharing links, copying URLs, and
+            reading articles aloud with word highlighting.
+        </p>
+
+        <div class="meme">
+            <img src="https://img.magnific.com/free-vector/gradient-api-illustration_23-2149370938.jpg"
+                alt="Browser APIs illustration" class="image" loading="lazy" height="300px">
+        </div>
+
+        <p class="image-caption">
+            Browser APIs and Web Development
+            (<a href="https://img.magnific.com/free-vector/gradient-api-illustration_23-2149370938.jpg" target="_blank"
+                rel="noopener noreferrer" class="link">Source</a>)
+        </p>
+
+        <p>
+            In this article, I'll walk through some of the browser
+            APIs and JavaScript techniques I used, along with
+            examples from my website.
+        </p>
+
+    </div>
+
+    <blockquote>
+        "Sometimes, the most useful website features are already
+        available in the browser. We just need to know how to use them."
+    </blockquote>
+
+</section>
+
+<section class="self-help">
+
+    <!-- TIP 1 -->
+    <div class="tip-item">
+
+        <h3>🌐 1. Understand Browser APIs</h3>
+
+        <p>
+            Browser APIs are built-in interfaces that allow
+            JavaScript to interact with browser features and
+            capabilities.
+        </p>
+
+        <p>
+            They make it possible to work with browser storage,
+            share content, access the clipboard, produce speech,
+            observe element dimensions, and manipulate page content.
+        </p>
+
+        <p>
+            For Madhurima Mindscape, some particularly useful
+            browser APIs and features were:
+        </p>
+
+        <ul>
+            <li><strong>LocalStorage:</strong> Stores information in the browser so it remains available across page
+                visits.</li>
+            <li><strong>Clipboard API:</strong> Allows text to be copied to the system clipboard.</li>
+            <li><strong>Web Share API:</strong> Opens the device's native sharing interface.</li>
+            <li><strong>Web Speech API:</strong> Provides text-to-speech functionality.</li>
+            <li><strong>ResizeObserver:</strong> Detects changes in an element's dimensions.</li>
+            <li><strong>CSS Custom Highlight API:</strong> Provides a way to highlight text ranges without changing the
+                underlying document structure.</li>
+        </ul>
+
+        <p>
+            These capabilities can help create useful interactions
+            without introducing unnecessary dependencies.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> Before installing an
+            additional library for a small browser-related feature,
+            check whether a native browser API already provides
+            what you need.
+        </p>
+
+    </div>
+
+    <!-- TIP 2 -->
+    <div class="tip-item">
+
+        <h3>🎨 2. LocalStorage: Remember User Preferences</h3>
+
+        <p>
+            One of the first interactive features I implemented
+            was theme selection.
+        </p>
+
+        <p>
+            Madhurima Mindscape supports multiple visual themes.
+            Instead of asking visitors to select their preferred
+            theme every time they open the website, I wanted the
+            browser to remember their last selection.
+        </p>
+
+        <p>
+            That's where <strong>LocalStorage</strong> comes in.
+            It stores key-value pairs in the browser. Unlike
+            temporary JavaScript variables, its values remain
+            available after a page refresh or browser restart,
+            until they are cleared or removed.
+        </p>
+
+        <h4>Saving a selected theme</h4>
+
+        <p>
+            In my <code>index.js</code> file, the
+            <code>applyTheme()</code> function handles
+            theme changes and stores the selected theme:
+        </p>
+
+        <pre><code>function saveTheme(themeName) {
+
+    try {
+        localStorage.setItem(
+            "madhurima-mindscape-website-theme",
+            themeName
+        );
+
+        console.log("Theme saved:", themeName);
+
+    } catch (error) {
+        console.warn(
+            "localStorage is unavailable:",
+            error
+        );
+    }
+
+}</code></pre>
+
+        <p>
+            The <code>setItem()</code> method stores
+            the selected theme under a specific key.
+        </p>
+
+        <h4>Restoring the saved theme</h4>
+
+        <p>
+            When the page loads, I retrieve the previously
+            selected value:
+        </p>
+
+        <pre><code>document.addEventListener("DOMContentLoaded", function () {
+
+    try {
+        const savedTheme = localStorage.getItem(
+            "madhurima-mindscape-website-theme"
+        );
+
+        applyTheme(savedTheme || "default");
+
+    } catch (error) {
+        console.warn("Error loading saved theme:", error);
+
+        applyTheme("default");
+    }
+
+});</code></pre>
+
+        <p>
+            Here, <code>getItem()</code> retrieves
+            the stored theme. If no saved value exists, the
+            website uses the default theme.
+        </p>
+
+        <h4>Saving blog articles</h4>
+
+        <p>
+            I also used LocalStorage to implement a
+            <strong>Saved Articles</strong> feature.
+        </p>
+
+        <p>
+            When a visitor saves an article, its URL path is
+            added to an array. The array is converted into JSON
+            before being stored:
+        </p>
+
+        <pre><code>localStorage.setItem(
+    savedKey,
+    JSON.stringify(savedPosts)
+);</code></pre>
+
+        <p>
+            To retrieve the saved articles:
+        </p>
+
+        <pre><code>const stored = JSON.parse(
+    localStorage.getItem(savedKey) || "[]"
+);
+
+const savedPosts = Array.isArray(stored) ? stored : [];</code></pre>
+
+        <p>
+            I also maintain a separate record of saved dates
+            so that the website can associate a timestamp
+            with each saved article.
+        </p>
+
+        <p>
+            💡 <strong>What I learned:</strong> LocalStorage
+            is useful for preferences and lightweight browser-side
+            features. However, saved information belongs to the
+            visitor's browser, not a central database. It does not
+            automatically synchronize across devices or browsers,
+            and visitors can clear it at any time.
+        </p>
+
+    </div>
+
+    <!-- TIP 3 -->
+    <div class="tip-item">
+
+        <h3>📋 3. Clipboard API: Copy Article Links</h3>
+
+        <p>
+            Sharing an article should be easy, even when a visitor
+            doesn't want to open a sharing application.
+        </p>
+
+        <p>
+            The <strong>Clipboard API</strong> provides
+            a convenient way to copy text directly to the clipboard.
+            In Madhurima Mindscape, I use it as a fallback when
+            the native sharing feature isn't available.
+        </p>
+
+        <pre><code>if (
+    navigator.clipboard &&
+    window.isSecureContext
+) {
+    await navigator.clipboard.writeText(postUrl);
+
+    showStatus("Article link copied!");
+}</code></pre>
+
+        <p>
+            The <code>navigator.clipboard.writeText()</code>
+            method copies the article URL.
+        </p>
+
+        <p>
+            The example also checks
+            <code>window.isSecureContext</code> because
+            clipboard access is generally restricted to secure
+            contexts, such as HTTPS websites.
+        </p>
+
+        <p>
+            After copying the link, I display a temporary
+            status message to let the visitor know that
+            the action was successful.
+        </p>
+
+        <p>
+            💡 <strong>What I learned:</strong> Clipboard
+            access is subject to browser security restrictions
+            and user permissions. It's important to provide
+            an alternative when the API is unavailable.
+        </p>
+
+    </div>
+
+    <!-- TIP 4 -->
+    <div class="tip-item">
+
+        <h3>📤 4. Web Share API: Share Articles Through Native Apps</h3>
+
+        <p>
+            The <strong>Web Share API</strong> allows
+            websites to use the device's native sharing interface.
+        </p>
+
+        <p>
+            Instead of manually copying a link and opening
+            another application, visitors can use the browser's
+            sharing interface to send content through supported
+            applications.
+        </p>
+
+        <p>
+            For my blog, I prepare the article's title,
+            description, and URL:
+        </p>
+
+        <pre><code>const shareData = {
+    title: postTitle,
+    text: "Read this article on Madhurima Mindscape",
+    url: postUrl
+};</code></pre>
+
+        <p>
+            Then I check whether the browser supports native sharing:
+        </p>
+
+        <pre><code>if (navigator.share) {
+
+    await navigator.share(shareData);
+
+    showStatus("Share action completed.");
+
+} else if (
+    navigator.clipboard &&
+    window.isSecureContext
+) {
+
+    await navigator.clipboard.writeText(postUrl);
+
+    showStatus("Article link copied!");
+
+} else {
+
+    window.prompt(
+        "Copy this article link:",
+        postUrl
+    );
+
+}</code></pre>
+
+        <p>
+            This creates a fallback sequence:
+        </p>
+
+        <ol>
+            <li>Use the native sharing interface when available.</li>
+            <li>Otherwise, try copying the article URL.</li>
+            <li>If clipboard access is unavailable, display the URL in a prompt so the visitor can copy it manually.
+            </li>
+        </ol>
+
+        <p>
+            The sharing operation is asynchronous, so I use
+            <code>async</code> and <code>await</code>
+            to handle its result.
+        </p>
+
+        <p>
+            I also handle errors separately. For example,
+            if a visitor closes the sharing interface without
+            completing the action, the browser may report an
+            <code>AbortError</code>. That should not be
+            treated as an ordinary failure.
+        </p>
+
+        <p>
+            💡 <strong>What I learned:</strong> Browser
+            support and sharing options vary across devices.
+            A fallback makes the feature more reliable instead
+            of assuming every browser supports native sharing.
+        </p>
+
+    </div>
+
+    <!-- TIP 5 -->
+    <div class="tip-item">
+
+        <h3>🔊 5. Web Speech API: Read Articles Aloud</h3>
+
+        <p>
+            One of the more interesting features I implemented
+            was <strong>Read Aloud</strong>.
+        </p>
+
+        <p>
+            The Web Speech API provides speech synthesis
+            capabilities, allowing a browser to convert text
+            into spoken audio.
+        </p>
+
+        <p>
+            I wanted this feature to do more than simply read
+            the article. I also wanted visitors to be able
+            to pause, resume, follow the current reading position,
+            and see the word being spoken.
+        </p>
+
+        <h4>Checking browser support</h4>
+
+        <p>
+            Before initializing the feature, I check whether
+            speech synthesis is available:
+        </p>
+
+        <pre><code>if (
+    readAloudButton &&
+    "speechSynthesis" in window
+) {
+    const synth = window.speechSynthesis;
+}</code></pre>
+
+        <p>
+            The <code>speechSynthesis</code> interface
+            provides methods to control speech playback.
+        </p>
+
+        <h4>Creating a speech utterance</h4>
+
+        <p>
+            The <code>SpeechSynthesisUtterance</code>
+            interface represents the text that should be spoken.
+            I created a helper function to configure the voice
+            and speech properties:
+        </p>
+
+        <pre><code>function createUtterance(text) {
+
+    const utterance = new SpeechSynthesisUtterance(text);
+
+    utterance.lang = "en-IN";
+    utterance.rate = 1;
+    utterance.pitch = 1;
+
+    const voice = getIndianVoice();
+
+    if (voice) {
+        utterance.voice = voice;
+    }
+
+    return utterance;
+}</code></pre>
+
+        <p>
+            I also added voice selection logic using
+            <code>speechSynthesis.getVoices()</code>.
+            The function looks for available Indian English
+            voices and prefers a voice whose name matches
+            a list of familiar voice names. If no suitable
+            voice is available, the browser's default voice
+            is used.
+        </p>
+
+        <p>
+            The available voices depend on the operating
+            system and browser.
+        </p>
+
+        <h4>Reading article content</h4>
+
+        <p>
+            Rather than reading the entire page indiscriminately,
+            I collect text nodes from the main article content.
+        </p>
+
+        <p>
+            I use <code>document.createTreeWalker()</code>
+            with <code>NodeFilter.SHOW_TEXT</code> to
+            traverse text nodes and exclude elements such as
+            scripts, navigation, buttons, and form controls.
+            This keeps unrelated interface content out of
+            the reading queue.
+        </p>
+
+        <h4>Highlighting the spoken word</h4>
+
+        <p>
+            One of the most useful parts of the implementation
+            is word highlighting.
+        </p>
+
+        <p>
+            The <code>onboundary</code> event of a speech
+            utterance can report when speech reaches a word
+            boundary. I use its <code>charIndex</code>
+            value to identify the current position in the text.
+        </p>
+
+        <pre><code>utterance.onboundary = function (event) {
+
+    if (event.name === "word") {
+        highlightWord(node, event.charIndex);
+    }
+
+};</code></pre>
+
+        <p>
+            The <code>highlightWord()</code> function
+            creates a DOM <code>Range</code> around
+            the current word.
+        </p>
+
+        <p>
+            Where supported, I use the CSS Custom Highlight API
+            through <code>CSS.highlights</code> and
+            <code>Highlight</code>. If that capability
+            is unavailable, the implementation falls back to
+            applying a CSS class to the current text block.
+            This provides a visual indication of the reading
+            position.
+        </p>
+
+        <h4>Pause, resume, and stop</h4>
+
+        <p>
+            The Web Speech API provides methods for controlling
+            playback:
+        </p>
+
+        <pre><code>// Pause speech.
+synth.pause();
+
+// Resume speech.
+synth.resume();
+
+// Stop speech and clear the queue.
+synth.cancel();</code></pre>
+
+        <p>
+            I connected these methods to the Read Aloud button,
+            allowing it to switch between reading, paused,
+            and resumed states.
+        </p>
+
+        <p>
+            I also implemented automatic scrolling to follow
+            the current reading position, while allowing
+            visitors to scroll manually without immediately
+            losing their place.
+        </p>
+
+        <p>
+            💡 <strong>What I learned:</strong> Text-to-speech
+            can make articles more accessible and convenient
+            to consume. However, speech voices, word-boundary
+            events, and playback behavior can differ between
+            browsers and operating systems. Testing on different
+            devices is important.
+        </p>
+
+    </div>
+
+    <!-- TIP 6 -->
+    <div class="tip-item">
+
+        <h3>📐 6. ResizeObserver: Keep Carousel Layouts Responsive</h3>
+
+        <p>
+            While developing the website's carousel, I needed
+            its slides to maintain the same height as the
+            icon hero section.
+        </p>
+
+        <p>
+            A fixed height would not work well because the
+            hero section changes dimensions depending on
+            the viewport and its content.
+        </p>
+
+        <p>
+            I used <strong>ResizeObserver</strong> to
+            detect changes in the hero section's dimensions.
+        </p>
+
+        <pre><code>const heroSection = document.querySelector(
+    ".icon-hero-section"
+);
+
+const heroResizeObserver = new ResizeObserver(function () {
+    matchCarouselHeight();
+});
+
+if (heroSection) {
+    heroResizeObserver.observe(heroSection);
+}</code></pre>
+
+        <p>
+            The <code>matchCarouselHeight()</code>
+            function measures the hero section and applies
+            the resulting height to each carousel slide:
+        </p>
+
+        <pre><code>function matchCarouselHeight() {
+
+    const heroHeight =
+        heroSection.getBoundingClientRect().height;
+
+    if (!Number.isFinite(heroHeight) || heroHeight &lt;= 0) {
+        return;
+    }
+
+    carouselSlides.forEach(function (slide) {
+        slide.style.height = heroHeight + "px";
+    });
+
+}</code></pre>
+
+        <p>
+            I also trigger height synchronization when the
+            page finishes loading and when the browser window
+            is resized.
+        </p>
+
+        <p>
+            To avoid unnecessary calculations during rapid
+            resizing, I use a small timeout to debounce
+            the resize handler.
+        </p>
+
+        <p>
+            💡 <strong>What I learned:</strong> ResizeObserver
+            is particularly useful when an element's dimensions
+            depend on content or other layout changes, rather
+            than only on the browser window size.
+        </p>
+
+    </div>
+
+    <!-- TIP 7 -->
+    <div class="tip-item">
+
+        <h3>🗂️ 7. Organize Browser Features Across JavaScript Files</h3>
+
+        <p>
+            As interactive features grow, keeping all the
+            JavaScript in a single file can make the project
+            difficult to maintain.
+        </p>
+
+        <p>
+            I kept the interactions in separate JavaScript
+            files according to their responsibilities.
+        </p>
+
+        <ul>
+            <li><strong><code>index.js</code>:</strong> Theme management, saved theme restoration, and desktop/mobile
+                dropdown behavior.</li>
+            <li><strong><code>slider-carousel.js</code>:</strong> Dynamic carousel height synchronization.</li>
+            <li><strong><code>post-actions.js</code>:</strong> Article saving, sharing, comments, reading time, and
+                read-aloud functionality.</li>
+        </ul>
+
+        <p>
+            I also used reusable Jekyll components so that
+            post actions could be included across articles
+            without duplicating their markup.
+        </p>
+
+        <p>
+            This separation makes the code easier to maintain
+            and helps keep individual features independent.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> Organize JavaScript
+            according to feature responsibilities. It becomes
+            easier to debug, update, and reuse individual
+            features as your website grows.
+        </p>
+
+    </div>
+
+    <!-- TIP 8 -->
+    <div class="tip-item">
+
+        <h3>🧪 8. Handle Browser Compatibility and User Experience</h3>
+
+        <p>
+            Browser APIs are powerful, but they come with
+            a few practical considerations. Not every browser
+            supports every API, and some features depend on
+            permissions, secure contexts, or user interaction.
+        </p>
+
+        <p>
+            Here are some important points to remember:
+        </p>
+
+        <ul>
+            <li><strong>Check browser support:</strong> Not every browser implements every API.</li>
+            <li><strong>Provide fallbacks:</strong> Clipboard and sharing features should have alternatives.</li>
+            <li><strong>Handle errors:</strong> Browser permissions, unavailable storage, and interrupted operations can
+                cause failures.</li>
+            <li><strong>Respect user interaction:</strong> Some capabilities require a user action or permission before
+                they can be used.</li>
+            <li><strong>Test across devices:</strong> Mobile and desktop browsers may behave differently.</li>
+            <li><strong>Consider accessibility:</strong> Interactive controls should have meaningful labels and
+                accessible states.</li>
+            <li><strong>Protect user data:</strong> LocalStorage is suitable for lightweight preferences, but it is not
+                a replacement for secure server-side storage.</li>
+        </ul>
+
+        <p>
+            It is also worth remembering that LocalStorage
+            is accessible to JavaScript running on the same
+            origin. Avoid storing passwords, authentication
+            secrets, or other sensitive information in it.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> Don't build an
+            interactive feature around the assumption that
+            every browser will behave identically. Check
+            support, handle failures gracefully, and make
+            sure the basic website experience remains usable.
+        </p>
+
+    </div>
+
+    <!-- TIP 9 -->
+    <div class="tip-item">
+
+        <h3>📊 9. Bring the Features Together</h3>
+
+        <p>
+            These browser capabilities are used across
+            different parts of Madhurima Mindscape.
+            Each one contributes to a more convenient
+            browsing and reading experience.
+        </p>
+
+        <p>
+            The following table summarizes where these
+            features are implemented:
+        </p>
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Browser API or Capability</th>
+                        <th>Implementation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Remembering themes</td>
+                        <td>LocalStorage</td>
+                        <td><code>index.js</code></td>
+                    </tr>
+                    <tr>
+                        <td>Saving articles</td>
+                        <td>LocalStorage</td>
+                        <td><code>post-actions.js</code></td>
+                    </tr>
+                    <tr>
+                        <td>Sharing article links</td>
+                        <td>Web Share API</td>
+                        <td><code>post-actions.js</code></td>
+                    </tr>
+                    <tr>
+                        <td>Copying article URLs</td>
+                        <td>Clipboard API</td>
+                        <td><code>post-actions.js</code></td>
+                    </tr>
+                    <tr>
+                        <td>Reading articles aloud</td>
+                        <td>Web Speech API</td>
+                        <td><code>post-actions.js</code></td>
+                    </tr>
+                    <tr>
+                        <td>Following spoken text</td>
+                        <td>Speech boundary events and CSS Custom Highlight API</td>
+                        <td><code>post-actions.js</code></td>
+                    </tr>
+                    <tr>
+                        <td>Synchronizing carousel heights</td>
+                        <td>ResizeObserver</td>
+                        <td><code>slider-carousel.js</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>
+            Keeping these features separate makes the
+            implementation easier to understand and
+            maintain. It also allows individual features
+            to be improved without unnecessarily affecting
+            unrelated parts of the website.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> Start with small,
+            useful interactions and organize them properly.
+            A collection of well-implemented features can
+            make a website feel much more engaging without
+            making its code unnecessarily complicated.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="conclusion">
+
+    <h3>💜 Building Better Experiences with Browser APIs</h3>
+
+    <p>
+        Building interactive features doesn't always require
+        a large framework or a complex backend. Browser APIs
+        provide many useful capabilities that can make
+        websites more responsive, accessible, and convenient.
+    </p>
+
+    <p>
+        Working on Madhurima Mindscape gave me an opportunity
+        to explore these capabilities through practical
+        implementations rather than treating them as
+        isolated JavaScript concepts.
+    </p>
+
+    <p>
+        From remembering a visitor's preferred theme to
+        reading an entire article aloud with word highlighting,
+        each feature helped me understand how browser APIs
+        can improve the everyday experience of using a website.
+    </p>
+
+    <p>
+        The biggest takeaway is that a good interactive
+        feature isn't just about making something work.
+        It's about making it useful, reliable, and comfortable
+        for the person using it.
+    </p>
+
+    <blockquote>
+        "A good interactive feature isn't just about making
+        something work; it's about making it useful, reliable,
+        and comfortable for the person using it."
+    </blockquote>
+
+    <p class="text-center">
+        <strong>Interested in the website behind these implementations?</strong>
+        Explore Madhurima Mindscape and its source code to
+        see how the browser features are organized and maintained.
+    </p>
+
+    <p class="text-center">
+        <a href="https://github.com/madhurimarawat/Madhurima-Mindscape" target="_blank" rel="noopener noreferrer"
+            class="font-weight-bold link">
+            <i class="fab fa-github"></i> Explore the GitHub Repository
+        </a>
+    </p>
+
+</section>

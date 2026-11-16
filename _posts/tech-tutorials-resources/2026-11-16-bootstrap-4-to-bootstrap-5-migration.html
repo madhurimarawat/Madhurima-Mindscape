@@ -1,0 +1,736 @@
+---
+layout: blog
+permalink: /bootstrap-4-to-bootstrap-5-migration
+seo: tech-tutorials-resources/bootstrap-4-to-bootstrap-5-migration
+
+categories:
+- Tech Tutorials and Resources
+
+tags:
+- Bootstrap
+- Bootstrap 4
+- Bootstrap 5
+- Bootstrap Migration
+- Bootstrap 5 Migration
+- Font Awesome
+- Font Awesome 5
+- Font Awesome 7
+- Frontend Development
+- Web Development
+- HTML
+- CSS
+- JavaScript
+- Responsive Web Design
+- Web Frameworks
+- Website Maintenance
+- Website Modernization
+- Software Development
+---
+
+<!--
+**********************************************************************
+* File: bootstrap-4-to-bootstrap-5-migration.html
+* Author: Madhurima Rawat
+* Date: November 16, 2026
+* Description: A practical migration guide from Bootstrap 4 to
+*              Bootstrap 5, including Font Awesome upgrades,
+*              carousel updates, and frontend compatibility.
+* Version: 1.0
+* GitHub Repository: https://github.com/madhurimarawat/Madhurima-Mindscape
+**********************************************************************
+-->
+
+<top>
+    <h2>
+        Bootstrap 4 to Bootstrap 5: A Practical Migration Guide
+    </h2>
+
+    <div class="line-below"></div>
+    <p class="date-class">November 16, 2026</p>
+</top>
+
+<section class="intro">
+
+    <div>
+
+        <p class="dropcap">
+            Framework upgrades are an important part of maintaining
+            a website, but migrating an existing project is not always
+            as simple as replacing a stylesheet or updating a version
+            number. Framework changes can affect HTML attributes,
+            JavaScript behavior, component structures, and even
+            the smallest details of a website's appearance.
+        </p>
+
+        <p>
+            Recently, I completed the migration of my website from
+            <strong>Bootstrap 4.6.1 to Bootstrap 5.3.9</strong> and
+            <strong>Font Awesome 5.15.4 to Font Awesome 7.3.1</strong>.
+            The goal was to modernize the frontend dependencies while
+            preserving the website's existing design, responsive
+            layouts, and overall user experience.
+        </p>
+
+        <div class="meme">
+            <img src="https://designmodo.com/wp-content/uploads/2020/07/bootstrap4-5-1-597532-preview.jpg"
+                alt="Bootstrap Migration" class="image" loading="lazy" height="300px">
+        </div>
+
+        <p class="image-caption">
+            Bootstrap Migration
+            (<a href="https://designmodo.com/wp-content/uploads/2020/07/bootstrap4-5-1-597532-preview.jpg"
+                target="_blank" rel="noopener noreferrer" class="link">Source</a>)
+        </p>
+
+        <p>
+            In this article, I'll walk through the changes I made,
+            the components that required special attention, and
+            some practical lessons from the migration process.
+        </p>
+
+    </div>
+
+    <blockquote>
+        "A successful migration isn't just about using newer versions.
+        It's about making improvements without losing what already works."
+    </blockquote>
+
+</section>
+
+<section class="self-help">
+
+    <!-- TIP 1 -->
+    <div class="tip-item">
+
+        <h3>🔍 1. Understand What Is Changing Before Migrating</h3>
+
+        <p>
+            Before upgrading a frontend framework, it is important
+            to understand which parts of your project depend on
+            the existing version.
+        </p>
+
+        <p>
+            Bootstrap 5 introduced several changes compared with
+            Bootstrap 4, particularly in its JavaScript dependencies,
+            data attributes, and component markup.
+        </p>
+
+        <p>Some important differences include:</p>
+
+        <ul>
+            <li>Bootstrap 5 no longer requires jQuery for its JavaScript components.</li>
+            <li>Popper.js 2 is included in the Bootstrap bundle.</li>
+            <li>Data attributes use the <code>data-bs-</code> prefix.</li>
+            <li>Some component markup and utility classes have changed.</li>
+            <li>Several JavaScript APIs and component behaviors have been updated.</li>
+        </ul>
+
+        <p>
+            Before making changes, review your existing HTML,
+            CSS, and JavaScript files. Identify Bootstrap components,
+            custom scripts, external dependencies, and styles that
+            may be affected by the upgrade.
+        </p>
+
+        <p>
+            You can refer to the official
+            <a href="https://getbootstrap.com/docs/5.3/migration/" target="_blank" rel="noopener noreferrer"
+                class="link">
+                Bootstrap 5 Migration Guide
+            </a>
+            to understand the changes in detail.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> Don't start by replacing
+            everything at once. First, understand how your existing
+            website uses the framework. This makes it easier to
+            identify compatibility issues and avoid unnecessary
+            changes.
+        </p>
+
+    </div>
+
+    <!-- TIP 2 -->
+    <div class="tip-item">
+
+        <h3>📦 2. Update Bootstrap and Font Awesome Dependencies</h3>
+
+        <p>
+            The first practical step is updating the external
+            dependencies used by your website. Bootstrap CSS and
+            JavaScript, along with icon libraries such as Font Awesome,
+            should be upgraded to their intended versions.
+        </p>
+
+        <p>
+            For Bootstrap 5.3.9, the stylesheet and JavaScript bundle
+            can be included using the official CDN resources.
+        </p>
+
+        <pre><code>&lt;!-- Bootstrap 5 CSS --&gt;
+&lt;link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css"
+    rel="stylesheet"&gt;
+
+&lt;!-- Bootstrap 5 JavaScript Bundle --&gt;
+&lt;script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"&gt;
+&lt;/script&gt;</code></pre>
+
+        <p>
+            The Bootstrap bundle includes Popper.js, so a separate
+            Popper.js import is no longer necessary for the standard
+            Bootstrap components.
+        </p>
+
+        <p>
+            I also upgraded Font Awesome from version 5.15.4
+            to version 7.3.1 to modernize the icon library.
+        </p>
+
+        <pre><code>&lt;!-- Font Awesome 7.3.1 --&gt;
+&lt;link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"&gt;</code></pre>
+
+        <p>
+            One important point is that upgrading Bootstrap does
+            not automatically mean every other dependency must
+            be removed. Review your project scripts before
+            changing or deleting existing imports.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> I retained the jQuery
+            dependency where it was still needed by legacy or
+            custom scripts. Bootstrap 5 itself does not require
+            jQuery, but an existing project may still depend on it.
+        </p>
+
+    </div>
+
+    <!-- TIP 3 -->
+    <div class="tip-item">
+
+        <h3>🧩 3. Update HTML Markup and Data Attributes</h3>
+
+        <p>
+            One of the most important parts of migrating from
+            Bootstrap 4 to Bootstrap 5 is updating the HTML markup
+            of interactive components.
+        </p>
+
+        <p>
+            Bootstrap 5 introduced the <code>data-bs-</code>
+            prefix for its JavaScript-related data attributes.
+            Older Bootstrap 4 attributes may therefore need
+            to be updated.
+        </p>
+
+        <p>For example, a Bootstrap 4 carousel control might use:</p>
+
+        <pre><code>&lt;button
+    type="button"
+    data-target="#myCarousel"
+    data-slide="next"&gt;
+    Next
+&lt;/button&gt;</code></pre>
+
+        <p>In Bootstrap 5, the equivalent markup becomes:</p>
+
+        <pre><code>&lt;button
+    type="button"
+    data-bs-target="#myCarousel"
+    data-bs-slide="next"&gt;
+    Next
+&lt;/button&gt;</code></pre>
+
+        <p>Some commonly encountered attribute changes include:</p>
+
+        <ul>
+            <li><code>data-toggle</code> becomes <code>data-bs-toggle</code>.</li>
+            <li><code>data-target</code> becomes <code>data-bs-target</code>.</li>
+            <li><code>data-dismiss</code> becomes <code>data-bs-dismiss</code>.</li>
+            <li><code>data-slide</code> becomes <code>data-bs-slide</code>.</li>
+            <li><code>data-slide-to</code> becomes <code>data-bs-slide-to</code>.</li>
+        </ul>
+
+        <p>
+            These changes are especially important for components
+            such as carousels, modals, dropdowns, tooltips, and
+            collapsible sections.
+        </p>
+
+        <p>
+            You can find the updated component documentation in
+            the official
+            <a href="https://getbootstrap.com/docs/5.3/components/" target="_blank" rel="noopener noreferrer"
+                class="link">
+                Bootstrap 5 Components Documentation
+            </a>.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> Search your project files
+            for older Bootstrap data attributes. Updating them
+            systematically is much easier than discovering broken
+            interactions one component at a time.
+        </p>
+
+    </div>
+
+    <!-- TIP 4 -->
+    <div class="tip-item">
+
+        <h3>🎠 4. Migrate and Test Carousel Components</h3>
+
+        <p>
+            Carousels deserve special attention during a Bootstrap
+            migration because their markup, indicators, controls,
+            and JavaScript behavior are closely connected.
+        </p>
+
+        <p>
+            Bootstrap 5 uses button-based carousel indicators
+            instead of the older list-based structure used in
+            Bootstrap 4.
+        </p>
+
+        <p>A simplified Bootstrap 5 carousel structure looks like this:</p>
+
+        <pre><code>&lt;div id="myCarousel" class="carousel slide"&gt;
+
+    &lt;div class="carousel-indicators"&gt;
+        &lt;button
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"&gt;
+        &lt;/button&gt;
+
+        &lt;button
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div class="carousel-inner"&gt;
+        &lt;div class="carousel-item active"&gt;
+            &lt;img src="slide-1.jpg"
+                 class="d-block w-100"
+                 alt="First slide"&gt;
+        &lt;/div&gt;
+
+        &lt;div class="carousel-item"&gt;
+            &lt;img src="slide-2.jpg"
+                 class="d-block w-100"
+                 alt="Second slide"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="prev"&gt;
+        &lt;span class="carousel-control-prev-icon"
+              aria-hidden="true"&gt;&lt;/span&gt;
+        &lt;span class="visually-hidden"&gt;Previous&lt;/span&gt;
+    &lt;/button&gt;
+
+    &lt;button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="next"&gt;
+        &lt;span class="carousel-control-next-icon"
+              aria-hidden="true"&gt;&lt;/span&gt;
+        &lt;span class="visually-hidden"&gt;Next&lt;/span&gt;
+    &lt;/button&gt;
+
+&lt;/div&gt;</code></pre>
+
+        <p>
+            However, updating the markup alone may not be enough.
+            Custom CSS and JavaScript can also influence carousel
+            dimensions, spacing, indicators, and slide transitions.
+        </p>
+
+        <p>
+            In my website, I updated the carousel HTML to follow
+            Bootstrap 5 conventions and revised the associated
+            CSS to preserve its original visual appearance.
+            I also retained responsive spacing, hover and focus
+            states, and reduced-motion support.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> Test carousel navigation,
+            indicators, slide transitions, and layout dimensions
+            after migrating. Pay attention to how the component
+            behaves on desktop, tablet, and mobile screens.
+        </p>
+
+    </div>
+
+    <!-- TIP 5 -->
+    <div class="tip-item">
+
+        <h3>⚙️ 5. Review Custom JavaScript and Layout Behavior</h3>
+
+        <p>
+            Framework migrations can affect custom JavaScript
+            even when the scripts do not directly use Bootstrap
+            APIs. Changes in component markup or page dimensions
+            can introduce unexpected behavior.
+        </p>
+
+        <p>
+            For example, a script that synchronizes carousel
+            slide heights may need to be reviewed if the updated
+            layout changes how elements are measured.
+        </p>
+
+        <p>
+            The <code>ResizeObserver</code> API can help monitor
+            changes to an element's dimensions and respond
+            accordingly.
+        </p>
+
+        <pre><code>const observer = new ResizeObserver(entries =&gt; {
+    for (const entry of entries) {
+        const height = entry.contentRect.height;
+
+        console.log("Updated element height:", height);
+    }
+});
+
+const element = document.querySelector(".hero-section");
+
+if (element) {
+    observer.observe(element);
+}</code></pre>
+
+        <p>
+            This is a simplified example of observing element
+            dimensions. In an actual project, the callback
+            should update the relevant layout elements and
+            include safeguards against invalid measurements.
+        </p>
+
+        <p>
+            During my migration, I updated the carousel
+            height-synchronization logic to work with the
+            revised layout. I also added safeguards against
+            zero or invalid hero-section heights, improved
+            synchronization during page loading and resizing,
+            and introduced error handling.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> Don't assume that custom
+            scripts will continue working just because the
+            framework's CSS and JavaScript load successfully.
+            Test the actual behavior of your website.
+        </p>
+
+    </div>
+
+    <!-- TIP 6 -->
+    <div class="tip-item">
+
+        <h3>🎨 6. Preserve Custom Styling and Responsive Layouts</h3>
+
+        <p>
+            One challenge during a framework migration is
+            maintaining the visual identity of an existing
+            website. Even small changes in default styles,
+            spacing utilities, or component markup can affect
+            the overall appearance.
+        </p>
+
+        <p>
+            After updating Bootstrap, review your custom
+            stylesheets and check the following:
+        </p>
+
+        <ul>
+            <li>Container widths and grid layouts.</li>
+            <li>Margins, padding, and spacing utilities.</li>
+            <li>Typography, headings, and text alignment.</li>
+            <li>Navigation bars and responsive menus.</li>
+            <li>Buttons, forms, and interactive components.</li>
+            <li>Carousel indicators and controls.</li>
+            <li>Mobile, tablet, and desktop layouts.</li>
+            <li>Hover, focus, and accessibility states.</li>
+        </ul>
+
+        <p>
+            Avoid rewriting custom CSS unnecessarily. If an
+            existing style still works correctly, there may
+            be no reason to change it.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> I revised the carousel
+            stylesheet to maintain the original margins,
+            padding, spacing, and visual presentation across
+            different screen sizes. The objective was to
+            modernize the framework without changing the
+            website's familiar appearance.
+        </p>
+
+    </div>
+
+    <!-- TIP 7 -->
+    <div class="tip-item">
+
+        <h3>⭐ 7. Upgrade Font Awesome Without Losing Your Icons</h3>
+
+        <p>
+            Bootstrap and Font Awesome are separate dependencies,
+            but both can contribute significantly to a website's
+            frontend appearance. If your project uses Font Awesome
+            icons throughout its layouts, remember to review
+            the icon library separately during a framework upgrade.
+        </p>
+
+        <p>
+            Font Awesome 5 and Font Awesome 7 use different
+            generations of icon styles and naming conventions.
+            Therefore, it is worth checking the existing icon
+            classes and verifying that they render correctly
+            after the upgrade.
+        </p>
+
+        <p>
+            For example, a solid home icon can be written using
+            the newer Font Awesome class convention:
+        </p>
+
+        <pre><code>&lt;i class="fa-solid fa-house"&gt;&lt;/i&gt;</code></pre>
+
+        <p>
+            You can explore available icons and their usage
+            through the official
+            <a href="https://fontawesome.com/icons" target="_blank" rel="noopener noreferrer" class="link">
+                Font Awesome Icon Library
+            </a>.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> I upgraded Font Awesome
+            from version 5.15.4 to 7.3.1 alongside Bootstrap.
+            Interestingly, my existing older icons continued
+            to work nicely after the upgrade, so I didn't have
+            to redesign the website's icon usage.
+        </p>
+
+        <p>
+            However, don't assume every older icon class will
+            work in every project. Check your actual icons
+            after changing versions, especially if you use
+            legacy styles or less common icon names.
+        </p>
+
+    </div>
+
+    <!-- TIP 8 -->
+    <div class="tip-item">
+
+        <h3>🗂️ 8. Organize Dependencies Across Different Layouts</h3>
+
+        <p>
+            A website may have several layouts or specialized
+            pages that load their own stylesheets and scripts.
+            Updating only the homepage is not enough if other
+            pages still reference older framework versions.
+        </p>
+
+        <p>
+            Review all the layouts and templates that include
+            Bootstrap or Font Awesome dependencies.
+        </p>
+
+        <p>
+            In my website, I reviewed the following files:
+        </p>
+
+        <ul>
+            <li><code>index.html</code> and <code>blog.html</code> layouts.</li>
+            <li><code>404.html</code> layout.</li>
+            <li><code>slider-carousel.html</code>.</li>
+            <li><code>slider-carousel.css</code>.</li>
+            <li><code>slider-carousel.js</code>.</li>
+        </ul>
+
+        <p>
+            I updated the shared dependencies, reorganized
+            stylesheet and JavaScript imports, and retained
+            the page-specific styles and scripts required
+            by individual layouts.
+        </p>
+
+        <p>
+            For example, the error page continued using its
+            dedicated <code>404.css</code> stylesheet, while
+            the shared framework dependencies were upgraded.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> Search the entire
+            project for old CDN URLs and version references.
+            This helps prevent situations where one page
+            uses Bootstrap 5 while another accidentally
+            continues loading Bootstrap 4.
+        </p>
+
+    </div>
+
+    <!-- TIP 9 -->
+    <div class="tip-item">
+
+        <h3>🧪 9. Test the Website After Migration</h3>
+
+        <p>
+            A successful dependency update does not necessarily
+            mean the migration is complete. You should verify
+            that the website continues to behave as expected.
+        </p>
+
+        <p>Here is a practical checklist to follow:</p>
+
+        <ul>
+            <li>Check whether Bootstrap CSS and JavaScript load correctly.</li>
+            <li>Verify that all Font Awesome icons render properly.</li>
+            <li>Test navigation menus and dropdowns.</li>
+            <li>Check carousel navigation and slide indicators.</li>
+            <li>Verify modals, collapsible sections, and other interactive components.</li>
+            <li>Inspect browser console errors and warnings.</li>
+            <li>Check for broken images, stylesheets, and scripts.</li>
+            <li>Test responsive layouts on different screen sizes.</li>
+            <li>Verify that page-specific styles remain intact.</li>
+            <li>Check SEO metadata and important page content.</li>
+        </ul>
+
+        <p>
+            Browser Developer Tools are especially useful
+            during this stage. The Console helps identify
+            JavaScript errors, while the Network tab can
+            reveal failed resource requests and outdated
+            dependency imports.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> Compare the migrated
+            website with its previous appearance. Don't
+            focus only on whether the page loads. Check
+            whether the original layout, interactions,
+            and user experience have been preserved.
+        </p>
+
+    </div>
+
+    <!-- TIP 10 -->
+    <div class="tip-item">
+
+        <h3>📋 10. Document the Migration and Its Outcome</h3>
+
+        <p>
+            Once the migration is complete, document the
+            changes you made. This is useful for future
+            maintenance, debugging, and understanding
+            why certain implementation decisions were taken.
+        </p>
+
+        <p>
+            A migration summary can include:
+        </p>
+
+        <ul>
+            <li>Previous and updated dependency versions.</li>
+            <li>Files and layouts modified.</li>
+            <li>HTML attributes and component markup changes.</li>
+            <li>CSS and JavaScript adjustments.</li>
+            <li>Compatibility fixes and testing results.</li>
+            <li>Any remaining dependencies that still require attention.</li>
+        </ul>
+
+        <p>
+            Keeping this information in your project documentation
+            also makes future framework upgrades easier to plan.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> I maintained a detailed
+            migration summary covering the updated layouts,
+            framework dependencies, carousel implementation,
+            custom scripts, and overall outcome. This gives
+            me a useful reference for future website maintenance.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="conclusion">
+
+    <h3>💜 A Successful Migration Is More Than a Version Update</h3>
+
+    <p>
+        Migrating from Bootstrap 4.6.1 to Bootstrap 5.3.9
+        and Font Awesome 5.15.4 to 7.3.1 was an opportunity
+        to modernize my website's frontend dependencies
+        while reviewing its existing implementation.
+    </p>
+
+    <p>
+        The migration included updating the main layouts,
+        error page, shared dependencies, carousel markup,
+        custom stylesheets, and JavaScript functionality.
+        I also retained the jQuery dependency where it
+        was still needed by existing scripts.
+    </p>
+
+    <p>
+        The final result preserves the website's original
+        visual identity, responsive behavior, SEO organization,
+        and overall user experience. My existing Font Awesome
+        icons also continued to work nicely after the upgrade.
+    </p>
+
+    <p>
+        The biggest lesson I took away from this process is
+        that framework migrations should be approached
+        systematically. Understand the changes, update
+        dependencies carefully, review custom code, and
+        test every important component before considering
+        the work complete.
+    </p>
+
+    <blockquote>
+        "Good maintenance isn't always about changing how
+        something looks. Sometimes, it's about making
+        what already works ready for the future."
+    </blockquote>
+
+    <p class="text-center">
+        <strong>Interested in the website behind this migration?</strong>
+        Explore Madhurima Mindscape and its source code to
+        see how the frontend is organized and maintained.
+    </p>
+
+    <p class="text-center">
+        <a href="https://github.com/madhurimarawat/Madhurima-Mindscape/blob/main/Project_Documentation.md"
+            target="_blank" rel="noopener noreferrer" class="font-weight-bold link">
+            <i class="fab fa-github"></i> Explore the Project Documentation
+        </a>
+    </p>
+
+</section>

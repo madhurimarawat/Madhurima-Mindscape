@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: contents.css
 * Author: Madhurima Rawat
-* Date: November 13, 2026
+* Date: November 16, 2026
 * Description: This is the stylesheet for the content pages of the "Madhurima Mindscape" blog website.
 *              It contains specific styles for the body text, headings, quotes, images, and links 
 *              used across various content pages. The CSS ensures consistent and readable design 
@@ -295,4 +295,104 @@ pre code {
     /* Matches the heading color across themes */
     margin-top: 10px;
     /* Adds space between the divider and the date */
+}
+
+/* Glossy transparent table card */
+.table-responsive {
+    width: 80%;
+    margin: 25px auto;
+    padding: 12px;
+
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    /* Only outer card border */
+    border: 1px solid var(--text-color);
+    border-radius: 16px;
+
+    overflow-x: auto;
+
+    /* Soft glossy shadow */
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.08),
+        inset 0 1px 1px rgba(255, 255, 255, 0.12);
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--h2-color) transparent;
+}
+
+/* Main table styling */
+.table-responsive .table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: var(--text-color);
+    background: transparent;
+    text-align: center;
+}
+
+/* Table heading */
+.table-responsive .table thead th {
+    color: var(--h2-color);
+    font-size: 0.88rem;
+    font-weight: 700;
+    padding: 13px 15px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.06);
+
+    /* Remove inner borders */
+    border: none;
+}
+
+/* Table body cells */
+.table-responsive .table tbody td {
+    color: var(--text-color);
+    font-size: 0.82rem;
+    padding: 12px 15px;
+    text-align: center;
+    vertical-align: middle;
+    background: transparent;
+
+    /* Remove inner borders */
+    border: none;
+}
+
+/* Subtle glossy hover effect */
+.table-responsive .table tbody tr {
+    transition: background 0.3s ease;
+}
+
+.table-responsive .table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.07);
+}
+
+/* Style inline code inside table cells */
+.table-responsive .table code {
+    color: var(--h2-color);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 3px 6px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .table-responsive {
+        width: 95%;
+        padding: 8px;
+        border-radius: 12px;
+    }
+
+    .table-responsive .table thead th {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+
+    .table-responsive .table tbody td {
+        font-size: 0.75rem;
+        padding: 9px;
+    }
 }

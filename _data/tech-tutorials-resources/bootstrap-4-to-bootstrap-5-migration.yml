@@ -1,0 +1,70 @@
+# Bootstrap 4 to Bootstrap 5 Migration - SEO and Social Sharing Metadata
+
+title: "Bootstrap 4 to Bootstrap 5 Migration Guide | Bootstrap 5.3.9, Font Awesome 7 and Frontend Updates | Madhurima Rawat"
+
+description: >-
+    Learn how to migrate a website from Bootstrap 4.6.1 to Bootstrap 5.3.9
+    and upgrade Font Awesome from version 5.15.4 to 7.3.1. Explore dependency
+    updates, HTML data attribute changes, carousel migration, JavaScript
+    compatibility, ResizeObserver, responsive styling, layout updates,
+    icon compatibility, and post-migration testing. Follow practical tips
+    for modernizing an existing website while preserving its design,
+    functionality, and user experience.
+
+date: "2026-11-16T19:52:00+05:30"
+last_modified: "2026-11-16T19:52:00+05:30"
+
+image: "https://designmodo.com/wp-content/uploads/2020/07/bootstrap4-5-1-597532-preview.jpg"
+image_alt: "Bootstrap 4 to Bootstrap 5 migration comparison illustrating the transition between framework versions"
+image_width: 1200
+image_height: 630
+
+author: "Madhurima Rawat"
+robots: "index, follow"
+
+keywords: >-
+    Bootstrap 4 to Bootstrap 5 migration, Bootstrap 5 migration guide,
+    migrate Bootstrap 4 to Bootstrap 5, Bootstrap 4.6.1, Bootstrap 5.3.9,
+    Bootstrap 5 upgrade, Bootstrap 5.3, Bootstrap migration tutorial,
+    Bootstrap 4 vs Bootstrap 5, Bootstrap breaking changes,
+    Bootstrap 5 data attributes, data-bs-toggle, data-bs-target,
+    Bootstrap JavaScript migration, Bootstrap without jQuery,
+    Bootstrap Popper.js, Bootstrap 5 components, Bootstrap carousel migration,
+    Bootstrap 5 carousel, Bootstrap carousel indicators,
+    Bootstrap carousel controls, Bootstrap responsive design,
+    Bootstrap custom CSS, Bootstrap layout migration,
+    Font Awesome 5 to Font Awesome 7, Font Awesome 7.3.1,
+    Font Awesome upgrade, Font Awesome compatibility, Font Awesome icons,
+    frontend framework migration, frontend development,
+    JavaScript compatibility, ResizeObserver, responsive web design,
+    website modernization, website maintenance, dependency management,
+    CDN dependencies, HTML, CSS, JavaScript, jQuery,
+    web development tutorial, frontend optimization,
+    Bootstrap migration checklist, Madhurima Mindscape
+
+# Open Graph Metadata
+
+og_title: "Bootstrap 4 to Bootstrap 5: A Practical Migration Guide"
+
+og_type: "article"
+
+og_description: >-
+    Migrating from Bootstrap 4 to Bootstrap 5? Explore practical steps
+    for updating dependencies, HTML attributes, carousels, JavaScript,
+    Font Awesome icons, and responsive layouts while preserving your
+    website's existing design and functionality.
+
+# Twitter/X Card Metadata
+
+twitter_card: "summary_large_image"
+
+twitter_title: "Bootstrap 4 to Bootstrap 5 Migration Guide"
+
+twitter_description: >-
+    Planning a Bootstrap 5 upgrade? Learn how to migrate Bootstrap 4,
+    update Font Awesome, fix carousel markup, review JavaScript,
+    and preserve responsive layouts.
+
+# Favicon
+
+favicon: "images/Logo.png"
