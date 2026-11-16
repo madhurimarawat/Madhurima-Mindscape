@@ -31,6 +31,7 @@ It covers:
 
 - [About the Project](#about-the-project)
 - [Technology Stack](#technology-stack)
+- [Bootstrap 4 to Bootstrap 5 Migration](#bootstrap-4-to-bootstrap-5-migration)
 - [Features and Functionalities](#features-and-functionalities)
 - [Blog Categories](#blog-categories)
 - [Blog Reading Experience](#blog-reading-experience)
@@ -66,6 +67,8 @@ The website includes:
 - Tools for discovering and bookmarking posts.
 - Blog insights and reusable content templates.
 
+---
+
 ## Technology Stack
 
 Madhurima Mindscape uses Jekyll for static site generation and frontend technologies for its design and interactive features.
@@ -87,6 +90,55 @@ Madhurima Mindscape uses Jekyll for static site generation and frontend technolo
 | **XML** | RSS feed generation |
 | **Git & GitHub** | Version control and repository management |
 | **GitHub Pages** | Website hosting and deployment |
+
+--
+
+## Bootstrap 4 to Bootstrap 5 Migration
+
+The website migration from **Bootstrap 4.6.1 to Bootstrap 5.3.9** and **Font Awesome 5.15.4 to 7.3.1** has been completed. The updates modernize the website's framework, styling, scripts, and carousel functionality while preserving its existing design, responsive layout, SEO structure, and overall user experience.
+
+### **1. `index.html` and `blog.html` Layouts**
+
+- Updated Bootstrap CSS and JavaScript imports to version 5.3.9.
+- Upgraded Font Awesome to version 7.3.1.
+- Reorganized stylesheet and JavaScript imports to support the updated framework.
+- Replaced the separate Popper.js dependency with the Bootstrap bundle, which includes Popper.js 2.
+- Retained the required jQuery dependency for legacy or custom scripts where applicable.
+- Preserved the existing SEO metadata structure and page-specific content configuration.
+
+### **2. `404.html` Layout**
+
+- Updated Bootstrap and Font Awesome imports to their new versions.
+- Retained the shared stylesheets and JavaScript functionality.
+- Integrated the dedicated `404.css` stylesheet to preserve the error page's appearance.
+- Maintained the existing SEO metadata and layout structure.
+
+### **3. `slider-carousel.html` and `slider-carousel.css`**
+
+- Updated the carousel HTML markup to follow Bootstrap 5 conventions.
+- Replaced Bootstrap 4 carousel attributes with their Bootstrap 5 equivalents, including `data-bs-target`, `data-bs-slide`, and `data-bs-slide-to`.
+- Updated carousel indicators from the older list-based structure to Bootstrap 5 button-based indicators.
+- Revised the CSS to maintain the original margins, padding, spacing, and visual presentation across desktop, tablet, and mobile screen sizes.
+- Preserved responsive styling, indicator appearance, hover and focus states, and reduced-motion support.
+
+### **4. `slider-carousel.js`**
+
+- Updated the carousel height-synchronization logic to work reliably with the migrated layout.
+- Added safeguards to prevent zero or invalid hero-section heights from being applied to carousel slides.
+- Improved height synchronization during initial page loading, window resizing, and dynamic content changes using `ResizeObserver`.
+- Added error handling to make the script more robust and maintain consistent carousel slide dimensions.
+
+### **5. Overall Migration Outcome**
+
+- Modernized the website's frontend dependencies and Bootstrap implementation.
+- Removed the need for a separate Popper.js import.
+- Updated carousel markup, styling, and JavaScript for Bootstrap 5 compatibility.
+- Preserved the existing visual identity, responsive behavior, page layouts, and SEO organization.
+- Improved maintainability and reliability while keeping the website's original user experience intact.
+
+**The migration is now complete**, with the main layouts, shared dependencies, error page, and special features carousel updated to work with the new framework.
+
+---
 
 ### Development and Browser Technologies
 
@@ -248,11 +300,13 @@ Articles on Madhurima Mindscape are organized into the following categories:
 | Category | Description |
 |---|---|
 | **Introduction** | Personal introduction, background, and an overview of the blog |
-| **Personal Insights** | Reflections, personal experiences, and practical wisdom |
-| **Tech Insights** | Technology, GitHub, data, tools, and technical learnings |
-| **Project Diaries** | Development experiences and behind-the-scenes project documentation |
-| **Creative Clicks** | Photography and visual creativity |
-| **Poem Perspectives** | Poetry, literary interpretations, and creative perspectives |
+| **Personal Insights** | Reflections, personal experiences, life lessons, and practical wisdom |
+| **Tech Insights** | Technology-related ideas, developer perspectives, digital creativity, and reflections on programming |
+| **Tech Tutorials & Resources** | Practical technology tutorials, development guides, GitHub tips, Jekyll resources, and technical walkthroughs |
+| **Project Diaries** | Development experiences, project journeys, and behind-the-scenes documentation |
+| **Creative Clicks** | Photography, visual storytelling, and creative exploration through images |
+| **Poem Perspectives** | Poetry, poetic interpretations, literary analysis, and creative perspectives |
+| **Literature Lore** | Exploration and analysis of novels, plays, literary works, their themes, characters, and underlying ideas |
 
 Each article is stored in its corresponding category directory inside Jekyll's `_posts` directory.
 
