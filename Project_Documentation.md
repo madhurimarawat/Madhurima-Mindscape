@@ -91,7 +91,7 @@ Madhurima Mindscape uses Jekyll for static site generation and frontend technolo
 | **Git & GitHub** | Version control and repository management |
 | **GitHub Pages** | Website hosting and deployment |
 
---
+---
 
 ## Bootstrap 4 to Bootstrap 5 Migration
 
