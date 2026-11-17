@@ -1,0 +1,1051 @@
+---
+layout: blog
+permalink: /building-interactive-apps-streamlit
+seo: tech-tutorials-resources/building-interactive-apps-streamlit
+
+categories:
+- Tech Tutorials and Resources
+
+tags:
+- Python
+- Streamlit
+- Python Frameworks
+- Web Development
+- Machine Learning
+- Data Science
+- Python Tutorials
+- Interactive Applications
+- Python Libraries
+- Streamlit Widgets
+- Beginner Projects
+- Data Visualization
+- Frontend Development
+---
+
+<!-- ********************************************************************
+* File: building-interactive-apps-streamlit.html
+* Author: Madhurima Rawat
+* Date: November 17, 2026
+* Description: A beginner-friendly tutorial for building interactive
+*              Python applications using Streamlit.
+* Version: 1.0
+* GitHub Repository: https://github.com/madhurimarawat/Streamlit-Programs
+******************************************************************** -->
+
+<top>
+    <h2>
+        Building Interactive Apps with Streamlit
+    </h2>
+
+    <div class="line-below"></div>
+    <p class="date-class">November 17, 2026</p>
+</top>
+
+<section class="intro">
+
+    <div>
+
+        <p class="dropcap">
+            Building a web application usually involves working with
+            both frontend and backend technologies. We need to design
+            the user interface, handle user interactions, process
+            inputs, and display the results. But what if we could
+            build an interactive web application using Python alone?
+        </p>
+
+        <p>
+            This is where <strong>Streamlit</strong> comes in.
+            Streamlit is an open-source Python framework that makes
+            it easier to create interactive web applications without
+            having to write traditional frontend code using HTML,
+            CSS, or JavaScript.
+        </p>
+
+        <p>
+            It is particularly useful for Python projects involving
+            Machine Learning, Data Science, data visualization,
+            dashboards, and other applications where we want to
+            present Python functionality through a simple user
+            interface.
+        </p>
+
+        <div class="meme">
+            <img src="https://www.graphable.ai/wp-content/uploads/2022/08/Streamilt-Cover-progressive-1200-e1663291696534.jpg"
+                alt="Streamlit interactive application demonstration" class="image" loading="lazy" height="300px">
+        </div>
+
+        <p class="image-caption">
+            Streamlit – Building interactive applications using Python.
+            (<a href="https://streamlit.io/" target="_blank" rel="noopener noreferrer" class="link">Explore
+                Streamlit</a>)
+        </p>
+
+        <p>
+            In this tutorial, I'll walk through the basic features
+            of Streamlit using a simple Python application. We'll
+            explore how to display text, headings, messages, images,
+            buttons, checkboxes, radio buttons, selection boxes,
+            text inputs, and sliders.
+        </p>
+
+        <p>
+            We'll also see how to run a Streamlit application locally
+            and how changes in the Python file are reflected in the
+            running application.
+        </p>
+
+    </div>
+
+    <blockquote>
+        "Sometimes, the easiest way to build an interactive
+        application is to use the language you already know."
+    </blockquote>
+
+</section>
+
+<section class="self-help">
+
+    <!-- TIP 1 -->
+    <div class="tip-item">
+
+        <h3>🐍 1. What is Streamlit?</h3>
+
+        <p>
+            Streamlit is a Python framework that allows developers
+            to turn Python scripts into interactive web applications.
+            It provides predefined functions for creating different
+            frontend components.
+        </p>
+
+        <p>
+            Instead of manually creating web pages and handling
+            frontend interactions, we can use Streamlit functions
+            directly in our Python code.
+        </p>
+
+        <p>
+            For example, we can use:
+        </p>
+
+        <ul>
+            <li><strong>st.title():</strong> Display the main title of an application.</li>
+            <li><strong>st.header():</strong> Display a section heading.</li>
+            <li><strong>st.text():</strong> Display plain text.</li>
+            <li><strong>st.button():</strong> Create an interactive button.</li>
+            <li><strong>st.text_input():</strong> Accept text from users.</li>
+            <li><strong>st.slider():</strong> Allow users to select a numerical value.</li>
+        </ul>
+
+        <p>
+            Streamlit is especially useful when working with Machine
+            Learning models because we can create a user interface
+            for a model without building a separate frontend.
+        </p>
+
+        <p>
+            For example, we can train a prediction model, take
+            input from a user through Streamlit widgets, pass that
+            input to the model, and display the prediction on the
+            same application.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> If you already know Python
+            and want to build simple interactive applications,
+            Streamlit is a great framework to explore.
+        </p>
+
+    </div>
+
+    <!-- TIP 2 -->
+    <div class="tip-item">
+
+        <h3>💻 2. Setting Up the Development Environment</h3>
+
+        <p>
+            Before creating our first Streamlit application,
+            we need Python and a code editor.
+        </p>
+
+        <h4>Visual Studio Code</h4>
+
+        <p>
+            I use Visual Studio Code to write and execute Python
+            programs. You can download it from its official website:
+        </p>
+
+        <p>
+            <a href="https://code.visualstudio.com/download" target="_blank" rel="noopener noreferrer">
+                Download Visual Studio Code
+            </a>
+        </p>
+
+        <p>
+            Follow these steps to prepare your environment:
+        </p>
+
+        <ul>
+            <li>Download Visual Studio Code according to your operating system.</li>
+            <li>Install Python if it is not already installed.</li>
+            <li>Open Visual Studio Code.</li>
+            <li>Create a new Python file with the <strong>.py</strong> extension.</li>
+            <li>Open the integrated terminal to execute Python commands.</li>
+        </ul>
+
+        <h4>Installing Streamlit</h4>
+
+        <p>
+            Streamlit can be installed using Python's package
+            installer, pip.
+        </p>
+
+        <pre><code>pip install streamlit</code></pre>
+
+        <p>
+            If you are working inside a virtual environment,
+            activate it before installing the package.
+        </p>
+
+        <p>
+            Once the installation is complete, we are ready
+            to create our first Streamlit application.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> Keep your project dependencies
+            organized. For larger projects, using a virtual
+            environment helps avoid conflicts between packages.
+        </p>
+
+    </div>
+
+    <!-- TIP 3 -->
+    <div class="tip-item">
+
+        <h3>🚀 3. Running Your First Streamlit Application</h3>
+
+        <p>
+            Unlike a regular Python script, a Streamlit application
+            is executed using the Streamlit command.
+        </p>
+
+        <p>
+            Create a Python file named <strong>app.py</strong>
+            and add the following code:
+        </p>
+
+        <pre><code>import streamlit as st
+
+st.title("My First Streamlit Application")
+
+st.header("Welcome!")
+
+st.text("Hello Everyone!")</code></pre>
+
+        <p>
+            Save the file and open the terminal in the project
+            directory.
+        </p>
+
+        <p>
+            Execute the following command:
+        </p>
+
+        <pre><code>streamlit run app.py</code></pre>
+
+        <p>
+            Here, <strong>app.py</strong> is the name of the
+            Python file containing our Streamlit code.
+        </p>
+
+        <p>
+            After executing the command, Streamlit starts a local
+            development server and provides a URL to access
+            the application.
+        </p>
+
+        <p>
+            By default, the application runs at:
+        </p>
+
+        <pre><code>http://localhost:8501</code></pre>
+
+        <p>
+            Open this URL in your browser to view the application.
+        </p>
+
+        <p>
+            If the default port is already occupied, Streamlit
+            can use another available port.
+        </p>
+
+        <h4>Updating the Application</h4>
+
+        <p>
+            One useful feature of Streamlit is its development
+            workflow. When you modify and save the Python file,
+            Streamlit can automatically rerun the application.
+        </p>
+
+        <p>
+            This makes it convenient to experiment with different
+            components and see the changes in the browser.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> Keep the terminal running
+            while developing your application. You can edit your
+            Python code and check the updated output in the browser.
+        </p>
+
+    </div>
+
+    <!-- TIP 4 -->
+    <div class="tip-item">
+
+        <h3>📝 4. Displaying Titles, Headers and Text</h3>
+
+        <p>
+            Streamlit provides several functions to display
+            different types of text content.
+        </p>
+
+        <h4>Title</h4>
+
+        <p>
+            The <strong>st.title()</strong> function displays
+            the main title of the application.
+        </p>
+
+        <pre><code>st.title("Basic App in Python Using Streamlit!!")</code></pre>
+
+        <h4>Header and Subheader</h4>
+
+        <p>
+            We can use headers to organize different sections
+            of the application.
+        </p>
+
+        <pre><code>st.header("This is a Header")
+
+st.subheader("This is a Subheader")</code></pre>
+
+        <h4>Plain Text</h4>
+
+        <p>
+            The <strong>st.text()</strong> function displays
+            simple text in the application.
+        </p>
+
+        <pre><code>st.text("Hello Everyone!!!")</code></pre>
+
+        <h4>Markdown</h4>
+
+        <p>
+            Streamlit also supports Markdown formatting through
+            the <strong>st.markdown()</strong> function.
+            This allows us to display formatted text and headings.
+        </p>
+
+        <pre><code>st.markdown("# This is a Markdown Header 1")
+
+st.markdown("## This is a Markdown Header 2")
+
+st.markdown("### This is a Markdown Header 3")</code></pre>
+
+        <p>
+            Markdown headings can be created using one to six
+            hash symbols, with each level representing a
+            different heading size.
+        </p>
+
+        <p>
+            These functions are useful when organizing content
+            and making an application easier to understand.
+        </p>
+
+    </div>
+
+    <!-- TIP 5 -->
+    <div class="tip-item">
+
+        <h3>📢 5. Displaying Success, Information and Error Messages</h3>
+
+        <p>
+            Streamlit includes predefined functions for displaying
+            different types of status messages.
+        </p>
+
+        <p>
+            These messages are useful for communicating the
+            result of an operation or informing users about
+            something happening in the application.
+        </p>
+
+        <h4>Success Message</h4>
+
+        <p>
+            The <strong>st.success()</strong> function displays
+            a success message.
+        </p>
+
+        <pre><code>st.success("For Showing Successful Submission")</code></pre>
+
+        <h4>Information Message</h4>
+
+        <p>
+            The <strong>st.info()</strong> function displays
+            an informational message.
+        </p>
+
+        <pre><code>st.info("Information")</code></pre>
+
+        <h4>Warning Message</h4>
+
+        <p>
+            The <strong>st.warning()</strong> function displays
+            a warning message.
+        </p>
+
+        <pre><code>st.warning("This is a Warning")</code></pre>
+
+        <h4>Error Message</h4>
+
+        <p>
+            The <strong>st.error()</strong> function displays
+            an error message.
+        </p>
+
+        <pre><code>st.error("Error Encountered!!")</code></pre>
+
+        <h4>Displaying Exceptions</h4>
+
+        <p>
+            We can also display exception information using
+            <strong>st.exception()</strong>.
+        </p>
+
+        <pre><code>exp = ZeroDivisionError("Trying to divide by Zero")
+
+st.exception(exp)</code></pre>
+
+        <p>
+            These functions make it easier to display the status
+            of different operations without creating custom
+            message components.
+        </p>
+
+    </div>
+
+    <!-- TIP 6 -->
+    <div class="tip-item">
+
+        <h3>🔢 6. Displaying Python Objects with st.write()</h3>
+
+        <p>
+            The <strong>st.write()</strong> function is a flexible
+            way to display different types of content in a
+            Streamlit application.
+        </p>
+
+        <p>
+            For example, we can display a message or even
+            a Python object.
+        </p>
+
+        <pre><code>st.write("Writing Python Inbuilt Range Function")
+
+st.write(range(10))</code></pre>
+
+        <p>
+            The function can also display many other Python
+            objects, including strings, numbers, lists,
+            dictionaries, and data structures.
+        </p>
+
+        <p>
+            This makes it particularly useful when displaying
+            intermediate results or exploring data while
+            developing an application.
+        </p>
+
+    </div>
+
+    <!-- TIP 7 -->
+    <div class="tip-item">
+
+        <h3>🖼️ 7. Displaying Images Using Pillow</h3>
+
+        <p>
+            We can display images in Streamlit using the
+            <strong>st.image()</strong> function.
+        </p>
+
+        <p>
+            In this example, I used Pillow, a Python imaging
+            library, to open an image file.
+        </p>
+
+        <p>
+            First, install Pillow:
+        </p>
+
+        <pre><code>pip install Pillow</code></pre>
+
+        <p>
+            Import the Image module and load the image:
+        </p>
+
+        <pre><code>from PIL import Image
+
+# Loading an image
+img = Image.open("Picture-1.jpg")
+
+# Displaying the image
+st.image(img, width=200)</code></pre>
+
+        <p>
+            Here:
+        </p>
+
+        <ul>
+            <li><strong>Image.open():</strong> Opens the image file.</li>
+            <li><strong>img:</strong> Stores the loaded image.</li>
+            <li><strong>st.image():</strong> Displays the image in the application.</li>
+            <li><strong>width=200:</strong> Sets the display width of the image.</li>
+        </ul>
+
+        <p>
+            Make sure that the image file is available at the
+            specified path relative to your application.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> Keep images and other
+            supporting files organized inside your project
+            directory so that they can be accessed easily.
+        </p>
+
+    </div>
+
+    <!-- TIP 8 -->
+    <div class="tip-item">
+
+        <h3>☑️ 8. Creating a Checkbox</h3>
+
+        <p>
+            A checkbox allows users to select or deselect
+            an option. In Streamlit, we can create one using
+            <strong>st.checkbox()</strong>.
+        </p>
+
+        <p>
+            A checkbox returns a Boolean value:
+            <strong>True</strong> when selected and
+            <strong>False</strong> when not selected.
+        </p>
+
+        <pre><code>if st.checkbox("Show/Hide"):
+
+    st.text("Showing the widget")</code></pre>
+
+        <p>
+            In this example, the text is displayed only when
+            the checkbox is selected.
+        </p>
+
+        <p>
+            This is useful when we want to show or hide
+            additional information based on user interaction.
+        </p>
+
+    </div>
+
+    <!-- TIP 9 -->
+    <div class="tip-item">
+
+        <h3>🔘 9. Creating Radio Buttons</h3>
+
+        <p>
+            Radio buttons allow users to select one option
+            from a predefined set of choices.
+        </p>
+
+        <p>
+            We can create radio buttons using
+            <strong>st.radio()</strong>.
+        </p>
+
+        <pre><code>status = st.radio(
+    "Select Gender: ",
+    ("Male", "Female")
+)
+
+if status == "Male":
+    st.success("Male")
+else:
+    st.success("Female")</code></pre>
+
+        <p>
+            The first argument represents the label of the
+            radio button, while the second argument contains
+            the available options.
+        </p>
+
+        <p>
+            The selected option is stored in the
+            <strong>status</strong> variable.
+        </p>
+
+        <p>
+            We can then use conditional statements to perform
+            different actions depending on the selected value.
+        </p>
+
+    </div>
+
+    <!-- TIP 10 -->
+    <div class="tip-item">
+
+        <h3>📋 10. Creating Selection Boxes</h3>
+
+        <p>
+            Streamlit provides selection widgets that allow
+            users to choose one or multiple options.
+        </p>
+
+        <h4>Select Box</h4>
+
+        <p>
+            The <strong>st.selectbox()</strong> function allows
+            users to select a single option from a list.
+        </p>
+
+        <pre><code>hobby = st.selectbox(
+    "Hobbies: ",
+    ["Dancing", "Reading", "Sports"]
+)
+
+st.write("Your hobby is: ", hobby)</code></pre>
+
+        <p>
+            The selected hobby is stored in the
+            <strong>hobby</strong> variable and displayed
+            using st.write().
+        </p>
+
+        <h4>Multiselect Box</h4>
+
+        <p>
+            If we want users to select multiple options,
+            we can use <strong>st.multiselect()</strong>.
+        </p>
+
+        <pre><code>prog_lang = st.multiselect(
+    "Programming Languages: ",
+    ["C", "C++", "PHP", "Python", "R", "Ruby"]
+)
+
+st.write(
+    "Programming Languages you selected are: ",
+    len(prog_lang),
+    prog_lang
+)</code></pre>
+
+        <p>
+            Unlike a regular select box, the multiselect
+            widget returns the selected options as a list.
+        </p>
+
+        <p>
+            We can use <strong>len(prog_lang)</strong> to
+            find the number of selected languages and
+            display the selected values directly.
+        </p>
+
+        <p>
+            💡 <strong>What I learned:</strong> Use selectbox
+            when only one choice is required and multiselect
+            when users should be able to choose several options.
+        </p>
+
+    </div>
+
+    <!-- TIP 11 -->
+    <div class="tip-item">
+
+        <h3>🖱️ 11. Creating Interactive Buttons</h3>
+
+        <p>
+            Buttons are among the most commonly used components
+            in interactive applications.
+        </p>
+
+        <p>
+            Streamlit provides the <strong>st.button()</strong>
+            function to create buttons.
+        </p>
+
+        <h4>Simple Button</h4>
+
+        <p>
+            We can create a basic button using:
+        </p>
+
+        <pre><code>st.button("Click me for no reason")</code></pre>
+
+        <p>
+            We can also use the return value of a button
+            to execute a block of code when it is clicked.
+        </p>
+
+        <h4>Button with an Action</h4>
+
+        <pre><code>if st.button("About"):
+
+    st.text("Welcome To My App!!!")</code></pre>
+
+        <p>
+            In this example, the welcome message is displayed
+            when the user clicks the About button.
+        </p>
+
+        <p>
+            This is useful for actions such as displaying
+            additional information, submitting operations,
+            or triggering application functionality.
+        </p>
+
+    </div>
+
+    <!-- TIP 12 -->
+    <div class="tip-item">
+
+        <h3>⌨️ 12. Taking User Input with Text Input</h3>
+
+        <p>
+            Interactive applications often need to collect
+            information from users. For this, Streamlit provides
+            the <strong>st.text_input()</strong> function.
+        </p>
+
+        <p>
+            Let's create a simple input field that accepts
+            a user's name.
+        </p>
+
+        <pre><code>name = st.text_input(
+    "Enter Your name",
+    "Type Here ..."
+)
+
+if st.button("Submit"):
+
+    result = name.title()
+
+    st.success(result)</code></pre>
+
+        <p>
+            Here:
+        </p>
+
+        <ul>
+            <li><strong>st.text_input():</strong> Creates a text input field.</li>
+            <li><strong>name:</strong> Stores the entered text.</li>
+            <li><strong>st.button():</strong> Creates a Submit button.</li>
+            <li><strong>name.title():</strong> Converts the entered text into title case.</li>
+            <li><strong>st.success():</strong> Displays the processed result.</li>
+        </ul>
+
+        <p>
+            For example, if a user enters "madhurima rawat",
+            the application displays "Madhurima Rawat"
+            after clicking Submit.
+        </p>
+
+        <p>
+            This is a simple example of collecting and processing
+            user input in a Streamlit application.
+        </p>
+
+    </div>
+
+    <!-- TIP 13 -->
+    <div class="tip-item">
+
+        <h3>🎚️ 13. Creating Sliders</h3>
+
+        <p>
+            Sliders allow users to select a value from
+            a specified range.
+        </p>
+
+        <p>
+            We can create a slider using the
+            <strong>st.slider()</strong> function.
+        </p>
+
+        <pre><code>level = st.slider(
+    "Select The Level",
+    1,
+    5
+)
+
+st.text("Selected: {}".format(level))</code></pre>
+
+        <p>
+            The first argument represents the slider label,
+            while the second and third arguments specify
+            the minimum and maximum values.
+        </p>
+
+        <p>
+            The selected value is stored in the
+            <strong>level</strong> variable and displayed
+            using st.text().
+        </p>
+
+        <p>
+            Sliders are useful for selecting numerical values
+            such as ratings, thresholds, ranges, and model
+            parameters.
+        </p>
+
+    </div>
+
+    <!-- TIP 14 -->
+    <div class="tip-item">
+
+        <h3>🧩 14. Putting Everything Together</h3>
+
+        <p>
+            Now that we have explored the basic Streamlit
+            components, let's combine them into one application.
+        </p>
+
+        <p>
+            The following example brings together the widgets
+            covered in this tutorial.
+        </p>
+
+        <pre><code>import streamlit as st
+from PIL import Image
+
+# Application title
+st.title("Basic App in Python Using Streamlit!!")
+
+# Headers and text
+st.header("This is a Header")
+st.subheader("This is a Subheader")
+st.text("Hello Everyone!!!")
+
+# Markdown
+st.markdown("# This is a Markdown Header 1")
+st.markdown("## This is a Markdown Header 2")
+
+# Status messages
+st.success("Successful Submission")
+st.info("Information")
+st.warning("This is a Warning")
+st.error("Error Encountered!!")
+
+# Display Python objects
+st.write("Writing Python Inbuilt Range Function")
+st.write(range(10))
+
+# Display an image
+img = Image.open("Picture-1.jpg")
+st.image(img, width=200)
+
+# Checkbox
+if st.checkbox("Show/Hide"):
+    st.text("Showing the widget")
+
+# Radio button
+status = st.radio(
+    "Select Gender: ",
+    ("Male", "Female")
+)
+
+st.success(status)
+
+# Select box
+hobby = st.selectbox(
+    "Hobbies: ",
+    ["Dancing", "Reading", "Sports"]
+)
+
+st.write("Your hobby is:", hobby)
+
+# Multiselect
+prog_lang = st.multiselect(
+    "Programming Languages: ",
+    ["C", "C++", "PHP", "Python", "R", "Ruby"]
+)
+
+st.write(
+    "Programming Languages selected:",
+    len(prog_lang),
+    prog_lang
+)
+
+# Buttons
+st.button("Click me for no reason")
+
+if st.button("About"):
+    st.text("Welcome To My App!!!")
+
+# Text input
+name = st.text_input(
+    "Enter Your name",
+    "Type Here ..."
+)
+
+if st.button("Submit"):
+    st.success(name.title())
+
+# Slider
+level = st.slider("Select The Level", 1, 5)
+
+st.text("Selected: {}".format(level))</code></pre>
+
+        <p>
+            Save the code in a file named
+            <strong>app.py</strong> and execute it using:
+        </p>
+
+        <pre><code>streamlit run app.py</code></pre>
+
+        <p>
+            Make sure Pillow is installed and
+            Picture-1.jpg is available in the correct location
+            before running the application.
+        </p>
+
+        <p>
+            You can now explore the different components,
+            interact with the widgets, and modify the code
+            to customize your application.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> Start with simple
+            components and gradually combine them to build
+            more useful applications.
+        </p>
+
+    </div>
+
+    <!-- TIP 15 -->
+    <div class="tip-item">
+
+        <h3>🤖 15. Using Streamlit for Machine Learning Projects</h3>
+
+        <p>
+            One of the most interesting uses of Streamlit
+            is deploying Machine Learning projects through
+            an interactive web interface.
+        </p>
+
+        <p>
+            A typical Machine Learning project involves
+            training a model, accepting input features,
+            processing those inputs, and generating
+            predictions.
+        </p>
+
+        <p>
+            Streamlit can provide the interface for this
+            entire interaction.
+        </p>
+
+        <p>
+            For example, a simple prediction application
+            can follow this workflow:
+        </p>
+
+        <ul>
+            <li>Train a Machine Learning model using Python.</li>
+            <li>Load the trained model into the Streamlit application.</li>
+            <li>Use widgets to collect input from users.</li>
+            <li>Pass the input values to the prediction model.</li>
+            <li>Display the prediction using Streamlit components.</li>
+        </ul>
+
+        <p>
+            This approach can be used for regression,
+            classification, data analysis, and many other
+            Python-based projects.
+        </p>
+
+        <p>
+            In my <strong>Streamlit-Programs</strong> repository,
+            I have also explored applications involving
+            Linear Regression, Naive Bayes classification,
+            and built-in datasets from scikit-learn.
+        </p>
+
+        <p>
+            These examples demonstrate how the same Streamlit
+            workflow can be used for different Python and
+            Machine Learning applications.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="conclusion">
+
+    <h3>💜 Building Python Applications Without the Frontend Complexity</h3>
+
+    <p>
+        Streamlit makes it easier to turn Python scripts
+        into interactive applications. Its predefined
+        components help us display content, collect user
+        input, create widgets, and present results without
+        building a traditional frontend from scratch.
+    </p>
+
+    <p>
+        Through this tutorial, we explored how to set up
+        Streamlit, run a local application, display different
+        types of content, work with images, and create
+        interactive components such as checkboxes, radio
+        buttons, selection boxes, buttons, text inputs,
+        and sliders.
+    </p>
+
+    <p>
+        These basic components provide a foundation for
+        building more advanced applications, especially
+        when working with Python, Machine Learning,
+        and Data Science projects.
+    </p>
+
+    <p>
+        If you are new to Streamlit, I would recommend
+        starting with small applications and experimenting
+        with the available widgets before moving on to
+        larger projects.
+    </p>
+
+    <blockquote>
+        "You don't always need a separate frontend to make
+        your Python projects interactive."
+    </blockquote>
+
+    <p class="text-center">
+        <strong>Want to explore the complete code?</strong>
+        Visit my GitHub repository to check out the
+        Streamlit programs and examples.
+    </p>
+
+    <p class="text-center">
+        <a href="https://github.com/madhurimarawat/Streamlit-Programs" target="_blank" rel="noopener noreferrer"
+            class="font-weight-bold link">
+            <i class="fab fa-github"></i> Explore Streamlit Programs
+        </a>
+    </p>
+
+</section>

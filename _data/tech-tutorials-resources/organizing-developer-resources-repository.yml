@@ -1,0 +1,82 @@
+# Managing 100+ Resources with GitHub - SEO and Social Sharing Metadata
+
+title: "Managing 100+ Resources with GitHub | Developer Repository Organization Guide | Madhurima Rawat"
+
+description: >-
+  Learn how to organize a large collection of developer resources
+  using a structured GitHub repository. Explore practical ways
+  to categorize programming tutorials, documentation, free courses,
+  books, GitHub repositories, technical PDFs, developer tools,
+  and learning materials. Discover how to create README navigation
+  using Markdown and HTML anchors, organize resources by technology
+  and purpose, add GitHub badges with Shields.io, write clear
+  resource descriptions, maintain repository content, and encourage
+  open-source contributions. Explore how the Developer Resources
+  Hub brings more than 100 technical resources together in one
+  organized collection.
+
+date: "2026-11-17T18:51:00+05:30"
+last_modified: "2026-11-17T18:51:00+05:30"
+
+image: "https://github.com/madhurimarawat/Developer-Resources-Hub/raw/main/images/developers_resources_hub_illustration.PNG"
+image_alt: "Developer Resources Hub GitHub repository illustration representing an organized collection of programming resources, tutorials, and developer tools"
+image_width: 1200
+image_height: 630
+
+author: "Madhurima Rawat"
+robots: "index, follow"
+
+keywords: >-
+  Developer Resources Hub, GitHub repository organization,
+  organize developer resources, developer resource collection,
+  GitHub resource repository, programming resources,
+  technical resources, technical documentation,
+  README organization, GitHub README tutorial,
+  Markdown README, Markdown table of contents,
+  HTML anchors in Markdown, GitHub README navigation,
+  visual navigation in README, GitHub badges,
+  Shields.io badges, open source resources,
+  developer productivity, knowledge management,
+  programming tutorials, free programming courses,
+  developer learning resources, programming books,
+  technical PDF resources, useful developer tools,
+  Python programming resources, Go programming resources,
+  Kotlin programming resources, Rust programming resources,
+  SAS programming resources, frontend development resources,
+  backend development resources, full stack development,
+  Node.js resources, CSS resources, database resources,
+  MySQL, MongoDB, MariaDB, Oracle database,
+  AI ML DS resources, Artificial Intelligence resources,
+  Machine Learning repositories, Data Science resources,
+  Deep Learning resources, machine learning cheat sheets,
+  coding interview preparation, system design resources,
+  GitHub repository maintenance, GitHub issues,
+  GitHub pull requests, GitHub discussions,
+  open source contributions, resource categorization,
+  organizing technical links, developer knowledge hub,
+  software development resources, Madhurima Mindscape
+
+# Open Graph Metadata
+og_title: "Managing 100+ Resources with GitHub"
+
+og_type: "article"
+
+og_description: >-
+  Discover how to organize more than 100 developer resources
+  in a structured GitHub repository. Learn README navigation,
+  resource categorization, Markdown formatting, GitHub badges,
+  repository maintenance, and open-source contributions.
+
+# Twitter/X Card Metadata
+twitter_card: "summary_large_image"
+
+twitter_title: "Organizing 100+ Developer Resources with GitHub"
+
+twitter_description: >-
+  Turn a collection of technical links into an organized
+  knowledge hub. Explore GitHub README navigation, programming
+  categories, developer tools, resource descriptions, badges,
+  and practical repository maintenance tips.
+
+# Favicon
+favicon: "images/Logo.png"

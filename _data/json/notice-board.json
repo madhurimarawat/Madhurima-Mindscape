@@ -1,6 +1,30 @@
 {
   "notices": [
     {
+      "date": "2026-11-17",
+      "blogs": [
+        {
+          "title": "Interactive Apps with Streamlit",
+          "text": "Learn how to build interactive Python web applications using Streamlit. Explore its core features, create user-friendly interfaces, display dynamic data, and deploy your applications to the web without needing extensive frontend development.",
+          "url": "/building-interactive-apps-streamlit",
+          "icon": "fas fa-chart-line"
+        },
+        {
+          "title": "Python Web Scraper",
+          "text": "Explore how to build a Python-based web scraper using Requests, BeautifulSoup, lxml, and Streamlit. Learn how to extract website text, collect embedded links, retrieve PDF content, and download images and PDF files through an interactive application.",
+          "url": "/python-web-scraper",
+          "icon": "fas fa-spider"
+        },
+        {
+          "title": "Organizing Developer Resources Repository",
+          "text": "Discover how to create and maintain a well-organized developer resources repository. Explore ways to categorize useful tools, documentation, tutorials, libraries, and learning materials so developers can easily discover and access valuable resources.",
+          "url": "/organizing-developer-resources-repository",
+          "icon": "fas fa-folder-open"
+        }
+      ],
+      "features": []
+    },
+    {
       "date": "2026-11-16",
       "blogs": [
         {

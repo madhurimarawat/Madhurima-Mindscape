@@ -1,0 +1,72 @@
+# Python Web Scrapers with Streamlit - SEO and Social Sharing Metadata
+
+title: "Python Web Scrapers with Streamlit | Website Data Extraction Using Python | Madhurima Rawat"
+
+description: >-
+    Learn how to build and explore a Python web scraper using Streamlit.
+    Discover how to extract website text, collect embedded links, retrieve
+    PDF content, and download PDF documents and images. Explore the use
+    of Python libraries including Requests, Beautiful Soup, lxml, and
+    PyPDF2, along with setting up a PyCharm development environment,
+    running Streamlit applications locally, and deploying web scraping
+    projects online. Understand practical web scraping features,
+    Python project organization, and responsible data extraction.
+
+date: "2026-11-17T18:51:00+05:30"
+last_modified: "2026-11-17T18:51:00+05:30"
+
+image: "https://github.com/user-attachments/assets/f935ec1b-b973-49fe-9fae-5fc9340134f1"
+image_alt: "Python Web Scraper application built using Streamlit for extracting website text, links, PDF documents, and images"
+image_width: 927
+image_height: 630
+
+author: "Madhurima Rawat"
+robots: "index, follow"
+
+keywords: >-
+    Python web scraping, Python web scraper, web scraping with Python,
+    Streamlit web scraper, Python scraping project, website data extraction,
+    web data extraction, website text extraction, extract website text,
+    extract embedded links, website link extraction, scrape website content,
+    Python Requests, Requests library, Beautiful Soup, BeautifulSoup,
+    bs4, lxml Python, HTML parsing, HTML extraction,
+    PyPDF2, PDF text extraction, extract PDF data using Python,
+    extract text from PDF link, download PDF files using Python,
+    download website PDFs, download website images,
+    image downloading with Python, Python file downloading,
+    Streamlit application, Streamlit Python project,
+    build Python web applications, interactive Python applications,
+    PyCharm Python development, Python virtual environment,
+    pip install Streamlit, Streamlit local server,
+    streamlit run app.py, deploy Streamlit application,
+    Streamlit Community Cloud, GitHub deployment,
+    requirements.txt, Python dependencies, Python libraries,
+    web scraping tutorial, beginner Python project,
+    Python tutorials, practical Python projects,
+    website scraping tools, automated data extraction,
+    responsible web scraping, web development,
+    Python development, Madhurima Mindscape
+
+# Open Graph Metadata
+og_title: "Python Web Scrapers with Streamlit"
+
+og_type: "article"
+
+og_description: >-
+    Explore a Python and Streamlit web scraper that extracts website
+    text, collects embedded links, retrieves PDF content, and downloads
+    PDF and image files. Learn about Requests, Beautiful Soup, lxml,
+    PyPDF2, local development, and Streamlit deployment.
+
+# Twitter/X Card Metadata
+twitter_card: "summary_large_image"
+
+twitter_title: "Python Web Scrapers with Streamlit"
+
+twitter_description: >-
+    Learn how to explore a Python web scraper built with Streamlit.
+    Discover website text extraction, embedded links, PDF processing,
+    image downloading, Python libraries, and application deployment.
+
+# Favicon
+favicon: "images/Logo.png"

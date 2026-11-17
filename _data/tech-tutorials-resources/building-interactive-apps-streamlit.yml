@@ -1,0 +1,83 @@
+# Building Interactive Apps with Streamlit - SEO and Social Sharing Metadata
+
+title: "Building Interactive Apps with Streamlit | Python Web Application Development | Madhurima Rawat"
+
+description: >-
+    Learn how to build interactive web applications using Streamlit
+    and Python. Explore Streamlit installation, application setup,
+    and practical examples of displaying titles, headers, text,
+    images, and status messages. Discover how to create interactive
+    widgets including checkboxes, radio buttons, select boxes,
+    multiselect boxes, buttons, text inputs, and sliders. Understand
+    how to combine these components into complete applications,
+    run Streamlit projects locally, and use Streamlit to create
+    interactive interfaces for Machine Learning and Data Science
+    projects.
+
+date: "2026-11-17T18:51:00+05:30"
+last_modified: "2026-11-17T18:51:00+05:30"
+
+image: "https://www.graphable.ai/wp-content/uploads/2022/08/Streamilt-Cover-progressive-1200-e1663291696534.jpg"
+image_alt: "Streamlit framework illustration representing interactive Python application development"
+image_width: 1200
+image_height: 630
+
+author: "Madhurima Rawat"
+robots: "index, follow"
+
+keywords: >-
+    Streamlit, Streamlit Python, Python Streamlit tutorial,
+    interactive apps with Streamlit, building interactive applications,
+    Python web applications, Python web development,
+    Streamlit framework, Streamlit installation, install Streamlit,
+    pip install Streamlit, Streamlit application,
+    create Streamlit app, run Streamlit application,
+    streamlit run app.py, Streamlit local server,
+    Python frontend framework, Python application development,
+    Streamlit widgets, Streamlit components,
+    Streamlit title, st.title, st.header, st.subheader,
+    st.text, st.markdown, st.write, Streamlit text display,
+    Streamlit success message, st.success, st.info,
+    st.warning, st.error, st.exception,
+    Streamlit image display, st.image, Pillow Python,
+    Python image processing, Streamlit checkbox, st.checkbox,
+    Streamlit radio button, st.radio, Streamlit selectbox,
+    st.selectbox, Streamlit multiselect, st.multiselect,
+    Streamlit buttons, st.button, Streamlit text input,
+    st.text_input, Streamlit slider, st.slider,
+    Streamlit user input, interactive Python widgets,
+    Streamlit user interface, Streamlit application examples,
+    Streamlit combined application, Python virtual environment,
+    Visual Studio Code Python, Python IDE setup,
+    Streamlit Machine Learning applications,
+    Streamlit Data Science projects, Machine Learning deployment,
+    Python data visualization, interactive dashboards,
+    Python beginner projects, Python tutorials,
+    Streamlit programming examples, Python frameworks,
+    frontend development, web application development,
+    Madhurima Mindscape
+
+# Open Graph Metadata
+og_title: "Building Interactive Apps with Streamlit"
+
+og_type: "article"
+
+og_description: >-
+    Discover how to create interactive Python web applications
+    using Streamlit. Learn installation, text and image display,
+    interactive widgets, user input, buttons, sliders, and
+    practical applications for Machine Learning and Data Science.
+
+# Twitter/X Card Metadata
+twitter_card: "summary_large_image"
+
+twitter_title: "Building Interactive Apps with Streamlit"
+
+twitter_description: >-
+    Build interactive Python applications without traditional
+    frontend development. Explore Streamlit widgets, buttons,
+    checkboxes, radio buttons, text inputs, sliders, and
+    Machine Learning application examples.
+
+# Favicon
+favicon: "images/Logo.png"

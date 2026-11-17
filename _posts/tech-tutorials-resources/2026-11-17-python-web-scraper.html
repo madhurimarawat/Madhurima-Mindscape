@@ -1,0 +1,1064 @@
+---
+layout: blog
+permalink: /python-web-scraper
+seo: tech-tutorials-resources/python-web-scraper
+
+categories:
+- Tech Tutorials and Resources
+
+tags:
+- Python
+- Web Scraping
+- Streamlit
+- Python Libraries
+- Beautiful Soup
+- Requests
+- lxml
+- PyPDF2
+- Web Development
+- Python Projects
+- Data Extraction
+- PDF Extraction
+- Image Downloading
+- Beginner Projects
+---
+
+<!-- ********************************************************************
+* File: building-python-web-scrapers.html
+* Author: Madhurima Rawat
+* Date: November 17, 2026
+* Description: A beginner-friendly tutorial explaining a Streamlit-based
+*              Python web scraper for extracting website text, links,
+*              PDF documents, and images.
+* Version: 1.0
+* GitHub Repository: https://github.com/madhurimarawat/Web-Scrapper-Functions
+******************************************************************** -->
+
+<top>
+    <h2>
+        Python Web Scrapers with Streamlit
+    </h2>
+
+    <div class="line-below"></div>
+    <p class="date-class">November 17, 2026</p>
+</top>
+
+<section class="intro">
+
+    <div>
+
+        <p class="dropcap">
+            Web scraping is a useful technique for collecting
+            information from websites. Whether you want to extract
+            textual content, discover embedded links, retrieve
+            PDF documents, or download images, Python provides
+            several libraries that make these tasks easier.
+        </p>
+
+        <p>
+            However, running scraping scripts through a
+            command-line interface can sometimes make the process
+            less convenient, especially when you want to perform
+            different extraction tasks without repeatedly
+            modifying your code.
+        </p>
+
+        <p>
+            In this tutorial, we will explore a Python project
+            that combines web scraping libraries with Streamlit
+            to provide an interactive interface for extracting
+            website data. The application brings several scraping
+            and downloading features together in one place,
+            making data extraction more accessible.
+        </p>
+
+        <div class="meme">
+            <a href="https://web-scrapper-functions-h6phqofpkjtaylwyn9uvzf.streamlit.app/" target="_blank"
+                rel="noopener noreferrer">
+                <img src="https://github.com/user-attachments/assets/f935ec1b-b973-49fe-9fae-5fc9340134f1"
+                    alt="Web Scraper Application" class="image" loading="lazy" width="927">
+            </a>
+        </div>
+
+        <p class="image-caption">
+            Web Scraper application built using Python and Streamlit.
+            (<a href="https://web-scrapper-functions-h6phqofpkjtaylwyn9uvzf.streamlit.app/" target="_blank"
+                rel="noopener noreferrer" class="link">Try the Application</a>)
+        </p>
+
+        <p>
+            The application provides options for extracting
+            website text, collecting embedded links, retrieving
+            PDF content, and downloading PDF and image files.
+            All these features are accessible through a
+            common Streamlit interface.
+        </p>
+
+    </div>
+
+    <blockquote>
+        "The goal of this project is to simplify website data
+        extraction by bringing text scraping, PDF extraction,
+        and image downloading features into a single application."
+    </blockquote>
+
+</section>
+
+<section class="self-help">
+
+    <!-- TIP 1 -->
+    <div class="tip-item">
+
+        <h3>🌐 1. What is Web Scraping?</h3>
+
+        <p>
+            Web scraping is the process of automatically collecting
+            information from websites. Instead of manually opening
+            web pages and copying their contents, a Python program
+            can retrieve website data and extract the information
+            required.
+        </p>
+
+        <p>
+            Websites contain different kinds of information,
+            including:
+        </p>
+
+        <ul>
+            <li>Textual content such as headings, paragraphs, and descriptions.</li>
+            <li>Links that redirect users to other web pages.</li>
+            <li>PDF documents embedded or linked within a website.</li>
+            <li>Images available on individual pages.</li>
+        </ul>
+
+        <p>
+            Python provides libraries such as Requests,
+            Beautiful Soup, and lxml that can help retrieve
+            and process website content. Additional libraries
+            can be used to work with PDF documents and
+            downloaded files.
+        </p>
+
+        <p>
+            In this project, these capabilities are presented
+            through a Streamlit interface, so users can access
+            different extraction features without having to
+            interact directly with individual Python scripts.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> Before starting a scraping
+            task, identify the type of information you want to
+            collect. This makes it easier to choose the appropriate
+            libraries and extraction approach.
+        </p>
+
+    </div>
+
+    <!-- TIP 2 -->
+    <div class="tip-item">
+
+        <h3>📌 2. Project Overview</h3>
+
+        <p>
+            The Web Scraper Functions project is a Python
+            application developed using Streamlit. It provides
+            a user-friendly interface for extracting text,
+            images, and PDF files from websites.
+        </p>
+
+        <p>
+            Rather than focusing on only one type of website
+            content, the application provides multiple
+            extraction options.
+        </p>
+
+        <p>
+            <strong>The major capabilities of this project include:</strong>
+        </p>
+
+        <ul>
+            <li>
+                <strong>Embedded Links:</strong>
+                Extracts links available within a website.
+            </li>
+
+            <li>
+                <strong>Main Website Text Data:</strong>
+                Retrieves the primary textual content from
+                the main website.
+            </li>
+
+            <li>
+                <strong>Main Website Text Data along with Embedded Links Text Data:</strong>
+                Combines textual content from the main website
+                with text data from its embedded links.
+            </li>
+
+            <li>
+                <strong>Complete Website Text Data:</strong>
+                Retrieves textual content across the website.
+            </li>
+
+            <li>
+                <strong>Extract Text from PDF Link:</strong>
+                Extracts text from a PDF using a provided
+                PDF link.
+            </li>
+
+            <li>
+                <strong>Main Website PDF Data along with Embedded Links PDF Data:</strong>
+                Combines PDF text extracted from the main
+                website with PDF data available through
+                embedded links.
+            </li>
+
+            <li>
+                <strong>Complete Website PDF Data:</strong>
+                Retrieves PDF data available across
+                the website.
+            </li>
+
+            <li>
+                <strong>Complete Website Text and PDF Data:</strong>
+                Presents both textual and PDF data collected
+                from the website.
+            </li>
+
+            <li>
+                <strong>Download PDF Files From Main Website:</strong>
+                Allows selective downloading of PDF files
+                from the main website.
+            </li>
+
+            <li>
+                <strong>Download All PDF Files From Website:</strong>
+                Supports downloading all PDF files available
+                across the website.
+            </li>
+
+            <li>
+                <strong>Download Image Files From Main Website:</strong>
+                Allows downloading image files from the
+                main website.
+            </li>
+
+            <li>
+                <strong>Download All Image Files From Website:</strong>
+                Supports downloading all image files
+                available across the website.
+            </li>
+        </ul>
+
+        <p>
+            These features make the application useful for
+            collecting different types of website information
+            through a single interface.
+        </p>
+
+        <p>
+            You can try the application here:
+            <a href="https://web-scrapper-functions-h6phqofpkjtaylwyn9uvzf.streamlit.app/" target="_blank"
+                rel="noopener noreferrer">Web Scraper Application</a>.
+        </p>
+
+    </div>
+
+    <!-- TIP 3 -->
+    <div class="tip-item">
+
+        <h3>🛠️ 3. Tools and Technologies Used</h3>
+
+        <p>
+            The project uses Python libraries for retrieving
+            website content, parsing HTML, processing PDF
+            documents, and managing downloaded files.
+            Streamlit provides the application interface.
+        </p>
+
+        <h4>Development Environment</h4>
+
+        <ul>
+            <li>
+                <strong>PyCharm:</strong>
+                An IDE used for writing and executing Python code.
+            </li>
+
+            <li>
+                <strong>Streamlit:</strong>
+                A Python framework used to create the
+                interactive web application.
+            </li>
+        </ul>
+
+        <h4>Libraries Used</h4>
+
+        <ul>
+            <li>
+                <strong>Streamlit:</strong>
+                Simplifies the development of interactive
+                Python web applications. It provides
+                ready-to-use interface components that can
+                be created directly from Python code.
+            </li>
+
+            <li>
+                <strong>Requests:</strong>
+                A Python library for making HTTP requests.
+                It helps retrieve website content and
+                communicate with web servers.
+            </li>
+
+            <li>
+                <strong>lxml:</strong>
+                A library for processing HTML and XML
+                documents. It provides tools for parsing
+                and working with structured document data.
+            </li>
+
+            <li>
+                <strong>Beautiful Soup (bs4):</strong>
+                A Python library used to parse HTML and
+                XML documents and extract useful information
+                such as text and links.
+            </li>
+
+            <li>
+                <strong>PyPDF2:</strong>
+                A Python library for working with PDF
+                documents, including extracting text
+                and handling PDF files.
+            </li>
+
+            <li>
+                <strong>io:</strong>
+                Python's built-in input/output module,
+                which provides tools for working with
+                streams and in-memory data.
+            </li>
+
+            <li>
+                <strong>zipfile:</strong>
+                Python's built-in module for creating,
+                reading, and extracting ZIP archives.
+            </li>
+        </ul>
+
+        <p>
+            Together, these libraries provide the tools
+            required for the different data extraction
+            and file-handling features available in
+            the project.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> Understanding the
+            purpose of each library makes it easier to
+            maintain the project and extend its functionality.
+        </p>
+
+    </div>
+
+    <!-- TIP 4 -->
+    <div class="tip-item">
+
+        <h3>💻 4. Setting Up the Development Environment</h3>
+
+        <p>
+            Before running the project, we need to set up
+            Python and an IDE. This project uses PyCharm
+            as its development environment.
+        </p>
+
+        <h4>Step 1: Download PyCharm</h4>
+
+        <p>
+            Visit the official
+            <a href="https://www.jetbrains.com/pycharm/" target="_blank" rel="noopener noreferrer">PyCharm website</a>
+            to download the IDE.
+        </p>
+
+        <ul>
+            <li>Download the version suitable for your operating system, such as Windows, macOS, or Linux.</li>
+            <li>Follow the installation wizard to complete the setup.</li>
+        </ul>
+
+        <h4>Step 2: Choose a PyCharm Version</h4>
+
+        <p>
+            PyCharm offers different editions:
+        </p>
+
+        <ul>
+            <li>
+                <strong>Community Edition:</strong>
+                A free edition suitable for Python development.
+            </li>
+
+            <li>
+                <strong>Professional Edition:</strong>
+                A paid edition that also provides a trial
+                option for eligible users.
+            </li>
+        </ul>
+
+        <h4>Step 3: Create a Project</h4>
+
+        <ul>
+            <li>Open PyCharm and create a new Python project.</li>
+            <li>Set up a virtual environment for the project.</li>
+            <li>Create the required Python files.</li>
+            <li>Install the libraries needed by the application.</li>
+        </ul>
+
+        <p>
+            A virtual environment keeps project dependencies
+            separate. This is useful when working on multiple
+            Python projects that may require different
+            library versions.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> Create a separate
+            virtual environment for each project. This
+            helps keep dependencies organized and reduces
+            the chances of package conflicts.
+        </p>
+
+    </div>
+
+    <!-- TIP 5 -->
+    <div class="tip-item">
+
+        <h3>📚 5. Installing the Required Libraries</h3>
+
+        <p>
+            Once the development environment is ready,
+            install the libraries required by the project.
+        </p>
+
+        <p>
+            Python packages can be installed using the
+            pip package manager. The general command is:
+        </p>
+
+        <pre><code>pip install library_name</code></pre>
+
+        <p>
+            The project uses the following external libraries:
+        </p>
+
+        <pre><code>pip install streamlit
+pip install requests
+pip install lxml
+pip install beautifulsoup4
+pip install PyPDF2</code></pre>
+
+        <p>
+            The <strong>io</strong> and
+            <strong>zipfile</strong> modules are part of
+            Python's standard library, so they do not need
+            to be installed separately.
+        </p>
+
+        <p>
+            Make sure the required dependencies are installed
+            in the same Python environment that will be used
+            to execute the application.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> You can also maintain
+            your dependencies in a requirements.txt file.
+            This makes it easier to install all the required
+            packages when setting up the project on another
+            system.
+        </p>
+
+    </div>
+
+    <!-- TIP 6 -->
+    <div class="tip-item">
+
+        <h3>🚀 6. Understanding Streamlit</h3>
+
+        <p>
+            Streamlit is a Python framework that makes it
+            easier to create and deploy interactive web
+            applications. It is particularly useful for
+            Data Science, Machine Learning, and Python
+            projects that need a user-friendly interface.
+        </p>
+
+        <p>
+            One of its main advantages is that developers
+            can create application components directly
+            through Python functions instead of building
+            a separate frontend.
+        </p>
+
+        <p>
+            To install Streamlit, execute the following
+            command:
+        </p>
+
+        <pre><code>pip install streamlit</code></pre>
+
+        <p>
+            After installation, Streamlit can be used
+            to build an application interface and connect
+            it with Python functionality.
+        </p>
+
+        <p>
+            In this project, Streamlit acts as the interface
+            through which users can access the different
+            web scraping and file downloading options.
+        </p>
+
+    </div>
+
+    <!-- TIP 7 -->
+    <div class="tip-item">
+
+        <h3>▶️ 7. Running the Project Locally</h3>
+
+        <p>
+            After installing the dependencies, we can
+            execute the Streamlit application locally.
+        </p>
+
+        <h4>Step 1: Open the Project</h4>
+
+        <p>
+            Open the project directory in PyCharm and
+            make sure the required dependencies are installed.
+        </p>
+
+        <h4>Step 2: Run the Streamlit Application</h4>
+
+        <p>
+            Open the terminal inside the project directory
+            and execute:
+        </p>
+
+        <pre><code>streamlit run app.py</code></pre>
+
+        <p>
+            Here, <strong>app.py</strong> represents the
+            Python file containing the Streamlit application.
+            If your main file has a different name, replace
+            app.py with that filename.
+        </p>
+
+        <h4>Step 3: Open the Application</h4>
+
+        <p>
+            By default, Streamlit starts its local server
+            on port 8501. Open the following URL in your
+            browser:
+        </p>
+
+        <pre><code>http://localhost:8501</code></pre>
+
+        <p>
+            You should now be able to access the application
+            through your browser.
+        </p>
+
+        <p>
+            If another Streamlit application is already
+            using the default port, Streamlit can use
+            another available port, such as 8502.
+        </p>
+
+        <p>
+            The execution process remains similar for
+            other Streamlit projects. The application code
+            and features may change, but the basic command
+            used to launch the project stays the same.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> Before launching
+            the application, verify that the terminal is
+            using the correct virtual environment.
+        </p>
+
+    </div>
+
+    <!-- TIP 8 -->
+    <div class="tip-item">
+
+        <h3>📝 8. Understanding the Text Extraction Features</h3>
+
+        <p>
+            One of the main functionalities of this project
+            is extracting textual information from websites.
+        </p>
+
+        <p>
+            A website may contain information on its main
+            page as well as additional content available
+            through embedded links. Depending on the
+            extraction option, the application can retrieve
+            different combinations of this information.
+        </p>
+
+        <h4>Main Website Text Data</h4>
+
+        <p>
+            This option focuses on retrieving the primary
+            textual content from the main website. It is
+            useful when we only need the information
+            available on the page provided.
+        </p>
+
+        <h4>Embedded Links</h4>
+
+        <p>
+            Websites often contain links that direct users
+            to other pages. Extracting these links helps
+            identify additional pages that may contain
+            relevant information.
+        </p>
+
+        <h4>Main Website Text along with Embedded Links Text</h4>
+
+        <p>
+            Sometimes, the main page alone does not contain
+            all the information we need. This option
+            combines the main website's textual content
+            with text extracted from its embedded links.
+        </p>
+
+        <h4>Complete Website Text Data</h4>
+
+        <p>
+            This option is intended to retrieve textual
+            content across the website rather than limiting
+            extraction to the main page.
+        </p>
+
+        <p>
+            These different extraction options make it
+            easier to choose the level of information
+            required for a particular task.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> If you only need
+            information from one page, start with the
+            main website text option. Use broader extraction
+            options when you need content from linked pages.
+        </p>
+
+    </div>
+
+    <!-- TIP 9 -->
+    <div class="tip-item">
+
+        <h3>📄 9. Extracting PDF Data from Websites</h3>
+
+        <p>
+            Many websites provide useful information in
+            PDF documents, such as reports, guides,
+            documentation, and other downloadable resources.
+        </p>
+
+        <p>
+            This project includes PDF extraction features
+            that allow users to retrieve text from PDF
+            documents available through website links.
+        </p>
+
+        <h4>Extract Text from PDF Link</h4>
+
+        <p>
+            This feature extracts information from a PDF
+            document using the PDF link provided by the user.
+        </p>
+
+        <h4>Main Website PDF Data along with Embedded Links PDF Data</h4>
+
+        <p>
+            PDF documents may be available both on the
+            main website and on pages linked from it.
+            This option combines PDF text extracted
+            from these sources.
+        </p>
+
+        <h4>Complete Website PDF Data</h4>
+
+        <p>
+            This feature retrieves PDF data available
+            across the website.
+        </p>
+
+        <h4>Complete Website Text and PDF Data</h4>
+
+        <p>
+            This option brings together textual content
+            and PDF data, providing a more comprehensive
+            view of the information available across
+            the website.
+        </p>
+
+        <p>
+            The project uses PyPDF2 for working with
+            PDF documents.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> PDF extraction
+            works with accessible documents. The extracted
+            text can depend on the PDF's structure and
+            whether its pages contain selectable text
+            or scanned images.
+        </p>
+
+    </div>
+
+    <!-- TIP 10 -->
+    <div class="tip-item">
+
+        <h3>🖼️ 10. Downloading PDF and Image Files</h3>
+
+        <p>
+            Apart from extracting text, the application
+            also provides options for downloading files
+            available on websites.
+        </p>
+
+        <h4>PDF Downloading</h4>
+
+        <ul>
+            <li>
+                <strong>Download PDF Files From Main Website:</strong>
+                Provides the option to download PDF files
+                available on the main website.
+            </li>
+
+            <li>
+                <strong>Download All PDF Files From Website:</strong>
+                Supports downloading PDF files available
+                across the website.
+            </li>
+        </ul>
+
+        <h4>Image Downloading</h4>
+
+        <ul>
+            <li>
+                <strong>Download Image Files From Main Website:</strong>
+                Allows downloading image files available
+                on the main page.
+            </li>
+
+            <li>
+                <strong>Download All Image Files From Website:</strong>
+                Supports downloading image files available
+                across the website.
+            </li>
+        </ul>
+
+        <p>
+            These features are useful when the required
+            information is available as downloadable
+            documents or images rather than ordinary
+            webpage text.
+        </p>
+
+        <p>
+            The project also includes Python's
+            <strong>io</strong> and <strong>zipfile</strong>
+            modules among its libraries. These modules
+            provide tools for working with data streams
+            and ZIP archives.
+        </p>
+
+    </div>
+
+    <!-- TIP 11 -->
+    <div class="tip-item">
+
+        <h3>☁️ 11. Deploying the Application Using Streamlit</h3>
+
+        <p>
+            Once the application is working locally,
+            we can deploy it online using Streamlit.
+            This makes the application accessible through
+            a browser without requiring every user to
+            install the project locally.
+        </p>
+
+        <h4>Step 1: Create a GitHub Repository</h4>
+
+        <p>
+            Upload the project code to a GitHub repository.
+            Make sure the required Python files and
+            dependency information are included.
+        </p>
+
+        <h4>Step 2: Open Streamlit</h4>
+
+        <p>
+            Visit the official
+            <a href="https://streamlit.io/" target="_blank" rel="noopener noreferrer">Streamlit website</a>
+            and sign in using your GitHub account.
+        </p>
+
+        <h4>Step 3: Create a New Deployment</h4>
+
+        <p>
+            Select the option to create a new deployment
+            and provide the details of your GitHub repository.
+        </p>
+
+        <h4>Step 4: Specify the Application File</h4>
+
+        <p>
+            Enter the repository name and specify the
+            Python file that should be executed when
+            the application starts.
+        </p>
+
+        <p>
+            If your main application file is named
+            <strong>streamlit_app.py</strong>, Streamlit
+            can use that conventional filename. Otherwise,
+            specify the correct file path.
+        </p>
+
+        <h4>Step 5: Add Dependencies</h4>
+
+        <p>
+            Include a <strong>requirements.txt</strong>
+            file in the repository. This file lists the
+            Python packages required by the application.
+        </p>
+
+        <p>
+            For example, the dependencies used by this
+            project can be listed as:
+        </p>
+
+        <pre><code>streamlit
+requests
+lxml
+beautifulsoup4
+PyPDF2</code></pre>
+
+        <p>
+            You can also specify package versions when
+            your project requires particular versions.
+            Python version compatibility should be
+            configured according to the deployment
+            platform's supported settings.
+        </p>
+
+        <h4>Step 6: Deploy</h4>
+
+        <p>
+            After providing the repository, application
+            file, and dependencies, start the deployment
+            process.
+        </p>
+
+        <p>
+            Once deployment completes successfully,
+            Streamlit provides a web address through
+            which the application can be accessed
+            and shared.
+        </p>
+
+        <p>
+            You can visit the deployed version of this
+            project here:
+            <a href="https://web-scrapper-functions-h6phqofpkjtaylwyn9uvzf.streamlit.app/" target="_blank"
+                rel="noopener noreferrer">Web Scraper Application</a>.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> Always test the
+            application locally before deploying it.
+            This helps identify missing dependencies
+            and configuration issues early.
+        </p>
+
+    </div>
+
+    <!-- TIP 12 -->
+    <div class="tip-item">
+
+        <h3>⚠️ 12. Important Considerations and Limitations</h3>
+
+        <p>
+            Web scraping applications depend on the
+            availability and structure of the websites
+            being accessed. Before extracting data,
+            it is important to consider the following
+            points:
+        </p>
+
+        <ul>
+            <li>
+                <strong>Website Access:</strong>
+                Some websites restrict automated requests
+                or require authentication. A scraping
+                application may not be able to retrieve
+                content from every website.
+            </li>
+
+            <li>
+                <strong>Website Structure:</strong>
+                The structure and availability of website
+                content can vary. Changes to a website
+                may affect the information that can
+                be extracted.
+            </li>
+
+            <li>
+                <strong>PDF Availability:</strong>
+                PDF extraction depends on accessible
+                PDF links and documents that can be
+                processed by the application.
+            </li>
+
+            <li>
+                <strong>Responsible Scraping:</strong>
+                Always respect website terms of service,
+                access restrictions, copyright requirements,
+                and applicable laws. Avoid sending
+                excessive requests to websites.
+            </li>
+
+            <li>
+                <strong>Application Resource Limits:</strong>
+                The deployed web application has a limit
+                of 100 MB. Once this limit is reached,
+                the application will not be able to
+                scrape additional content. For larger
+                scraping tasks, the README recommends
+                running the application locally.
+            </li>
+        </ul>
+
+        <p>
+            Keeping these limitations in mind helps
+            users understand what the application
+            can handle and when local execution may
+            be more suitable.
+        </p>
+
+    </div>
+
+    <!-- TIP 13 -->
+    <div class="tip-item">
+
+        <h3>🔍 13. Exploring the Project</h3>
+
+        <p>
+            The Web Scraper Functions project brings
+            together several useful website extraction
+            capabilities in one Streamlit application.
+        </p>
+
+        <p>
+            Instead of creating separate scripts for
+            retrieving text, extracting PDF content,
+            and downloading images, users can access
+            these different features through a common
+            interface.
+        </p>
+
+        <p>
+            This project also demonstrates how Python
+            libraries can be combined with Streamlit
+            to turn backend functionality into an
+            accessible web application.
+        </p>
+
+        <p>
+            You can explore the complete source code
+            and project documentation in the GitHub
+            repository:
+        </p>
+
+        <p>
+            <a href="https://github.com/madhurimarawat/Web-Scrapper-Functions" target="_blank"
+                rel="noopener noreferrer">
+                Web-Scrapper-Functions on GitHub
+            </a>
+        </p>
+
+        <p>
+            You can also try the deployed application directly:
+        </p>
+
+        <p>
+            <a href="https://web-scrapper-functions-h6phqofpkjtaylwyn9uvzf.streamlit.app/" target="_blank"
+                rel="noopener noreferrer">
+                Launch Web Scraper
+            </a>
+        </p>
+
+    </div>
+
+</section>
+
+<section class="conclusion">
+
+    <h3>💜 Making Web Scraping Easier with Python and Streamlit</h3>
+
+    <p>
+        Web scraping is a practical way to collect
+        information from websites, and Python provides
+        a wide range of libraries to make this process
+        easier.
+    </p>
+
+    <p>
+        Through this project, we explored how Streamlit
+        can be used to provide an interactive interface
+        for different scraping tasks, including
+        extracting website text, collecting embedded
+        links, retrieving PDF content, and downloading
+        PDF and image files.
+    </p>
+
+    <p>
+        The project also demonstrates how libraries
+        such as Requests, Beautiful Soup, lxml, and
+        PyPDF2 can be used together in a Python
+        application.
+    </p>
+
+    <p>
+        If you are interested in exploring the
+        implementation, visit the GitHub repository
+        and try the deployed application. You can
+        also contribute suggestions, report issues,
+        or discuss improvements.
+    </p>
+
+    <blockquote>
+        "A useful Python project becomes even more
+        accessible when its functionality is presented
+        through a simple interactive interface."
+    </blockquote>
+
+    <p class="text-center">
+        <strong>Want to explore the complete code?</strong>
+        Visit my GitHub repository and try the
+        Web Scraper application.
+    </p>
+
+    <p class="text-center">
+        <a href="https://github.com/madhurimarawat/Web-Scrapper-Functions" target="_blank" rel="noopener noreferrer"
+            class="font-weight-bold link">
+            <i class="fab fa-github"></i> Explore Web-Scrapper-Functions
+        </a>
+    </p>
+
+</section>
