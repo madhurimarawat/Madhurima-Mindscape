@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: post-actions.css
 * Author: Madhurima Rawat
-* Date: November 02, 2026
+* Date: November 24, 2026
 * Description: Stylesheet for the post interaction components of the "Madhurima Mindscape" blog.
 *              It provides styling for post action buttons, comment panels, reading information,
 *              and Read Aloud functionality.
@@ -144,17 +144,12 @@
     filter: drop-shadow(0 0 4px rgba(255, 224, 184, 0.4));
 }
 
-/* =========================================
-   POST ACTION STATUS MESSAGES
-========================================= */
-
 .post-action-status {
+    display: block !important;
+    width: 100%;
+    box-sizing: border-box;
     margin: 12px 0 0;
     padding: 0;
-    border: none;
-    background: none;
-    border-radius: 0;
-    box-shadow: none;
 
     text-align: center;
     font-size: 0.9rem;
@@ -166,14 +161,9 @@
     transition: opacity 0.8s ease;
 }
 
-/* Hide when there is no message */
-.post-action-status:empty {
-    display: none;
-}
-
-/* Fade-out effect */
-.post-action-status.fade-out {
-    opacity: 0;
+.post-action-status.status-fading {
+    opacity: 0 !important;
+    pointer-events: none;
 }
 
 /* Style the comment panel container */

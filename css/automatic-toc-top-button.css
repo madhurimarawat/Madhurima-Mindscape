@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: automatic-toc-top-button.css
 * Author: Madhurima Rawat
-* Date: November 13, 2026
+* Date: November 24, 2026
 * Description:
 *   Dedicated responsive stylesheet for the blog navigation elements of
 *   "Madhurima Mindscape".
@@ -147,7 +147,9 @@
     position: fixed;
 
     right: 25px;
-    bottom: 25px;
+
+    /* Keep button above the Language button */
+    bottom: calc(90px + env(safe-area-inset-bottom, 0px));
 
     width: 55px;
     height: 55px;
@@ -170,7 +172,7 @@
     color: var(--post-action-color);
 
     cursor: pointer;
-    z-index: 999;
+    z-index: 9999;
 
     /* Shadow */
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
@@ -189,6 +191,9 @@
         visibility 0.25s ease,
         transform 0.25s ease,
         box-shadow 0.25s ease;
+
+    /* Prevent unwanted touch gestures */
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* Arrow Above Text */
@@ -251,14 +256,16 @@
     /* Back to Top Button */
     .back-to-top {
         right: 20px;
-        bottom: 20px;
+
+        /* Preserve position above Language button */
+        bottom: calc(90px + env(safe-area-inset-bottom, 0px));
 
         width: 52px;
         height: 52px;
     }
 
     .back-to-top-arrow {
-        font-size: 21px;
+        font-size: 19px;
     }
 
     .back-to-top-text {
@@ -315,14 +322,16 @@
     /* Back to Top Button */
     .back-to-top {
         right: 16px;
-        bottom: 18px;
+
+        /* Always remain above the Language button */
+        bottom: calc(90px + env(safe-area-inset-bottom, 0px));
 
         width: 46px;
         height: 46px;
     }
 
     .back-to-top-arrow {
-        font-size: 19px;
+        font-size: 17px;
     }
 
     .back-to-top-text {

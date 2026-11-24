@@ -27,7 +27,7 @@
 
   Version: 1.0
 
-  Date: November 15, 2026
+  Date: November 24, 2026
 -->
 
 <!-- Split the SEO path into its category and YAML filename. -->
@@ -162,14 +162,26 @@
 <!-- Load the stylesheet responsible for the table of contents and top button. -->
 <link rel="stylesheet" href="{{ 'css/automatic-toc-top-button.css' | relative_url }}">
 
+<!-- For Translation -->
+<link rel="stylesheet" href="{{ 'css/translate.css' | relative_url }}">
+
 <!-- Load the primary website JavaScript after HTML parsing. -->
 <script defer src="{{ 'js/index.js' | relative_url }}"></script>
 
 <!-- Load the JavaScript responsible for blog post actions. -->
 <script defer src="{{ 'js/post-actions.js' | relative_url }}"></script>
 
+<!-- Load the JavaScript responsible for blog post read aloud actions. -->
+<script defer src="{{ 'js/read-aloud.js' | relative_url }}"></script>
+
 <!-- Load the JavaScript responsible for blockquote interactions. -->
 <script defer src="{{ 'js/blockquotes.js' | relative_url }}"></script>
 
 <!-- Load the JavaScript responsible for the table of contents and top button. -->
 <script defer src="{{ 'js/automatic-toc-top-button.js' | relative_url }}"></script>
+
+<!-- For Translation -->
+<script src="https://res.zvo.cn/translate/translate.js"></script>
+
+<!-- For Translation -->
+<script defer src="{{ 'js/translate.js' | relative_url }}"></script>

@@ -1,6 +1,6 @@
 <!--
 *********************************************************************************************
-  File: import-tags-index.html
+  File: index.html
 
   Description:
   Centralized resource loader and metadata generator for all blog pages.
@@ -21,7 +21,7 @@
   - jQuery 4.0.0 (for legacy/custom scripts)
 
   Version: 2.1
-  Last Updated: November 15, 2026
+  Last Updated: November 24, 2026
 *********************************************************************************************
 -->
 
@@ -135,6 +135,8 @@
 <!-- Special Features Carousel stylesheet. -->
 <link rel="stylesheet" href="{{ 'css/slider-carousel.css' | relative_url }}">
 
+<!-- For Translation -->
+<link rel="stylesheet" href="{{ 'css/translate.css' | relative_url }}">
 
 <!-- ========================================= -->
 <!-- JAVASCRIPT                                -->
@@ -155,3 +157,9 @@
 
 <!-- Special Features Carousel JavaScript. -->
 <script defer src="{{ 'js/slider-carousel.js' | relative_url }}"></script>
+
+<!-- For Translation -->
+<script src="https://res.zvo.cn/translate/translate.js"></script>
+
+<!-- For Translation -->
+<script defer src="{{ 'js/translate.js' | relative_url }}"></script>

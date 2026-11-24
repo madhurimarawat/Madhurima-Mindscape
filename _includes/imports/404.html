@@ -28,7 +28,7 @@
 
   Version: 3.0
 
-  Date: November 15, 2026
+  Date: November 24, 2026
 -->
 
 <!-- Split the SEO path into its category and YAML filename. -->
@@ -160,5 +160,14 @@
 <!-- Load the stylesheet responsible for the 404 error page. -->
 <link rel="stylesheet" href="{{ 'css/404.css' | relative_url }}">
 
+<!-- For Translation -->
+<link rel="stylesheet" href="{{ 'css/translate.css' | relative_url }}">
+
 <!-- Load the primary website JavaScript after HTML parsing. -->
 <script defer src="{{ 'js/index.js' | relative_url }}"></script>
+
+<!-- For Translation -->
+<script src="https://res.zvo.cn/translate/translate.js"></script>
+
+<!-- For Translation -->
+<script defer src="{{ 'js/translate.js' | relative_url }}"></script>

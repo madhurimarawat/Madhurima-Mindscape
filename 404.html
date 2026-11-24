@@ -4,6 +4,38 @@ permalink: /404.html
 seo: 404/404
 ---
 
+<!--
+*********************************************************************************************
+* File: 404.html
+* Author: Madhurima Rawat
+* Date: November 24, 2026
+* Description: This is the custom 404 error page of Madhurima Rawat's personal blog website,
+*              "Madhurima Mindscape". It is displayed whenever visitors attempt to access a
+*              page that does not exist, has been moved, or cannot be found.
+*              The page provides a friendly error message and a convenient navigation link
+*              to help visitors return to the website's homepage.
+* Version: 1.0
+* GitHub Repository: https://github.com/madhurimarawat/Madhurima-Mindscape
+* Issues/Bugs: For any issues or bugs, please visit the GitHub repository issues section.
+* Comments:
+    - Displays a prominent 404 error code to clearly indicate that the requested page
+*     could not be found.
+    - Includes a friendly error message to inform visitors that the page may not exist
+*     or may have been moved.
+    - Provides a direct link to the Madhurima Mindscape homepage for easy navigation.
+    - Includes a language toggle button to allow visitors to access the website's
+*     language translation functionality.
+    - Uses a dedicated translation container to support multilingual content.
+    - Uses Jekyll front matter to configure the custom 404 layout, permalink, and SEO path.
+* Dependencies:
+    - Jekyll: Processes the page front matter and generates the custom 404 error page.
+    - Custom 404 Layout: Defines the overall structure and presentation of the error page.
+    - Font Awesome: Provides the language icon used in the language toggle button.
+    - Custom CSS: Styles the error page, navigation link, and language toggle button.
+    - Translation JavaScript: Handles the language toggle and multilingual translation functionality.
+*********************************************************************************************
+-->
+
 <div class="error-container">
     <h1 class="error-code">404</h1>
 
@@ -17,4 +49,13 @@ seo: 404/404
     <a href="{{ '/' | relative_url }}" class="home-link">
         Back to Madhurima Mindscape
     </a>
+
+    <!-- Language Toggle Button -->
+    <button id="language-toggle" class="language-toggle ignore" type="button">
+        <i class="fa-solid fa-language language-icon"></i>
+        <span class="language-text">Lang</span>
+    </button>
+
+    <div id="translate-container" class="translate-container">
+    </div>
 </div>

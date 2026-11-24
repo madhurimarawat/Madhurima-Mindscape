@@ -1,6 +1,17 @@
 {
   "notices": [
     {
+      "date": "2026-11-24",
+      "blogs": [],
+      "features": [
+        {
+          "title": "Introduced Multilingual Language Support",
+          "text": "Added a custom language selector supporting 73 languages using translate.js. Includes a searchable dropdown, native language names, and localStorage to remember visitors' language preferences across page refreshes.",
+          "icon": "fas fa-language"
+        }
+      ]
+    },
+    {
       "date": "2026-11-17",
       "blogs": [
         {
