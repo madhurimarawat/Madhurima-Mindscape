@@ -2,7 +2,7 @@
 *********************************************************************************************
 * File: blog.html
 * Author: Madhurima Rawat
-* Date: October 31, 2026
+* Date: November 24, 2026
 * Description: Defines the shared layout for all blog pages, automatically positioning
 *              the Post Actions component immediately after the blog's top section.
 * Version: 1.0
@@ -54,6 +54,15 @@
     <!-- Footer -->
     <div id="footer-container">
         {% include components/footer.html %}
+    </div>
+
+    <!-- Language Toggle Button -->
+    <button id="language-toggle" class="language-toggle ignore" type="button">
+        <i class="fa-solid fa-language language-icon"></i>
+        <span class="language-text">Lang</span>
+    </button>
+
+    <div id="translate-container" class="translate-container">
     </div>
 
 </body>
