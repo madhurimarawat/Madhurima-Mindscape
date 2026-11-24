@@ -73,23 +73,26 @@ The website includes:
 
 Madhurima Mindscape uses Jekyll for static site generation and frontend technologies for its design and interactive features.
 
-| Technology | Purpose |
-|---|---|
-| **Jekyll** | Static site generation and blog management |
-| **Ruby** | Jekyll runtime and dependency environment |
-| **Liquid** | Templates, loops, conditions, and data rendering |
-| **HTML5** | Website structure and content |
-| **CSS3** | Styling, responsive layouts, and visual design |
-| **JavaScript** | Interactive components and client-side functionality |
-| **YAML** | Website configuration, structured metadata, and SEO data |
-| **Font Awesome** | Icons used in navigation and blog sections |
-| **LocalStorage** | Storing saved articles in the browser |
-| **Web Share API** | Native content sharing where supported |
-| **Clipboard API** | Copying blog links |
-| **Web Speech API** | Browser-based read-aloud functionality |
-| **XML** | RSS feed generation |
-| **Git & GitHub** | Version control and repository management |
-| **GitHub Pages** | Website hosting and deployment |
+| Technology | Version / Reference | Purpose |
+|---|---|---|
+| **Jekyll** | Latest Stable | Static site generation and blog management |
+| **Ruby** | Environment Dependent | Jekyll runtime and dependency environment |
+| **Liquid** | Jekyll-integrated | Templates, loops, conditions, and data rendering |
+| **HTML5** | HTML Living Standard | Website structure and content |
+| **CSS3** | CSS3 | Styling, responsive layouts, and visual design |
+| **JavaScript** | ECMAScript | Interactive components and client-side functionality |
+| **YAML** | YAML 1.2 | Website configuration, structured metadata, and SEO data |
+| **Bootstrap** | 5.3.9 | Responsive layouts and interface components |
+| **Font Awesome** | 7.3.1 | Icons used in navigation and blog sections |
+| **jQuery** | 4.0.0 | JavaScript utilities for legacy and custom scripts |
+| **Translate.js** | Latest Available (CDN) | Full-page website translation into supported languages. [GitHub Repository](https://github.com/xnx3/translate) |
+| **LocalStorage** | Web Storage API | Storing saved articles in the browser |
+| **Web Share API** | Browser API | Native content sharing where supported |
+| **Clipboard API** | Browser API | Copying blog links |
+| **Web Speech API** | Browser API | Browser-based multilingual Read Aloud functionality |
+| **XML** | XML 1.0 | RSS feed generation |
+| **Git & GitHub** | Latest Stable | Version control and repository management |
+| **GitHub Pages** | Managed Platform | Website hosting and deployment |
 
 ---
 
@@ -290,6 +293,27 @@ The Notice Board provides a centralized space for viewing the latest updates acr
 - Keeps the Back to Top button in a consistent position while scrolling.
 - Provides smooth scrolling to the top of the page when clicked.
 - Supports accessible reduced-motion preferences.
+
+### 15. Full-Page Website Translation and Multilingual Read Aloud
+
+- Integrates the **Translate.js** library to provide multilingual translation functionality across the website.
+- Allows visitors to translate the entire webpage into **73 supported languages**.
+- Supports major international and regional languages, including English, French, German, Spanish, Russian, Hindi, Marathi, Bengali, Japanese, Chinese, Arabic, Portuguese, and many more.
+- Provides multilingual text-to-speech functionality through the Read Aloud feature.
+- Implements language-specific voice selection and matching for more accurate pronunciation.
+- Uses sequential voice retry handling when speech synthesis fails.
+- Remembers successfully completed speech voices and prioritizes them for subsequent utterances.
+- Includes timeout handling for unresponsive speech voices.
+- Automatically falls back to English when voices for the selected language fail.
+- Supports translated spoken instructions across supported languages.
+- Prevents website translation scripts from modifying Read Aloud status messages.
+- Improves speech error handling and session management for reliable playback.
+- Highlights words during speech playback and automatically scrolls to keep the highlighted text visible.
+- Supports pause, resume, and dynamic language switching during playback.
+- Calculates and displays the estimated reading time.
+
+**Translation Library:** Translate.js  
+**Script Source:** https://res.zvo.cn/translate/translate.js
 
 ---
 
