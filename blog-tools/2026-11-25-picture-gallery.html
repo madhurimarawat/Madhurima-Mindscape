@@ -1,0 +1,51 @@
+---
+layout: picture-gallery
+permalink: /picture-gallery
+seo: blog-tools/picture-gallery
+---
+
+<!--
+============================================================
+Project     : Madhurima Mindscape
+File Name   : Images_Gallery.html
+Author      : Madhurima Rawat
+Created On  : 25 November 2026
+
+Description :
+    Minimal Picture Gallery containing clickable image
+    thumbnails inside a large rounded gallery container.
+
+    Each image links directly to its corresponding blog post.
+
+Dependencies :
+    CSS  : css/picture-gallery.css
+    JS   : js/picture-gallery.js
+    JSON : _data/json/images_preview_links.json
+
+Usage :
+    Open through a local Jekyll server or GitHub Pages.
+============================================================
+-->
+
+<!-- Main Gallery Container -->
+
+<!-- Displays the page heading -->
+<h2>Picture Gallery</h2>
+
+<!-- Adds the title divider and current date -->
+<div class="line-below"></div>
+<p class="date-class">November 25, 2026</p>
+
+<main class="gallery-shell">
+
+    <p>Every Picture Holds a Story, Click to Explore!!</p>
+
+    <!-- Dynamic Image Gallery -->
+
+    <div class="gallery-grid" id="gallery"></div>
+
+    <!-- Empty / Error Message -->
+
+    <div id="message"></div>
+
+</main>

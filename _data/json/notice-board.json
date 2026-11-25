@@ -1,6 +1,17 @@
 {
   "notices": [
     {
+      "date": "2026-11-25",
+      "blogs": [],
+      "features": [
+        {
+          "title": "Introduced Dynamic Picture Gallery",
+          "text": "Added a dedicated Picture Gallery featuring dynamically generated image thumbnails linked directly to their corresponding blog posts. Includes automated image extraction from YAML files, duplicate image removal, newest-first sorting, and a responsive glassmorphic gallery design with soft lavender glow and hover animations.",
+          "icon": "fas fa-images"
+        }
+      ]
+    },
+    {
       "date": "2026-11-24",
       "blogs": [],
       "features": [
