@@ -1,3 +1,4 @@
+
 /*
 ============================================================
 Project     : Madhurima Mindscape
@@ -6,36 +7,51 @@ Author      : Madhurima Rawat
 Created On  : 25 November 2026
 
 Description :
-    Provides styling for the minimal Picture Gallery.
+    Defines the visual presentation and responsive styling
+    of the Picture Gallery.
 
     Features:
-    - Gallery-specific background and spacing
-    - Transparent glass-like gallery container
-    - Soft glowing gallery effect
-    - Centered image badges
-    - Cute rounded image thumbnails
-    - Borderless badge design
-    - Subtle purple glow effects
-    - Smooth hover animations
-    - Responsive desktop and mobile layouts
-    - Theme-aware colors
+    - Gallery-specific layout, spacing, and alignment
+    - Lightweight glassmorphic container with frosted effects
+    - Subtle lavender glow and ambient shadow effects
+    - Centered, evenly spaced image thumbnail arrangement
+    - Rounded, borderless image badges
+    - Smooth hover transitions and interactive animations
+    - Theme-aware text and accent colors
+    - Responsive layouts for desktop, tablet, and mobile
+    - Keyboard focus visibility and reduced-motion support
 
 Dependencies :
     HTML : Images_Gallery.html
     JS   : js/picture-gallery.js
 
 Usage :
-    Link this stylesheet from Images_Gallery.html.
+    Include this stylesheet through the Picture Gallery
+    layout or directly in the corresponding HTML page.
+
 ============================================================
 */
 
-/* Paragraph Text */
+
+/* ==========================================================
+   01. Global Paragraph Typography
+   ========================================================== */
+
+/* Establishes consistent alignment and typography for
+   paragraph text within the gallery page. */
+
 p {
     text-align: center;
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 
-/* Main Gallery Container */
+
+/* ==========================================================
+   02. Main Gallery Container
+   ========================================================== */
+
+/* Creates the primary gallery wrapper with a subtle,
+   translucent glass appearance and spacious layout. */
 
 .gallery-shell {
     font-family: Arial, sans-serif;
@@ -45,11 +61,12 @@ p {
     max-width: 1250px;
     min-height: 350px;
 
-    /* Gallery-specific Spacing */
+    /* Centers the gallery and provides surrounding space. */
     margin: 55px auto 70px;
     padding: 32px;
 
-    /* Subtle, Nearly Transparent Glass */
+    /* Adds a delicate layered background that blends
+       naturally with the website's existing theme. */
     background: linear-gradient(135deg,
             rgba(255, 255, 255, 0.055),
             rgba(196, 181, 253, 0.025),
@@ -58,23 +75,31 @@ p {
     border: none;
     border-radius: 28px;
 
-    /* Very Light Frosted Glass */
+    /* Applies a lightweight frosted-glass appearance. */
     backdrop-filter: blur(16px) saturate(125%);
     -webkit-backdrop-filter: blur(16px) saturate(125%);
 
-    /* Soft, Subtle Lavender Glow */
+    /* Creates a soft lavender ambience without
+       overpowering the surrounding page design. */
     box-shadow:
         0 8px 30px rgba(31, 20, 65, 0.045),
         0 0 20px rgba(167, 139, 250, 0.055),
         0 0 45px rgba(167, 139, 250, 0.025),
         inset 0 1px 2px rgba(255, 255, 255, 0.10);
 
+    /* Smoothly transitions the container's visual effects. */
     transition:
         background 0.4s ease,
         box-shadow 0.4s ease;
 }
 
-/* Subtle Hover Effect */
+
+/* ==========================================================
+   03. Gallery Container Interaction
+   ========================================================== */
+
+/* Slightly enhances the glass effect and lavender glow
+   when the user interacts with the gallery container. */
 
 .gallery-shell:hover {
     background: linear-gradient(135deg,
@@ -89,7 +114,13 @@ p {
 }
 
 
-/* Image Gallery Layout */
+/* ==========================================================
+   04. Gallery Thumbnail Grid
+   ========================================================== */
+
+/* Arranges image badges in a flexible, centered layout.
+   Automatically wraps thumbnails onto additional rows
+   when the available horizontal space becomes limited. */
 
 .gallery-grid {
     display: flex;
@@ -103,7 +134,13 @@ p {
 }
 
 
-/* Individual Image Badges */
+/* ==========================================================
+   05. Individual Image Badges
+   ========================================================== */
+
+/* Styles each clickable thumbnail wrapper with rounded
+   corners, a translucent lavender background, and
+   a gentle ambient glow. */
 
 .gallery-item {
     display: block;
@@ -123,12 +160,13 @@ p {
     border-radius: 22px;
     text-decoration: none;
 
-    /* Cute Soft Glow */
+    /* Adds depth through soft outer and inner shadows. */
     box-shadow:
         0 4px 12px rgba(167, 139, 250, 0.12),
         0 0 12px rgba(167, 139, 250, 0.12),
         inset 0 0 12px rgba(167, 139, 250, 0.05);
 
+    /* Enables smooth movement and visual transitions. */
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease,
@@ -136,7 +174,12 @@ p {
 }
 
 
-/* Badge Hover Effect */
+/* ==========================================================
+   06. Image Badge Hover Interaction
+   ========================================================== */
+
+/* Adds a gentle floating and enlarging effect to
+   thumbnails while intensifying their lavender glow. */
 
 .gallery-item:hover {
     transform: translateY(-6px) scale(1.07);
@@ -150,7 +193,12 @@ p {
 }
 
 
-/* Image Thumbnail */
+/* ==========================================================
+   07. Image Thumbnail Presentation
+   ========================================================== */
+
+/* Ensures images completely fill their badges while
+   maintaining consistent dimensions and rounded corners. */
 
 .gallery-item img {
     display: block;
@@ -158,6 +206,7 @@ p {
     width: 100%;
     height: 100%;
 
+    /* Crops images proportionally without distortion. */
     object-fit: cover;
 
     border: none;
@@ -165,6 +214,7 @@ p {
 
     border-radius: 16px;
 
+    /* Provides a subtle glow around each thumbnail. */
     box-shadow:
         0 3px 10px rgba(167, 139, 250, 0.12);
 
@@ -175,7 +225,12 @@ p {
 }
 
 
-/* Image Hover Glow */
+/* ==========================================================
+   08. Image Hover Enhancement
+   ========================================================== */
+
+/* Adds a slight zoom, brightness, and saturation boost
+   to create a more engaging thumbnail interaction. */
 
 .gallery-item:hover img {
     transform: scale(1.09);
@@ -187,7 +242,12 @@ p {
 }
 
 
-/* Keyboard Accessibility */
+/* ==========================================================
+   09. Keyboard Accessibility
+   ========================================================== */
+
+/* Makes the currently focused gallery badge visually
+   identifiable when navigating with a keyboard. */
 
 .gallery-item:focus-visible {
     outline: 2px solid var(--accent-color, #a78bfa);
@@ -196,7 +256,12 @@ p {
 }
 
 
-/* Empty / Error Message */
+/* ==========================================================
+   10. Gallery Status and Error Messages
+   ========================================================== */
+
+/* Centers informational messages displayed when gallery
+   images are unavailable or an error occurs. */
 
 #message {
     text-align: center;
@@ -206,9 +271,18 @@ p {
 }
 
 
-/* Responsive Design */
+/* ==========================================================
+   11. Responsive Layout — Tablets and Small Screens
+   ========================================================== */
+
+/* Adjusts container dimensions, thumbnail sizes, and
+   spacing to maintain a balanced layout on tablets. */
 
 @media (max-width: 768px) {
+
+    p {
+        font-size: 0.7em;
+    }
 
     .gallery-shell {
         width: 82%;
@@ -237,7 +311,18 @@ p {
 }
 
 
+/* ==========================================================
+   12. Responsive Layout — Mobile Devices
+   ========================================================== */
+
+/* Further reduces thumbnail dimensions and container
+   spacing to accommodate narrow mobile displays. */
+
 @media (max-width: 480px) {
+
+    p {
+        font-size: 0.6em;
+    }
 
     .gallery-shell {
         width: 84%;
@@ -264,7 +349,12 @@ p {
 }
 
 
-/* Reduced Motion Accessibility */
+/* ==========================================================
+   13. Reduced Motion Accessibility
+   ========================================================== */
+
+/* Respects the user's operating-system motion preferences
+   by disabling decorative transitions and hover movement. */
 
 @media (prefers-reduced-motion: reduce) {
 
