@@ -176,6 +176,7 @@ Poetry, literary reflections, and interpretations of meaningful works.
 - **Floating Back to Top Button:** Provides a fixed bottom-right button on each blog post for smooth scrolling back to the top, with responsive styling and hover effects.
 - **Full-Page Website Translation:** Translates the entire website into 73 supported languages, allowing visitors to read content in their preferred language.
 - **Multilingual Read Aloud:** Provides text-to-speech with language-specific voices, automatic voice fallback, word highlighting, synchronized scrolling, and pause/resume controls.
+- **Dynamic Picture Gallery:** Automatically extracts and displays unique images from YAML files, generates filename-based permalinks, sorts images by publication date (newest first), and presents clickable thumbnails in a responsive glassmorphic gallery with soft lavender glow and hover animations.
   
 ---
 
