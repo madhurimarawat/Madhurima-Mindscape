@@ -385,6 +385,8 @@ Alongside published articles, the project includes separate pages for browsing a
 | **Saved Articles** | View and manage bookmarked blog posts |
 | **Blog Insights** | Explore article categories, tags, and associated metadata |
 | **Blog Templates** | Access reusable content templates with structured metadata |
+| **Notice Board** | Stay updated with the latest blog announcements, newly introduced features, and website updates |
+| **Picture Gallery** | Explore preview images from blog posts, with clickable thumbnails linking directly to their corresponding articles |
 
 These tools are maintained separately from published articles in the `blog-tools` directory.
 
