@@ -315,6 +315,28 @@ The Notice Board provides a centralized space for viewing the latest updates acr
 **Translation Library:** Translate.js  
 **Script Source:** https://res.zvo.cn/translate/translate.js
 
+### **16. Automated YAML Image Extraction and Dynamic Picture Gallery**
+
+- Introduces a Python automation script to recursively scan the `_data` directory and all its subdirectories for YAML files (`.yml` and `.yaml`).
+- Extracts image URLs from YAML metadata to automatically populate the Picture Gallery.
+- Generates blog permalinks using only the corresponding YAML filenames, excluding parent directories and file extensions.
+- Ensures generated permalinks do not contain trailing slashes.
+- Detects and removes duplicate image URLs before generating the output JSON.
+- Sorts extracted gallery entries by publication date in descending order, displaying the newest images first.
+- Uses the `date` field exclusively for sorting without including it in the generated JSON.
+- Validates YAML content and skips files without valid image URLs.
+- Handles YAML parsing and file-reading errors without interrupting the entire extraction process.
+- Automatically creates the output directory if it does not exist.
+- Generates a structured JSON file containing only `image` and `permalink` fields.
+- Integrates the generated JSON with the Jekyll-based Picture Gallery for dynamically displaying clickable image thumbnails.
+- Eliminates the need to manually maintain gallery image entries whenever new blog posts are added.
+
+**Automation Script:** Extract_YML_Images_Link.py\
+**Script Source:** [GitHub – Extract_YML_Images_Link.py](https://github.com/madhurimarawat/Madhurima-Mindscape/blob/main/Extract_YML_Images_Link.py?utm_source=chatgpt.com)
+
+**Output File:** `_data/json/images_preview_links.json`\
+**Requirement:** PyYAML (`pip install PyYAML`)
+
 ---
 
 ## Blog Categories
