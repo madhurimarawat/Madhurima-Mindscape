@@ -1,0 +1,1496 @@
+---
+layout: blog
+permalink: /translate-js-library
+seo: tech-tutorials-resources/translate-js-library
+
+categories:
+- Tech Tutorials and Resources
+
+tags:
+- JavaScript
+- JavaScript Libraries
+- translate.js
+- AI Translation
+- Website Translation
+- Internationalization
+- i18n
+- Web Development
+- HTML
+- CSS
+- Frontend Development
+- Language Selector
+- Responsive Design
+---
+
+<!-- ********************************************************************
+* File: translate-js-library.html
+* Author: Madhurima Rawat
+* Date: November 26, 2026
+* Description:
+*   A beginner-friendly tutorial explaining how to integrate the
+*   translate.js JavaScript library into a website for automatic
+*   multilingual translation, along with a custom floating language
+*   selector and searchable dropdown.
+*
+*   Includes:
+*   - Automatic HTML translation
+*   - Translation service configuration
+*   - Language selection and customization
+*   - Advanced translation instructions
+*   - Custom terminology and ignored elements
+*   - Dynamic content translation
+*   - Practical implementation in Madhurima Mindscape
+*
+* GitHub Repository: https://github.com/xnx3/translate
+******************************************************************** -->
+
+<top>
+    <h2>Automatic Website Translation with translate.js</h2>
+
+    <div class="line-below"></div>
+    <p class="date-class">November 26, 2026</p>
+</top>
+
+<section class="intro">
+
+    <div>
+
+        <p class="dropcap">
+            Creating a multilingual website can make content
+            accessible to visitors from different parts of the
+            world. However, implementing internationalization
+            manually often requires maintaining language files,
+            configuring translations, and writing additional
+            JavaScript to switch between languages.
+        </p>
+
+        <p>
+            Fortunately, JavaScript libraries such as
+            <strong>translate.js</strong> simplify this process
+            by providing automatic webpage translation without
+            requiring developers to rewrite their existing HTML
+            content.
+        </p>
+
+        <p>
+            In this tutorial, we will explore
+            <strong>translate.js</strong>, an open-source
+            JavaScript library developed by
+            <strong>xnx3</strong>. It provides automatic HTML
+            translation with a minimal JavaScript setup and
+            offers numerous customization options for controlling
+            translation behavior.
+        </p>
+
+        <p>
+            We will also explore how I integrated this library
+            into my personal blog website,
+            <strong>Madhurima Mindscape</strong>, using a
+            floating language button, a searchable language
+            dropdown, and localStorage to remember visitors'
+            language preferences.
+        </p>
+
+        <p>You can also try the live implementation right here on this website! Simply click the floating language
+            button to open
+            the language panel, then expand the language dropdown to browse or search for your preferred language. This
+            lets you
+            experience how <strong>translate.js</strong> works in practice and see how easily it can translate the
+            webpage content.
+        </p>
+
+        <p>
+            GitHub Repository:
+            <a href="https://github.com/xnx3/translate" target="_blank" rel="noopener noreferrer" class="link">
+                xnx3/translate
+            </a>
+        </p>
+
+        <p>
+            Official Documentation:
+            <a href="http://translate.zvo.cn/index.html?language=english" target="_blank" rel="noopener noreferrer"
+                class="link">
+                translate.js Documentation
+            </a>
+        </p>
+
+    </div>
+
+    <blockquote>
+        "A multilingual website should make content accessible
+        without making the translation implementation
+        unnecessarily complicated."
+    </blockquote>
+
+</section>
+
+<section class="self-help">
+
+    <!-- TIP 1 -->
+    <div class="tip-item">
+
+        <h3>🌐 1. What is translate.js?</h3>
+
+        <p>
+            <strong>translate.js</strong> is an open-source
+            JavaScript library designed to provide automatic
+            multilingual translation for websites.
+        </p>
+
+        <p>
+            Its main objective is to simplify website
+            internationalization by allowing developers to
+            translate webpage content with a minimal amount
+            of JavaScript code.
+        </p>
+
+        <p>
+            According to its GitHub repository, the library
+            provides several useful capabilities:
+        </p>
+
+        <ul>
+            <li>Automatic HTML content translation.</li>
+            <li>Language detection and language switching.</li>
+            <li>Translation without manually modifying existing page content.</li>
+            <li>Custom translation terminology.</li>
+            <li>Dynamic webpage content monitoring.</li>
+            <li>Translation service customization.</li>
+            <li>Browser-side translation caching.</li>
+            <li>SEO-oriented translation functionality.</li>
+        </ul>
+
+        <p>
+            One of its biggest advantages is that developers
+            can get started with only a few JavaScript
+            instructions instead of building an entire
+            translation system from scratch.
+        </p>
+
+        <p>
+            The library also provides an extensive collection
+            of extension instructions for more precise control
+            over translation behavior.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> If you want to introduce
+            multilingual support into an existing static HTML
+            website, explore translate.js before building a
+            complete translation system manually.
+        </p>
+
+    </div>
+
+    <!-- TIP 2 -->
+    <div class="tip-item">
+
+        <h3>📌 2. Why Use translate.js?</h3>
+
+        <p>
+            Traditional internationalization implementations
+            often require developers to maintain separate
+            translations for different languages and manually
+            connect those translations with webpage elements.
+        </p>
+
+        <p>
+            translate.js offers an alternative approach by
+            automatically identifying and translating webpage
+            text through its translation service.
+        </p>
+
+        <p>
+            <strong>Some important advantages include:</strong>
+        </p>
+
+        <ul>
+            <li>
+                <strong>Minimal JavaScript:</strong>
+                Basic translation can be initialized with
+                just a few configuration instructions.
+            </li>
+
+            <li>
+                <strong>No Manual HTML Replacement:</strong>
+                Existing webpage content does not need to
+                be rewritten into separate language templates.
+            </li>
+
+            <li>
+                <strong>Multiple Languages:</strong>
+                Visitors can select from the languages
+                supported by the configured translation service.
+            </li>
+
+            <li>
+                <strong>Custom Translation Rules:</strong>
+                Developers can define terminology, ignore
+                specific content, and customize translation behavior.
+            </li>
+
+            <li>
+                <strong>Dynamic Content Support:</strong>
+                The library can monitor DOM changes and
+                translate dynamically rendered content.
+            </li>
+
+            <li>
+                <strong>Flexible Integration:</strong>
+                It can be integrated into existing HTML,
+                CSS, and JavaScript projects.
+            </li>
+        </ul>
+
+        <p>
+            The library also supports different translation
+            service configurations. For example,
+            <strong>client.edge</strong> can be selected
+            without configuring your own translation server.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> Choose the translation
+            service according to your application's requirements.
+            For production websites, also evaluate service
+            availability, reliability, privacy, and usage limits.
+        </p>
+
+    </div>
+
+    <!-- TIP 3 -->
+    <div class="tip-item">
+
+        <h3>🛠️ 3. Setting Up translate.js</h3>
+
+        <p>
+            Before implementing translation, we need to load
+            the translate.js library into our webpage.
+        </p>
+
+        <h4>Step 1: Include the JavaScript Library</h4>
+
+        <p>
+            Add the following script to your HTML page.
+            It can be placed near the end of the body section.
+        </p>
+
+        <pre><code>&lt;script src="https://res.zvo.cn/translate/translate.js"&gt;&lt;/script&gt;</code></pre>
+
+        <p>
+            Alternatively, you can download the library
+            from its GitHub repository and host the file
+            within your own project.
+        </p>
+
+        <h4>Step 2: Configure the Original Language</h4>
+
+        <p>
+            Specify the original language used by your website.
+            In my personal blog, the original content is written
+            in English.
+        </p>
+
+        <pre><code>translate.language.setLocal('english');</code></pre>
+
+        <p>
+            This tells the library which language should
+            be treated as the local language of the webpage.
+        </p>
+
+        <h4>Step 3: Select a Translation Service</h4>
+
+        <p>
+            Next, configure the translation service.
+            In my implementation, I used the client.edge
+            translation service.
+        </p>
+
+        <pre><code>translate.service.use('client.edge');</code></pre>
+
+        <h4>Step 4: Execute Translation</h4>
+
+        <p>
+            Finally, initialize the translation process:
+        </p>
+
+        <pre><code>translate.execute();</code></pre>
+
+        <p>
+            The basic configuration can therefore be written
+            as follows:
+        </p>
+
+        <pre><code>&lt;script src="https://res.zvo.cn/translate/translate.js"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+    translate.language.setLocal('english');
+
+    translate.service.use('client.edge');
+
+    translate.execute();
+&lt;/script&gt;</code></pre>
+
+        <p>
+            These instructions provide the foundation for
+            translating webpage content. Additional
+            configuration can be added before calling
+            <strong>translate.execute()</strong>.
+        </p>
+
+        <p>
+            Official reference:
+            <a href="https://github.com/xnx3/translate" target="_blank" rel="noopener noreferrer">
+                translate.js GitHub Repository
+            </a>
+        </p>
+
+    </div>
+
+    <!-- TIP 4 -->
+    <div class="tip-item">
+
+        <h3>⚙️ 4. Fine-Tuning and Advanced Customization</h3>
+
+        <p>
+            One of the most useful aspects of translate.js
+            is its extensive collection of fine-tuning
+            instructions.
+        </p>
+
+        <p>
+            These instructions allow developers to control
+            different parts of the translation process,
+            customize the language selector, define
+            translation rules, monitor dynamic content,
+            and integrate custom translation functionality.
+        </p>
+
+        <p>
+            Instead of relying only on the default translation
+            behavior, we can configure the library according
+            to the requirements of our website.
+        </p>
+
+        <h4>Language Selection and Configuration</h4>
+
+        <ul>
+            <li>
+                <strong>translate.selectLanguageTag.xxx</strong>:
+                Customize the language selection dropdown,
+                including its appearance, available languages,
+                and display behavior.
+            </li>
+
+            <li>
+                <strong>translate.changeLanguage('english')</strong>:
+                Switch the displayed webpage language manually.
+            </li>
+
+            <li>
+                <strong>translate.language.setLocal('english')</strong>:
+                Specify the original language of the webpage.
+            </li>
+
+            <li>
+                <strong>translate.language.setDefaultTo('english')</strong>:
+                Set the default target translation language.
+            </li>
+
+            <li>
+                <strong>translate.setAutoDiscriminateLocalLanguage()</strong>:
+                Automatically identify and switch according
+                to the language used by the visitor.
+            </li>
+
+            <li>
+                <strong>translate.language.getCurrent()</strong>:
+                Retrieve the language currently displayed.
+            </li>
+
+            <li>
+                <strong>translate.language.getLocal()</strong>:
+                Retrieve the original webpage language.
+            </li>
+
+            <li>
+                <strong>translate.language.translateLanguagesRange = [xxx]</strong>:
+                Restrict translation to a specified range
+                of languages.
+            </li>
+
+            <li>
+                <strong>translate.language.setUrlParamControl()</strong>:
+                Control the displayed language through URL
+                parameters.
+            </li>
+        </ul>
+
+        <h4>Element and Content Control</h4>
+
+        <ul>
+            <li>
+                <strong>translate.setDocuments(documents)</strong>:
+                Specify which webpage elements should
+                be translated.
+            </li>
+
+            <li>
+                <strong>translate.execute(eles)</strong>:
+                Execute translation for specified elements.
+            </li>
+
+            <li>
+                <strong>translate.reset()</strong>:
+                Restore translated webpage content to
+                its original state.
+            </li>
+
+            <li>
+                <strong>translate.ignore.text.push('你好')</strong>:
+                Exclude specific text from translation.
+            </li>
+
+            <li>
+                <strong>translate.ignore.id.push('test')</strong>:
+                Ignore elements with a specified ID.
+            </li>
+
+            <li>
+                <strong>translate.ignore.class.push('test')</strong>:
+                Ignore elements with a specified CSS class.
+            </li>
+
+            <li>
+                <strong>translate.ignore.tag.push('span')</strong>:
+                Exclude specified HTML tags from translation.
+            </li>
+
+            <li>
+                <strong>translate.element.tagAttribute['input'] = ['value', 'data-value']</strong>:
+                Configure additional HTML attributes
+                that should be translated.
+            </li>
+
+            <li>
+                <strong>translate.whole.enableAll()</strong>:
+                Enable whole-element translation to help
+                maintain semantic fluency.
+            </li>
+        </ul>
+
+        <h4>Translation Terminology and Manual Operations</h4>
+
+        <ul>
+            <li>
+                <strong>translate.nomenclature.append(...)</strong>:
+                Define custom terminology and preferred
+                translation results.
+            </li>
+
+            <li>
+                <strong>translate.request.translateText(...)</strong>:
+                Manually request translation of text
+                through the translation interface.
+            </li>
+
+            <li>
+                <strong>translate.language.recognition('xxx')</strong>:
+                Identify and analyze the language of a string.
+            </li>
+
+            <li>
+                <strong>translate.language.textTranslateReplace(...)</strong>:
+                Translate and replace specific words
+                within a sentence.
+            </li>
+
+            <li>
+                <strong>translate.js.transObject(...)</strong>:
+                Translate JavaScript objects and code-related
+                content.
+            </li>
+
+            <li>
+                <strong>translate.images.add(...)</strong>:
+                Add images to the image translation process.
+            </li>
+
+            <li>
+                <strong>translate.offline.append(...)</strong>:
+                Configure offline translation data and
+                automatically generated translation settings.
+            </li>
+        </ul>
+
+        <h4>Dynamic Content and Event Monitoring</h4>
+
+        <ul>
+            <li>
+                <strong>translate.listener.start()</strong>:
+                Monitor dynamically rendered webpage content
+                and automatically translate detected changes.
+            </li>
+
+            <li>
+                <strong>translate.request.listener.start()</strong>:
+                Monitor AJAX requests and trigger
+                translation when requests complete.
+            </li>
+
+            <li>
+                <strong>translate.network.use()</strong>:
+                Enable network request interception
+                and translation.
+            </li>
+
+            <li>
+                <strong>translate.listener.renderTaskFinish = function() {}</strong>:
+                Execute custom functionality after
+                translation tasks finish rendering.
+            </li>
+
+            <li>
+                <strong>translate.lifecycle.execute.xxx.push(...)</strong>:
+                Register custom lifecycle actions
+                during translation.
+            </li>
+
+            <li>
+                <strong>translate.listener.execute.xxx.push(...)</strong>:
+                Customize event execution during
+                translation.
+            </li>
+        </ul>
+
+        <h4>Translation Service and Network Configuration</h4>
+
+        <ul>
+            <li>
+                <strong>translate.service.use('client.edge')</strong>:
+                Select the translation service.
+            </li>
+
+            <li>
+                <strong>translate.request.setHost(...)</strong>:
+                Specify a custom translation service domain.
+            </li>
+
+            <li>
+                <strong>translate.request.api.translate = 'xxx'</strong>:
+                Customize the translation API endpoint.
+            </li>
+
+            <li>
+                <strong>translate.request.appendParams = ...</strong>:
+                Add custom parameters to translation requests.
+            </li>
+
+            <li>
+                <strong>translate.request.response</strong>:
+                Customize translation API response processing.
+            </li>
+
+            <li>
+                <strong>translate.request.sse.start()</strong>:
+                Enable Server-Sent Events support
+                for the translation service.
+            </li>
+        </ul>
+
+        <h4>Cache, Performance, and Other Controls</h4>
+
+        <ul>
+            <li>
+                <strong>translate.storage = ...</strong>:
+                Customize the browser-side translation cache.
+            </li>
+
+            <li>
+                <strong>translate.language.clearCacheLanguage()</strong>:
+                Clear previously stored translation
+                language information.
+            </li>
+
+            <li>
+                <strong>translate.language.translateLocal = true</strong>:
+                Force translation of content written
+                in the local language.
+            </li>
+
+            <li>
+                <strong>translate.language.getTranslateAreaText()</strong>:
+                Retrieve original text from the
+                translation area.
+            </li>
+
+            <li>
+                <strong>translate.language.recognitionAlgorithm</strong>:
+                Customize the language identification strategy.
+            </li>
+
+            <li>
+                <strong>translate.progress.api.startUITip()</strong>:
+                Display a translation progress interface.
+            </li>
+
+            <li>
+                <strong>translate.visual.webPageLoadTranslateBeforeHiddenText()</strong>:
+                Hide original text temporarily until
+                translation is completed.
+            </li>
+
+            <li>
+                <strong>translate.element.iframe.use(...)</strong>:
+                Configure translation functionality
+                for iframe content.
+            </li>
+
+            <li>
+                <strong>translate.selectionTranslate.start()</strong>:
+                Enable mouse-based word selection
+                and translation.
+            </li>
+
+            <li>
+                <strong>translate.time.execute.start()</strong>:
+                Enable translation performance monitoring.
+            </li>
+
+            <li>
+                <strong>translate.debug</strong>:
+                Enable debugging and diagnostic
+                functionality.
+            </li>
+
+            <li>
+                <strong>translate.isTranslateExecute()</strong>:
+                Check whether translation has already
+                been executed.
+            </li>
+        </ul>
+
+        <p>
+            These are selected instructions from the library's
+            extension capabilities. Their exact arguments
+            and configuration requirements should be checked
+            in the official documentation before implementation.
+        </p>
+
+        <p>
+            For the complete list of customization options,
+            visit:
+            <a href="http://translate.zvo.cn/index.html?language=english" target="_blank" rel="noopener noreferrer"
+                class="link">
+                Official translate.js Documentation
+            </a>.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> You do not need to
+            configure every available instruction. Start
+            with basic translation and introduce additional
+            controls only when your website requires them.
+        </p>
+
+    </div>
+
+    <!-- TIP 5 -->
+    <div class="tip-item">
+
+        <h3>💻 5. My Practical Use Case: Adding a Floating Language Selector to My Personal Blog</h3>
+
+        <p>
+            After exploring the library, I decided to use
+            translate.js in my personal blog website,
+            <strong>Madhurima Mindscape</strong>.
+        </p>
+
+        <p>
+            My goal was to provide visitors with an easy
+            way to translate blog content without changing
+            the existing page layout or introducing a
+            complicated language configuration system.
+        </p>
+
+        <p>
+            Instead of displaying a traditional language
+            selection dropdown permanently on the page,
+            I implemented a floating language button
+            positioned at the bottom-right corner.
+        </p>
+
+        <p>
+            When visitors click this button, a language
+            selection panel appears. The panel contains
+            a custom searchable dropdown where visitors
+            can search for languages using their English
+            names or native language names.
+        </p>
+
+        <p>
+            <strong>The implementation includes:</strong>
+        </p>
+
+        <ul>
+            <li>A floating circular language button.</li>
+            <li>A Font Awesome language icon.</li>
+            <li>A custom language selection panel.</li>
+            <li>A searchable dropdown with English and native language names.</li>
+            <li>Alphabetically sorted language options.</li>
+            <li>A scrollable language list.</li>
+            <li>A hidden native select element for translate.js integration.</li>
+            <li>Selected language highlighting.</li>
+            <li>LocalStorage-based language preference persistence.</li>
+            <li>Automatic restoration of the previously selected language.</li>
+            <li>Responsive styling for mobile devices.</li>
+        </ul>
+
+        <p>
+            The implementation is divided into three
+            main parts: HTML, CSS, and JavaScript.
+        </p>
+
+        <h4>Step 1: Adding the HTML Structure</h4>
+
+        <p>
+            First, I added a floating language button
+            and a separate container for the translation
+            selector.
+        </p>
+
+        <pre><code>&lt;!-- Language Toggle Button --&gt;
+&lt;button id="language-toggle"
+        class="language-toggle ignore"
+        type="button"&gt;
+
+    &lt;i class="fa-solid fa-language language-icon"&gt;&lt;/i&gt;
+
+    &lt;span class="language-text"&gt;Lang&lt;/span&gt;
+
+&lt;/button&gt;
+
+&lt;div id="translate-container"
+     class="translate-container"&gt;
+&lt;/div&gt;</code></pre>
+
+        <p>
+            The <strong>language-toggle</strong> button
+            is responsible for opening and closing the
+            language selection panel.
+        </p>
+
+        <p>
+            The <strong>translate-container</strong>
+            element is where the custom language selector
+            is dynamically generated using JavaScript.
+        </p>
+
+        <p>
+            I also added the <strong>ignore</strong> class
+            to the floating button so that it remains
+            unaffected by automatic translation.
+        </p>
+
+        <h4>Step 2: Styling the Language Selector with CSS</h4>
+
+        <p>
+            I created a separate stylesheet named
+            <strong>translate.css</strong> to keep the
+            language selector styling independent from
+            the rest of the website.
+        </p>
+
+        <p>
+            The main styling focuses on the floating
+            button and the language selection panel.
+        </p>
+
+        <p>
+            <strong>Important CSS features include:</strong>
+        </p>
+
+        <ul>
+            <li>
+                <strong>Fixed Positioning:</strong>
+                The language button remains at the
+                bottom-right corner of the screen.
+            </li>
+
+            <li>
+                <strong>Circular Design:</strong>
+                A 55px by 55px button with a circular
+                border radius.
+            </li>
+
+            <li>
+                <strong>Layer Management:</strong>
+                High z-index values keep the selector
+                visible above other webpage elements.
+            </li>
+
+            <li>
+                <strong>Dropdown Panel:</strong>
+                A white floating panel with rounded
+                corners and a subtle shadow.
+            </li>
+
+            <li>
+                <strong>Searchable Options:</strong>
+                Styling for the language search input
+                and scrollable options list.
+            </li>
+
+            <li>
+                <strong>Interactive States:</strong>
+                Hover, selected, and keyboard focus
+                styling for better usability.
+            </li>
+
+            <li>
+                <strong>Responsive Design:</strong>
+                Adjustments for smaller mobile screens.
+            </li>
+        </ul>
+
+        <p>
+            Here is a simplified example of the main
+            CSS styling:
+        </p>
+
+        <pre><code>/* Floating Language Button */
+
+.language-toggle {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--h2-color);
+    color: var(--post-action-color);
+
+    cursor: pointer;
+    z-index: 9999;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,.18);
+
+    transition: .25s ease;
+}
+
+/* Language Selection Panel */
+
+.translate-container {
+    display: none;
+
+    position: fixed;
+    right: 24px;
+    bottom: 80px;
+
+    width: 280px;
+    max-width: calc(100vw - 32px);
+
+    padding: 12px;
+
+    background: #fff;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 20px rgba(0,0,0,.15);
+
+    z-index: 9998;
+}
+
+/* Show Panel */
+
+.translate-container.active {
+    display: block;
+}
+
+/* Searchable Language Options */
+
+.language-dropdown-options {
+    max-height: 240px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Mobile Responsiveness */
+
+@media (max-width: 480px) {
+
+    .language-toggle {
+        right: 16px;
+        bottom: 24px;
+    }
+
+    .translate-container {
+        right: 16px;
+        bottom: 90px;
+
+        width: 240px;
+    }
+
+    .language-dropdown-options {
+        max-height: 200px;
+    }
+
+}</code></pre>
+
+        <p>
+            The complete stylesheet also includes
+            additional styling for the dropdown trigger,
+            search input, individual language options,
+            selected states, scrollbar, and accessibility.
+        </p>
+
+        <p>
+            You can explore the complete CSS implementation here:
+        </p>
+
+        <p>
+            <a href="https://github.com/madhurimarawat/Madhurima-Mindscape/blob/main/css/translate.css" target="_blank"
+                rel="noopener noreferrer" class="link">
+                View translate.css on GitHub
+            </a>
+        </p>
+
+        <h4>Step 3: Initializing translate.js in JavaScript</h4>
+
+        <p>
+            Next, I configured translate.js to use English
+            as the original webpage language and selected
+            the client.edge translation service.
+        </p>
+
+        <pre><code>// Set original webpage language
+translate.language.setLocal('english');
+
+// Select translation service
+translate.service.use('client.edge');
+
+// Set language selector container
+translate.selectLanguageTag.documentId =
+    'translate-container';
+
+translate.selectLanguageTag.show = true;
+
+// Ignore language selector during translation
+translate.ignore.id.push('translate-container');
+
+// Monitor dynamically rendered content
+translate.listener.start();</code></pre>
+
+        <p>
+            I also used the library's custom UI functionality
+            through <strong>translate.selectLanguageTag.customUI</strong>
+            to build my own searchable language dropdown
+            instead of relying on the default selector.
+        </p>
+
+        <p>
+            The custom dropdown is generated dynamically
+            from the language list provided by translate.js.
+            I created the language options using JavaScript
+            and added their English and native language names.
+        </p>
+
+        <p>
+            To make language selection easier, the dropdown
+            also includes a search input that filters the
+            available options as visitors type.
+        </p>
+
+        <h4>Step 4: Remembering Language Preferences</h4>
+
+        <p>
+            Another important feature I implemented was
+            remembering the visitor's selected language
+            across page visits.
+        </p>
+
+        <p>
+            For this, I used the browser's
+            <strong>localStorage</strong> API.
+        </p>
+
+        <pre><code>const LANGUAGE_STORAGE_KEY = 'preferredLanguage';
+
+// Retrieve saved language
+function getSavedLanguage() {
+    return localStorage.getItem(LANGUAGE_STORAGE_KEY);
+}
+
+// Save selected language
+function savePreferredLanguage(languageId) {
+    localStorage.setItem(
+        LANGUAGE_STORAGE_KEY,
+        languageId
+    );
+}</code></pre>
+
+        <p>
+            Whenever a visitor selects a language, its
+            language ID is saved in localStorage.
+            When the page is opened again, JavaScript
+            retrieves that saved preference and restores
+            the selected language through the translation
+            library.
+        </p>
+
+        <p>
+            I also added error handling around localStorage
+            operations so that the translation interface
+            can continue working if browser storage
+            is unavailable.
+        </p>
+
+        <h4>Step 5: Connecting the Custom Dropdown with translate.js</h4>
+
+        <p>
+            The custom dropdown uses a hidden native
+            select element to communicate with translate.js.
+        </p>
+
+        <p>
+            When a visitor selects a language, JavaScript:
+        </p>
+
+        <ul>
+            <li>Updates the hidden select element's value.</li>
+            <li>Saves the selected language in localStorage.</li>
+            <li>Dispatches a change event.</li>
+            <li>Calls the library's language selection handler.</li>
+            <li>Updates the visible selected language.</li>
+            <li>Closes the dropdown and resets the search input.</li>
+        </ul>
+
+        <p>
+            The important integration instruction is:
+        </p>
+
+        <pre><code>select.addEventListener('change', function(event) {
+
+    translate.selectLanguageTag.selectOnChange(event);
+
+});</code></pre>
+
+        <p>
+            This allows the custom interface to use
+            translate.js for the actual language switching
+            functionality.
+        </p>
+
+        <h4>Step 6: Connecting the Floating Button</h4>
+
+        <p>
+            Finally, I connected the floating language
+            button to the translation container.
+        </p>
+
+        <pre><code>const button =
+    document.getElementById('language-toggle');
+
+const container =
+    document.getElementById('translate-container');
+
+if (button && container) {
+
+    button.addEventListener('click', function() {
+
+        container.classList.toggle('active');
+
+    });
+
+}</code></pre>
+
+        <p>
+            Clicking the button toggles the visibility
+            of the language selection panel.
+            Visitors can then open the searchable dropdown
+            and select their preferred language.
+        </p>
+
+        <p>
+            I also implemented outside-click handling
+            to close the dropdown when visitors interact
+            elsewhere on the page.
+        </p>
+
+        <p>
+            The complete JavaScript implementation contains
+            additional logic for language sorting, searching,
+            saved preference restoration, dropdown accessibility,
+            and translation initialization.
+        </p>
+
+        <p>
+            You can explore the complete JavaScript source here:
+        </p>
+
+        <p>
+            <a href="https://github.com/madhurimarawat/Madhurima-Mindscape/blob/main/js/translate.js" target="_blank"
+                rel="noopener noreferrer" class="link">
+                View translate.js on GitHub
+            </a>
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> Keeping the translation
+            library configuration, custom dropdown logic,
+            and CSS styling organized makes the implementation
+            easier to maintain and customize.
+        </p>
+
+    </div>
+
+    <!-- TIP 6 -->
+    <div class="tip-item">
+
+        <h3>📂 6. Understanding the Project File Structure</h3>
+
+        <p>
+            In my personal blog, I separated the language
+            selector into dedicated CSS and JavaScript
+            files instead of placing everything directly
+            inside the main HTML document.
+        </p>
+
+        <p>
+            The relevant project structure looks like this:
+        </p>
+
+        <pre><code>Madhurima-Mindscape/
+│
+├── css/
+│   └── translate.css
+│
+├── js/
+│   └── translate.js
+│
+└── blog.html</code></pre>
+
+        <p>
+            The HTML document contains the floating button
+            and translation container. The CSS file manages
+            the appearance and responsive layout, while
+            the JavaScript file handles translation
+            configuration and user interactions.
+        </p>
+
+        <p>
+            <strong>Complete source files:</strong>
+        </p>
+
+        <ul>
+            <li>
+                <a href="https://github.com/madhurimarawat/Madhurima-Mindscape/blob/main/css/translate.css"
+                    target="_blank" rel="noopener noreferrer" class="link">
+                    translate.css
+                </a>
+                – Floating language selector styling.
+            </li>
+
+            <li>
+                <a href="https://github.com/madhurimarawat/Madhurima-Mindscape/blob/main/js/translate.js"
+                    target="_blank" rel="noopener noreferrer" class="link">
+                    translate.js
+                </a>
+                – Translation configuration and custom dropdown functionality.
+            </li>
+        </ul>
+
+        <p>
+            This separation also makes it easier to reuse
+            the language selector across different pages
+            of the website.
+        </p>
+
+    </div>
+
+    <!-- TIP 7 -->
+    <div class="tip-item">
+
+        <h3>📱 7. Responsive Design and User Experience</h3>
+
+        <p>
+            A language selector should be convenient
+            to use on both desktop and mobile devices.
+        </p>
+
+        <p>
+            For this reason, I included responsive CSS
+            rules to adjust the floating button and
+            language selection panel on smaller screens.
+        </p>
+
+        <p>
+            The mobile implementation includes:
+        </p>
+
+        <ul>
+            <li>Adjusted button positioning.</li>
+            <li>Responsive language panel width.</li>
+            <li>Reduced dropdown height for smaller screens.</li>
+            <li>Scrollable language options.</li>
+            <li>Touch-friendly language selection buttons.</li>
+            <li>Keyboard focus styling for accessibility.</li>
+        </ul>
+
+        <p>
+            I also used a search input so that visitors
+            do not need to scroll through the entire
+            language list to find a particular language.
+        </p>
+
+        <p>
+            The selected language is highlighted,
+            making it easier to identify the currently
+            active translation.
+        </p>
+
+        <p>
+            💡 <strong>My tip:</strong> When implementing
+            a language selector with many options,
+            a searchable dropdown provides a much better
+            experience than a long, unfiltered list.
+        </p>
+
+    </div>
+
+    <!-- TIP 8 -->
+    <div class="tip-item">
+
+        <h3>⚠️ 8. Important Considerations and Limitations</h3>
+
+        <p>
+            Although translate.js makes website translation
+            easier, there are a few things developers
+            should consider before using it.
+        </p>
+
+        <ul>
+            <li>
+                <strong>Translation Quality:</strong>
+                Automatic translations may not always
+                preserve the exact meaning or context
+                of the original content.
+            </li>
+
+            <li>
+                <strong>Translation Service Availability:</strong>
+                The selected translation service must
+                be accessible for translation requests
+                to work successfully.
+            </li>
+
+            <li>
+                <strong>Dynamic Content:</strong>
+                Content rendered after the initial
+                translation may require the appropriate
+                monitoring configuration.
+            </li>
+
+            <li>
+                <strong>Custom Terminology:</strong>
+                Brand names, technical terms, and
+                specialized vocabulary may require
+                custom translation rules.
+            </li>
+
+            <li>
+                <strong>Browser Storage:</strong>
+                Saved language preferences depend
+                on browser storage availability and
+                the visitor's storage settings.
+            </li>
+
+            <li>
+                <strong>SEO Considerations:</strong>
+                Automatic client-side translation
+                should not be treated as a replacement
+                for properly localized pages when
+                implementing a multilingual SEO strategy.
+            </li>
+
+            <li>
+                <strong>Privacy and External Services:</strong>
+                Review the selected translation service's
+                policies before sending website content
+                for translation.
+            </li>
+
+            <li>
+                <strong>Testing:</strong>
+                Test translated layouts carefully,
+                particularly for right-to-left languages
+                and languages with longer text.
+            </li>
+        </ul>
+
+        <p>
+            It is also important to remember that
+            automatic translation is different from
+            professionally localized content.
+            Important legal, technical, or business
+            information may require human review.
+        </p>
+
+    </div>
+
+    <!-- TIP 9 -->
+    <div class="tip-item">
+
+        <h3>🔍 9. Exploring the Project and Documentation</h3>
+
+        <p>
+            translate.js provides considerably more
+            functionality than basic webpage translation.
+            Its customization instructions make it possible
+            to adapt the library to different website
+            requirements.
+        </p>
+
+        <p>
+            If you want to explore more advanced features,
+            I recommend going through the official
+            documentation and GitHub repository.
+        </p>
+
+        <p>
+            <strong>Useful Resources:</strong>
+        </p>
+
+        <ul>
+            <li>
+                <a href="https://github.com/xnx3/translate" target="_blank" rel="noopener noreferrer" class="link">
+                    translate.js GitHub Repository
+                </a>
+                – Explore the source code and project.
+            </li>
+
+            <li>
+                <a href="http://translate.zvo.cn/index.html?language=english" target="_blank" rel="noopener noreferrer"
+                    class="link">
+                    Official Documentation
+                </a>
+                – Explore configuration and extension instructions.
+            </li>
+
+            <li>
+                <a href="https://github.com/madhurimarawat/Madhurima-Mindscape" target="_blank"
+                    rel="noopener noreferrer" class="link">
+                    Madhurima Mindscape GitHub Repository
+                </a>
+                – Explore my personal blog project.
+            </li>
+
+            <li>
+                <a href="https://github.com/madhurimarawat/Madhurima-Mindscape/blob/main/css/translate.css"
+                    target="_blank" rel="noopener noreferrer" class="link">
+                    My translate.css Implementation
+                </a>
+                – Explore the complete language selector styling.
+            </li>
+
+            <li>
+                <a href="https://github.com/madhurimarawat/Madhurima-Mindscape/blob/main/js/translate.js"
+                    target="_blank" rel="noopener noreferrer" class="link">
+                    My translate.js Implementation
+                </a>
+                – Explore the complete custom language selector logic.
+            </li>
+        </ul>
+
+        <p>
+            Exploring the original library alongside
+            a practical implementation is a useful way
+            to understand how its different features
+            can be applied to real websites.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="conclusion">
+
+    <h3>💜 Making Websites Multilingual with translate.js</h3>
+
+    <p>
+        Building multilingual functionality does not
+        always require a complicated internationalization
+        system. JavaScript libraries such as translate.js
+        provide a convenient way to introduce automatic
+        translation into existing websites.
+    </p>
+
+    <p>
+        In this tutorial, we explored the basic setup
+        of translate.js, its translation service
+        configuration, language selection functionality,
+        and several advanced customization instructions.
+    </p>
+
+    <p>
+        We also explored my practical implementation
+        in <strong>Madhurima Mindscape</strong>, where
+        I created a floating language button with
+        a searchable dropdown, responsive styling,
+        and localStorage-based language preference
+        persistence.
+    </p>
+
+    <p>
+        What I particularly like about this implementation
+        is that it keeps the language selector separate
+        from the main website layout while providing
+        visitors with an accessible way to switch
+        between languages.
+    </p>
+
+    <p>
+        If you are developing a personal blog,
+        portfolio, documentation website, or another
+        HTML-based project, translate.js is worth
+        exploring for its flexible translation
+        and customization capabilities.
+    </p>
+
+    <blockquote>
+        "Good web development is not just about adding
+        functionality. It is also about making that
+        functionality accessible and convenient for
+        everyone."
+    </blockquote>
+
+    <p class="text-center">
+        <strong>Want to explore the complete implementation?</strong>
+        Check out the translate.js library and my
+        personal blog's source code.
+    </p>
+
+    <p class="text-center">
+        <a href="https://github.com/xnx3/translate" target="_blank" rel="noopener noreferrer" class="link">
+            <i class="fab fa-github"></i>
+            Explore translate.js
+        </a>
+    </p>
+
+    <p class="text-center">
+        <a href="https://github.com/madhurimarawat/Madhurima-Mindscape" target="_blank" rel="noopener noreferrer"
+            class="link">
+            <i class="fab fa-github"></i>
+            Explore Madhurima Mindscape
+        </a>
+    </p>
+
+</section>

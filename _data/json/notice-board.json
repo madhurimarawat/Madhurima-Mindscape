@@ -1,6 +1,30 @@
 {
   "notices": [
     {
+      "date": "2026-11-26",
+      "blogs": [
+        {
+          "title": "Semester Notes",
+          "text": "Explore Semester Notes, a personal project created to organize academic notes and study materials semester by semester. Browse subjects, handwritten notes, programming lab work, and project resources arranged in a structured folder system. Discover how a simple habit of making and organizing notes evolved into a searchable website, making study materials easier to find, access, and revisit.",
+          "url": "/semester-notes",
+          "icon": "fas fa-folder-open"
+        },
+        {
+          "title": "A Marriage Proposal by Anton Chekhov",
+          "text": "Explore A Marriage Proposal by Anton Chekhov through a detailed literary explanation and analysis. Discover the characters of Ivan Vassilevitch Lomov, Natalya Stepanovna, and Stepan Stepanovitch Choobookov. Understand the play's themes of marriage, love, pride, greed, property disputes, humour, irony, and social satire. Examine how Chekhov uses comic arguments and misunderstandings to expose the absurdities of human relationships.",
+          "url": "/a-marriage-proposal",
+          "icon": "fas fa-ring"
+        },
+        {
+          "title": "Website Translation with translate.js",
+          "text": "Learn how to add automatic multilingual support to your website using the translate.js JavaScript library. Explore automatic HTML translation, language detection, translation services, and customization options. Build a floating language button with a searchable language selector, saved language preferences, and responsive styling.",
+          "url": "/translate-js-library",
+          "icon": "fas fa-language"
+        }
+      ],
+      "features": []
+    },
+    {
       "date": "2026-11-25",
       "blogs": [],
       "features": [

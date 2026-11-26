@@ -1,0 +1,68 @@
+# Website Translation with translate.js - SEO and Social Sharing Metadata
+
+title: "Website Translation with translate.js | Automatic Multilingual Website Translation | Madhurima Rawat"
+
+permalink: /translate-js-library
+
+description: >-
+    Learn how to add automatic multilingual support to your website using
+    the translate.js JavaScript library. Explore its lightweight setup,
+    automatic HTML translation, language detection, translation services,
+    and customization options. Follow a practical implementation featuring
+    a floating language button, searchable language selector, saved language
+    preferences, and responsive styling to make your website accessible
+    to visitors around the world.
+
+date: "2026-11-26"
+last_modified: "2026-11-26"
+
+image: "https://static.vecteezy.com/system/resources/previews/025/900/567/large_2x/translator-service-illustration-with-language-translation-various-countries-and-multilanguage-using-dictionary-in-hand-drawn-templates-vector.jpg"
+image_alt: "Multilingual translation service illustration representing automatic website translation and communication across different languages"
+
+author: "Madhurima Rawat"
+robots: "index, follow"
+
+keywords: >-
+    translate.js, xnx3 translate, translate.js JavaScript library,
+    automatic website translation, website translation JavaScript,
+    multilingual website, website internationalization,
+    automatic HTML translation, JavaScript translation library,
+    translate.js tutorial, translate.js integration,
+    translate.js documentation, translate.js GitHub,
+    translate.js language selector, searchable language selector,
+    custom language dropdown, floating language switcher,
+    automatic language detection, language preference storage,
+    JavaScript multilingual support, client-side translation,
+    dynamic website translation, HTML translation,
+    translate.language.setLocal, translate.service.use,
+    translate.selectLanguageTag, translate.execute,
+    website localization, multilingual web development,
+    responsive language selector, localStorage language preference,
+    frontend development, JavaScript tutorial,
+    website accessibility, Madhurima Mindscape
+
+# Open Graph Metadata
+
+og_title: "Website Translation with translate.js: A Practical Guide"
+
+og_type: "article"
+
+og_description: >-
+    Want to add multilingual support to your website? Discover how to use
+    translate.js for automatic HTML translation and build a custom floating
+    language selector with searchable language options and saved preferences.
+
+# Twitter/X Card Metadata
+
+twitter_card: "summary_large_image"
+
+twitter_title: "Website Translation with translate.js"
+
+twitter_description: >-
+    Add automatic multilingual support to your website using translate.js.
+    Explore easy integration, automatic HTML translation, and a custom
+    searchable language selector with saved preferences.
+
+# Favicon
+
+favicon: "images/Logo.png"

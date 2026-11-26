@@ -1,0 +1,69 @@
+# Semester Notes - SEO and Social Sharing Metadata
+
+title: "Semester Notes | Organized Study Materials and Resources | Madhurima Rawat"
+
+description: >-
+    Explore Semester Notes, a personal academic project by Madhurima Rawat,
+    featuring organized study materials for Data Science and Artificial
+    Intelligence. Browse semester-wise notes, subject folders, laboratory
+    programs, projects, and academic resources. Discover how a personal
+    passion for note-making, colour-coding, and organizing files evolved
+    into a structured GitHub repository and website with search functionality.
+    Find useful resources for studying, revision, and exam preparation.
+
+date: "2026-11-26T15:15:00+05:30"
+last_modified: "2026-11-26T15:15:00+05:30"
+
+image: "https://raw.githubusercontent.com/madhurimarawat/Semester-Notes/main/docs/website_snapshots/website_1.png"
+image_alt: "Semester Notes by Madhurima Rawat, an organized collection of semester-wise study notes, subjects, and academic resources"
+image_width: 1200
+image_height: 630
+
+author: "Madhurima Rawat"
+robots: "index, follow"
+
+keywords: >-
+    Semester Notes, Madhurima Rawat, Semester Notes Website,
+    Semester Notes GitHub, organized study notes, college notes,
+    computer science notes, Data Science and Artificial Intelligence,
+    semester-wise notes, academic resources, study materials,
+    exam preparation, revision notes, subject-wise notes,
+    Engineering Mathematics, Environmental Science,
+    Data Structures Using C, Digital Logic and Design,
+    Object-Oriented Programming, Python for Data Science,
+    Analysis and Design of Algorithm, Database Management System,
+    Computer Organization and Architecture, Discrete Structure,
+    Probability and Statistics, Artificial Intelligence,
+    Computer Networks, Data Visualization, Operating System,
+    Theory of Computation, laboratory programs, programming notes,
+    GitHub repository, GitHub Pages, HTML, CSS, JavaScript,
+    website development, search functionality, file organization,
+    folder structure, note making, study organization,
+    academic documentation, student project, college project
+
+# Open Graph Metadata
+
+og_title: "Semester Notes | Madhurima Rawat"
+
+og_type: "article"
+
+og_description: >-
+    Discover Semester Notes, a personal academic project featuring
+    organized study materials, semester-wise subjects, laboratory work,
+    and programming resources.
+
+# Twitter/X Card Metadata
+
+twitter_card: "summary_large_image"
+
+twitter_title: "Semester Notes | Organized Study Materials"
+
+twitter_description: >-
+    Explore Semester Notes through a personal project journey. Discover
+    semester-wise study materials, organized subject folders, lab programs,
+    programming resources, and a searchable academic notes website.
+    Created with a love for note-making and organization.
+
+# Favicon
+
+favicon: "images/Logo.png"
