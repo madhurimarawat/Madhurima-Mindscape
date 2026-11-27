@@ -4,15 +4,38 @@ permalink: /blog-insights
 seo: blog-tools/blog-insights
 ---
 
+<!--
+*********************************************************************************************
+* File: blog-insights.html
+* Author: Madhurima Rawat
+* Date: November 27, 2026
+*
+* Description:
+* Displays the Blog Insights dashboard of Madhurima Mindscape.
+*
+* Features:
+* - Displays overall blog statistics, including published articles, categories,
+*   unique tags, and active publishing months.
+* - Generates interactive category distribution and monthly publishing charts
+*   using Jekyll-generated JSON data.
+* - Highlights the three latest published articles with titles, excerpts,
+*   publication dates, and categories.
+* - Provides navigation to the complete blog collection.
+* - Supports dynamic website themes and responsive layouts.
+*
+* Version: 1.0
+*********************************************************************************************
+-->
+
+
 <!-- Blog Insights Dashboard -->
 
 {% assign total_posts = site.posts | size %}
 {% assign total_categories = site.categories | size %}
 {% assign total_tags = site.tags | size %}
 
-<!-- Group posts by publication month -->
-{% assign monthly_posts = site.posts | group_by_exp: "post", "post.date | date: '%Y-%m'" %}
-
+<!-- Group posts by publication month and sort chronologically -->
+{% assign monthly_posts = site.posts | group_by_exp: "post", "post.date | date: '%Y-%m'" | sort: "name" %}
 
 <h2>Blog Insights</h2>
 <div class="line-below"></div>
@@ -20,31 +43,51 @@ seo: blog-tools/blog-insights
 
 <section class="blog-insights">
 
-    <!-- Statistics Cards -->
+    <!-- Statistics -->
     <div class="insights-stats">
 
         <div class="insight-card">
-            <i class="fas fa-newspaper"></i>
-            <h3>{{ total_posts }}</h3>
-            <p>Published Articles</p>
+            <div class="stat-icon">
+                <i class="fas fa-newspaper"></i>
+            </div>
+            <div class="stat-content">
+                <h3>{{ total_posts }}</h3>
+                <p>Published Articles</p>
+            </div>
+            <span class="stat-note">Stories shared</span>
         </div>
 
         <div class="insight-card">
-            <i class="fas fa-folder-open"></i>
-            <h3>{{ total_categories }}</h3>
-            <p>Categories</p>
+            <div class="stat-icon">
+                <i class="fas fa-folder-open"></i>
+            </div>
+            <div class="stat-content">
+                <h3>{{ total_categories }}</h3>
+                <p>Categories</p>
+            </div>
+            <span class="stat-note">Topics explored</span>
         </div>
 
         <div class="insight-card">
-            <i class="fas fa-tags"></i>
-            <h3>{{ total_tags }}</h3>
-            <p>Unique Tags</p>
+            <div class="stat-icon">
+                <i class="fas fa-tags"></i>
+            </div>
+            <div class="stat-content">
+                <h3>{{ total_tags }}</h3>
+                <p>Unique Tags</p>
+            </div>
+            <span class="stat-note">Ideas collected</span>
         </div>
 
         <div class="insight-card">
-            <i class="fas fa-calendar-alt"></i>
-            <h3>{{ monthly_posts.size }}</h3>
-            <p>Active Publishing Months</p>
+            <div class="stat-icon">
+                <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="stat-content">
+                <h3>{{ monthly_posts.size }}</h3>
+                <p>Active Months</p>
+            </div>
+            <span class="stat-note">Writing in motion</span>
         </div>
 
     </div>
@@ -81,18 +124,112 @@ seo: blog-tools/blog-insights
     }
     </script>
 
+    <!-- Writing Insights -->
+    <div class="insights-section-heading">
+        <div>
+            <h3>Behind the stories</h3>
+            <p>A closer look at the subjects I write about and when I share them.</p>
+        </div>
+    </div>
+
     <!-- Charts -->
     <div class="insights-charts">
 
         <div class="insight-chart-card">
-            <h2>Articles by Category</h2>
-            <canvas id="categoryChart"></canvas>
+            <div class="chart-heading">
+                <div>
+                    <h3>Topics I Explore</h3>
+                    <p>How my articles are distributed across categories.</p>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="categoryChart"></canvas>
+            </div>
+
+            <p class="chart-footer">
+                <i class="fas fa-lightbulb"></i>
+                Different interests, one creative space.
+            </p>
         </div>
 
         <div class="insight-chart-card">
-            <h2>Publishing Activity</h2>
-            <canvas id="monthlyChart"></canvas>
+            <div class="chart-heading">
+                <div>
+                    <h3>My Publishing Journey</h3>
+                    <p>Articles published over time, month by month.</p>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="monthlyChart"></canvas>
+            </div>
+
+            <p class="chart-footer">
+                <i class="fas fa-pen-nib"></i>
+                Every month brings another opportunity to create.
+            </p>
         </div>
+
+    </div>
+
+    <!-- Latest Stories -->
+    <div class="latest-stories">
+
+        <div class="insights-section-heading">
+            <div>
+                <h3>Latest stories</h3>
+                <p>A few of the most recent things I've been writing about.</p>
+            </div>
+
+            <a href="{{ '/blogs' | relative_url }}" class="view-all-stories">
+                Explore all articles <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="latest-stories-grid">
+
+            {% for post in site.posts limit:3 %}
+
+            <article class="latest-story-card">
+
+                <span class="story-date">
+                    <i class="far fa-calendar-alt"></i>
+                    {{ post.date | date: "%B %d, %Y" }}
+                </span>
+
+                <h4>
+                    <a href="{{ post.url | relative_url }}">
+                        {{ post.title }}
+                    </a>
+                </h4>
+
+                {% if post.excerpt %}
+                <p>
+                    {{ post.excerpt | strip_html | normalize_whitespace | truncate: 130 }}
+                </p>
+                {% endif %}
+
+                {% if post.categories.size > 0 %}
+                <span class="story-category">
+                    <i class="fas fa-folder-open"></i>
+                    {{ post.categories | first }}
+                </span>
+                {% endif %}
+
+                <a href="{{ post.url | relative_url }}" class="read-story">
+                    Read article <i class="fas fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+            {% endfor %}
+
+        </div>
+
+        {% if total_posts == 0 %}
+        <p class="no-stories">Your next story is waiting to be written!</p>
+        {% endif %}
 
     </div>
 

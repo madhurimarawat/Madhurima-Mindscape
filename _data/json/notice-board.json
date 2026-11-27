@@ -1,6 +1,18 @@
 {
   "notices": [
     {
+      "date": "2026-11-27",
+      "blogs": [],
+      "features": [
+        {
+          "title": "Introduced Blog Insights Dashboard",
+          "text": "Added a dedicated Blog Insights dashboard providing an overview of publishing activity. Includes dynamic statistics for published articles, categories, unique tags, and active writing months, interactive charts visualizing category distribution and monthly publishing trends, and a latest stories section highlighting recently published articles. Features responsive layouts, bold chart typography, and dynamic theme integration that automatically adapts chart colors to the selected website theme.",
+          "icon": "fas fa-chart-line",
+          "url": "/blog-insights"
+        }
+      ]
+    },
+    {
       "date": "2026-11-26",
       "blogs": [
         {
